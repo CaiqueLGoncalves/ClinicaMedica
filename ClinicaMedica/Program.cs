@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicaMedica.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace ClinicaMedica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FrmIndex());
         }
     }
 }
