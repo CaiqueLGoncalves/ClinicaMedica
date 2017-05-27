@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e4e4147acbf94071ba694b63f81112ce" Name="DataModelDiagram" DisplayType="true" ZoomLevel="27" >
+        <EntityTypeShape EntityType="DataModel.Usuario" Width="2.125" PointX="11.25" PointY="1.375" />
+        <EntityTypeShape EntityType="DataModel.Localidade" Width="2.125" PointX="14.25" PointY="1.375" />
+        <AssociationConnector Association="DataModel.PessoaLocalidade" ></AssociationConnector>
+        <EntityTypeShape EntityType="DataModel.Telefone" Width="2" PointX="8.125" PointY="1.375" />
+        <AssociationConnector Association="DataModel.TelefonePessoa" />
+        <EntityTypeShape EntityType="DataModel.Funcionario" Width="1.875" PointX="10.125" PointY="4.875" />
+        <InheritanceConnector EntityType="DataModel.Funcionario" />
+        <EntityTypeShape EntityType="DataModel.Paciente" Width="1.5" PointX="13" PointY="4.875" />
+        <InheritanceConnector EntityType="DataModel.Paciente" />
+        <InheritanceConnector EntityType="DataModel.Paciente" />
+        <InheritanceConnector EntityType="DataModel.Funcionario" />
+        <EntityTypeShape EntityType="DataModel.Funcao" Width="1.5" PointX="6.375" PointY="4.625" />
+        <AssociationConnector Association="DataModel.FuncionarioFuncao" />
+        <EntityTypeShape EntityType="DataModel.Medico" Width="1.5" PointX="10.25" PointY="7.25" />
+        <InheritanceConnector EntityType="DataModel.Medico" />
+        <EntityTypeShape EntityType="DataModel.Consultorio" Width="2.25" PointX="10" PointY="12.125" />
+        <EntityTypeShape EntityType="DataModel.QuadroFuncionarios" Width="2.5" PointX="6.375" PointY="8.875" />
+        <AssociationConnector Association="DataModel.FuncionarioQuadroFuncionarios" ManuallyRouted="true" >
+          <ConnectorPoint PointX="10.125" PointY="5.7485957653972726" />
+          <ConnectorPoint PointX="9.20734099727278" PointY="5.7485957653972726" />
+          <ConnectorPoint PointX="9.20734099727278" PointY="7.803857833616604" />
+          <ConnectorPoint PointX="7.625" PointY="7.803857833616604" />
+          <ConnectorPoint PointX="7.625" PointY="8.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataModel.ConsultorioQuadroFuncionarios" />
+        <AssociationConnector Association="DataModel.ConsultorioLocalidade" ManuallyRouted="true" >
+          <ConnectorPoint PointX="12.25" PointY="14.534783386845815" />
+          <ConnectorPoint PointX="25.968663325676953" PointY="14.534783386845815" />
+          <ConnectorPoint PointX="25.968663325676953" PointY="2.7506800546210486" />
+          <ConnectorPoint PointX="16.375" PointY="2.7506800546210486" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataModel.ConsultorioTelefone" ManuallyRouted="true" >
+          <ConnectorPoint PointX="10" PointY="14.357262078722314" />
+          <ConnectorPoint PointX="5.0238092845377533" PointY="14.357262078722314" />
+          <ConnectorPoint PointX="5.0238092845377533" PointY="2.6318679021156015" />
+          <ConnectorPoint PointX="8.125" PointY="2.6318679021156015" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataModel.Estoque" Width="2.25" PointX="10" PointY="16.125" IsExpanded="true" />
+        <AssociationConnector Association="DataModel.ConsultorioEstoque" />
+        <EntityTypeShape EntityType="DataModel.Produto" Width="1.875" PointX="16.75" PointY="16.125" />
+        <EntityTypeShape EntityType="DataModel.Item" Width="1.875" PointX="13.625" PointY="16.125" />
+        <AssociationConnector Association="DataModel.EstoqueItem" />
+        <AssociationConnector Association="DataModel.ProdutoItem" />
+        <EntityTypeShape EntityType="DataModel.Especialidade" Width="1.875" PointX="10.125" PointY="9.625" />
+        <AssociationConnector Association="DataModel.MedicoEspecialidade" />
+        <EntityTypeShape EntityType="DataModel.Exame" Width="2" PointX="22.875" PointY="4.875" />
+        <EntityTypeShape EntityType="DataModel.Consulta" Width="2.25" PointX="14.875" PointY="7.375" />
+        <EntityTypeShape EntityType="DataModel.AgendaExame" Width="2.25" PointX="18.5" PointY="4.875" />
+        <AssociationConnector Association="DataModel.PacienteConsulta" />
+        <AssociationConnector Association="DataModel.MedicoConsulta" />
+        <AssociationConnector Association="DataModel.ConsultorioConsulta" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="DataModel.PacienteAgendaExame" />
+        <AssociationConnector Association="DataModel.ExameAgendaExame" />
+        <AssociationConnector Association="DataModel.ConsultorioAgendaExame" />
+        <AssociationConnector Association="DataModel.ConsultorioExame" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
