@@ -46,6 +46,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClinicaMedicaBDDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\ConsultorioController.cs" />
     <Compile Include="Model\AgendaExame.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -128,6 +135,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\WSCorreios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultorioCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultorioCadastrar.Designer.cs">
+      <DependentUpon>FrmConsultorioCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultorioConsultarcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultorioConsultarcs.Designer.cs">
+      <DependentUpon>FrmConsultorioConsultarcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmIndex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,10 +167,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmConsultorioCadastrar.resx">
+      <DependentUpon>FrmConsultorioCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConsultorioConsultarcs.resx">
+      <DependentUpon>FrmConsultorioConsultarcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmIndex.resx">
+      <DependentUpon>FrmIndex.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Model\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClinicaMedicaBDDataSet.xsc">
+      <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ClinicaMedicaBDDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ClinicaMedicaBDDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClinicaMedicaBDDataSet.xss">
+      <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model\DataModel.edmx.diagram">
       <DependentUpon>DataModel.edmx</DependentUpon>
     </None>
@@ -160,13 +204,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\WSCorreios\AtendeClienteService.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Model\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -179,9 +222,150 @@
       <LastGenOutput>DataModel.cs</LastGenOutput>
       <DependentUpon>DataModel.edmx</DependentUpon>
     </Content>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.assuntoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.consultarPedidosInformacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.consultaSROResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.mensagemRetornoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.motivoPIMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.obterAssuntosPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.obterMensagemRetornoPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.obterMotivosPIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.registrarPedidosInformacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.retorno.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.retornoCancelamentoTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\ClinicaMedica.WSCorreios.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WSCorreios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\WSCorreios\configuration.svcinfo" />
+    <None Include="Service References\WSCorreios\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WSCorreios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

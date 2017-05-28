@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace ClinicaMedica.View
 {
-    public partial class FrmIndex : Form
+    public partial class FrmConsultorioConsultarcs : Form
     {
-        public FrmIndex()
+        public FrmConsultorioConsultarcs()
         {
             InitializeComponent();
         }
 
-        private void consultórioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmConsultorioCadastrar consultorio = new FrmConsultorioCadastrar();
-            consultorio.Show();
+
         }
     }
 }
