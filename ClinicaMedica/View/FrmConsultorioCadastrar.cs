@@ -46,19 +46,21 @@ namespace ClinicaMedica.View
         {
             ConsultorioController consultCont = new ConsultorioController();
             Consultorio c = new Consultorio();
+            Localidade l = new Localidade();
 
             c.NomeFantasia = txbNomeFantasia.Text;
             c.RazaoSocial = txbRazaoSocial.Text;
             c.CNPJ = txbCnpj.Text;
             c.HorarioAbertura = dtpHorairoAbertura.Value.TimeOfDay;
             c.HorarioFechamento = dtpHorarioFechamento.Value.TimeOfDay;
-            c.Localidade.Endereco = txbEndereco.Text;
-            c.Localidade.Numero = txbNumero.Text;
-            c.Localidade.Complemento = txbComplemento.Text;
-            c.Localidade.CEP = txbCep.Text;
-            c.Localidade.Cidade = txbCidade.Text;
-            c.Localidade.Estado = txbEstado.Text;
-
+            l.Endereco = txbEndereco.Text;
+            l.Numero = txbNumero.Text;
+            l.Complemento = txbComplemento.Text;
+            l.CEP = txbCep.Text;
+            l.Bairro = txbBairro.Text;
+            l.Cidade = txbCidade.Text;
+            l.Estado = txbEstado.Text;
+            c.Localidade = l;
             consultCont.Insert(c);
         }
     }

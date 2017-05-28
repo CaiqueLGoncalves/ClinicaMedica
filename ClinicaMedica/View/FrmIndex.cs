@@ -22,5 +22,23 @@ namespace ClinicaMedica.View
             FrmConsultorioCadastrar consultorio = new FrmConsultorioCadastrar();
             consultorio.Show();
         }
+
+        private void consultórioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmConsultorioConsultar consultorioConsulta = new FrmConsultorioConsultar();
+            consultorioConsulta.Show();
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProdutoCadastrar produtoCadastra = new FrmProdutoCadastrar();
+            produtoCadastra.Show();
+        }
+
+        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstoqueCadastrar estoqueCadastra = new FrmEstoqueCadastrar();
+            estoqueCadastra.Show();
+        }
     }
 }

@@ -64,6 +64,7 @@
       <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controller\ConsultorioController.cs" />
+    <Compile Include="Controller\EstoqueController.cs" />
     <Compile Include="Model\AgendaExame.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -133,6 +134,7 @@
     <Compile Include="Model\Usuario.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Validacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WSCorreios\Reference.cs">
@@ -146,17 +148,29 @@
     <Compile Include="View\FrmConsultorioCadastrar.Designer.cs">
       <DependentUpon>FrmConsultorioCadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmConsultorioConsultarcs.cs">
+    <Compile Include="View\FrmConsultorioConsultar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmConsultorioConsultarcs.Designer.cs">
-      <DependentUpon>FrmConsultorioConsultarcs.cs</DependentUpon>
+    <Compile Include="View\FrmConsultorioConsultar.Designer.cs">
+      <DependentUpon>FrmConsultorioConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmEstoqueCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmEstoqueCadastrar.Designer.cs">
+      <DependentUpon>FrmEstoqueCadastrar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmIndex.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmIndex.Designer.cs">
       <DependentUpon>FrmIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmProdutoCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmProdutoCadastrar.Designer.cs">
+      <DependentUpon>FrmProdutoCadastrar.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -170,11 +184,17 @@
     <EmbeddedResource Include="View\FrmConsultorioCadastrar.resx">
       <DependentUpon>FrmConsultorioCadastrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmConsultorioConsultarcs.resx">
-      <DependentUpon>FrmConsultorioConsultarcs.cs</DependentUpon>
+    <EmbeddedResource Include="View\FrmConsultorioConsultar.resx">
+      <DependentUpon>FrmConsultorioConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmEstoqueCadastrar.resx">
+      <DependentUpon>FrmEstoqueCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmIndex.resx">
       <DependentUpon>FrmIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmProdutoCadastrar.resx">
+      <DependentUpon>FrmProdutoCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

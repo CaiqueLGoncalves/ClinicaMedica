@@ -15,17 +15,31 @@ namespace ClinicaMedica.Controller
 
         public void Insert(Consultorio consultorio)
         {
-            try
-            {
-                db.TB_Consultorio.Add(consultorio);
-                db.SaveChanges();
-                MessageBox.Show("Consultório Cadastrado com sucesso!!!");
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("não foi possível cadastrar o consultório!\n" + e.Message);
-            }
-           
+
+                var erros = Validacao.ValidaConsultorio(consultorio);
+
+
+                if (erros.Count() == 0)
+                {
+                    try
+                    {
+                        db.TB_Consultorio.Add(consultorio);
+                        db.SaveChanges();
+                        MessageBox.Show("Consultório cadastrado com sucesso!");
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show("Não foi possível cadastrar o consultório!\n" + e.Message);
+                    }
+                  //  CadastroCargo.ActiveForm.Close();
+
+                }
+                else
+                {
+                    foreach (var e in erros)
+                        MessageBox.Show(e.ToString());
+                }
+            
         }
     }
 }
