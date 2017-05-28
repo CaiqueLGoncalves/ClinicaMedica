@@ -40,5 +40,23 @@ namespace ClinicaMedica.View
             FrmEstoqueCadastrar estoqueCadastra = new FrmEstoqueCadastrar();
             estoqueCadastra.Show();
         }
+
+        private void produtoEmEstoqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEstoqueProdutoCadastrar estoqueProdutoCadastra = new FrmEstoqueProdutoCadastrar();
+            estoqueProdutoCadastra.Show();
+        }
+
+        private void exameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmExameCadastrar exameCadastra = new FrmExameCadastrar();
+            exameCadastra.Show();
+        }
+
+        private void exameEmConsultóriroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmExameConsultorio exameConsultorio = new FrmExameConsultorio();
+            exameConsultorio.Show();
+        }
     }
 }

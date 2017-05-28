@@ -24,14 +24,17 @@ namespace ClinicaMedica.View
             // TODO: This line of code loads data into the 'clinicaMedicaBDDataSet.TB_Consultorio' table. You can move, or remove it, as needed.
             this.tB_ConsultorioTableAdapter.Fill(this.clinicaMedicaBDDataSet.TB_Consultorio);
 
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Estoque estoque = new Estoque();
             EstoqueController estcont = new EstoqueController();
+
             estoque.IdConsultorio = Int32.Parse(cmbConsultorio.SelectedValue.ToString());
-            estoque.Nome = txbDescricao.Text;
+            estoque.Nome = txbNome.Text;
+            estoque.Descricao = txbDescricao.Text;
             if (cmbRefrigeracao.SelectedIndex == 0) estoque.Refrigeracao = false;
             else estoque.Refrigeracao = true;
 

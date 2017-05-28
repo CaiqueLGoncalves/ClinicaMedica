@@ -30,7 +30,6 @@
         {
             this.txbNomeFantasia = new System.Windows.Forms.TextBox();
             this.txbRazaoSocial = new System.Windows.Forms.TextBox();
-            this.txbCnpj = new System.Windows.Forms.TextBox();
             this.dtpHorairoAbertura = new System.Windows.Forms.DateTimePicker();
             this.dtpHorarioFechamento = new System.Windows.Forms.DateTimePicker();
             this.lblNomeFantasia = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@
             this.lblBairro = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.txbCep = new System.Windows.Forms.TextBox();
             this.txbEndereco = new System.Windows.Forms.TextBox();
             this.txbNumero = new System.Windows.Forms.TextBox();
             this.txbComplemento = new System.Windows.Forms.TextBox();
@@ -54,36 +52,33 @@
             this.txbEstado = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnBuscarCep = new System.Windows.Forms.Button();
+            this.mskCnpj = new System.Windows.Forms.MaskedTextBox();
+            this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // txbNomeFantasia
             // 
             this.txbNomeFantasia.Location = new System.Drawing.Point(214, 29);
             this.txbNomeFantasia.Name = "txbNomeFantasia";
-            this.txbNomeFantasia.Size = new System.Drawing.Size(100, 20);
+            this.txbNomeFantasia.Size = new System.Drawing.Size(192, 20);
             this.txbNomeFantasia.TabIndex = 0;
             // 
             // txbRazaoSocial
             // 
             this.txbRazaoSocial.Location = new System.Drawing.Point(214, 65);
             this.txbRazaoSocial.Name = "txbRazaoSocial";
-            this.txbRazaoSocial.Size = new System.Drawing.Size(100, 20);
+            this.txbRazaoSocial.Size = new System.Drawing.Size(192, 20);
             this.txbRazaoSocial.TabIndex = 1;
-            // 
-            // txbCnpj
-            // 
-            this.txbCnpj.Location = new System.Drawing.Point(214, 110);
-            this.txbCnpj.Name = "txbCnpj";
-            this.txbCnpj.Size = new System.Drawing.Size(100, 20);
-            this.txbCnpj.TabIndex = 2;
             // 
             // dtpHorairoAbertura
             // 
             this.dtpHorairoAbertura.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorairoAbertura.Location = new System.Drawing.Point(232, 143);
             this.dtpHorairoAbertura.Name = "dtpHorairoAbertura";
+            this.dtpHorairoAbertura.ShowUpDown = true;
             this.dtpHorairoAbertura.Size = new System.Drawing.Size(82, 20);
             this.dtpHorairoAbertura.TabIndex = 3;
+            this.dtpHorairoAbertura.Value = new System.DateTime(2017, 5, 28, 0, 0, 0, 0);
             this.dtpHorairoAbertura.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dtpHorarioFechamento
@@ -91,8 +86,10 @@
             this.dtpHorarioFechamento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpHorarioFechamento.Location = new System.Drawing.Point(232, 178);
             this.dtpHorarioFechamento.Name = "dtpHorarioFechamento";
+            this.dtpHorarioFechamento.ShowUpDown = true;
             this.dtpHorarioFechamento.Size = new System.Drawing.Size(82, 20);
             this.dtpHorarioFechamento.TabIndex = 4;
+            this.dtpHorarioFechamento.Value = new System.DateTime(2017, 5, 28, 0, 0, 0, 0);
             // 
             // lblNomeFantasia
             // 
@@ -202,34 +199,27 @@
             this.lblEstado.TabIndex = 16;
             this.lblEstado.Text = "Estado";
             // 
-            // txbCep
-            // 
-            this.txbCep.Location = new System.Drawing.Point(214, 213);
-            this.txbCep.Name = "txbCep";
-            this.txbCep.Size = new System.Drawing.Size(100, 20);
-            this.txbCep.TabIndex = 17;
-            // 
             // txbEndereco
             // 
             this.txbEndereco.Enabled = false;
             this.txbEndereco.Location = new System.Drawing.Point(214, 244);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(192, 20);
-            this.txbEndereco.TabIndex = 18;
+            this.txbEndereco.TabIndex = 7;
             // 
             // txbNumero
             // 
             this.txbNumero.Location = new System.Drawing.Point(214, 271);
             this.txbNumero.Name = "txbNumero";
             this.txbNumero.Size = new System.Drawing.Size(100, 20);
-            this.txbNumero.TabIndex = 19;
+            this.txbNumero.TabIndex = 8;
             // 
             // txbComplemento
             // 
             this.txbComplemento.Location = new System.Drawing.Point(214, 301);
             this.txbComplemento.Name = "txbComplemento";
             this.txbComplemento.Size = new System.Drawing.Size(192, 20);
-            this.txbComplemento.TabIndex = 20;
+            this.txbComplemento.TabIndex = 9;
             // 
             // txbBairro
             // 
@@ -237,7 +227,7 @@
             this.txbBairro.Location = new System.Drawing.Point(214, 333);
             this.txbBairro.Name = "txbBairro";
             this.txbBairro.Size = new System.Drawing.Size(100, 20);
-            this.txbBairro.TabIndex = 21;
+            this.txbBairro.TabIndex = 10;
             // 
             // txbCidade
             // 
@@ -245,15 +235,15 @@
             this.txbCidade.Location = new System.Drawing.Point(214, 361);
             this.txbCidade.Name = "txbCidade";
             this.txbCidade.Size = new System.Drawing.Size(100, 20);
-            this.txbCidade.TabIndex = 22;
+            this.txbCidade.TabIndex = 11;
             // 
             // txbEstado
             // 
             this.txbEstado.Enabled = false;
             this.txbEstado.Location = new System.Drawing.Point(214, 396);
             this.txbEstado.Name = "txbEstado";
-            this.txbEstado.Size = new System.Drawing.Size(100, 20);
-            this.txbEstado.TabIndex = 23;
+            this.txbEstado.Size = new System.Drawing.Size(42, 20);
+            this.txbEstado.TabIndex = 12;
             // 
             // btnCadastrar
             // 
@@ -270,16 +260,36 @@
             this.btnBuscarCep.Location = new System.Drawing.Point(331, 211);
             this.btnBuscarCep.Name = "btnBuscarCep";
             this.btnBuscarCep.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarCep.TabIndex = 25;
+            this.btnBuscarCep.TabIndex = 6;
             this.btnBuscarCep.Text = "Buscar";
             this.btnBuscarCep.UseVisualStyleBackColor = true;
             this.btnBuscarCep.Click += new System.EventHandler(this.btnBuscarCep_Click);
             // 
-            // FrmConsultorio
+            // mskCnpj
+            // 
+            this.mskCnpj.Location = new System.Drawing.Point(214, 103);
+            this.mskCnpj.Mask = "00,000,000/0000-00";
+            this.mskCnpj.Name = "mskCnpj";
+            this.mskCnpj.Size = new System.Drawing.Size(109, 20);
+            this.mskCnpj.TabIndex = 2;
+            this.mskCnpj.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // mskCep
+            // 
+            this.mskCep.Location = new System.Drawing.Point(214, 211);
+            this.mskCep.Mask = "00000-999";
+            this.mskCep.Name = "mskCep";
+            this.mskCep.Size = new System.Drawing.Size(100, 20);
+            this.mskCep.TabIndex = 5;
+            this.mskCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // FrmConsultorioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 501);
+            this.Controls.Add(this.mskCep);
+            this.Controls.Add(this.mskCnpj);
             this.Controls.Add(this.btnBuscarCep);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txbEstado);
@@ -288,7 +298,6 @@
             this.Controls.Add(this.txbComplemento);
             this.Controls.Add(this.txbNumero);
             this.Controls.Add(this.txbEndereco);
-            this.Controls.Add(this.txbCep);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.lblCidade);
             this.Controls.Add(this.lblBairro);
@@ -303,11 +312,10 @@
             this.Controls.Add(this.lblNomeFantasia);
             this.Controls.Add(this.dtpHorarioFechamento);
             this.Controls.Add(this.dtpHorairoAbertura);
-            this.Controls.Add(this.txbCnpj);
             this.Controls.Add(this.txbRazaoSocial);
             this.Controls.Add(this.txbNomeFantasia);
-            this.Name = "FrmConsultorio";
-            this.Text = "FrmConsultorio";
+            this.Name = "FrmConsultorioCadastrar";
+            this.Text = "Cadastro de Consultório";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,7 +325,6 @@
 
         private System.Windows.Forms.TextBox txbNomeFantasia;
         private System.Windows.Forms.TextBox txbRazaoSocial;
-        private System.Windows.Forms.TextBox txbCnpj;
         private System.Windows.Forms.DateTimePicker dtpHorairoAbertura;
         private System.Windows.Forms.DateTimePicker dtpHorarioFechamento;
         private System.Windows.Forms.Label lblNomeFantasia;
@@ -332,7 +339,6 @@
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.TextBox txbCep;
         private System.Windows.Forms.TextBox txbEndereco;
         private System.Windows.Forms.TextBox txbNumero;
         private System.Windows.Forms.TextBox txbComplemento;
@@ -341,5 +347,7 @@
         private System.Windows.Forms.TextBox txbEstado;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnBuscarCep;
+        private System.Windows.Forms.MaskedTextBox mskCnpj;
+        private System.Windows.Forms.MaskedTextBox mskCep;
     }
 }

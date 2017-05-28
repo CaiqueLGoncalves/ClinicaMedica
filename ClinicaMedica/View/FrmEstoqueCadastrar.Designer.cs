@@ -33,20 +33,22 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.lblRefrigeracao = new System.Windows.Forms.Label();
             this.cmbConsultorio = new System.Windows.Forms.ComboBox();
+            this.tBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.txbDescricao = new System.Windows.Forms.TextBox();
             this.cmbRefrigeracao = new System.Windows.Forms.ComboBox();
-            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
-            this.tBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
+            this.txbNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblConsultorio
             // 
             this.lblConsultorio.AutoSize = true;
-            this.lblConsultorio.Location = new System.Drawing.Point(53, 71);
+            this.lblConsultorio.Location = new System.Drawing.Point(57, 62);
             this.lblConsultorio.Name = "lblConsultorio";
             this.lblConsultorio.Size = new System.Drawing.Size(62, 13);
             this.lblConsultorio.TabIndex = 0;
@@ -55,7 +57,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(56, 100);
+            this.lblDescricao.Location = new System.Drawing.Point(57, 123);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(58, 13);
             this.lblDescricao.TabIndex = 1;
@@ -64,7 +66,7 @@
             // lblRefrigeracao
             // 
             this.lblRefrigeracao.AutoSize = true;
-            this.lblRefrigeracao.Location = new System.Drawing.Point(59, 136);
+            this.lblRefrigeracao.Location = new System.Drawing.Point(59, 157);
             this.lblRefrigeracao.Name = "lblRefrigeracao";
             this.lblRefrigeracao.Size = new System.Drawing.Size(71, 13);
             this.lblRefrigeracao.TabIndex = 2;
@@ -74,19 +76,30 @@
             // 
             this.cmbConsultorio.DataSource = this.tBConsultorioBindingSource;
             this.cmbConsultorio.DisplayMember = "NomeFantasia";
+            this.cmbConsultorio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConsultorio.FormattingEnabled = true;
-            this.cmbConsultorio.Location = new System.Drawing.Point(166, 62);
+            this.cmbConsultorio.Location = new System.Drawing.Point(166, 59);
             this.cmbConsultorio.Name = "cmbConsultorio";
-            this.cmbConsultorio.Size = new System.Drawing.Size(121, 21);
-            this.cmbConsultorio.TabIndex = 3;
+            this.cmbConsultorio.Size = new System.Drawing.Size(206, 21);
+            this.cmbConsultorio.TabIndex = 1;
             this.cmbConsultorio.ValueMember = "IdConsultorio";
+            // 
+            // tBConsultorioBindingSource
+            // 
+            this.tBConsultorioBindingSource.DataMember = "TB_Consultorio";
+            this.tBConsultorioBindingSource.DataSource = this.clinicaMedicaBDDataSet;
+            // 
+            // clinicaMedicaBDDataSet
+            // 
+            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txbDescricao
             // 
-            this.txbDescricao.Location = new System.Drawing.Point(166, 100);
+            this.txbDescricao.Location = new System.Drawing.Point(166, 116);
             this.txbDescricao.Name = "txbDescricao";
             this.txbDescricao.Size = new System.Drawing.Size(121, 20);
-            this.txbDescricao.TabIndex = 4;
+            this.txbDescricao.TabIndex = 3;
             // 
             // cmbRefrigeracao
             // 
@@ -94,24 +107,10 @@
             this.cmbRefrigeracao.Items.AddRange(new object[] {
             "Não",
             "Sim"});
-            this.cmbRefrigeracao.Location = new System.Drawing.Point(166, 127);
+            this.cmbRefrigeracao.Location = new System.Drawing.Point(166, 148);
             this.cmbRefrigeracao.Name = "cmbRefrigeracao";
             this.cmbRefrigeracao.Size = new System.Drawing.Size(121, 21);
-            this.cmbRefrigeracao.TabIndex = 5;
-            // 
-            // clinicaMedicaBDDataSet
-            // 
-            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
-            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBConsultorioBindingSource
-            // 
-            this.tBConsultorioBindingSource.DataMember = "TB_Consultorio";
-            this.tBConsultorioBindingSource.DataSource = this.clinicaMedicaBDDataSet;
-            // 
-            // tB_ConsultorioTableAdapter
-            // 
-            this.tB_ConsultorioTableAdapter.ClearBeforeFill = true;
+            this.cmbRefrigeracao.TabIndex = 4;
             // 
             // button1
             // 
@@ -123,11 +122,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txbNome
+            // 
+            this.txbNome.Location = new System.Drawing.Point(166, 90);
+            this.txbNome.Name = "txbNome";
+            this.txbNome.Size = new System.Drawing.Size(206, 20);
+            this.txbNome.TabIndex = 2;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(59, 90);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 8;
+            this.lblNome.Text = "Nome:";
+            // 
+            // tB_ConsultorioTableAdapter
+            // 
+            this.tB_ConsultorioTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmEstoqueCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 355);
+            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.txbNome);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbRefrigeracao);
             this.Controls.Add(this.txbDescricao);
@@ -136,10 +157,10 @@
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblConsultorio);
             this.Name = "FrmEstoqueCadastrar";
-            this.Text = "FrmEstoqueCadastrar";
+            this.Text = "Cadastrar Estoque";
             this.Load += new System.EventHandler(this.FrmEstoqueCadastrar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,9 +174,11 @@
         private System.Windows.Forms.ComboBox cmbConsultorio;
         private System.Windows.Forms.TextBox txbDescricao;
         private System.Windows.Forms.ComboBox cmbRefrigeracao;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txbNome;
+        private System.Windows.Forms.Label lblNome;
         private ClinicaMedicaBDDataSet clinicaMedicaBDDataSet;
         private System.Windows.Forms.BindingSource tBConsultorioBindingSource;
         private ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter tB_ConsultorioTableAdapter;
-        private System.Windows.Forms.Button button1;
     }
 }

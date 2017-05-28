@@ -29,12 +29,11 @@ namespace ClinicaMedica.View
             try
             {
                 var ws = new WSCorreios.AtendeClienteClient();
-                var resposta = ws.consultaCEP(txbCep.Text);
+                var resposta = ws.consultaCEP(mskCep.Text);
                 txbEndereco.Text = resposta.end;
                 txbBairro.Text = resposta.bairro;
                 txbCidade.Text = resposta.cidade;
                 txbEstado.Text = resposta.uf;
-
             }
             catch (Exception ex)
             {
@@ -50,18 +49,19 @@ namespace ClinicaMedica.View
 
             c.NomeFantasia = txbNomeFantasia.Text;
             c.RazaoSocial = txbRazaoSocial.Text;
-            c.CNPJ = txbCnpj.Text;
+            c.CNPJ = mskCnpj.Text;
             c.HorarioAbertura = dtpHorairoAbertura.Value.TimeOfDay;
             c.HorarioFechamento = dtpHorarioFechamento.Value.TimeOfDay;
             l.Endereco = txbEndereco.Text;
             l.Numero = txbNumero.Text;
             l.Complemento = txbComplemento.Text;
-            l.CEP = txbCep.Text;
+            l.CEP = mskCep.Text;
             l.Bairro = txbBairro.Text;
             l.Cidade = txbCidade.Text;
             l.Estado = txbEstado.Text;
             c.Localidade = l;
             consultCont.Insert(c);
+            this.Controls.Clear();
         }
     }
 }

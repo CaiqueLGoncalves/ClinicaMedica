@@ -30,12 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
-            this.clinicaMedicaBDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.consultorioExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.consultorioExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.ConsultorioExameTableAdapter();
-            this.tBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
             this.idConsultorioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeFantasiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razaoSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,11 +37,17 @@
             this.horarioAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horarioFechamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.localidadeIdLocalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicaMedicaBDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
+            this.consultorioExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.consultorioExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.ConsultorioExameTableAdapter();
+            this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consultorioExameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultorioExameBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -68,34 +68,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(675, 150);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // clinicaMedicaBDDataSet
-            // 
-            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
-            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clinicaMedicaBDDataSetBindingSource
-            // 
-            this.clinicaMedicaBDDataSetBindingSource.DataSource = this.clinicaMedicaBDDataSet;
-            this.clinicaMedicaBDDataSetBindingSource.Position = 0;
-            // 
-            // consultorioExameBindingSource
-            // 
-            this.consultorioExameBindingSource.DataMember = "ConsultorioExame";
-            this.consultorioExameBindingSource.DataSource = this.clinicaMedicaBDDataSetBindingSource;
-            // 
-            // consultorioExameTableAdapter
-            // 
-            this.consultorioExameTableAdapter.ClearBeforeFill = true;
-            // 
-            // tBConsultorioBindingSource
-            // 
-            this.tBConsultorioBindingSource.DataMember = "TB_Consultorio";
-            this.tBConsultorioBindingSource.DataSource = this.clinicaMedicaBDDataSetBindingSource;
-            // 
-            // tB_ConsultorioTableAdapter
-            // 
-            this.tB_ConsultorioTableAdapter.ClearBeforeFill = true;
             // 
             // idConsultorioDataGridViewTextBoxColumn
             // 
@@ -140,20 +112,48 @@
             this.localidadeIdLocalidadeDataGridViewTextBoxColumn.HeaderText = "Localidade_IdLocalidade";
             this.localidadeIdLocalidadeDataGridViewTextBoxColumn.Name = "localidadeIdLocalidadeDataGridViewTextBoxColumn";
             // 
-            // FrmConsultorioConsultarcs
+            // tBConsultorioBindingSource
+            // 
+            this.tBConsultorioBindingSource.DataMember = "TB_Consultorio";
+            this.tBConsultorioBindingSource.DataSource = this.clinicaMedicaBDDataSetBindingSource;
+            // 
+            // clinicaMedicaBDDataSetBindingSource
+            // 
+            this.clinicaMedicaBDDataSetBindingSource.DataSource = this.clinicaMedicaBDDataSet;
+            this.clinicaMedicaBDDataSetBindingSource.Position = 0;
+            // 
+            // clinicaMedicaBDDataSet
+            // 
+            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // consultorioExameBindingSource
+            // 
+            this.consultorioExameBindingSource.DataMember = "ConsultorioExame";
+            this.consultorioExameBindingSource.DataSource = this.clinicaMedicaBDDataSetBindingSource;
+            // 
+            // consultorioExameTableAdapter
+            // 
+            this.consultorioExameTableAdapter.ClearBeforeFill = true;
+            // 
+            // tB_ConsultorioTableAdapter
+            // 
+            this.tB_ConsultorioTableAdapter.ClearBeforeFill = true;
+            // 
+            // FrmConsultorioConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 445);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FrmConsultorioConsultarcs";
-            this.Text = "FrmConsultorioConsultarcs";
+            this.Name = "FrmConsultorioConsultar";
+            this.Text = "Consulta de Consultório";
             this.Load += new System.EventHandler(this.FrmConsultorioConsultarcs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.consultorioExameBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consultorioExameBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

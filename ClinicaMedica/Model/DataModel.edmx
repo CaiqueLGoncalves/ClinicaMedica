@@ -4,576 +4,576 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="DataModelStoreContainer">
-    <EntitySet Name="TB_Usuario" EntityType="DataModel.Store.TB_Usuario" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Localidade" EntityType="DataModel.Store.TB_Localidade" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Telefone" EntityType="DataModel.Store.TB_Telefone" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Funcao" EntityType="DataModel.Store.TB_Funcao" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Consultorio" EntityType="DataModel.Store.TB_Consultorio" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_QuadroFuncionarios" EntityType="DataModel.Store.TB_QuadroFuncionarios" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Estoque" EntityType="DataModel.Store.TB_Estoque" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Produto" EntityType="DataModel.Store.TB_Produto" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Item" EntityType="DataModel.Store.TB_Item" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Especialidade" EntityType="DataModel.Store.TB_Especialidade" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Exame" EntityType="DataModel.Store.TB_Exame" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Consulta" EntityType="DataModel.Store.TB_Consulta" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_AgendaExame" EntityType="DataModel.Store.TB_AgendaExame" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Usuario_Funcionario" EntityType="DataModel.Store.TB_Usuario_Funcionario" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Usuario_Medico" EntityType="DataModel.Store.TB_Usuario_Medico" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TB_Usuario_Paciente" EntityType="DataModel.Store.TB_Usuario_Paciente" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="MedicoEspecialidade" EntityType="DataModel.Store.MedicoEspecialidade" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ConsultorioExame" EntityType="DataModel.Store.ConsultorioExame" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="PessoaLocalidade" Association="DataModel.Store.PessoaLocalidade">
-      <End Role="Pessoa" EntitySet="TB_Usuario" />
-      <End Role="Localidade" EntitySet="TB_Localidade" />
-    </AssociationSet>
-    <AssociationSet Name="TelefonePessoa" Association="DataModel.Store.TelefonePessoa">
-      <End Role="Telefone" EntitySet="TB_Telefone" />
-      <End Role="Pessoa" EntitySet="TB_Usuario" />
-    </AssociationSet>
-    <AssociationSet Name="FuncionarioFuncao" Association="DataModel.Store.FuncionarioFuncao">
-      <End Role="Funcionario" EntitySet="TB_Usuario_Funcionario" />
-      <End Role="Funcao" EntitySet="TB_Funcao" />
-    </AssociationSet>
-    <AssociationSet Name="FuncionarioQuadroFuncionarios" Association="DataModel.Store.FuncionarioQuadroFuncionarios">
-      <End Role="Funcionario" EntitySet="TB_Usuario_Funcionario" />
-      <End Role="QuadroFuncionarios" EntitySet="TB_QuadroFuncionarios" />
-    </AssociationSet>
-    <AssociationSet Name="ConsultorioQuadroFuncionarios" Association="DataModel.Store.ConsultorioQuadroFuncionarios">
-      <End Role="Consultorio" EntitySet="TB_Consultorio" />
-      <End Role="QuadroFuncionarios" EntitySet="TB_QuadroFuncionarios" />
-    </AssociationSet>
-    <AssociationSet Name="ConsultorioLocalidade" Association="DataModel.Store.ConsultorioLocalidade">
-      <End Role="Consultorio" EntitySet="TB_Consultorio" />
-      <End Role="Localidade" EntitySet="TB_Localidade" />
-    </AssociationSet>
-    <AssociationSet Name="ConsultorioTelefone" Association="DataModel.Store.ConsultorioTelefone">
-      <End Role="Consultorio" EntitySet="TB_Consultorio" />
-      <End Role="Telefone" EntitySet="TB_Telefone" />
-    </AssociationSet>
-    <AssociationSet Name="ConsultorioEstoque" Association="DataModel.Store.ConsultorioEstoque">
-      <End Role="Consultorio" EntitySet="TB_Consultorio" />
-      <End Role="Estoque" EntitySet="TB_Estoque" />
-    </AssociationSet>
-    <AssociationSet Name="EstoqueItem" Association="DataModel.Store.EstoqueItem">
-      <End Role="Estoque" EntitySet="TB_Estoque" />
-      <End Role="Item" EntitySet="TB_Item" />
-    </AssociationSet>
-    <AssociationSet Name="ProdutoItem" Association="DataModel.Store.ProdutoItem">
-      <End Role="Produto" EntitySet="TB_Produto" />
-      <End Role="Item" EntitySet="TB_Item" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MedicoEspecialidade_Medico" Association="DataModel.Store.FK_MedicoEspecialidade_Medico">
-      <End Role="Medico" EntitySet="TB_Usuario_Medico" />
-      <End Role="MedicoEspecialidade" EntitySet="MedicoEspecialidade" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MedicoEspecialidade_Especialidade" Association="DataModel.Store.FK_MedicoEspecialidade_Especialidade">
-      <End Role="Especialidade" EntitySet="TB_Especialidade" />
-      <End Role="MedicoEspecialidade" EntitySet="MedicoEspecialidade" />
-    </AssociationSet>
-    <AssociationSet Name="PacienteConsulta" Association="DataModel.Store.PacienteConsulta">
-      <End Role="Paciente" EntitySet="TB_Usuario_Paciente" />
-      <End Role="Consulta" EntitySet="TB_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="MedicoConsulta" Association="DataModel.Store.MedicoConsulta">
-      <End Role="Medico" EntitySet="TB_Usuario_Medico" />
-      <End Role="Consulta" EntitySet="TB_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="ConsultorioConsulta" Association="DataModel.Store.ConsultorioConsulta">
-      <End Role="Consultorio" EntitySet="TB_Consultorio" />
-      <End Role="Consulta" EntitySet="TB_Consulta" />
-    </AssociationSet>
-    <AssociationSet Name="PacienteAgendaExame" Association="DataModel.Store.PacienteAgendaExame">
-      <End Role="Paciente" EntitySet="TB_Usuario_Paciente" />
-      <End Role="AgendaExame" EntitySet="TB_AgendaExame" />
-    </AssociationSet>
-    <AssociationSet Name="ExameAgendaExame" Association="DataModel.Store.ExameAgendaExame">
-      <End Role="Exame" EntitySet="TB_Exame" />
-      <End Role="AgendaExame" EntitySet="TB_AgendaExame" />
-    </AssociationSet>
-    <AssociationSet Name="ConsultorioAgendaExame" Association="DataModel.Store.ConsultorioAgendaExame">
-      <End Role="Consultorio" EntitySet="TB_Consultorio" />
-      <End Role="AgendaExame" EntitySet="TB_AgendaExame" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ConsultorioExame_Consultorio" Association="DataModel.Store.FK_ConsultorioExame_Consultorio">
-      <End Role="Consultorio" EntitySet="TB_Consultorio" />
-      <End Role="ConsultorioExame" EntitySet="ConsultorioExame" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ConsultorioExame_Exame" Association="DataModel.Store.FK_ConsultorioExame_Exame">
-      <End Role="Exame" EntitySet="TB_Exame" />
-      <End Role="ConsultorioExame" EntitySet="ConsultorioExame" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Funcionario_inherits_Usuario" Association="DataModel.Store.FK_Funcionario_inherits_Usuario">
-      <End Role="Usuario" EntitySet="TB_Usuario" />
-      <End Role="Funcionario" EntitySet="TB_Usuario_Funcionario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Medico_inherits_Funcionario" Association="DataModel.Store.FK_Medico_inherits_Funcionario">
-      <End Role="Funcionario" EntitySet="TB_Usuario_Funcionario" />
-      <End Role="Medico" EntitySet="TB_Usuario_Medico" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Paciente_inherits_Usuario" Association="DataModel.Store.FK_Paciente_inherits_Usuario">
-      <End Role="Usuario" EntitySet="TB_Usuario" />
-      <End Role="Paciente" EntitySet="TB_Usuario_Paciente" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="TB_Usuario">
-    <Key>
-      <PropertyRef Name="Identificacao" />
-    </Key>
-    <Property Name="Identificacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="CPF" Type="nvarchar" Nullable="true" MaxLength="11" />
-    <Property Name="RG" Type="nvarchar" Nullable="true" MaxLength="12" />
-    <Property Name="DataNascimento" Type="datetime" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="64" />
-    <Property Name="IdLocalidade" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_Localidade">
-    <Key>
-      <PropertyRef Name="IdLocalidade" />
-    </Key>
-    <Property Name="IdLocalidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Endereco" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="Numero" Type="nvarchar" Nullable="true" MaxLength="6" />
-    <Property Name="Complemento" Type="nvarchar" Nullable="true" MaxLength="25" />
-    <Property Name="CEP" Type="nvarchar" Nullable="false" MaxLength="8" />
-    <Property Name="Bairro" Type="nvarchar" Nullable="true" MaxLength="25" />
-    <Property Name="Cidade" Type="nvarchar" Nullable="false" MaxLength="25" />
-    <Property Name="Estado" Type="nvarchar" Nullable="false" MaxLength="25" />
-  </EntityType>
-  <EntityType Name="TB_Telefone">
-    <Key>
-      <PropertyRef Name="DDI" />
-      <PropertyRef Name="DDD" />
-      <PropertyRef Name="Numero" />
-    </Key>
-    <Property Name="DDI" Type="nvarchar" Nullable="false" DefaultValue="55" MaxLength="3" />
-    <Property Name="DDD" Type="nvarchar" Nullable="false" MaxLength="3" />
-    <Property Name="Numero" Type="nvarchar" Nullable="false" MaxLength="10" />
-    <Property Name="IdentificacaoPessoa" Type="int" Nullable="true" />
-    <Property Name="IdConsultorio" Type="int" Nullable="true" />
-    <Property Name="Tipo" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_Funcao">
-    <Key>
-      <PropertyRef Name="IdFuncao" />
-    </Key>
-    <Property Name="IdFuncao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="30" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="TB_Consultorio">
-    <Key>
-      <PropertyRef Name="IdConsultorio" />
-    </Key>
-    <Property Name="IdConsultorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NomeFantasia" Type="nvarchar" Nullable="true" MaxLength="100" />
-    <Property Name="RazaoSocial" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="CNPJ" Type="nvarchar" Nullable="false" MaxLength="14" />
-    <Property Name="HorarioAbertura" Type="time" Nullable="false" />
-    <Property Name="HorarioFechamento" Type="time" Nullable="false" />
-    <Property Name="Localidade_IdLocalidade" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_QuadroFuncionarios">
-    <Key>
-      <PropertyRef Name="IdConsultorio" />
-      <PropertyRef Name="IdFuncionario" />
-    </Key>
-    <Property Name="IdConsultorio" Type="int" Nullable="false" />
-    <Property Name="IdFuncionario" Type="int" Nullable="false" />
-    <Property Name="DataAdmissao" Type="datetime" Nullable="false" />
-    <Property Name="DataDemissao" Type="datetime" Nullable="true" />
-  </EntityType>
-  <EntityType Name="TB_Estoque">
-    <Key>
-      <PropertyRef Name="IdEstoque" />
-    </Key>
-    <Property Name="IdEstoque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdConsultorio" Type="int" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="30" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Refrigeracao" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_Produto">
-    <Key>
-      <PropertyRef Name="IdProduto" />
-    </Key>
-    <Property Name="IdProduto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="Tipo" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_Item">
-    <Key>
-      <PropertyRef Name="IdEstoque" />
-      <PropertyRef Name="IdProduto" />
-    </Key>
-    <Property Name="IdEstoque" Type="int" Nullable="false" />
-    <Property Name="IdProduto" Type="int" Nullable="false" />
-    <Property Name="Quantidade" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_Especialidade">
-    <Key>
-      <PropertyRef Name="IdEspecialidade" />
-    </Key>
-    <Property Name="IdEspecialidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="30" />
-    <Property Name="Descricao" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="TB_Exame">
-    <Key>
-      <PropertyRef Name="IdExame" />
-    </Key>
-    <Property Name="IdExame" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
-    <Property Name="Recomendacoes" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="TB_Consulta">
-    <Key>
-      <PropertyRef Name="IdConsulta" />
-    </Key>
-    <Property Name="IdConsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdentificacaoPaciente" Type="int" Nullable="false" />
-    <Property Name="IdentificacaoMedico" Type="int" Nullable="false" />
-    <Property Name="IdConsultorio" Type="int" Nullable="false" />
-    <Property Name="DataHoraInicio" Type="datetime" Nullable="false" />
-    <Property Name="DataHoraFim" Type="datetime" Nullable="false" />
-    <Property Name="Comparecimento" Type="bit" Nullable="false" />
-    <Property Name="Anotacoes" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="TB_AgendaExame">
-    <Key>
-      <PropertyRef Name="IdAgendaExame" />
-    </Key>
-    <Property Name="IdAgendaExame" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="IdentificacaoPaciente" Type="int" Nullable="false" />
-    <Property Name="IdExame" Type="int" Nullable="false" />
-    <Property Name="IdConsultorio" Type="int" Nullable="false" />
-    <Property Name="DataHoraInicio" Type="datetime" Nullable="false" />
-    <Property Name="DataHoraFim" Type="datetime" Nullable="false" />
-    <Property Name="Comparecimento" Type="bit" Nullable="false" />
-    <Property Name="Anotacoes" Type="nvarchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="TB_Usuario_Funcionario">
-    <Key>
-      <PropertyRef Name="Identificacao" />
-    </Key>
-    <Property Name="IdFuncao" Type="int" Nullable="false" />
-    <Property Name="Identificacao" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_Usuario_Medico">
-    <Key>
-      <PropertyRef Name="Identificacao" />
-    </Key>
-    <Property Name="CRM" Type="nvarchar" Nullable="false" MaxLength="10" />
-    <Property Name="Identificacao" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="TB_Usuario_Paciente">
-    <Key>
-      <PropertyRef Name="Identificacao" />
-    </Key>
-    <Property Name="Identificacao" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="MedicoEspecialidade">
-    <Key>
-      <PropertyRef Name="Medico_Identificacao" />
-      <PropertyRef Name="Especialidade_IdEspecialidade" />
-    </Key>
-    <Property Name="Medico_Identificacao" Type="int" Nullable="false" />
-    <Property Name="Especialidade_IdEspecialidade" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ConsultorioExame">
-    <Key>
-      <PropertyRef Name="Consultorio_IdConsultorio" />
-      <PropertyRef Name="Exame_IdExame" />
-    </Key>
-    <Property Name="Consultorio_IdConsultorio" Type="int" Nullable="false" />
-    <Property Name="Exame_IdExame" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="PessoaLocalidade">
-    <End Role="Pessoa" Type="DataModel.Store.TB_Usuario" Multiplicity="*" />
-    <End Role="Localidade" Type="DataModel.Store.TB_Localidade" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Localidade">
-        <PropertyRef Name="IdLocalidade" />
-      </Principal>
-      <Dependent Role="Pessoa">
-        <PropertyRef Name="IdLocalidade" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="TelefonePessoa">
-    <End Role="Telefone" Type="DataModel.Store.TB_Telefone" Multiplicity="*" />
-    <End Role="Pessoa" Type="DataModel.Store.TB_Usuario" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Pessoa">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="Telefone">
-        <PropertyRef Name="IdentificacaoPessoa" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FuncionarioFuncao">
-    <End Role="Funcionario" Type="DataModel.Store.TB_Usuario_Funcionario" Multiplicity="*" />
-    <End Role="Funcao" Type="DataModel.Store.TB_Funcao" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Funcao">
-        <PropertyRef Name="IdFuncao" />
-      </Principal>
-      <Dependent Role="Funcionario">
-        <PropertyRef Name="IdFuncao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FuncionarioQuadroFuncionarios">
-    <End Role="Funcionario" Type="DataModel.Store.TB_Usuario_Funcionario" Multiplicity="1" />
-    <End Role="QuadroFuncionarios" Type="DataModel.Store.TB_QuadroFuncionarios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Funcionario">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="QuadroFuncionarios">
-        <PropertyRef Name="IdFuncionario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ConsultorioQuadroFuncionarios">
-    <End Role="Consultorio" Type="DataModel.Store.TB_Consultorio" Multiplicity="1" />
-    <End Role="QuadroFuncionarios" Type="DataModel.Store.TB_QuadroFuncionarios" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Consultorio">
-        <PropertyRef Name="IdConsultorio" />
-      </Principal>
-      <Dependent Role="QuadroFuncionarios">
-        <PropertyRef Name="IdConsultorio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ConsultorioLocalidade">
-    <End Role="Consultorio" Type="DataModel.Store.TB_Consultorio" Multiplicity="*" />
-    <End Role="Localidade" Type="DataModel.Store.TB_Localidade" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Localidade">
-        <PropertyRef Name="IdLocalidade" />
-      </Principal>
-      <Dependent Role="Consultorio">
-        <PropertyRef Name="Localidade_IdLocalidade" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ConsultorioTelefone">
-    <End Role="Consultorio" Type="DataModel.Store.TB_Consultorio" Multiplicity="0..1" />
-    <End Role="Telefone" Type="DataModel.Store.TB_Telefone" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Consultorio">
-        <PropertyRef Name="IdConsultorio" />
-      </Principal>
-      <Dependent Role="Telefone">
-        <PropertyRef Name="IdConsultorio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ConsultorioEstoque">
-    <End Role="Consultorio" Type="DataModel.Store.TB_Consultorio" Multiplicity="1" />
-    <End Role="Estoque" Type="DataModel.Store.TB_Estoque" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Consultorio">
-        <PropertyRef Name="IdConsultorio" />
-      </Principal>
-      <Dependent Role="Estoque">
-        <PropertyRef Name="IdConsultorio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="EstoqueItem">
-    <End Role="Estoque" Type="DataModel.Store.TB_Estoque" Multiplicity="1" />
-    <End Role="Item" Type="DataModel.Store.TB_Item" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Estoque">
-        <PropertyRef Name="IdEstoque" />
-      </Principal>
-      <Dependent Role="Item">
-        <PropertyRef Name="IdEstoque" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ProdutoItem">
-    <End Role="Produto" Type="DataModel.Store.TB_Produto" Multiplicity="1" />
-    <End Role="Item" Type="DataModel.Store.TB_Item" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Produto">
-        <PropertyRef Name="IdProduto" />
-      </Principal>
-      <Dependent Role="Item">
-        <PropertyRef Name="IdProduto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PacienteConsulta">
-    <End Role="Paciente" Type="DataModel.Store.TB_Usuario_Paciente" Multiplicity="1" />
-    <End Role="Consulta" Type="DataModel.Store.TB_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Paciente">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="Consulta">
-        <PropertyRef Name="IdentificacaoPaciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MedicoConsulta">
-    <End Role="Medico" Type="DataModel.Store.TB_Usuario_Medico" Multiplicity="1" />
-    <End Role="Consulta" Type="DataModel.Store.TB_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Medico">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="Consulta">
-        <PropertyRef Name="IdentificacaoMedico" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ConsultorioConsulta">
-    <End Role="Consultorio" Type="DataModel.Store.TB_Consultorio" Multiplicity="1" />
-    <End Role="Consulta" Type="DataModel.Store.TB_Consulta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Consultorio">
-        <PropertyRef Name="IdConsultorio" />
-      </Principal>
-      <Dependent Role="Consulta">
-        <PropertyRef Name="IdConsultorio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="PacienteAgendaExame">
-    <End Role="Paciente" Type="DataModel.Store.TB_Usuario_Paciente" Multiplicity="1" />
-    <End Role="AgendaExame" Type="DataModel.Store.TB_AgendaExame" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Paciente">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="AgendaExame">
-        <PropertyRef Name="IdentificacaoPaciente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ExameAgendaExame">
-    <End Role="Exame" Type="DataModel.Store.TB_Exame" Multiplicity="1" />
-    <End Role="AgendaExame" Type="DataModel.Store.TB_AgendaExame" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Exame">
-        <PropertyRef Name="IdExame" />
-      </Principal>
-      <Dependent Role="AgendaExame">
-        <PropertyRef Name="IdExame" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="ConsultorioAgendaExame">
-    <End Role="Consultorio" Type="DataModel.Store.TB_Consultorio" Multiplicity="1" />
-    <End Role="AgendaExame" Type="DataModel.Store.TB_AgendaExame" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Consultorio">
-        <PropertyRef Name="IdConsultorio" />
-      </Principal>
-      <Dependent Role="AgendaExame">
-        <PropertyRef Name="IdConsultorio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MedicoEspecialidade_Medico">
-    <End Role="Medico" Type="DataModel.Store.TB_Usuario_Medico" Multiplicity="1" />
-    <End Role="MedicoEspecialidade" Type="DataModel.Store.MedicoEspecialidade" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Medico">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="MedicoEspecialidade">
-        <PropertyRef Name="Medico_Identificacao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MedicoEspecialidade_Especialidade">
-    <End Role="MedicoEspecialidade" Type="DataModel.Store.MedicoEspecialidade" Multiplicity="*" />
-    <End Role="Especialidade" Type="DataModel.Store.TB_Especialidade" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Especialidade">
-        <PropertyRef Name="IdEspecialidade" />
-      </Principal>
-      <Dependent Role="MedicoEspecialidade">
-        <PropertyRef Name="Especialidade_IdEspecialidade" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ConsultorioExame_Consultorio">
-    <End Role="Consultorio" Type="DataModel.Store.TB_Consultorio" Multiplicity="1" />
-    <End Role="ConsultorioExame" Type="DataModel.Store.ConsultorioExame" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Consultorio">
-        <PropertyRef Name="IdConsultorio" />
-      </Principal>
-      <Dependent Role="ConsultorioExame">
-        <PropertyRef Name="Consultorio_IdConsultorio" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ConsultorioExame_Exame">
-    <End Role="ConsultorioExame" Type="DataModel.Store.ConsultorioExame" Multiplicity="*" />
-    <End Role="Exame" Type="DataModel.Store.TB_Exame" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Exame">
-        <PropertyRef Name="IdExame" />
-      </Principal>
-      <Dependent Role="ConsultorioExame">
-        <PropertyRef Name="Exame_IdExame" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Funcionario_inherits_Usuario">
-    <End Role="Usuario" Type="DataModel.Store.TB_Usuario" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Funcionario" Type="DataModel.Store.TB_Usuario_Funcionario" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="Funcionario">
-        <PropertyRef Name="Identificacao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Medico_inherits_Funcionario">
-    <End Role="Funcionario" Type="DataModel.Store.TB_Usuario_Funcionario" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Medico" Type="DataModel.Store.TB_Usuario_Medico" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Funcionario">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="Medico">
-        <PropertyRef Name="Identificacao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Paciente_inherits_Usuario">
-    <End Role="Usuario" Type="DataModel.Store.TB_Usuario" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Paciente" Type="DataModel.Store.TB_Usuario_Paciente" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Usuario">
-        <PropertyRef Name="Identificacao" />
-      </Principal>
-      <Dependent Role="Paciente">
-        <PropertyRef Name="Identificacao" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ConsultorioExame">
+          <Key>
+            <PropertyRef Name="Consultorio_IdConsultorio" />
+            <PropertyRef Name="Exame_IdExame" />
+          </Key>
+          <Property Name="Consultorio_IdConsultorio" Type="int" Nullable="false" />
+          <Property Name="Exame_IdExame" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MedicoEspecialidade">
+          <Key>
+            <PropertyRef Name="Medico_Identificacao" />
+            <PropertyRef Name="Especialidade_IdEspecialidade" />
+          </Key>
+          <Property Name="Medico_Identificacao" Type="int" Nullable="false" />
+          <Property Name="Especialidade_IdEspecialidade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_AgendaExame">
+          <Key>
+            <PropertyRef Name="IdAgendaExame" />
+          </Key>
+          <Property Name="IdAgendaExame" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdentificacaoPaciente" Type="int" Nullable="false" />
+          <Property Name="IdExame" Type="int" Nullable="false" />
+          <Property Name="IdConsultorio" Type="int" Nullable="false" />
+          <Property Name="DataHoraInicio" Type="datetime" Nullable="false" />
+          <Property Name="DataHoraFim" Type="datetime" Nullable="false" />
+          <Property Name="Comparecimento" Type="bit" Nullable="false" />
+          <Property Name="Anotacoes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Consulta">
+          <Key>
+            <PropertyRef Name="IdConsulta" />
+          </Key>
+          <Property Name="IdConsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdentificacaoPaciente" Type="int" Nullable="false" />
+          <Property Name="IdentificacaoMedico" Type="int" Nullable="false" />
+          <Property Name="IdConsultorio" Type="int" Nullable="false" />
+          <Property Name="DataHoraInicio" Type="datetime" Nullable="false" />
+          <Property Name="DataHoraFim" Type="datetime" Nullable="false" />
+          <Property Name="Comparecimento" Type="bit" Nullable="false" />
+          <Property Name="Anotacoes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Consultorio">
+          <Key>
+            <PropertyRef Name="IdConsultorio" />
+          </Key>
+          <Property Name="IdConsultorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeFantasia" Type="nvarchar" MaxLength="100" />
+          <Property Name="RazaoSocial" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CNPJ" Type="nvarchar" MaxLength="14" Nullable="false" />
+          <Property Name="HorarioAbertura" Type="time" Precision="7" Nullable="false" />
+          <Property Name="HorarioFechamento" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Localidade_IdLocalidade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Especialidade">
+          <Key>
+            <PropertyRef Name="IdEspecialidade" />
+          </Key>
+          <Property Name="IdEspecialidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Estoque">
+          <Key>
+            <PropertyRef Name="IdEstoque" />
+          </Key>
+          <Property Name="IdEstoque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdConsultorio" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Refrigeracao" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Exame">
+          <Key>
+            <PropertyRef Name="IdExame" />
+          </Key>
+          <Property Name="IdExame" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Recomendacoes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Funcao">
+          <Key>
+            <PropertyRef Name="IdFuncao" />
+          </Key>
+          <Property Name="IdFuncao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Item">
+          <Key>
+            <PropertyRef Name="IdEstoque" />
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdEstoque" Type="int" Nullable="false" />
+          <Property Name="IdProduto" Type="int" Nullable="false" />
+          <Property Name="Quantidade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Localidade">
+          <Key>
+            <PropertyRef Name="IdLocalidade" />
+          </Key>
+          <Property Name="IdLocalidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Endereco" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="6" />
+          <Property Name="Complemento" Type="nvarchar" MaxLength="25" />
+          <Property Name="CEP" Type="nvarchar" MaxLength="8" Nullable="false" />
+          <Property Name="Bairro" Type="nvarchar" MaxLength="25" />
+          <Property Name="Cidade" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Produto">
+          <Key>
+            <PropertyRef Name="IdProduto" />
+          </Key>
+          <Property Name="IdProduto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_QuadroFuncionarios">
+          <Key>
+            <PropertyRef Name="IdConsultorio" />
+            <PropertyRef Name="IdFuncionario" />
+          </Key>
+          <Property Name="IdConsultorio" Type="int" Nullable="false" />
+          <Property Name="IdFuncionario" Type="int" Nullable="false" />
+          <Property Name="DataAdmissao" Type="datetime" Nullable="false" />
+          <Property Name="DataDemissao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TB_Telefone">
+          <Key>
+            <PropertyRef Name="DDI" />
+            <PropertyRef Name="DDD" />
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="DDI" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="DDD" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdentificacaoPessoa" Type="int" />
+          <Property Name="IdConsultorio" Type="int" />
+          <Property Name="Tipo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Usuario">
+          <Key>
+            <PropertyRef Name="Identificacao" />
+          </Key>
+          <Property Name="Identificacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CPF" Type="nvarchar" MaxLength="11" />
+          <Property Name="RG" Type="nvarchar" MaxLength="12" />
+          <Property Name="DataNascimento" Type="datetime" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="64" />
+          <Property Name="IdLocalidade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Usuario_Funcionario">
+          <Key>
+            <PropertyRef Name="Identificacao" />
+          </Key>
+          <Property Name="IdFuncao" Type="int" Nullable="false" />
+          <Property Name="Identificacao" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Usuario_Medico">
+          <Key>
+            <PropertyRef Name="Identificacao" />
+          </Key>
+          <Property Name="CRM" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Identificacao" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_Usuario_Paciente">
+          <Key>
+            <PropertyRef Name="Identificacao" />
+          </Key>
+          <Property Name="Identificacao" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ConsultorioAgendaExame">
+          <End Role="TB_Consultorio" Type="Self.TB_Consultorio" Multiplicity="1" />
+          <End Role="TB_AgendaExame" Type="Self.TB_AgendaExame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Consultorio">
+              <PropertyRef Name="IdConsultorio" />
+            </Principal>
+            <Dependent Role="TB_AgendaExame">
+              <PropertyRef Name="IdConsultorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultorioConsulta">
+          <End Role="TB_Consultorio" Type="Self.TB_Consultorio" Multiplicity="1" />
+          <End Role="TB_Consulta" Type="Self.TB_Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Consultorio">
+              <PropertyRef Name="IdConsultorio" />
+            </Principal>
+            <Dependent Role="TB_Consulta">
+              <PropertyRef Name="IdConsultorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultorioEstoque">
+          <End Role="TB_Consultorio" Type="Self.TB_Consultorio" Multiplicity="1" />
+          <End Role="TB_Estoque" Type="Self.TB_Estoque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Consultorio">
+              <PropertyRef Name="IdConsultorio" />
+            </Principal>
+            <Dependent Role="TB_Estoque">
+              <PropertyRef Name="IdConsultorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultorioExame_Consultorio">
+          <End Role="TB_Consultorio" Type="Self.TB_Consultorio" Multiplicity="1" />
+          <End Role="ConsultorioExame" Type="Self.ConsultorioExame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Consultorio">
+              <PropertyRef Name="IdConsultorio" />
+            </Principal>
+            <Dependent Role="ConsultorioExame">
+              <PropertyRef Name="Consultorio_IdConsultorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultorioExame_Exame">
+          <End Role="TB_Exame" Type="Self.TB_Exame" Multiplicity="1" />
+          <End Role="ConsultorioExame" Type="Self.ConsultorioExame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Exame">
+              <PropertyRef Name="IdExame" />
+            </Principal>
+            <Dependent Role="ConsultorioExame">
+              <PropertyRef Name="Exame_IdExame" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultorioLocalidade">
+          <End Role="TB_Localidade" Type="Self.TB_Localidade" Multiplicity="1" />
+          <End Role="TB_Consultorio" Type="Self.TB_Consultorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Localidade">
+              <PropertyRef Name="IdLocalidade" />
+            </Principal>
+            <Dependent Role="TB_Consultorio">
+              <PropertyRef Name="Localidade_IdLocalidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultorioQuadroFuncionarios">
+          <End Role="TB_Consultorio" Type="Self.TB_Consultorio" Multiplicity="1" />
+          <End Role="TB_QuadroFuncionarios" Type="Self.TB_QuadroFuncionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Consultorio">
+              <PropertyRef Name="IdConsultorio" />
+            </Principal>
+            <Dependent Role="TB_QuadroFuncionarios">
+              <PropertyRef Name="IdConsultorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultorioTelefone">
+          <End Role="TB_Consultorio" Type="Self.TB_Consultorio" Multiplicity="0..1" />
+          <End Role="TB_Telefone" Type="Self.TB_Telefone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Consultorio">
+              <PropertyRef Name="IdConsultorio" />
+            </Principal>
+            <Dependent Role="TB_Telefone">
+              <PropertyRef Name="IdConsultorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstoqueItem">
+          <End Role="TB_Estoque" Type="Self.TB_Estoque" Multiplicity="1" />
+          <End Role="TB_Item" Type="Self.TB_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Estoque">
+              <PropertyRef Name="IdEstoque" />
+            </Principal>
+            <Dependent Role="TB_Item">
+              <PropertyRef Name="IdEstoque" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExameAgendaExame">
+          <End Role="TB_Exame" Type="Self.TB_Exame" Multiplicity="1" />
+          <End Role="TB_AgendaExame" Type="Self.TB_AgendaExame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Exame">
+              <PropertyRef Name="IdExame" />
+            </Principal>
+            <Dependent Role="TB_AgendaExame">
+              <PropertyRef Name="IdExame" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funcionario_inherits_Usuario">
+          <End Role="TB_Usuario" Type="Self.TB_Usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Usuario_Funcionario" Type="Self.TB_Usuario_Funcionario" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_Usuario_Funcionario">
+              <PropertyRef Name="Identificacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FuncionarioFuncao">
+          <End Role="TB_Funcao" Type="Self.TB_Funcao" Multiplicity="1" />
+          <End Role="TB_Usuario_Funcionario" Type="Self.TB_Usuario_Funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Funcao">
+              <PropertyRef Name="IdFuncao" />
+            </Principal>
+            <Dependent Role="TB_Usuario_Funcionario">
+              <PropertyRef Name="IdFuncao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FuncionarioQuadroFuncionarios">
+          <End Role="TB_Usuario_Funcionario" Type="Self.TB_Usuario_Funcionario" Multiplicity="1" />
+          <End Role="TB_QuadroFuncionarios" Type="Self.TB_QuadroFuncionarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario_Funcionario">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_QuadroFuncionarios">
+              <PropertyRef Name="IdFuncionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medico_inherits_Funcionario">
+          <End Role="TB_Usuario_Funcionario" Type="Self.TB_Usuario_Funcionario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Usuario_Medico" Type="Self.TB_Usuario_Medico" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario_Funcionario">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_Usuario_Medico">
+              <PropertyRef Name="Identificacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicoConsulta">
+          <End Role="TB_Usuario_Medico" Type="Self.TB_Usuario_Medico" Multiplicity="1" />
+          <End Role="TB_Consulta" Type="Self.TB_Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario_Medico">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_Consulta">
+              <PropertyRef Name="IdentificacaoMedico" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicoEspecialidade_Especialidade">
+          <End Role="TB_Especialidade" Type="Self.TB_Especialidade" Multiplicity="1" />
+          <End Role="MedicoEspecialidade" Type="Self.MedicoEspecialidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Especialidade">
+              <PropertyRef Name="IdEspecialidade" />
+            </Principal>
+            <Dependent Role="MedicoEspecialidade">
+              <PropertyRef Name="Especialidade_IdEspecialidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicoEspecialidade_Medico">
+          <End Role="TB_Usuario_Medico" Type="Self.TB_Usuario_Medico" Multiplicity="1" />
+          <End Role="MedicoEspecialidade" Type="Self.MedicoEspecialidade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario_Medico">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="MedicoEspecialidade">
+              <PropertyRef Name="Medico_Identificacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paciente_inherits_Usuario">
+          <End Role="TB_Usuario" Type="Self.TB_Usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TB_Usuario_Paciente" Type="Self.TB_Usuario_Paciente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_Usuario_Paciente">
+              <PropertyRef Name="Identificacao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PacienteAgendaExame">
+          <End Role="TB_Usuario_Paciente" Type="Self.TB_Usuario_Paciente" Multiplicity="1" />
+          <End Role="TB_AgendaExame" Type="Self.TB_AgendaExame" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario_Paciente">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_AgendaExame">
+              <PropertyRef Name="IdentificacaoPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PacienteConsulta">
+          <End Role="TB_Usuario_Paciente" Type="Self.TB_Usuario_Paciente" Multiplicity="1" />
+          <End Role="TB_Consulta" Type="Self.TB_Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario_Paciente">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_Consulta">
+              <PropertyRef Name="IdentificacaoPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PessoaLocalidade">
+          <End Role="TB_Localidade" Type="Self.TB_Localidade" Multiplicity="1" />
+          <End Role="TB_Usuario" Type="Self.TB_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Localidade">
+              <PropertyRef Name="IdLocalidade" />
+            </Principal>
+            <Dependent Role="TB_Usuario">
+              <PropertyRef Name="IdLocalidade" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProdutoItem">
+          <End Role="TB_Produto" Type="Self.TB_Produto" Multiplicity="1" />
+          <End Role="TB_Item" Type="Self.TB_Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Produto">
+              <PropertyRef Name="IdProduto" />
+            </Principal>
+            <Dependent Role="TB_Item">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TelefonePessoa">
+          <End Role="TB_Usuario" Type="Self.TB_Usuario" Multiplicity="0..1" />
+          <End Role="TB_Telefone" Type="Self.TB_Telefone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuario">
+              <PropertyRef Name="Identificacao" />
+            </Principal>
+            <Dependent Role="TB_Telefone">
+              <PropertyRef Name="IdentificacaoPessoa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataModelStoreContainer">
+          <EntitySet Name="ConsultorioExame" EntityType="Self.ConsultorioExame" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedicoEspecialidade" EntityType="Self.MedicoEspecialidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_AgendaExame" EntityType="Self.TB_AgendaExame" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Consulta" EntityType="Self.TB_Consulta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Consultorio" EntityType="Self.TB_Consultorio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Especialidade" EntityType="Self.TB_Especialidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Estoque" EntityType="Self.TB_Estoque" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Exame" EntityType="Self.TB_Exame" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Funcao" EntityType="Self.TB_Funcao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Item" EntityType="Self.TB_Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Localidade" EntityType="Self.TB_Localidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Produto" EntityType="Self.TB_Produto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_QuadroFuncionarios" EntityType="Self.TB_QuadroFuncionarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Telefone" EntityType="Self.TB_Telefone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Usuario" EntityType="Self.TB_Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Usuario_Funcionario" EntityType="Self.TB_Usuario_Funcionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Usuario_Medico" EntityType="Self.TB_Usuario_Medico" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Usuario_Paciente" EntityType="Self.TB_Usuario_Paciente" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ConsultorioAgendaExame" Association="Self.FK_ConsultorioAgendaExame">
+            <End Role="TB_Consultorio" EntitySet="TB_Consultorio" />
+            <End Role="TB_AgendaExame" EntitySet="TB_AgendaExame" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultorioConsulta" Association="Self.FK_ConsultorioConsulta">
+            <End Role="TB_Consultorio" EntitySet="TB_Consultorio" />
+            <End Role="TB_Consulta" EntitySet="TB_Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultorioEstoque" Association="Self.FK_ConsultorioEstoque">
+            <End Role="TB_Consultorio" EntitySet="TB_Consultorio" />
+            <End Role="TB_Estoque" EntitySet="TB_Estoque" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultorioExame_Consultorio" Association="Self.FK_ConsultorioExame_Consultorio">
+            <End Role="TB_Consultorio" EntitySet="TB_Consultorio" />
+            <End Role="ConsultorioExame" EntitySet="ConsultorioExame" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultorioExame_Exame" Association="Self.FK_ConsultorioExame_Exame">
+            <End Role="TB_Exame" EntitySet="TB_Exame" />
+            <End Role="ConsultorioExame" EntitySet="ConsultorioExame" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultorioLocalidade" Association="Self.FK_ConsultorioLocalidade">
+            <End Role="TB_Localidade" EntitySet="TB_Localidade" />
+            <End Role="TB_Consultorio" EntitySet="TB_Consultorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultorioQuadroFuncionarios" Association="Self.FK_ConsultorioQuadroFuncionarios">
+            <End Role="TB_Consultorio" EntitySet="TB_Consultorio" />
+            <End Role="TB_QuadroFuncionarios" EntitySet="TB_QuadroFuncionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultorioTelefone" Association="Self.FK_ConsultorioTelefone">
+            <End Role="TB_Consultorio" EntitySet="TB_Consultorio" />
+            <End Role="TB_Telefone" EntitySet="TB_Telefone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstoqueItem" Association="Self.FK_EstoqueItem">
+            <End Role="TB_Estoque" EntitySet="TB_Estoque" />
+            <End Role="TB_Item" EntitySet="TB_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExameAgendaExame" Association="Self.FK_ExameAgendaExame">
+            <End Role="TB_Exame" EntitySet="TB_Exame" />
+            <End Role="TB_AgendaExame" EntitySet="TB_AgendaExame" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_inherits_Usuario" Association="Self.FK_Funcionario_inherits_Usuario">
+            <End Role="TB_Usuario" EntitySet="TB_Usuario" />
+            <End Role="TB_Usuario_Funcionario" EntitySet="TB_Usuario_Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FuncionarioFuncao" Association="Self.FK_FuncionarioFuncao">
+            <End Role="TB_Funcao" EntitySet="TB_Funcao" />
+            <End Role="TB_Usuario_Funcionario" EntitySet="TB_Usuario_Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FuncionarioQuadroFuncionarios" Association="Self.FK_FuncionarioQuadroFuncionarios">
+            <End Role="TB_Usuario_Funcionario" EntitySet="TB_Usuario_Funcionario" />
+            <End Role="TB_QuadroFuncionarios" EntitySet="TB_QuadroFuncionarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medico_inherits_Funcionario" Association="Self.FK_Medico_inherits_Funcionario">
+            <End Role="TB_Usuario_Funcionario" EntitySet="TB_Usuario_Funcionario" />
+            <End Role="TB_Usuario_Medico" EntitySet="TB_Usuario_Medico" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicoConsulta" Association="Self.FK_MedicoConsulta">
+            <End Role="TB_Usuario_Medico" EntitySet="TB_Usuario_Medico" />
+            <End Role="TB_Consulta" EntitySet="TB_Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicoEspecialidade_Especialidade" Association="Self.FK_MedicoEspecialidade_Especialidade">
+            <End Role="TB_Especialidade" EntitySet="TB_Especialidade" />
+            <End Role="MedicoEspecialidade" EntitySet="MedicoEspecialidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicoEspecialidade_Medico" Association="Self.FK_MedicoEspecialidade_Medico">
+            <End Role="TB_Usuario_Medico" EntitySet="TB_Usuario_Medico" />
+            <End Role="MedicoEspecialidade" EntitySet="MedicoEspecialidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paciente_inherits_Usuario" Association="Self.FK_Paciente_inherits_Usuario">
+            <End Role="TB_Usuario" EntitySet="TB_Usuario" />
+            <End Role="TB_Usuario_Paciente" EntitySet="TB_Usuario_Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PacienteAgendaExame" Association="Self.FK_PacienteAgendaExame">
+            <End Role="TB_Usuario_Paciente" EntitySet="TB_Usuario_Paciente" />
+            <End Role="TB_AgendaExame" EntitySet="TB_AgendaExame" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PacienteConsulta" Association="Self.FK_PacienteConsulta">
+            <End Role="TB_Usuario_Paciente" EntitySet="TB_Usuario_Paciente" />
+            <End Role="TB_Consulta" EntitySet="TB_Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PessoaLocalidade" Association="Self.FK_PessoaLocalidade">
+            <End Role="TB_Localidade" EntitySet="TB_Localidade" />
+            <End Role="TB_Usuario" EntitySet="TB_Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProdutoItem" Association="Self.FK_ProdutoItem">
+            <End Role="TB_Produto" EntitySet="TB_Produto" />
+            <End Role="TB_Item" EntitySet="TB_Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TelefonePessoa" Association="Self.FK_TelefonePessoa">
+            <End Role="TB_Usuario" EntitySet="TB_Usuario" />
+            <End Role="TB_Telefone" EntitySet="TB_Telefone" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="DataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -669,11 +669,11 @@
             <PropertyRef Name="Identificacao" />
           </Key>
           <Property Name="Identificacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" />
-          <Property Name="CPF" Type="String" Nullable="true" MaxLength="11" />
-          <Property Name="RG" Type="String" Nullable="true" MaxLength="12" />
-          <Property Name="DataNascimento" Type="DateTime" Nullable="false" />
-          <Property Name="Email" Type="String" Nullable="true" MaxLength="64" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CPF" Type="String" Nullable="true" MaxLength="11" Unicode="true" FixedLength="false" />
+          <Property Name="RG" Type="String" Nullable="true" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Email" Type="String" Nullable="true" MaxLength="64" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Localidade" Relationship="DataModel.PessoaLocalidade" FromRole="Pessoa" ToRole="Localidade" />
           <Property Name="IdLocalidade" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Telefone" Relationship="DataModel.TelefonePessoa" FromRole="Pessoa" ToRole="Telefone" />
@@ -683,13 +683,13 @@
             <PropertyRef Name="IdLocalidade" />
           </Key>
           <Property Name="IdLocalidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="100" />
-          <Property Name="Numero" Type="String" Nullable="true" MaxLength="6" />
-          <Property Name="Complemento" Type="String" Nullable="true" MaxLength="25" />
-          <Property Name="CEP" Type="String" Nullable="false" MaxLength="8" />
-          <Property Name="Bairro" Type="String" Nullable="true" MaxLength="25" />
-          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="25" />
-          <Property Name="Estado" Type="String" Nullable="false" MaxLength="25" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Numero" Type="String" Nullable="true" MaxLength="6" Unicode="true" FixedLength="false" />
+          <Property Name="Complemento" Type="String" Nullable="true" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CEP" Type="String" Nullable="false" MaxLength="8" Unicode="true" FixedLength="false" />
+          <Property Name="Bairro" Type="String" Nullable="true" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Pessoa" Relationship="DataModel.PessoaLocalidade" FromRole="Localidade" ToRole="Pessoa" />
           <NavigationProperty Name="Consultorio" Relationship="DataModel.ConsultorioLocalidade" FromRole="Localidade" ToRole="Consultorio" />
         </EntityType>
@@ -711,9 +711,9 @@
             <PropertyRef Name="DDD" />
             <PropertyRef Name="Numero" />
           </Key>
-          <Property Name="DDI" Type="String" Nullable="false" MaxLength="3" DefaultValue="55" />
-          <Property Name="DDD" Type="String" Nullable="false" MaxLength="3" />
-          <Property Name="Numero" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="DDI" Type="String" Nullable="false" MaxLength="3" DefaultValue="55" Unicode="true" FixedLength="false" />
+          <Property Name="DDD" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="Numero" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
           <Property Name="IdentificacaoPessoa" Type="Int32" Nullable="true" />
           <Property Name="IdConsultorio" Type="Int32" Nullable="true" />
           <Property Name="Tipo" Type="DataModel.PhoneType" Nullable="false" />
@@ -750,8 +750,8 @@
             <PropertyRef Name="IdFuncao" />
           </Key>
           <Property Name="IdFuncao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" />
-          <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Funcionario" Relationship="DataModel.FuncionarioFuncao" FromRole="Funcao" ToRole="Funcionario" />
         </EntityType>
         <Association Name="FuncionarioFuncao">
@@ -767,7 +767,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityType Name="Medico" BaseType="DataModel.Funcionario" >
-          <Property Name="CRM" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="CRM" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Especialidade" Relationship="DataModel.MedicoEspecialidade" FromRole="Medico" ToRole="Especialidade" />
           <NavigationProperty Name="Consulta" Relationship="DataModel.MedicoConsulta" FromRole="Medico" ToRole="Consulta" />
         </EntityType>
@@ -776,11 +776,11 @@
             <PropertyRef Name="IdConsultorio" />
           </Key>
           <Property Name="IdConsultorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NomeFantasia" Type="String" Nullable="true" MaxLength="100" />
-          <Property Name="RazaoSocial" Type="String" Nullable="false" MaxLength="100" />
-          <Property Name="CNPJ" Type="String" Nullable="false" MaxLength="14" />
-          <Property Name="HorarioAbertura" Type="Time" Nullable="false" />
-          <Property Name="HorarioFechamento" Type="Time" Nullable="false" />
+          <Property Name="NomeFantasia" Type="String" Nullable="true" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="RazaoSocial" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CNPJ" Type="String" Nullable="false" MaxLength="14" Unicode="true" FixedLength="false" />
+          <Property Name="HorarioAbertura" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="HorarioFechamento" Type="Time" Nullable="false" Precision="7" />
           <NavigationProperty Name="QuadroFuncionarios" Relationship="DataModel.ConsultorioQuadroFuncionarios" FromRole="Consultorio" ToRole="QuadroFuncionarios" />
           <NavigationProperty Name="Localidade" Relationship="DataModel.ConsultorioLocalidade" FromRole="Consultorio" ToRole="Localidade" />
           <NavigationProperty Name="Telefone" Relationship="DataModel.ConsultorioTelefone" FromRole="Consultorio" ToRole="Telefone" />
@@ -796,8 +796,8 @@
           </Key>
           <Property Name="IdConsultorio" Type="Int32" Nullable="false" />
           <Property Name="IdFuncionario" Type="Int32" Nullable="false" />
-          <Property Name="DataAdmissao" Type="DateTime" Nullable="false" />
-          <Property Name="DataDemissao" Type="DateTime" Nullable="true" />
+          <Property Name="DataAdmissao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataDemissao" Type="DateTime" Nullable="true" Precision="3" />
           <NavigationProperty Name="Funcionario" Relationship="DataModel.FuncionarioQuadroFuncionarios" FromRole="QuadroFuncionarios" ToRole="Funcionario" />
           <NavigationProperty Name="Consultorio" Relationship="DataModel.ConsultorioQuadroFuncionarios" FromRole="QuadroFuncionarios" ToRole="Consultorio" />
         </EntityType>
@@ -847,8 +847,8 @@
           </Key>
           <Property Name="IdEstoque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdConsultorio" Type="Int32" Nullable="false" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" />
-          <Property Name="Descricao" Type="String" MaxLength="Max" Nullable="true" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" Nullable="true" Unicode="true" FixedLength="false" />
           <Property Name="Refrigeracao" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Consultorio" Relationship="DataModel.ConsultorioEstoque" FromRole="Estoque" ToRole="Consultorio" />
           <NavigationProperty Name="Item" Relationship="DataModel.EstoqueItem" FromRole="Estoque" ToRole="Item" />
@@ -870,8 +870,8 @@
             <PropertyRef Name="IdProduto" />
           </Key>
           <Property Name="IdProduto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" />
-          <Property Name="Descricao" Type="String" MaxLength="Max" Nullable="true" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" Nullable="true" Unicode="true" FixedLength="false" />
           <Property Name="Tipo" Type="DataModel.ProductType" Nullable="false" />
           <NavigationProperty Name="Item" Relationship="DataModel.ProdutoItem" FromRole="Produto" ToRole="Item" />
         </EntityType>
@@ -921,8 +921,8 @@
             <PropertyRef Name="IdEspecialidade" />
           </Key>
           <Property Name="IdEspecialidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" />
-          <Property Name="Descricao" Type="String" MaxLength="Max" Nullable="true" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Descricao" Type="String" MaxLength="Max" Nullable="true" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Medico" Relationship="DataModel.MedicoEspecialidade" FromRole="Especialidade" ToRole="Medico" />
         </EntityType>
         <Association Name="MedicoEspecialidade">
@@ -934,8 +934,8 @@
             <PropertyRef Name="IdExame" />
           </Key>
           <Property Name="IdExame" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" />
-          <Property Name="Recomendacoes" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Recomendacoes" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="AgendaExame" Relationship="DataModel.ExameAgendaExame" FromRole="Exame" ToRole="AgendaExame" />
           <NavigationProperty Name="Consultorio" Relationship="DataModel.ConsultorioExame" FromRole="Exame" ToRole="Consultorio" />
         </EntityType>
@@ -947,10 +947,10 @@
           <Property Name="IdentificacaoPaciente" Type="Int32" Nullable="false" />
           <Property Name="IdentificacaoMedico" Type="Int32" Nullable="false" />
           <Property Name="IdConsultorio" Type="Int32" Nullable="false" />
-          <Property Name="DataHoraInicio" Type="DateTime" Nullable="false" />
-          <Property Name="DataHoraFim" Type="DateTime" Nullable="false" />
+          <Property Name="DataHoraInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataHoraFim" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Comparecimento" Type="Boolean" Nullable="false" />
-          <Property Name="Anotacoes" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Anotacoes" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Paciente" Relationship="DataModel.PacienteConsulta" FromRole="Consulta" ToRole="Paciente" />
           <NavigationProperty Name="Medico" Relationship="DataModel.MedicoConsulta" FromRole="Consulta" ToRole="Medico" />
           <NavigationProperty Name="Consultorio" Relationship="DataModel.ConsultorioConsulta" FromRole="Consulta" ToRole="Consultorio" />
@@ -963,10 +963,10 @@
           <Property Name="IdentificacaoPaciente" Type="Int32" Nullable="false" />
           <Property Name="IdExame" Type="Int32" Nullable="false" />
           <Property Name="IdConsultorio" Type="Int32" Nullable="false" />
-          <Property Name="DataHoraInicio" Type="DateTime" Nullable="false" />
-          <Property Name="DataHoraFim" Type="DateTime" Nullable="false" />
+          <Property Name="DataHoraInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataHoraFim" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Comparecimento" Type="Boolean" Nullable="false" />
-          <Property Name="Anotacoes" Type="String" Nullable="true" MaxLength="Max" />
+          <Property Name="Anotacoes" Type="String" Nullable="true" MaxLength="Max" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Paciente" Relationship="DataModel.PacienteAgendaExame" FromRole="AgendaExame" ToRole="Paciente" />
           <NavigationProperty Name="Exame" Relationship="DataModel.ExameAgendaExame" FromRole="AgendaExame" ToRole="Exame" />
           <NavigationProperty Name="Consultorio" Relationship="DataModel.ConsultorioAgendaExame" FromRole="AgendaExame" ToRole="Consultorio" />
@@ -1256,6 +1256,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
         <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

@@ -65,6 +65,8 @@
     </Compile>
     <Compile Include="Controller\ConsultorioController.cs" />
     <Compile Include="Controller\EstoqueController.cs" />
+    <Compile Include="Controller\ExameController.cs" />
+    <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="Model\AgendaExame.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -142,6 +144,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmExameCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmExameCadastrar.Designer.cs">
+      <DependentUpon>FrmExameCadastrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmConsultorioCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +167,18 @@
     </Compile>
     <Compile Include="View\FrmEstoqueCadastrar.Designer.cs">
       <DependentUpon>FrmEstoqueCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmEstoqueProdutoCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmEstoqueProdutoCadastrar.Designer.cs">
+      <DependentUpon>FrmEstoqueProdutoCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmExameConsultorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmExameConsultorio.Designer.cs">
+      <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmIndex.cs">
       <SubType>Form</SubType>
@@ -189,6 +209,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmEstoqueCadastrar.resx">
       <DependentUpon>FrmEstoqueCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmEstoqueProdutoCadastrar.resx">
+      <DependentUpon>FrmEstoqueProdutoCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmExameCadastrar.resx">
+      <DependentUpon>FrmExameCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmExameConsultorio.resx">
+      <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmIndex.resx">
       <DependentUpon>FrmIndex.cs</DependentUpon>

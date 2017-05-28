@@ -2,6 +2,7 @@
 using ClinicaMedica.View;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,8 @@ namespace ClinicaMedica.Controller
                         db.SaveChanges();
                         MessageBox.Show("Consultório cadastrado com sucesso!");
                     }
-                    catch (Exception e)
+
+                catch (Exception e)
                     {
                         MessageBox.Show("Não foi possível cadastrar o consultório!\n" + e.Message);
                     }
