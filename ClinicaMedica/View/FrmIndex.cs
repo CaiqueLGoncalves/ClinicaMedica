@@ -64,5 +64,11 @@ namespace ClinicaMedica.View
             FrmPacienteCadastrar paciente = new FrmPacienteCadastrar();
             paciente.ShowDialog(this);
         }
+
+        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFuncionarioCadastrar funcionario = new FrmFuncionarioCadastrar();
+            funcionario.ShowDialog(this);
+        }
     }
 }

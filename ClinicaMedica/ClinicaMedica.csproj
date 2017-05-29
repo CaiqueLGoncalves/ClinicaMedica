@@ -66,6 +66,8 @@
     <Compile Include="Controller\ConsultorioController.cs" />
     <Compile Include="Controller\EstoqueController.cs" />
     <Compile Include="Controller\ExameController.cs" />
+    <Compile Include="Controller\FuncionarioController.cs" />
+    <Compile Include="Controller\MedicoController.cs" />
     <Compile Include="Controller\PacienteController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="Model\AgendaExame.cs">
@@ -181,6 +183,12 @@
     <Compile Include="View\FrmExameConsultorio.Designer.cs">
       <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmFuncionarioCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFuncionarioCadastrar.Designer.cs">
+      <DependentUpon>FrmFuncionarioCadastrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmIndex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameConsultorio.resx">
       <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFuncionarioCadastrar.resx">
+      <DependentUpon>FrmFuncionarioCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmIndex.resx">
       <DependentUpon>FrmIndex.cs</DependentUpon>
