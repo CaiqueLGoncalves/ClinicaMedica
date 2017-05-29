@@ -35,7 +35,7 @@ namespace ClinicaMedica.View
                 txbCidade.Text = resposta.cidade;
                 txbEstado.Text = resposta.uf;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado");
             }

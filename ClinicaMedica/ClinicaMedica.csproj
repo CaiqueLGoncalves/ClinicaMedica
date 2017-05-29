@@ -64,12 +64,10 @@
       <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controller\ConsultorioController.cs" />
-    <Compile Include="Controller\EstoqueController.cs" />
     <Compile Include="Controller\ExameController.cs" />
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\MedicoController.cs" />
     <Compile Include="Controller\PacienteController.cs" />
-    <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="Model\AgendaExame.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -97,9 +95,6 @@
     <Compile Include="Model\Especialidade.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Estoque.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Exame.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -107,9 +102,6 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Funcionario.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Item.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Localidade.cs">
@@ -121,24 +113,13 @@
     <Compile Include="Model\Paciente.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\PhoneType.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ProductType.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Produto.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\QuadroFuncionarios.cs">
-      <DependentUpon>DataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\Telefone.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Usuario.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Utilitario.cs" />
     <Compile Include="Model\Validacao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,18 +146,6 @@
     <Compile Include="View\FrmConsultorioConsultar.Designer.cs">
       <DependentUpon>FrmConsultorioConsultar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmEstoqueCadastrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmEstoqueCadastrar.Designer.cs">
-      <DependentUpon>FrmEstoqueCadastrar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FrmEstoqueProdutoCadastrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmEstoqueProdutoCadastrar.Designer.cs">
-      <DependentUpon>FrmEstoqueProdutoCadastrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FrmExameConsultorio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,12 +170,6 @@
     <Compile Include="View\FrmPacienteCadastrar.Designer.cs">
       <DependentUpon>FrmPacienteCadastrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmProdutoCadastrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmProdutoCadastrar.Designer.cs">
-      <DependentUpon>FrmProdutoCadastrar.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -222,12 +185,6 @@
     <EmbeddedResource Include="View\FrmConsultorioConsultar.resx">
       <DependentUpon>FrmConsultorioConsultar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmEstoqueCadastrar.resx">
-      <DependentUpon>FrmEstoqueCadastrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmEstoqueProdutoCadastrar.resx">
-      <DependentUpon>FrmEstoqueProdutoCadastrar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameCadastrar.resx">
       <DependentUpon>FrmExameCadastrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPacienteCadastrar.resx">
       <DependentUpon>FrmPacienteCadastrar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmProdutoCadastrar.resx">
-      <DependentUpon>FrmProdutoCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

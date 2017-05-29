@@ -18,6 +18,7 @@ namespace ClinicaMedica.Model
         public int IdFuncionario { get; set; }
         public System.DateTime DataAdmissao { get; set; }
         public Nullable<System.DateTime> DataDemissao { get; set; }
+        public bool Status { get; set; }
     
         public virtual Funcionario Funcionario { get; set; }
         public virtual Consultorio Consultorio { get; set; }

@@ -18,8 +18,6 @@ namespace ClinicaMedica.Model
         public Consultorio()
         {
             this.QuadroFuncionarios = new HashSet<QuadroFuncionarios>();
-            this.Telefone = new HashSet<Telefone>();
-            this.Estoque = new HashSet<Estoque>();
             this.Consulta = new HashSet<Consulta>();
             this.AgendaExame = new HashSet<AgendaExame>();
             this.Exame = new HashSet<Exame>();
@@ -31,14 +29,11 @@ namespace ClinicaMedica.Model
         public string CNPJ { get; set; }
         public System.TimeSpan HorarioAbertura { get; set; }
         public System.TimeSpan HorarioFechamento { get; set; }
+        public string Telefone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QuadroFuncionarios> QuadroFuncionarios { get; set; }
         public virtual Localidade Localidade { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Telefone> Telefone { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Estoque> Estoque { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consulta> Consulta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

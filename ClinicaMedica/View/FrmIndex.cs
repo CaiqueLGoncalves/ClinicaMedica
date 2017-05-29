@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClinicaMedica.View
@@ -27,24 +20,6 @@ namespace ClinicaMedica.View
         {
             FrmConsultorioConsultar consultorioConsulta = new FrmConsultorioConsultar();
             consultorioConsulta.Show();
-        }
-
-        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmProdutoCadastrar produtoCadastra = new FrmProdutoCadastrar();
-            produtoCadastra.Show();
-        }
-
-        private void estoqueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmEstoqueCadastrar estoqueCadastra = new FrmEstoqueCadastrar();
-            estoqueCadastra.Show();
-        }
-
-        private void produtoEmEstoqueToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmEstoqueProdutoCadastrar estoqueProdutoCadastra = new FrmEstoqueProdutoCadastrar();
-            estoqueProdutoCadastra.Show();
         }
 
         private void exameToolStripMenuItem_Click(object sender, EventArgs e)

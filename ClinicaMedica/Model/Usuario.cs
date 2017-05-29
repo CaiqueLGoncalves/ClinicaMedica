@@ -14,22 +14,18 @@ namespace ClinicaMedica.Model
     
     public partial class Usuario
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Usuario()
-        {
-            this.Telefone = new HashSet<Telefone>();
-        }
-    
         public int Identificacao { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
         public System.DateTime DataNascimento { get; set; }
+        public string Sexo { get; set; }
+        public string TelefoneResidencial { get; set; }
+        public string TelefoneComercial { get; set; }
+        public string TelefoneCelular { get; set; }
         public string Email { get; set; }
         public int IdLocalidade { get; set; }
     
         public virtual Localidade Localidade { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Telefone> Telefone { get; set; }
     }
 }
