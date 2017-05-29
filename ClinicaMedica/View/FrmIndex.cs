@@ -58,5 +58,11 @@ namespace ClinicaMedica.View
             FrmExameConsultorio exameConsultorio = new FrmExameConsultorio();
             exameConsultorio.Show();
         }
+
+        private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPacienteCadastrar paciente = new FrmPacienteCadastrar();
+            paciente.ShowDialog(this);
+        }
     }
 }
