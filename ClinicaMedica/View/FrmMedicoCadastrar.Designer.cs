@@ -1,6 +1,6 @@
 ﻿namespace ClinicaMedica.View
 {
-    partial class FrmFuncionarioCadastrar
+    partial class FrmMedicoCadastrar
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblFuncao = new System.Windows.Forms.Label();
-            this.cmbFuncao = new System.Windows.Forms.ComboBox();
-            this.TBFuncaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
-            this.TB_FuncaoTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_FuncaoTableAdapter();
             this.lblSexo = new System.Windows.Forms.Label();
             this.gpbSexo = new System.Windows.Forms.GroupBox();
             this.rbtFeminino = new System.Windows.Forms.RadioButton();
@@ -72,67 +67,39 @@
             this.lblCPF = new System.Windows.Forms.Label();
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.TBFuncaoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
+            this.txbCRM = new System.Windows.Forms.TextBox();
+            this.lblCRM = new System.Windows.Forms.Label();
+            this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
+            this.lstEspecialidades = new System.Windows.Forms.ListBox();
+            this.TBEspecialidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
+            this.lblEspecialidades = new System.Windows.Forms.Label();
+            this.TB_EspecialidadeTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_EspecialidadeTableAdapter();
             this.gpbSexo.SuspendLayout();
             this.gpbContato.SuspendLayout();
             this.gpbLocalidade.SuspendLayout();
+            this.gpbDadosProfissionais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblFuncao
-            // 
-            this.lblFuncao.AutoSize = true;
-            this.lblFuncao.Location = new System.Drawing.Point(12, 195);
-            this.lblFuncao.Name = "lblFuncao";
-            this.lblFuncao.Size = new System.Drawing.Size(46, 13);
-            this.lblFuncao.TabIndex = 10;
-            this.lblFuncao.Text = "Função:";
-            // 
-            // cmbFuncao
-            // 
-            this.cmbFuncao.DataSource = this.TBFuncaoBindingSource;
-            this.cmbFuncao.DisplayMember = "Nome";
-            this.cmbFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbFuncao.FormattingEnabled = true;
-            this.cmbFuncao.Location = new System.Drawing.Point(149, 192);
-            this.cmbFuncao.Name = "cmbFuncao";
-            this.cmbFuncao.Size = new System.Drawing.Size(269, 21);
-            this.cmbFuncao.TabIndex = 11;
-            this.cmbFuncao.ValueMember = "IdFuncao";
-            // 
-            // TBFuncaoBindingSource
-            // 
-            this.TBFuncaoBindingSource.DataMember = "TB_Funcao";
-            this.TBFuncaoBindingSource.DataSource = this.ClinicaMedicaBDDataSet;
-            this.TBFuncaoBindingSource.Filter = "Nome <> \'Médico\'";
-            this.TBFuncaoBindingSource.Sort = "Nome ASC";
-            // 
-            // ClinicaMedicaBDDataSet
-            // 
-            this.ClinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
-            this.ClinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // TB_FuncaoTableAdapter
-            // 
-            this.TB_FuncaoTableAdapter.ClearBeforeFill = true;
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(12, 129);
+            this.lblSexo.Location = new System.Drawing.Point(12, 132);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(34, 13);
-            this.lblSexo.TabIndex = 8;
+            this.lblSexo.TabIndex = 25;
             this.lblSexo.Text = "Sexo:";
             // 
             // gpbSexo
             // 
             this.gpbSexo.Controls.Add(this.rbtFeminino);
             this.gpbSexo.Controls.Add(this.rbtMasculino);
-            this.gpbSexo.Location = new System.Drawing.Point(149, 124);
+            this.gpbSexo.Location = new System.Drawing.Point(149, 127);
             this.gpbSexo.Name = "gpbSexo";
             this.gpbSexo.Size = new System.Drawing.Size(269, 55);
-            this.gpbSexo.TabIndex = 9;
+            this.gpbSexo.TabIndex = 26;
             this.gpbSexo.TabStop = false;
             // 
             // rbtFeminino
@@ -167,10 +134,10 @@
             this.gpbContato.Controls.Add(this.lblTelefoneResidencial);
             this.gpbContato.Controls.Add(this.lblEmail);
             this.gpbContato.Controls.Add(this.txbEmail);
-            this.gpbContato.Location = new System.Drawing.Point(12, 223);
+            this.gpbContato.Location = new System.Drawing.Point(12, 364);
             this.gpbContato.Name = "gpbContato";
             this.gpbContato.Size = new System.Drawing.Size(406, 150);
-            this.gpbContato.TabIndex = 14;
+            this.gpbContato.TabIndex = 31;
             this.gpbContato.TabStop = false;
             this.gpbContato.Text = "Contato";
             // 
@@ -262,10 +229,10 @@
             this.gpbLocalidade.Controls.Add(this.txbComplemento);
             this.gpbLocalidade.Controls.Add(this.txbBairro);
             this.gpbLocalidade.Controls.Add(this.lblBairro);
-            this.gpbLocalidade.Location = new System.Drawing.Point(12, 383);
+            this.gpbLocalidade.Location = new System.Drawing.Point(12, 524);
             this.gpbLocalidade.Name = "gpbLocalidade";
             this.gpbLocalidade.Size = new System.Drawing.Size(406, 240);
-            this.gpbLocalidade.TabIndex = 15;
+            this.gpbLocalidade.TabIndex = 32;
             this.gpbLocalidade.TabStop = false;
             this.gpbLocalidade.Text = "Endereço";
             // 
@@ -429,90 +396,155 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(173, 633);
+            this.btnCadastrar.Location = new System.Drawing.Point(173, 774);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 23);
-            this.btnCadastrar.TabIndex = 16;
+            this.btnCadastrar.TabIndex = 33;
             this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // dtpDataNascimento
             // 
             this.dtpDataNascimento.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(149, 97);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(149, 100);
             this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 6, 30, 0, 0, 0, 0);
             this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(269, 20);
-            this.dtpDataNascimento.TabIndex = 7;
+            this.dtpDataNascimento.TabIndex = 24;
             // 
             // lblDataNascimento
             // 
             this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Location = new System.Drawing.Point(12, 99);
+            this.lblDataNascimento.Location = new System.Drawing.Point(12, 102);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(107, 13);
-            this.lblDataNascimento.TabIndex = 6;
+            this.lblDataNascimento.TabIndex = 23;
             this.lblDataNascimento.Text = "Data de Nascimento:";
             // 
             // txbRG
             // 
-            this.txbRG.Location = new System.Drawing.Point(149, 66);
+            this.txbRG.Location = new System.Drawing.Point(149, 69);
             this.txbRG.MaxLength = 12;
             this.txbRG.Name = "txbRG";
             this.txbRG.Size = new System.Drawing.Size(269, 20);
-            this.txbRG.TabIndex = 5;
+            this.txbRG.TabIndex = 22;
             // 
             // lblRG
             // 
             this.lblRG.AutoSize = true;
-            this.lblRG.Location = new System.Drawing.Point(12, 69);
+            this.lblRG.Location = new System.Drawing.Point(12, 72);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(26, 13);
-            this.lblRG.TabIndex = 4;
+            this.lblRG.TabIndex = 21;
             this.lblRG.Text = "RG:";
             // 
             // mskCPF
             // 
-            this.mskCPF.Location = new System.Drawing.Point(149, 36);
+            this.mskCPF.Location = new System.Drawing.Point(149, 39);
             this.mskCPF.Mask = "999,999,999-99";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(269, 20);
-            this.mskCPF.TabIndex = 3;
+            this.mskCPF.TabIndex = 20;
             this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
-            this.lblCPF.Location = new System.Drawing.Point(12, 39);
+            this.lblCPF.Location = new System.Drawing.Point(12, 42);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(30, 13);
-            this.lblCPF.TabIndex = 2;
+            this.lblCPF.TabIndex = 19;
             this.lblCPF.Text = "CPF:";
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(149, 6);
+            this.txbNome.Location = new System.Drawing.Point(149, 9);
             this.txbNome.MaxLength = 100;
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(269, 20);
-            this.txbNome.TabIndex = 1;
+            this.txbNome.TabIndex = 18;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(12, 9);
+            this.lblNome.Location = new System.Drawing.Point(12, 12);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 0;
+            this.lblNome.TabIndex = 17;
             this.lblNome.Text = "Nome:";
             // 
-            // FrmFuncionarioCadastrar
+            // txbCRM
+            // 
+            this.txbCRM.Location = new System.Drawing.Point(134, 22);
+            this.txbCRM.MaxLength = 10;
+            this.txbCRM.Name = "txbCRM";
+            this.txbCRM.Size = new System.Drawing.Size(256, 20);
+            this.txbCRM.TabIndex = 30;
+            // 
+            // lblCRM
+            // 
+            this.lblCRM.AutoSize = true;
+            this.lblCRM.Location = new System.Drawing.Point(10, 25);
+            this.lblCRM.Name = "lblCRM";
+            this.lblCRM.Size = new System.Drawing.Size(34, 13);
+            this.lblCRM.TabIndex = 29;
+            this.lblCRM.Text = "CRM:";
+            // 
+            // gpbDadosProfissionais
+            // 
+            this.gpbDadosProfissionais.Controls.Add(this.lstEspecialidades);
+            this.gpbDadosProfissionais.Controls.Add(this.lblEspecialidades);
+            this.gpbDadosProfissionais.Controls.Add(this.lblCRM);
+            this.gpbDadosProfissionais.Controls.Add(this.txbCRM);
+            this.gpbDadosProfissionais.Location = new System.Drawing.Point(12, 190);
+            this.gpbDadosProfissionais.Name = "gpbDadosProfissionais";
+            this.gpbDadosProfissionais.Size = new System.Drawing.Size(406, 163);
+            this.gpbDadosProfissionais.TabIndex = 34;
+            this.gpbDadosProfissionais.TabStop = false;
+            this.gpbDadosProfissionais.Text = "Dados Profissionais";
+            // 
+            // lstEspecialidades
+            // 
+            this.lstEspecialidades.DataSource = this.TBEspecialidadeBindingSource;
+            this.lstEspecialidades.DisplayMember = "Nome";
+            this.lstEspecialidades.FormattingEnabled = true;
+            this.lstEspecialidades.Location = new System.Drawing.Point(134, 55);
+            this.lstEspecialidades.Name = "lstEspecialidades";
+            this.lstEspecialidades.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lstEspecialidades.Size = new System.Drawing.Size(256, 95);
+            this.lstEspecialidades.TabIndex = 32;
+            this.lstEspecialidades.ValueMember = "IdEspecialidade";
+            // 
+            // TBEspecialidadeBindingSource
+            // 
+            this.TBEspecialidadeBindingSource.DataMember = "TB_Especialidade";
+            this.TBEspecialidadeBindingSource.DataSource = this.ClinicaMedicaBDDataSet;
+            // 
+            // ClinicaMedicaBDDataSet
+            // 
+            this.ClinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.ClinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblEspecialidades
+            // 
+            this.lblEspecialidades.AutoSize = true;
+            this.lblEspecialidades.Location = new System.Drawing.Point(10, 55);
+            this.lblEspecialidades.Name = "lblEspecialidades";
+            this.lblEspecialidades.Size = new System.Drawing.Size(81, 13);
+            this.lblEspecialidades.TabIndex = 31;
+            this.lblEspecialidades.Text = "Especialidades:";
+            // 
+            // TB_EspecialidadeTableAdapter
+            // 
+            this.TB_EspecialidadeTableAdapter.ClearBeforeFill = true;
+            // 
+            // FrmMedicoCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 671);
+            this.ClientSize = new System.Drawing.Size(430, 811);
+            this.Controls.Add(this.gpbDadosProfissionais);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.gpbSexo);
             this.Controls.Add(this.gpbContato);
@@ -526,33 +558,29 @@
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.txbNome);
             this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.cmbFuncao);
-            this.Controls.Add(this.lblFuncao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FrmFuncionarioCadastrar";
+            this.Name = "FrmMedicoCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Funcionários";
-            this.Activated += new System.EventHandler(this.FrmFuncionarioCadastrar_Activated);
-            ((System.ComponentModel.ISupportInitialize)(this.TBFuncaoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).EndInit();
+            this.Text = "Cadastro de Médicos";
+            this.Activated += new System.EventHandler(this.FrmMedicoCadastrar_Activated);
             this.gpbSexo.ResumeLayout(false);
             this.gpbSexo.PerformLayout();
             this.gpbContato.ResumeLayout(false);
             this.gpbContato.PerformLayout();
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();
+            this.gpbDadosProfissionais.ResumeLayout(false);
+            this.gpbDadosProfissionais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblFuncao;
-        private System.Windows.Forms.ComboBox cmbFuncao;
-        private ClinicaMedicaBDDataSet ClinicaMedicaBDDataSet;
-        private System.Windows.Forms.BindingSource TBFuncaoBindingSource;
-        private ClinicaMedicaBDDataSetTableAdapters.TB_FuncaoTableAdapter TB_FuncaoTableAdapter;
+
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.GroupBox gpbSexo;
         private System.Windows.Forms.RadioButton rbtFeminino;
@@ -591,5 +619,13 @@
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txbCRM;
+        private System.Windows.Forms.Label lblCRM;
+        private System.Windows.Forms.GroupBox gpbDadosProfissionais;
+        private System.Windows.Forms.Label lblEspecialidades;
+        private System.Windows.Forms.ListBox lstEspecialidades;
+        private ClinicaMedicaBDDataSet ClinicaMedicaBDDataSet;
+        private System.Windows.Forms.BindingSource TBEspecialidadeBindingSource;
+        private ClinicaMedicaBDDataSetTableAdapters.TB_EspecialidadeTableAdapter TB_EspecialidadeTableAdapter;
     }
 }

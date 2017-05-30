@@ -164,6 +164,12 @@
     <Compile Include="View\FrmIndex.Designer.cs">
       <DependentUpon>FrmIndex.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmMedicoCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMedicoCadastrar.Designer.cs">
+      <DependentUpon>FrmMedicoCadastrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmPacienteCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmIndex.resx">
       <DependentUpon>FrmIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMedicoCadastrar.resx">
+      <DependentUpon>FrmMedicoCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPacienteCadastrar.resx">
       <DependentUpon>FrmPacienteCadastrar.cs</DependentUpon>

@@ -14,29 +14,7 @@ namespace ClinicaMedica.View
 
         private void FrmFuncionarioCadastrar_Activated(object sender, EventArgs e)
         {
-            tB_FuncaoTableAdapter.Fill(clinicaMedicaBDDataSet.TB_Funcao);
-
-            if (cmbFuncao.SelectedIndex != 0)
-            {
-                txbCRM.Clear();
-                lblCRM.Enabled = false;
-                txbCRM.Enabled = false;
-            }
-        }
-
-        private void cmbFuncao_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbFuncao.SelectedIndex != 0)
-            {
-                txbCRM.Clear();
-                lblCRM.Enabled = false;
-                txbCRM.Enabled = false;
-            }
-            else
-            {
-                lblCRM.Enabled = true;
-                txbCRM.Enabled = true;
-            }
+            TB_FuncaoTableAdapter.Fill(ClinicaMedicaBDDataSet.TB_Funcao);
         }
 
         private void btnBuscarCEP_Click(object sender, EventArgs e)
@@ -55,6 +33,10 @@ namespace ClinicaMedica.View
                 cmbEstado.SelectedIndex = Utilitario.RetornarIndiceEstado(resposta.uf);
                 cmbEstado.Enabled = false;
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception)
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado!");
@@ -63,6 +45,8 @@ namespace ClinicaMedica.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            FuncionarioController funcCont = new FuncionarioController();
+            Funcionario f = new Funcionario();
             Localidade l = new Localidade();
 
             l.CEP = mskCEP.Text;
@@ -73,45 +57,19 @@ namespace ClinicaMedica.View
             l.Cidade = txbCidade.Text;
             l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
 
-            if (cmbFuncao.SelectedIndex == 0)
-            {
-                MedicoController medicoCont = new MedicoController();
-                Medico m = new Medico();
+            f.Nome = txbNome.Text;
+            f.CPF = mskCPF.Text;
+            f.RG = txbRG.Text;
+            f.DataNascimento = dtpDataNascimento.Value;
+            f.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
+            f.TelefoneResidencial = mskTelefoneResidencial.Text;
+            f.TelefoneComercial = mskTelefoneResidencial.Text;
+            f.TelefoneCelular = mskTelefoneCelular.Text;
+            f.IdFuncao = int.Parse(cmbFuncao.SelectedValue.ToString());
+            f.Email = txbEmail.Text;
+            f.Localidade = l;
 
-                m.Nome = txbNome.Text;
-                m.CPF = mskCPF.Text;
-                m.RG = txbRG.Text;
-                m.DataNascimento = dtpDataNascimento.Value;
-                m.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
-                m.TelefoneResidencial = mskTelefoneResidencial.Text;
-                m.TelefoneComercial = mskTelefoneResidencial.Text;
-                m.TelefoneCelular = mskTelefoneCelular.Text;
-                m.IdFuncao = int.Parse(cmbFuncao.SelectedValue.ToString());
-                m.CRM = txbCRM.Text;
-                m.Email = txbEmail.Text;
-                m.Localidade = l;
-
-                medicoCont.Insert(m);
-            }
-            else
-            {
-                FuncionarioController funcCont = new FuncionarioController();
-                Funcionario f = new Funcionario();
-
-                f.Nome = txbNome.Text;
-                f.CPF = mskCPF.Text;
-                f.RG = txbRG.Text;
-                f.DataNascimento = dtpDataNascimento.Value;
-                f.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
-                f.TelefoneResidencial = mskTelefoneResidencial.Text;
-                f.TelefoneComercial = mskTelefoneResidencial.Text;
-                f.TelefoneCelular = mskTelefoneCelular.Text;
-                f.IdFuncao = int.Parse(cmbFuncao.SelectedValue.ToString());
-                f.Email = txbEmail.Text;
-                f.Localidade = l;
-
-                funcCont.Insert(f);
-            }
+            funcCont.Insert(f);
 
             Controls.Clear();
         }

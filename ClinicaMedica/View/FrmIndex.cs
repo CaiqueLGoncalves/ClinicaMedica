@@ -34,16 +34,22 @@ namespace ClinicaMedica.View
             exameConsultorio.Show();
         }
 
-        private void pacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarPacienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmPacienteCadastrar paciente = new FrmPacienteCadastrar();
             paciente.ShowDialog(this);
         }
 
-        private void funcionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmFuncionarioCadastrar funcionario = new FrmFuncionarioCadastrar();
             funcionario.ShowDialog(this);
+        }
+
+        private void cadastrarMedicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMedicoCadastrar medico = new FrmMedicoCadastrar();
+            medico.ShowDialog(this);
         }
     }
 }
