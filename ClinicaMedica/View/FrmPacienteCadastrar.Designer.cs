@@ -57,15 +57,15 @@
             this.gpbLocalidade = new System.Windows.Forms.GroupBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.gpbContato = new System.Windows.Forms.GroupBox();
+            this.mskTelefoneCelular = new System.Windows.Forms.MaskedTextBox();
+            this.lblTelefoneCelular = new System.Windows.Forms.Label();
+            this.mskTelefoneComercial = new System.Windows.Forms.MaskedTextBox();
+            this.lblTelefoneComercial = new System.Windows.Forms.Label();
+            this.mskTelefoneResidencial = new System.Windows.Forms.MaskedTextBox();
             this.gpbSexo = new System.Windows.Forms.GroupBox();
             this.rbtFeminino = new System.Windows.Forms.RadioButton();
             this.rbtMasculino = new System.Windows.Forms.RadioButton();
             this.lblSexo = new System.Windows.Forms.Label();
-            this.mskTelefoneResidencial = new System.Windows.Forms.MaskedTextBox();
-            this.lblTelefoneComercial = new System.Windows.Forms.Label();
-            this.mskTelefoneComercial = new System.Windows.Forms.MaskedTextBox();
-            this.lblTelefoneCelular = new System.Windows.Forms.Label();
-            this.mskTelefoneCelular = new System.Windows.Forms.MaskedTextBox();
             this.gpbLocalidade.SuspendLayout();
             this.gpbContato.SuspendLayout();
             this.gpbSexo.SuspendLayout();
@@ -149,7 +149,7 @@
             this.lblEmail.Location = new System.Drawing.Point(10, 115);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(38, 13);
-            this.lblEmail.TabIndex = 8;
+            this.lblEmail.TabIndex = 6;
             this.lblEmail.Text = "E-mail:";
             // 
             // txbEmail
@@ -158,7 +158,7 @@
             this.txbEmail.MaxLength = 64;
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(256, 20);
-            this.txbEmail.TabIndex = 9;
+            this.txbEmail.TabIndex = 7;
             // 
             // lblCEP
             // 
@@ -166,7 +166,7 @@
             this.lblCEP.Location = new System.Drawing.Point(10, 25);
             this.lblCEP.Name = "lblCEP";
             this.lblCEP.Size = new System.Drawing.Size(31, 13);
-            this.lblCEP.TabIndex = 10;
+            this.lblCEP.TabIndex = 0;
             this.lblCEP.Text = "CEP:";
             // 
             // mskCEP
@@ -175,7 +175,7 @@
             this.mskCEP.Mask = "00000-999";
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(150, 20);
-            this.mskCEP.TabIndex = 11;
+            this.mskCEP.TabIndex = 1;
             this.mskCEP.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // btnBuscarCEP
@@ -183,7 +183,7 @@
             this.btnBuscarCEP.Location = new System.Drawing.Point(305, 20);
             this.btnBuscarCEP.Name = "btnBuscarCEP";
             this.btnBuscarCEP.Size = new System.Drawing.Size(85, 23);
-            this.btnBuscarCEP.TabIndex = 12;
+            this.btnBuscarCEP.TabIndex = 2;
             this.btnBuscarCEP.Text = "Buscar";
             this.btnBuscarCEP.UseVisualStyleBackColor = true;
             this.btnBuscarCEP.Click += new System.EventHandler(this.btnBuscarCEP_Click);
@@ -194,7 +194,7 @@
             this.lblEndereco.Location = new System.Drawing.Point(10, 55);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(56, 13);
-            this.lblEndereco.TabIndex = 13;
+            this.lblEndereco.TabIndex = 3;
             this.lblEndereco.Text = "Endereço:";
             // 
             // txbEndereco
@@ -203,7 +203,7 @@
             this.txbEndereco.MaxLength = 100;
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(256, 20);
-            this.txbEndereco.TabIndex = 14;
+            this.txbEndereco.TabIndex = 4;
             // 
             // lblNumero
             // 
@@ -211,7 +211,7 @@
             this.lblNumero.Location = new System.Drawing.Point(10, 85);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(47, 13);
-            this.lblNumero.TabIndex = 15;
+            this.lblNumero.TabIndex = 5;
             this.lblNumero.Text = "Número:";
             // 
             // txbNumero
@@ -220,7 +220,7 @@
             this.txbNumero.MaxLength = 6;
             this.txbNumero.Name = "txbNumero";
             this.txbNumero.Size = new System.Drawing.Size(256, 20);
-            this.txbNumero.TabIndex = 16;
+            this.txbNumero.TabIndex = 6;
             // 
             // lblComplemento
             // 
@@ -228,7 +228,7 @@
             this.lblComplemento.Location = new System.Drawing.Point(10, 115);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(74, 13);
-            this.lblComplemento.TabIndex = 17;
+            this.lblComplemento.TabIndex = 7;
             this.lblComplemento.Text = "Complemento:";
             // 
             // txbComplemento
@@ -237,7 +237,7 @@
             this.txbComplemento.MaxLength = 100;
             this.txbComplemento.Name = "txbComplemento";
             this.txbComplemento.Size = new System.Drawing.Size(256, 20);
-            this.txbComplemento.TabIndex = 18;
+            this.txbComplemento.TabIndex = 8;
             // 
             // lblBairro
             // 
@@ -245,7 +245,7 @@
             this.lblBairro.Location = new System.Drawing.Point(10, 145);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(37, 13);
-            this.lblBairro.TabIndex = 19;
+            this.lblBairro.TabIndex = 9;
             this.lblBairro.Text = "Bairro:";
             // 
             // txbBairro
@@ -254,7 +254,7 @@
             this.txbBairro.MaxLength = 100;
             this.txbBairro.Name = "txbBairro";
             this.txbBairro.Size = new System.Drawing.Size(256, 20);
-            this.txbBairro.TabIndex = 20;
+            this.txbBairro.TabIndex = 10;
             // 
             // lblEstado
             // 
@@ -262,7 +262,7 @@
             this.lblEstado.Location = new System.Drawing.Point(10, 205);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(43, 13);
-            this.lblEstado.TabIndex = 21;
+            this.lblEstado.TabIndex = 13;
             this.lblEstado.Text = "Estado:";
             // 
             // btnCadastrar
@@ -270,7 +270,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(173, 600);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 23);
-            this.btnCadastrar.TabIndex = 23;
+            this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -281,7 +281,7 @@
             this.lblCidade.Location = new System.Drawing.Point(10, 175);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(43, 13);
-            this.lblCidade.TabIndex = 24;
+            this.lblCidade.TabIndex = 11;
             this.lblCidade.Text = "Cidade:";
             // 
             // txbCidade
@@ -289,7 +289,7 @@
             this.txbCidade.Location = new System.Drawing.Point(134, 172);
             this.txbCidade.Name = "txbCidade";
             this.txbCidade.Size = new System.Drawing.Size(256, 20);
-            this.txbCidade.TabIndex = 25;
+            this.txbCidade.TabIndex = 12;
             // 
             // lblTelefoneResidencial
             // 
@@ -297,7 +297,7 @@
             this.lblTelefoneResidencial.Location = new System.Drawing.Point(10, 25);
             this.lblTelefoneResidencial.Name = "lblTelefoneResidencial";
             this.lblTelefoneResidencial.Size = new System.Drawing.Size(110, 13);
-            this.lblTelefoneResidencial.TabIndex = 26;
+            this.lblTelefoneResidencial.TabIndex = 0;
             this.lblTelefoneResidencial.Text = "Telefone Residencial:";
             // 
             // gpbLocalidade
@@ -320,7 +320,7 @@
             this.gpbLocalidade.Location = new System.Drawing.Point(15, 350);
             this.gpbLocalidade.Name = "gpbLocalidade";
             this.gpbLocalidade.Size = new System.Drawing.Size(403, 240);
-            this.gpbLocalidade.TabIndex = 29;
+            this.gpbLocalidade.TabIndex = 11;
             this.gpbLocalidade.TabStop = false;
             this.gpbLocalidade.Text = "Endereço";
             // 
@@ -359,7 +359,7 @@
             this.cmbEstado.Location = new System.Drawing.Point(134, 202);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(256, 21);
-            this.cmbEstado.TabIndex = 26;
+            this.cmbEstado.TabIndex = 14;
             // 
             // gpbContato
             // 
@@ -374,9 +374,54 @@
             this.gpbContato.Location = new System.Drawing.Point(15, 190);
             this.gpbContato.Name = "gpbContato";
             this.gpbContato.Size = new System.Drawing.Size(403, 150);
-            this.gpbContato.TabIndex = 30;
+            this.gpbContato.TabIndex = 10;
             this.gpbContato.TabStop = false;
             this.gpbContato.Text = "Contato";
+            // 
+            // mskTelefoneCelular
+            // 
+            this.mskTelefoneCelular.Location = new System.Drawing.Point(134, 82);
+            this.mskTelefoneCelular.Mask = "(99) 00000-0000";
+            this.mskTelefoneCelular.Name = "mskTelefoneCelular";
+            this.mskTelefoneCelular.Size = new System.Drawing.Size(256, 20);
+            this.mskTelefoneCelular.TabIndex = 5;
+            this.mskTelefoneCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // lblTelefoneCelular
+            // 
+            this.lblTelefoneCelular.AutoSize = true;
+            this.lblTelefoneCelular.Location = new System.Drawing.Point(10, 85);
+            this.lblTelefoneCelular.Name = "lblTelefoneCelular";
+            this.lblTelefoneCelular.Size = new System.Drawing.Size(87, 13);
+            this.lblTelefoneCelular.TabIndex = 4;
+            this.lblTelefoneCelular.Text = "Telefone Celular:";
+            // 
+            // mskTelefoneComercial
+            // 
+            this.mskTelefoneComercial.Location = new System.Drawing.Point(134, 52);
+            this.mskTelefoneComercial.Mask = "(99) 0000-0000";
+            this.mskTelefoneComercial.Name = "mskTelefoneComercial";
+            this.mskTelefoneComercial.Size = new System.Drawing.Size(256, 20);
+            this.mskTelefoneComercial.TabIndex = 3;
+            this.mskTelefoneComercial.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // lblTelefoneComercial
+            // 
+            this.lblTelefoneComercial.AutoSize = true;
+            this.lblTelefoneComercial.Location = new System.Drawing.Point(10, 55);
+            this.lblTelefoneComercial.Name = "lblTelefoneComercial";
+            this.lblTelefoneComercial.Size = new System.Drawing.Size(101, 13);
+            this.lblTelefoneComercial.TabIndex = 2;
+            this.lblTelefoneComercial.Text = "Telefone Comercial:";
+            // 
+            // mskTelefoneResidencial
+            // 
+            this.mskTelefoneResidencial.Location = new System.Drawing.Point(134, 22);
+            this.mskTelefoneResidencial.Mask = "(99) 0000-0000";
+            this.mskTelefoneResidencial.Name = "mskTelefoneResidencial";
+            this.mskTelefoneResidencial.Size = new System.Drawing.Size(256, 20);
+            this.mskTelefoneResidencial.TabIndex = 1;
+            this.mskTelefoneResidencial.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // gpbSexo
             // 
@@ -385,7 +430,7 @@
             this.gpbSexo.Location = new System.Drawing.Point(149, 125);
             this.gpbSexo.Name = "gpbSexo";
             this.gpbSexo.Size = new System.Drawing.Size(269, 55);
-            this.gpbSexo.TabIndex = 31;
+            this.gpbSexo.TabIndex = 9;
             this.gpbSexo.TabStop = false;
             // 
             // rbtFeminino
@@ -416,56 +461,14 @@
             this.lblSexo.Location = new System.Drawing.Point(12, 130);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(34, 13);
-            this.lblSexo.TabIndex = 32;
+            this.lblSexo.TabIndex = 8;
             this.lblSexo.Text = "Sexo:";
-            // 
-            // mskTelefoneResidencial
-            // 
-            this.mskTelefoneResidencial.Location = new System.Drawing.Point(134, 22);
-            this.mskTelefoneResidencial.Mask = "(99) 0000-0000";
-            this.mskTelefoneResidencial.Name = "mskTelefoneResidencial";
-            this.mskTelefoneResidencial.Size = new System.Drawing.Size(256, 20);
-            this.mskTelefoneResidencial.TabIndex = 27;
-            // 
-            // lblTelefoneComercial
-            // 
-            this.lblTelefoneComercial.AutoSize = true;
-            this.lblTelefoneComercial.Location = new System.Drawing.Point(10, 55);
-            this.lblTelefoneComercial.Name = "lblTelefoneComercial";
-            this.lblTelefoneComercial.Size = new System.Drawing.Size(101, 13);
-            this.lblTelefoneComercial.TabIndex = 28;
-            this.lblTelefoneComercial.Text = "Telefone Comercial:";
-            // 
-            // mskTelefoneComercial
-            // 
-            this.mskTelefoneComercial.Location = new System.Drawing.Point(134, 52);
-            this.mskTelefoneComercial.Mask = "(99) 0000-0000";
-            this.mskTelefoneComercial.Name = "mskTelefoneComercial";
-            this.mskTelefoneComercial.Size = new System.Drawing.Size(256, 20);
-            this.mskTelefoneComercial.TabIndex = 29;
-            // 
-            // lblTelefoneCelular
-            // 
-            this.lblTelefoneCelular.AutoSize = true;
-            this.lblTelefoneCelular.Location = new System.Drawing.Point(10, 85);
-            this.lblTelefoneCelular.Name = "lblTelefoneCelular";
-            this.lblTelefoneCelular.Size = new System.Drawing.Size(87, 13);
-            this.lblTelefoneCelular.TabIndex = 30;
-            this.lblTelefoneCelular.Text = "Telefone Celular:";
-            // 
-            // mskTelefoneCelular
-            // 
-            this.mskTelefoneCelular.Location = new System.Drawing.Point(134, 82);
-            this.mskTelefoneCelular.Mask = "(99) 00000-0000";
-            this.mskTelefoneCelular.Name = "mskTelefoneCelular";
-            this.mskTelefoneCelular.Size = new System.Drawing.Size(256, 20);
-            this.mskTelefoneCelular.TabIndex = 31;
             // 
             // FrmPacienteCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 636);
+            this.ClientSize = new System.Drawing.Size(434, 636);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.gpbSexo);
             this.Controls.Add(this.gpbContato);

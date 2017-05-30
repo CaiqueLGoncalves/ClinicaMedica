@@ -56,6 +56,10 @@ namespace ClinicaMedica.View
             p.CPF = mskCPF.Text;
             p.RG = txbRG.Text;
             p.DataNascimento = dtpDataNascimento.Value;
+            p.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
+            p.TelefoneResidencial = mskTelefoneResidencial.Text;
+            p.TelefoneComercial = mskTelefoneResidencial.Text;
+            p.TelefoneCelular = mskTelefoneCelular.Text;
             p.Email = txbEmail.Text;
             p.Localidade = l;
 
