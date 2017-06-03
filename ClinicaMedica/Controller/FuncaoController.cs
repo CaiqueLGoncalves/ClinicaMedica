@@ -5,21 +5,21 @@ using System.Windows.Forms;
 
 namespace ClinicaMedica.Controller
 {
-    class PacienteController
+    class FuncaoController
     {
         private DataModelContainer db = new DataModelContainer();
 
-        public void Insert(Paciente paciente)
+        public void Insert(Funcao funcao)
         {
-            var erros = Validacao.Validar(paciente);
+            var erros = Validacao.Validar(funcao);
 
             if (erros.Count() == 0)
             {
                 try
                 {
-                    db.TB_Usuario.Add(paciente);
+                    db.TB_Funcao.Add(funcao);
                     db.SaveChanges();
-                    MessageBox.Show("Paciente cadastrado com sucesso!");
+                    MessageBox.Show("Função cadastrada com sucesso!");
                 }
                 /*
                 catch (DbEntityValidationException e)
@@ -40,7 +40,7 @@ namespace ClinicaMedica.Controller
                 */
                 catch (Exception e)
                 {
-                    MessageBox.Show("Não foi possível cadastrar o paciente!\n" + e.Message);
+                    MessageBox.Show("Não foi possível cadastrar a função!\n" + e.Message);
                 }
 
                 Form.ActiveForm.Close();

@@ -1,4 +1,5 @@
-﻿using ClinicaMedica.Model;
+﻿using ClinicaMedica.Controller;
+using ClinicaMedica.Model;
 using System;
 using System.Windows.Forms;
 
@@ -40,6 +41,42 @@ namespace ClinicaMedica.View
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado!");
             }
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            MedicoController medicoCont = new MedicoController();
+            Medico m = new Medico();
+            Localidade l = new Localidade();
+
+            l.CEP = mskCEP.Text;
+            l.Endereco = txbEndereco.Text;
+            l.Numero = txbNumero.Text;
+            l.Complemento = txbComplemento.Text;
+            l.Bairro = txbBairro.Text;
+            l.Cidade = txbCidade.Text;
+            l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
+
+            m.Nome = txbNome.Text;
+            m.CPF = mskCPF.Text;
+            m.RG = txbRG.Text;
+            m.DataNascimento = dtpDataNascimento.Value;
+            m.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
+
+            m.IdFuncao = 1;
+            m.CRM = txbCRM.Text;
+            // Descobrir como colocar as especialidades escolhidas em m.Especialidade
+
+            m.TelefoneResidencial = mskTelefoneResidencial.Text;
+            m.TelefoneComercial = mskTelefoneResidencial.Text;
+            m.TelefoneCelular = mskTelefoneCelular.Text;
+            m.Email = txbEmail.Text;
+
+            m.Localidade = l;
+
+            medicoCont.Insert(m);
+
+            Controls.Clear();
         }
     }
 }

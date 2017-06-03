@@ -22,6 +22,7 @@ namespace ClinicaMedica.Controller
                     db.SaveChanges();
                     MessageBox.Show("Funcionário cadastrado com sucesso!");
                 }
+                /*
                 catch (DbEntityValidationException e)
                 {
                     foreach (var eve in e.EntityValidationErrors)
@@ -37,6 +38,7 @@ namespace ClinicaMedica.Controller
                         }
                     }
                 }
+                */
                 catch (Exception e)
                 {
                     MessageBox.Show("Não foi possível cadastrar o funcionário!\n" + e.Message);

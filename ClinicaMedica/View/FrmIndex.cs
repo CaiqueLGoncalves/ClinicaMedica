@@ -51,5 +51,17 @@ namespace ClinicaMedica.View
             FrmMedicoCadastrar medico = new FrmMedicoCadastrar();
             medico.ShowDialog(this);
         }
+
+        private void cadastrarEspecialidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEspecialidadeCadastrar especialidade = new FrmEspecialidadeCadastrar();
+            especialidade.ShowDialog(this);
+        }
+
+        private void cadastrarFuncaoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFuncaoCadastrar funcao = new FrmFuncaoCadastrar();
+            funcao.ShowDialog(this);
+        }
     }
 }

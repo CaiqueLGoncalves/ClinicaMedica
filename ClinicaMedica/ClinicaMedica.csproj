@@ -64,7 +64,9 @@
       <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controller\ConsultorioController.cs" />
+    <Compile Include="Controller\EspecialidadeController.cs" />
     <Compile Include="Controller\ExameController.cs" />
+    <Compile Include="Controller\FuncaoController.cs" />
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\MedicoController.cs" />
     <Compile Include="Controller\PacienteController.cs" />
@@ -128,6 +130,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmEspecialidadeCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmEspecialidadeCadastrar.Designer.cs">
+      <DependentUpon>FrmEspecialidadeCadastrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmExameCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +159,12 @@
     </Compile>
     <Compile Include="View\FrmExameConsultorio.Designer.cs">
       <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmFuncaoCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFuncaoCadastrar.Designer.cs">
+      <DependentUpon>FrmFuncaoCadastrar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmFuncionarioCadastrar.cs">
       <SubType>Form</SubType>
@@ -191,11 +205,17 @@
     <EmbeddedResource Include="View\FrmConsultorioConsultar.resx">
       <DependentUpon>FrmConsultorioConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmEspecialidadeCadastrar.resx">
+      <DependentUpon>FrmEspecialidadeCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameCadastrar.resx">
       <DependentUpon>FrmExameCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameConsultorio.resx">
       <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFuncaoCadastrar.resx">
+      <DependentUpon>FrmFuncaoCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmFuncionarioCadastrar.resx">
       <DependentUpon>FrmFuncionarioCadastrar.cs</DependentUpon>

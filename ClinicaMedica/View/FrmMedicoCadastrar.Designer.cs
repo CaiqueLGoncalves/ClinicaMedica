@@ -401,6 +401,7 @@
             this.btnCadastrar.Size = new System.Drawing.Size(100, 23);
             this.btnCadastrar.TabIndex = 33;
             this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // dtpDataNascimento
             // 

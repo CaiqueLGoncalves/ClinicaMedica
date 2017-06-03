@@ -33,14 +33,17 @@
             this.consultórioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarMedicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarEspecialidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultórioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.inserirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exameEmConsultóriroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarPacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarFuncaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +65,8 @@
             this.consultórioToolStripMenuItem,
             this.exameToolStripMenuItem,
             this.pacienteToolStripMenuItem,
-            this.funcionarioToolStripMenuItem});
+            this.funcionarioToolStripMenuItem,
+            this.especialidadeToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
@@ -89,11 +93,19 @@
             this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pacienteToolStripMenuItem.Text = "Paciente";
             // 
+            // cadastrarPacienteToolStripMenuItem
+            // 
+            this.cadastrarPacienteToolStripMenuItem.Name = "cadastrarPacienteToolStripMenuItem";
+            this.cadastrarPacienteToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.cadastrarPacienteToolStripMenuItem.Text = "Cadastrar Paciente";
+            this.cadastrarPacienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarPacienteToolStripMenuItem_Click);
+            // 
             // funcionarioToolStripMenuItem
             // 
             this.funcionarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarFuncionarioToolStripMenuItem,
-            this.cadastrarMedicoToolStripMenuItem});
+            this.cadastrarMedicoToolStripMenuItem,
+            this.cadastrarFuncaoToolStripMenuItem});
             this.funcionarioToolStripMenuItem.Name = "funcionarioToolStripMenuItem";
             this.funcionarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.funcionarioToolStripMenuItem.Text = "Funcionário";
@@ -111,6 +123,21 @@
             this.cadastrarMedicoToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.cadastrarMedicoToolStripMenuItem.Text = "Cadastrar Médico";
             this.cadastrarMedicoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarMedicoToolStripMenuItem_Click);
+            // 
+            // especialidadeToolStripMenuItem
+            // 
+            this.especialidadeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarEspecialidadeToolStripMenuItem});
+            this.especialidadeToolStripMenuItem.Name = "especialidadeToolStripMenuItem";
+            this.especialidadeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.especialidadeToolStripMenuItem.Text = "Especialidade";
+            // 
+            // cadastrarEspecialidadeToolStripMenuItem
+            // 
+            this.cadastrarEspecialidadeToolStripMenuItem.Name = "cadastrarEspecialidadeToolStripMenuItem";
+            this.cadastrarEspecialidadeToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.cadastrarEspecialidadeToolStripMenuItem.Text = "Cadastrar Especialidade";
+            this.cadastrarEspecialidadeToolStripMenuItem.Click += new System.EventHandler(this.cadastrarEspecialidadeToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
@@ -142,12 +169,12 @@
             this.exameEmConsultóriroToolStripMenuItem.Text = "Exame em Consultóriro";
             this.exameEmConsultóriroToolStripMenuItem.Click += new System.EventHandler(this.exameEmConsultóriroToolStripMenuItem_Click);
             // 
-            // cadastrarPacienteToolStripMenuItem
+            // cadastrarFuncaoToolStripMenuItem
             // 
-            this.cadastrarPacienteToolStripMenuItem.Name = "cadastrarPacienteToolStripMenuItem";
-            this.cadastrarPacienteToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.cadastrarPacienteToolStripMenuItem.Text = "Cadastrar Paciente";
-            this.cadastrarPacienteToolStripMenuItem.Click += new System.EventHandler(this.cadastrarPacienteToolStripMenuItem_Click);
+            this.cadastrarFuncaoToolStripMenuItem.Name = "cadastrarFuncaoToolStripMenuItem";
+            this.cadastrarFuncaoToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.cadastrarFuncaoToolStripMenuItem.Text = "Cadastrar Função";
+            this.cadastrarFuncaoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarFuncaoToolStripMenuItem_Click);
             // 
             // FrmIndex
             // 
@@ -181,5 +208,8 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrarFuncionarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarMedicoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarPacienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem especialidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarEspecialidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarFuncaoToolStripMenuItem;
     }
 }
