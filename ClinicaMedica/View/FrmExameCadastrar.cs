@@ -28,6 +28,9 @@ namespace ClinicaMedica.View
             ex.Recomendacoes = txbRecomendacoes.Text;
 
             exc.Insert(ex);
+
+            txbNome.Clear();
+            txbRecomendacoes.Clear();
             
         }
     }

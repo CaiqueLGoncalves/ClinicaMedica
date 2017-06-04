@@ -17,7 +17,7 @@ namespace ClinicaMedica.Controller
         public void Insert(Consultorio consultorio)
         {
 
-                var erros = Validacao.ValidaConsultorio(consultorio);
+                var erros = Validacao.Validar(consultorio);
 
 
                 if (erros.Count() == 0)

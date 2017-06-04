@@ -14,7 +14,7 @@ namespace ClinicaMedica.Controller
 
         public void Insert(Exame exame)
         {
-            var erros = Validacao.ValidaExame(exame);
+            var erros = Validacao.Validar(exame);
 
             if (erros.Count() == 0)
             {
