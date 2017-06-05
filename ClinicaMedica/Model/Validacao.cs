@@ -17,13 +17,6 @@ namespace ClinicaMedica.Model
 
 
 
-        public static IEnumerable<ValidationResult> ValidaExameConsultorio(Object objeto)
-        {
-            var erros = new List<ValidationResult>();
-            var contexto = new ValidationContext(objeto, null, null);
 
-            Validator.TryValidateObject(objeto, contexto, erros, true);
-            return erros;
-        }
     }
 }

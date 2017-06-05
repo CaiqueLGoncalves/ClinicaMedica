@@ -90,7 +90,7 @@ namespace ClinicaMedica.View
 
                 m.IdFuncao = 1;
                 m.CRM = txbCRM.Text;
-                m.Especialidade = listaEspecialidades;
+                //m.Especialidade = listaEspecialidades;
 
                 m.TelefoneResidencial = mskTelefoneResidencial.Text;
                 m.TelefoneComercial = mskTelefoneComercial.Text;

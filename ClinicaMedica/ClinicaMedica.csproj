@@ -64,6 +64,7 @@
       <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Controller\ConsultorioController.cs" />
+    <Compile Include="Controller\ConsultorioExameController.cs" />
     <Compile Include="Controller\EspecialidadeController.cs" />
     <Compile Include="Controller\ExameController.cs" />
     <Compile Include="Controller\FuncaoController.cs" />
