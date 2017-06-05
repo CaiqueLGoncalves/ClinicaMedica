@@ -17,7 +17,7 @@ namespace ClinicaMedica.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Especialidade()
         {
-            this.Medico = new HashSet<Medico>();
+            this.MedicoEspecialidade = new HashSet<MedicoEspecialidade>();
         }
     
         public int IdEspecialidade { get; set; }
@@ -25,6 +25,6 @@ namespace ClinicaMedica.Model
         public string Descricao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Medico> Medico { get; set; }
+        public virtual ICollection<MedicoEspecialidade> MedicoEspecialidade { get; set; }
     }
 }

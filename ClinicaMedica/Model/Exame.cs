@@ -18,7 +18,7 @@ namespace ClinicaMedica.Model
         public Exame()
         {
             this.AgendaExame = new HashSet<AgendaExame>();
-            this.Consultorio = new HashSet<Consultorio>();
+            this.ConsultorioExame = new HashSet<ConsultorioExame>();
         }
     
         public int IdExame { get; set; }
@@ -28,6 +28,6 @@ namespace ClinicaMedica.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AgendaExame> AgendaExame { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Consultorio> Consultorio { get; set; }
+        public virtual ICollection<ConsultorioExame> ConsultorioExame { get; set; }
     }
 }

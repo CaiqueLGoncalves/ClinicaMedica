@@ -9,22 +9,24 @@
 
 namespace ClinicaMedica.Model
 {
+    using System;
     using System.Collections.Generic;
-
+    
     public partial class Medico : Funcionario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Medico()
         {
-            Especialidade = new HashSet<Especialidade>();
-            Consulta = new HashSet<Consulta>();
+            this.Consulta = new HashSet<Consulta>();
+            this.MedicoEspecialidade = new HashSet<MedicoEspecialidade>();
         }
     
         public string CRM { get; set; }
+        public int EspecialidadeIdEspecialidade { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Especialidade> Especialidade { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consulta> Consulta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MedicoEspecialidade> MedicoEspecialidade { get; set; }
     }
 }

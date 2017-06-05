@@ -34,5 +34,7 @@ namespace ClinicaMedica.Model
         public virtual DbSet<Exame> TB_Exame { get; set; }
         public virtual DbSet<Consulta> TB_Consulta { get; set; }
         public virtual DbSet<AgendaExame> TB_AgendaExame { get; set; }
+        public virtual DbSet<ConsultorioExame> TB_ConsultorioExame { get; set; }
+        public virtual DbSet<MedicoEspecialidade> TB_MedicoEspecialidade { get; set; }
     }
 }
