@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txbNomeFantasia = new System.Windows.Forms.TextBox();
             this.txbRazaoSocial = new System.Windows.Forms.TextBox();
             this.dtpHorairoAbertura = new System.Windows.Forms.DateTimePicker();
@@ -54,6 +55,13 @@
             this.btnBuscarCep = new System.Windows.Forms.Button();
             this.mskCnpj = new System.Windows.Forms.MaskedTextBox();
             this.mskCep = new System.Windows.Forms.MaskedTextBox();
+            this.lblExames = new System.Windows.Forms.Label();
+            this.lstExame = new System.Windows.Forms.ListBox();
+            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
+            this.tBExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tB_ExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txbNomeFantasia
@@ -247,7 +255,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(214, 438);
+            this.btnCadastrar.Location = new System.Drawing.Point(214, 559);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 24;
@@ -283,11 +291,47 @@
             this.mskCep.TabIndex = 5;
             this.mskCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
+            // lblExames
+            // 
+            this.lblExames.AutoSize = true;
+            this.lblExames.Location = new System.Drawing.Point(108, 448);
+            this.lblExames.Name = "lblExames";
+            this.lblExames.Size = new System.Drawing.Size(44, 13);
+            this.lblExames.TabIndex = 25;
+            this.lblExames.Text = "Exames";
+            // 
+            // lstExame
+            // 
+            this.lstExame.DataSource = this.tBExameBindingSource;
+            this.lstExame.DisplayMember = "Nome";
+            this.lstExame.FormattingEnabled = true;
+            this.lstExame.Location = new System.Drawing.Point(214, 448);
+            this.lstExame.Name = "lstExame";
+            this.lstExame.Size = new System.Drawing.Size(192, 95);
+            this.lstExame.TabIndex = 26;
+            this.lstExame.ValueMember = "IdExame";
+            // 
+            // clinicaMedicaBDDataSet
+            // 
+            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tBExameBindingSource
+            // 
+            this.tBExameBindingSource.DataMember = "TB_Exame";
+            this.tBExameBindingSource.DataSource = this.clinicaMedicaBDDataSet;
+            // 
+            // tB_ExameTableAdapter
+            // 
+            this.tB_ExameTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmConsultorioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 501);
+            this.ClientSize = new System.Drawing.Size(470, 608);
+            this.Controls.Add(this.lstExame);
+            this.Controls.Add(this.lblExames);
             this.Controls.Add(this.mskCep);
             this.Controls.Add(this.mskCnpj);
             this.Controls.Add(this.btnBuscarCep);
@@ -316,6 +360,9 @@
             this.Controls.Add(this.txbNomeFantasia);
             this.Name = "FrmConsultorioCadastrar";
             this.Text = "Cadastro de Consultório";
+            this.Load += new System.EventHandler(this.FrmConsultorioCadastrar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +396,10 @@
         private System.Windows.Forms.Button btnBuscarCep;
         private System.Windows.Forms.MaskedTextBox mskCnpj;
         private System.Windows.Forms.MaskedTextBox mskCep;
+        private System.Windows.Forms.Label lblExames;
+        private System.Windows.Forms.ListBox lstExame;
+        private ClinicaMedicaBDDataSet clinicaMedicaBDDataSet;
+        private System.Windows.Forms.BindingSource tBExameBindingSource;
+        private ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter tB_ExameTableAdapter;
     }
 }
