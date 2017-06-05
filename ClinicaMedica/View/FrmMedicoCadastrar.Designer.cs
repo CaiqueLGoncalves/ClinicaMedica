@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSexo = new System.Windows.Forms.Label();
             this.gpbSexo = new System.Windows.Forms.GroupBox();
             this.rbtFeminino = new System.Windows.Forms.RadioButton();
@@ -70,17 +71,21 @@
             this.txbCRM = new System.Windows.Forms.TextBox();
             this.lblCRM = new System.Windows.Forms.Label();
             this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
-            this.lstEspecialidades = new System.Windows.Forms.ListBox();
+            this.lblEspecialidades = new System.Windows.Forms.Label();
             this.TBEspecialidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
-            this.lblEspecialidades = new System.Windows.Forms.Label();
             this.TB_EspecialidadeTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_EspecialidadeTableAdapter();
+            this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
+            this.IdEspecialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbSexo.SuspendLayout();
             this.gpbContato.SuspendLayout();
             this.gpbLocalidade.SuspendLayout();
             this.gpbDadosProfissionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSexo
@@ -408,7 +413,7 @@
             this.dtpDataNascimento.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataNascimento.Location = new System.Drawing.Point(149, 100);
-            this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 6, 30, 0, 0, 0, 0);
+            this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(269, 20);
@@ -494,7 +499,7 @@
             // 
             // gpbDadosProfissionais
             // 
-            this.gpbDadosProfissionais.Controls.Add(this.lstEspecialidades);
+            this.gpbDadosProfissionais.Controls.Add(this.dgvEspecialidades);
             this.gpbDadosProfissionais.Controls.Add(this.lblEspecialidades);
             this.gpbDadosProfissionais.Controls.Add(this.lblCRM);
             this.gpbDadosProfissionais.Controls.Add(this.txbCRM);
@@ -505,17 +510,14 @@
             this.gpbDadosProfissionais.TabStop = false;
             this.gpbDadosProfissionais.Text = "Dados Profissionais";
             // 
-            // lstEspecialidades
+            // lblEspecialidades
             // 
-            this.lstEspecialidades.DataSource = this.TBEspecialidadeBindingSource;
-            this.lstEspecialidades.DisplayMember = "Nome";
-            this.lstEspecialidades.FormattingEnabled = true;
-            this.lstEspecialidades.Location = new System.Drawing.Point(134, 55);
-            this.lstEspecialidades.Name = "lstEspecialidades";
-            this.lstEspecialidades.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.lstEspecialidades.Size = new System.Drawing.Size(256, 95);
-            this.lstEspecialidades.TabIndex = 32;
-            this.lstEspecialidades.ValueMember = "IdEspecialidade";
+            this.lblEspecialidades.AutoSize = true;
+            this.lblEspecialidades.Location = new System.Drawing.Point(10, 55);
+            this.lblEspecialidades.Name = "lblEspecialidades";
+            this.lblEspecialidades.Size = new System.Drawing.Size(81, 13);
+            this.lblEspecialidades.TabIndex = 31;
+            this.lblEspecialidades.Text = "Especialidades:";
             // 
             // TBEspecialidadeBindingSource
             // 
@@ -527,24 +529,67 @@
             this.ClinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
             this.ClinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // lblEspecialidades
-            // 
-            this.lblEspecialidades.AutoSize = true;
-            this.lblEspecialidades.Location = new System.Drawing.Point(10, 55);
-            this.lblEspecialidades.Name = "lblEspecialidades";
-            this.lblEspecialidades.Size = new System.Drawing.Size(81, 13);
-            this.lblEspecialidades.TabIndex = 31;
-            this.lblEspecialidades.Text = "Especialidades:";
-            // 
             // TB_EspecialidadeTableAdapter
             // 
             this.TB_EspecialidadeTableAdapter.ClearBeforeFill = true;
+            // 
+            // dgvEspecialidades
+            // 
+            this.dgvEspecialidades.AllowUserToAddRows = false;
+            this.dgvEspecialidades.AllowUserToDeleteRows = false;
+            this.dgvEspecialidades.AutoGenerateColumns = false;
+            this.dgvEspecialidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEspecialidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEspecialidade,
+            this.Nome,
+            this.Descricao});
+            this.dgvEspecialidades.DataSource = this.TBEspecialidadeBindingSource;
+            this.dgvEspecialidades.Location = new System.Drawing.Point(134, 55);
+            this.dgvEspecialidades.Name = "dgvEspecialidades";
+            this.dgvEspecialidades.ReadOnly = true;
+            this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEspecialidades.Size = new System.Drawing.Size(256, 95);
+            this.dgvEspecialidades.TabIndex = 32;
+            // 
+            // IdEspecialidade
+            // 
+            this.IdEspecialidade.DataPropertyName = "IdEspecialidade";
+            this.IdEspecialidade.HeaderText = "IdEspecialidade";
+            this.IdEspecialidade.Name = "IdEspecialidade";
+            this.IdEspecialidade.ReadOnly = true;
+            this.IdEspecialidade.Visible = false;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Lista de Especialidades";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Visible = false;
             // 
             // FrmMedicoCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 811);
+            this.ClientSize = new System.Drawing.Size(429, 811);
             this.Controls.Add(this.gpbDadosProfissionais);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.gpbSexo);
@@ -564,7 +609,7 @@
             this.Name = "FrmMedicoCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Médicos";
-            this.Activated += new System.EventHandler(this.FrmMedicoCadastrar_Activated);
+            this.Load += new System.EventHandler(this.FrmMedicoCadastrar_Load);
             this.gpbSexo.ResumeLayout(false);
             this.gpbSexo.PerformLayout();
             this.gpbContato.ResumeLayout(false);
@@ -575,6 +620,7 @@
             this.gpbDadosProfissionais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,9 +670,12 @@
         private System.Windows.Forms.Label lblCRM;
         private System.Windows.Forms.GroupBox gpbDadosProfissionais;
         private System.Windows.Forms.Label lblEspecialidades;
-        private System.Windows.Forms.ListBox lstEspecialidades;
         private ClinicaMedicaBDDataSet ClinicaMedicaBDDataSet;
         private System.Windows.Forms.BindingSource TBEspecialidadeBindingSource;
         private ClinicaMedicaBDDataSetTableAdapters.TB_EspecialidadeTableAdapter TB_EspecialidadeTableAdapter;
+        private System.Windows.Forms.DataGridView dgvEspecialidades;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEspecialidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
     }
 }

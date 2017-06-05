@@ -72,6 +72,7 @@ namespace ClinicaMedica.Model
                 case 24: return "SP";
                 case 25: return "SE";
                 case 26: return "TO";
+                case -1: throw new ArgumentException("Por favor, escolha uma UF!");
                 default: throw new ArgumentException("UF Inexistente!");
             }
         }

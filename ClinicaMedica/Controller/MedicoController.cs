@@ -1,8 +1,8 @@
 ﻿using ClinicaMedica.Model;
 using System;
-using System.Data.Entity.Validation;
 using System.Linq;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Data.Entity.Validation;
 
 namespace ClinicaMedica.Controller
 {
@@ -10,48 +10,52 @@ namespace ClinicaMedica.Controller
     {
         private DataModelContainer db = new DataModelContainer();
 
-        public void Insert(Medico medico)
+        public List<string> Insert(Medico medico)
         {
             var erros = Validacao.Validar(medico);
 
-            if (erros.Count() == 0)
+            try
             {
-                try
+                if (erros.Count() == 0)
                 {
                     db.TB_Usuario.Add(medico);
                     db.SaveChanges();
-                    MessageBox.Show("Funcionário cadastrado com sucesso!");
+                    return null;
                 }
-                /*
-                catch (DbEntityValidationException e)
+                else
                 {
-                    foreach (var eve in e.EntityValidationErrors)
+                    List<string> listaErros = new List<string>();
+
+                    foreach (var erro in erros)
                     {
-                        Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                            eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                        foreach (var ve in eve.ValidationErrors)
-                        {
-                            Console.WriteLine("- Property: \"{0}\", Value: \"{1}\", Error: \"{2}\"",
-                                ve.PropertyName,
-                                eve.Entry.CurrentValues.GetValue<object>(ve.PropertyName),
-                                ve.ErrorMessage);
-                        }
+                        listaErros.Add(erro.ErrorMessage);
+                    }
+
+                    return listaErros;
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var evError in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entidade do tipo \"{0}\" no estado \"{1}\" possui os seguintes erros de validação: ",
+                                       evError.Entry.Entity.GetType().Name,
+                                       evError.Entry.State);
+
+                    foreach (var valError in evError.ValidationErrors)
+                    {
+                        Console.WriteLine("- Propriedade: \"{0}\", Valor: \"{1}\", Erro: \"{2}\"",
+                                          valError.PropertyName,
+                                          evError.Entry.CurrentValues.GetValue<object>(valError.PropertyName),
+                                          valError.ErrorMessage);
                     }
                 }
-                */
-                catch (Exception e)
-                {
-                    MessageBox.Show("Não foi possível cadastrar o funcionário!\n" + e.Message);
-                }
 
-                Form.ActiveForm.Close();
+                throw new Exception("Erro Interno. Por favor, contate o(s) administrador(es) do sistema.", ex);
             }
-            else
+            catch (Exception ex)
             {
-                foreach (var e in erros)
-                {
-                    MessageBox.Show(e.ToString());
-                }
+                throw new Exception("Não foi possível cadastrar o médico.", ex);
             }
         }
     }

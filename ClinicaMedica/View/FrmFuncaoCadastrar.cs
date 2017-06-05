@@ -14,14 +14,33 @@ namespace ClinicaMedica.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            FuncaoController funcaoCont = new FuncaoController();
-            Funcao f = new Funcao();
+            try
+            {
+                FuncaoController funcaoCont = new FuncaoController();
+                Funcao f = new Funcao();
 
-            f.Nome = txbNome.Text;
-            f.Descricao = txbDescricao.Text;
+                f.Nome = txbNome.Text;
+                f.Descricao = txbDescricao.Text;
 
-            funcaoCont.Insert(f);
-            Controls.Clear();
+                var resultado = funcaoCont.Insert(f);
+
+                if (resultado == null)
+                {
+                    MessageBox.Show("Função cadastrada com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    foreach (var erro in resultado)
+                    {
+                        MessageBox.Show("Não foi possível cadastrar a função!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

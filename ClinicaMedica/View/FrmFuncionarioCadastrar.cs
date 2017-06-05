@@ -35,43 +35,61 @@ namespace ClinicaMedica.View
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possível encontrar o CEP informado!");
+                MessageBox.Show("Não foi possível encontrar o CEP informado!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            FuncionarioController funcCont = new FuncionarioController();
-            Funcionario f = new Funcionario();
-            Localidade l = new Localidade();
+            try
+            {
+                FuncionarioController funcCont = new FuncionarioController();
+                Funcionario f = new Funcionario();
+                Localidade l = new Localidade();
 
-            l.CEP = mskCEP.Text;
-            l.Endereco = txbEndereco.Text;
-            l.Numero = txbNumero.Text;
-            l.Complemento = txbComplemento.Text;
-            l.Bairro = txbBairro.Text;
-            l.Cidade = txbCidade.Text;
-            l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
+                l.CEP = mskCEP.Text;
+                l.Endereco = txbEndereco.Text;
+                l.Numero = txbNumero.Text;
+                l.Complemento = txbComplemento.Text;
+                l.Bairro = txbBairro.Text;
+                l.Cidade = txbCidade.Text;
+                l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
 
-            f.Nome = txbNome.Text;
-            f.CPF = mskCPF.Text;
-            f.RG = txbRG.Text;
-            f.DataNascimento = dtpDataNascimento.Value;
-            f.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
-            f.TelefoneResidencial = mskTelefoneResidencial.Text;
-            f.TelefoneComercial = mskTelefoneResidencial.Text;
-            f.TelefoneCelular = mskTelefoneCelular.Text;
-            f.IdFuncao = int.Parse(cmbFuncao.SelectedValue.ToString());
-            f.Email = txbEmail.Text;
-            f.Localidade = l;
+                f.Nome = txbNome.Text;
+                f.CPF = mskCPF.Text;
+                f.RG = txbRG.Text;
+                f.DataNascimento = dtpDataNascimento.Value;
+                f.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
+                f.TelefoneResidencial = mskTelefoneResidencial.Text;
+                f.TelefoneComercial = mskTelefoneResidencial.Text;
+                f.TelefoneCelular = mskTelefoneCelular.Text;
+                f.IdFuncao = int.Parse(cmbFuncao.SelectedValue.ToString());
+                f.Email = txbEmail.Text;
+                f.Localidade = l;
 
-            funcCont.Insert(f);
+                var resultado = funcCont.Insert(f);
 
-            Controls.Clear();
+                if (resultado == null)
+                {
+                    MessageBox.Show("Funcionário cadastrado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    foreach (var erro in resultado)
+                    {
+                        MessageBox.Show("Não foi possível cadastrar o funcionário!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
