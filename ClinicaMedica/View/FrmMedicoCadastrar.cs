@@ -1,6 +1,8 @@
 ﻿using ClinicaMedica.Controller;
 using ClinicaMedica.Model;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ClinicaMedica.View
@@ -65,7 +67,6 @@ namespace ClinicaMedica.View
 
             m.IdFuncao = 1;
             m.CRM = txbCRM.Text;
-            // Descobrir como colocar as especialidades escolhidas em m.Especialidade
 
             m.TelefoneResidencial = mskTelefoneResidencial.Text;
             m.TelefoneComercial = mskTelefoneResidencial.Text;
@@ -74,7 +75,7 @@ namespace ClinicaMedica.View
 
             m.Localidade = l;
 
-            medicoCont.Insert(m);
+            // medicoCont.Insert(m);
 
             Controls.Clear();
         }

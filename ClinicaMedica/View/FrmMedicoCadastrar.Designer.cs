@@ -512,7 +512,7 @@
             this.lstEspecialidades.FormattingEnabled = true;
             this.lstEspecialidades.Location = new System.Drawing.Point(134, 55);
             this.lstEspecialidades.Name = "lstEspecialidades";
-            this.lstEspecialidades.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lstEspecialidades.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lstEspecialidades.Size = new System.Drawing.Size(256, 95);
             this.lstEspecialidades.TabIndex = 32;
             this.lstEspecialidades.ValueMember = "IdEspecialidade";

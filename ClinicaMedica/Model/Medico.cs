@@ -9,16 +9,15 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
     using System.Collections.Generic;
-    
+
     public partial class Medico : Funcionario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Medico()
         {
-            this.Especialidade = new HashSet<Especialidade>();
-            this.Consulta = new HashSet<Consulta>();
+            Especialidade = new HashSet<Especialidade>();
+            Consulta = new HashSet<Consulta>();
         }
     
         public string CRM { get; set; }
