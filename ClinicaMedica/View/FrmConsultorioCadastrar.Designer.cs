@@ -56,12 +56,18 @@
             this.mskCnpj = new System.Windows.Forms.MaskedTextBox();
             this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.lblExames = new System.Windows.Forms.Label();
-            this.lstExame = new System.Windows.Forms.ListBox();
-            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.tBExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.tB_ExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
+            this.dtgExame = new System.Windows.Forms.DataGridView();
+            this.tBExameBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.IdExame = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recomendacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // txbNomeFantasia
@@ -255,7 +261,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(214, 559);
+            this.btnCadastrar.Location = new System.Drawing.Point(108, 518);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 24;
@@ -300,37 +306,72 @@
             this.lblExames.TabIndex = 25;
             this.lblExames.Text = "Exames";
             // 
-            // lstExame
+            // tBExameBindingSource
             // 
-            this.lstExame.DataSource = this.tBExameBindingSource;
-            this.lstExame.DisplayMember = "Nome";
-            this.lstExame.FormattingEnabled = true;
-            this.lstExame.Location = new System.Drawing.Point(214, 448);
-            this.lstExame.Name = "lstExame";
-            this.lstExame.Size = new System.Drawing.Size(192, 95);
-            this.lstExame.TabIndex = 26;
-            this.lstExame.ValueMember = "IdExame";
+            this.tBExameBindingSource.DataMember = "TB_Exame";
+            this.tBExameBindingSource.DataSource = this.clinicaMedicaBDDataSet;
             // 
             // clinicaMedicaBDDataSet
             // 
             this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
             this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tBExameBindingSource
-            // 
-            this.tBExameBindingSource.DataMember = "TB_Exame";
-            this.tBExameBindingSource.DataSource = this.clinicaMedicaBDDataSet;
-            // 
             // tB_ExameTableAdapter
             // 
             this.tB_ExameTableAdapter.ClearBeforeFill = true;
+            // 
+            // dtgExame
+            // 
+            this.dtgExame.AllowUserToAddRows = false;
+            this.dtgExame.AllowUserToDeleteRows = false;
+            this.dtgExame.AutoGenerateColumns = false;
+            this.dtgExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgExame.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdExame,
+            this.nomeDataGridViewTextBoxColumn,
+            this.recomendacoesDataGridViewTextBoxColumn});
+            this.dtgExame.DataSource = this.tBExameBindingSource1;
+            this.dtgExame.Location = new System.Drawing.Point(214, 448);
+            this.dtgExame.Name = "dtgExame";
+            this.dtgExame.ReadOnly = true;
+            this.dtgExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgExame.Size = new System.Drawing.Size(240, 151);
+            this.dtgExame.TabIndex = 26;
+            // 
+            // tBExameBindingSource1
+            // 
+            this.tBExameBindingSource1.DataMember = "TB_Exame";
+            this.tBExameBindingSource1.DataSource = this.clinicaMedicaBDDataSet;
+            // 
+            // IdExame
+            // 
+            this.IdExame.DataPropertyName = "IdExame";
+            this.IdExame.HeaderText = "IdExame";
+            this.IdExame.Name = "IdExame";
+            this.IdExame.ReadOnly = true;
+            this.IdExame.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // recomendacoesDataGridViewTextBoxColumn
+            // 
+            this.recomendacoesDataGridViewTextBoxColumn.DataPropertyName = "Recomendacoes";
+            this.recomendacoesDataGridViewTextBoxColumn.HeaderText = "Recomendacoes";
+            this.recomendacoesDataGridViewTextBoxColumn.Name = "recomendacoesDataGridViewTextBoxColumn";
+            this.recomendacoesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.recomendacoesDataGridViewTextBoxColumn.Visible = false;
             // 
             // FrmConsultorioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 608);
-            this.Controls.Add(this.lstExame);
+            this.ClientSize = new System.Drawing.Size(472, 611);
+            this.Controls.Add(this.dtgExame);
             this.Controls.Add(this.lblExames);
             this.Controls.Add(this.mskCep);
             this.Controls.Add(this.mskCnpj);
@@ -361,8 +402,10 @@
             this.Name = "FrmConsultorioCadastrar";
             this.Text = "Cadastro de Consultório";
             this.Load += new System.EventHandler(this.FrmConsultorioCadastrar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -397,9 +440,13 @@
         private System.Windows.Forms.MaskedTextBox mskCnpj;
         private System.Windows.Forms.MaskedTextBox mskCep;
         private System.Windows.Forms.Label lblExames;
-        private System.Windows.Forms.ListBox lstExame;
         private ClinicaMedicaBDDataSet clinicaMedicaBDDataSet;
         private System.Windows.Forms.BindingSource tBExameBindingSource;
         private ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter tB_ExameTableAdapter;
+        private System.Windows.Forms.DataGridView dtgExame;
+        private System.Windows.Forms.BindingSource tBExameBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdExame;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recomendacoesDataGridViewTextBoxColumn;
     }
 }

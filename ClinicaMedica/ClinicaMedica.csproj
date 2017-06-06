@@ -144,6 +144,12 @@
     <Compile Include="View\FrmEspecialidadeCadastrar.Designer.cs">
       <DependentUpon>FrmEspecialidadeCadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmExameAgendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmExameAgendar.Designer.cs">
+      <DependentUpon>FrmExameAgendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmExameCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmEspecialidadeCadastrar.resx">
       <DependentUpon>FrmEspecialidadeCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmExameAgendar.resx">
+      <DependentUpon>FrmExameAgendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameCadastrar.resx">
       <DependentUpon>FrmExameCadastrar.cs</DependentUpon>

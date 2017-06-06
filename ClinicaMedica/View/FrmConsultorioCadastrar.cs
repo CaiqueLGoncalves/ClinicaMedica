@@ -61,25 +61,21 @@ namespace ClinicaMedica.View
             l.Bairro = txbBairro.Text;
             l.Cidade = txbCidade.Text;
             l.Estado = txbEstado.Text;
-            ce.IdConsultorio = c.IdConsultorio;
-            var exames = lstExame.Items.Cast<Int32>().ToList();
-
-            foreach (int ex in exames)
-            {
-                ce.IdExame = ex;
-                conexCont.Insert(ce);
-            }
-            //ce.IdExame = 
-            //var exames = lstExame.Items.Cast<Exame>().ToList();
-           // c.Exame.Add(lstExame.Items.Cast<Exame>().ToList());
-            //c.Exame = exames;
-           // List <Exame> exames = new List<Exame>();
-           // ICollection<Exame> exames = new ICollection<Exame>();
-            //exames.Add
-            //ex.IdExame = lstExame.SelectedItems;
             c.Localidade = l;
             consultCont.Insert(c);
-            this.Controls.Clear();
+            //ce.IdConsultorio = c.IdConsultorio;
+
+            for (int i = 0; i < dtgExame.SelectedRows.Count; i++)
+            {
+                ce = new ConsultorioExame();
+                ce.IdConsultorio = c.IdConsultorio;
+                ce.IdExame = int.Parse(dtgExame.SelectedRows[i].Cells["IdExame"].Value.ToString());
+                MessageBox.Show(c.IdConsultorio.ToString() + " " + ce.IdExame.ToString());
+                  conexCont.Insert(ce);
+            }
+
+
+            //consultCont.Insert(c);
         }
 
         private void FrmConsultorioCadastrar_Load(object sender, EventArgs e)
