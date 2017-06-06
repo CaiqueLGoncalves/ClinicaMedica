@@ -1,37 +1,29 @@
 ﻿using ClinicaMedica.Model;
 using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Data.Entity.Validation;
 
 namespace ClinicaMedica.Controller
 {
-    class MedicoController
+    class MedicoEspecialidadeController
     {
         private DataModelContainer db = new DataModelContainer();
 
-        public List<string> Insert(Medico medico)
+        public int Insert(MedicoEspecialidade medicoEspecialidade)
         {
-            var erros = Validacao.Validar(medico);
+            var erros = Validacao.Validar(medicoEspecialidade);
 
             try
             {
                 if (erros.Count() == 0)
                 {
-                    db.TB_Usuario.Add(medico);
+                    db.TB_MedicoEspecialidade.Add(medicoEspecialidade);
                     db.SaveChanges();
-                    return null;
+                    return 0;
                 }
                 else
                 {
-                    List<string> listaErros = new List<string>();
-
-                    foreach (var erro in erros)
-                    {
-                        listaErros.Add(erro.ErrorMessage);
-                    }
-
-                    return listaErros;
+                    return erros.Count();
                 }
             }
             catch (DbEntityValidationException ex)
@@ -55,7 +47,7 @@ namespace ClinicaMedica.Controller
             }
             catch (Exception ex)
             {
-                throw new Exception("Não foi possível cadastrar o médico!\n" + ex.Message);
+                throw new Exception("Não foi possível adicionar esta especialidade ao médico!\n" + ex.Message);
             }
         }
     }

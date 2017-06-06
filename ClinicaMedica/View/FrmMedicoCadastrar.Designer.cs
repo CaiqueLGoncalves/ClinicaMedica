@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblSexo = new System.Windows.Forms.Label();
             this.gpbSexo = new System.Windows.Forms.GroupBox();
             this.rbtFeminino = new System.Windows.Forms.RadioButton();
@@ -71,21 +71,21 @@
             this.txbCRM = new System.Windows.Forms.TextBox();
             this.lblCRM = new System.Windows.Forms.Label();
             this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
-            this.lblEspecialidades = new System.Windows.Forms.Label();
-            this.TBEspecialidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
-            this.TB_EspecialidadeTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_EspecialidadeTableAdapter();
             this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
             this.IdEspecialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TBEspecialidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
+            this.lblEspecialidades = new System.Windows.Forms.Label();
+            this.TB_EspecialidadeTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_EspecialidadeTableAdapter();
             this.gpbSexo.SuspendLayout();
             this.gpbContato.SuspendLayout();
             this.gpbLocalidade.SuspendLayout();
             this.gpbDadosProfissionais.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             this.SuspendLayout();
             // 
             // lblSexo
@@ -153,7 +153,7 @@
             this.mskTelefoneCelular.Name = "mskTelefoneCelular";
             this.mskTelefoneCelular.Size = new System.Drawing.Size(256, 20);
             this.mskTelefoneCelular.TabIndex = 5;
-            this.mskTelefoneCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.mskTelefoneCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblTelefoneCelular
             // 
@@ -171,7 +171,7 @@
             this.mskTelefoneComercial.Name = "mskTelefoneComercial";
             this.mskTelefoneComercial.Size = new System.Drawing.Size(256, 20);
             this.mskTelefoneComercial.TabIndex = 3;
-            this.mskTelefoneComercial.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.mskTelefoneComercial.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblTelefoneComercial
             // 
@@ -510,29 +510,6 @@
             this.gpbDadosProfissionais.TabStop = false;
             this.gpbDadosProfissionais.Text = "Dados Profissionais";
             // 
-            // lblEspecialidades
-            // 
-            this.lblEspecialidades.AutoSize = true;
-            this.lblEspecialidades.Location = new System.Drawing.Point(10, 55);
-            this.lblEspecialidades.Name = "lblEspecialidades";
-            this.lblEspecialidades.Size = new System.Drawing.Size(81, 13);
-            this.lblEspecialidades.TabIndex = 31;
-            this.lblEspecialidades.Text = "Especialidades:";
-            // 
-            // TBEspecialidadeBindingSource
-            // 
-            this.TBEspecialidadeBindingSource.DataMember = "TB_Especialidade";
-            this.TBEspecialidadeBindingSource.DataSource = this.ClinicaMedicaBDDataSet;
-            // 
-            // ClinicaMedicaBDDataSet
-            // 
-            this.ClinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
-            this.ClinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // TB_EspecialidadeTableAdapter
-            // 
-            this.TB_EspecialidadeTableAdapter.ClearBeforeFill = true;
-            // 
             // dgvEspecialidades
             // 
             this.dgvEspecialidades.AllowUserToAddRows = false;
@@ -540,14 +517,14 @@
             this.dgvEspecialidades.AutoGenerateColumns = false;
             this.dgvEspecialidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEspecialidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEspecialidade,
@@ -585,6 +562,29 @@
             this.Descricao.ReadOnly = true;
             this.Descricao.Visible = false;
             // 
+            // TBEspecialidadeBindingSource
+            // 
+            this.TBEspecialidadeBindingSource.DataMember = "TB_Especialidade";
+            this.TBEspecialidadeBindingSource.DataSource = this.ClinicaMedicaBDDataSet;
+            // 
+            // ClinicaMedicaBDDataSet
+            // 
+            this.ClinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.ClinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblEspecialidades
+            // 
+            this.lblEspecialidades.AutoSize = true;
+            this.lblEspecialidades.Location = new System.Drawing.Point(10, 55);
+            this.lblEspecialidades.Name = "lblEspecialidades";
+            this.lblEspecialidades.Size = new System.Drawing.Size(81, 13);
+            this.lblEspecialidades.TabIndex = 31;
+            this.lblEspecialidades.Text = "Especialidades:";
+            // 
+            // TB_EspecialidadeTableAdapter
+            // 
+            this.TB_EspecialidadeTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmMedicoCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,9 +618,9 @@
             this.gpbLocalidade.PerformLayout();
             this.gpbDadosProfissionais.ResumeLayout(false);
             this.gpbDadosProfissionais.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

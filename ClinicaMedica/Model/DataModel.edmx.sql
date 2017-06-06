@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/05/2017 19:48:31
+-- Date Created: 06/05/2017 21:31:43
 -- Generated from EDMX file: C:\Users\Caique\Documents\Visual Studio 2015\Projects\ClinicaMedica\ClinicaMedica\Model\DataModel.edmx
 -- --------------------------------------------------
 
@@ -131,8 +131,8 @@ CREATE TABLE [dbo].[TB_Usuario] (
     [RG] nvarchar(12)  NULL,
     [DataNascimento] datetime  NOT NULL,
     [Sexo] nvarchar(10)  NOT NULL,
-    [TelefoneResidencial] nvarchar(12)  NULL,
-    [TelefoneComercial] nvarchar(12)  NULL,
+    [TelefoneResidencial] nvarchar(15)  NULL,
+    [TelefoneComercial] nvarchar(15)  NULL,
     [TelefoneCelular] nvarchar(15)  NULL,
     [Email] nvarchar(100)  NULL,
     [IdLocalidade] int  NOT NULL
@@ -168,7 +168,7 @@ CREATE TABLE [dbo].[TB_Consultorio] (
     [CNPJ] nvarchar(14)  NOT NULL,
     [HorarioAbertura] time  NOT NULL,
     [HorarioFechamento] time  NOT NULL,
-    [Telefone] nvarchar(12)  NULL,
+    [Telefone] nvarchar(15)  NULL,
     [Localidade_IdLocalidade] int  NOT NULL
 );
 GO
@@ -255,7 +255,6 @@ GO
 -- Creating table 'TB_Usuario_Medico'
 CREATE TABLE [dbo].[TB_Usuario_Medico] (
     [CRM] nvarchar(10)  NOT NULL,
-    [EspecialidadeIdEspecialidade] int  NOT NULL,
     [Identificacao] int  NOT NULL
 );
 GO

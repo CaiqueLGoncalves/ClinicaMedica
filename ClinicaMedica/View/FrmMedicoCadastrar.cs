@@ -54,19 +54,14 @@ namespace ClinicaMedica.View
 
                 /* Lista de Especialidades do Médico */
 
-                List<Especialidade> listaEspecialidades = new List<Especialidade>();
+                List<int> listaIdEspecialidade = new List<int>();
 
                 for (int i = 0; i < dgvEspecialidades.SelectedRows.Count; i++)
                 {
-                    Especialidade esp = new Especialidade();
-                    esp.IdEspecialidade = int.Parse(dgvEspecialidades.SelectedRows[i].Cells["IdEspecialidade"].Value.ToString());
-                    esp.Nome = dgvEspecialidades.SelectedRows[i].Cells["Nome"].Value.ToString();
-                    esp.Descricao = dgvEspecialidades.SelectedRows[i].Cells["Descricao"].Value.ToString();
-
-                    listaEspecialidades.Add(esp);
+                    listaIdEspecialidade.Add(int.Parse(dgvEspecialidades.SelectedRows[i].Cells["IdEspecialidade"].Value.ToString()));
                 }
 
-                listaEspecialidades = listaEspecialidades.OrderBy(esp => esp.IdEspecialidade).ToList();
+                listaIdEspecialidade.Sort();
 
                 /* Localidade do Médico */
 
@@ -90,7 +85,6 @@ namespace ClinicaMedica.View
 
                 m.IdFuncao = 1;
                 m.CRM = txbCRM.Text;
-                m.Especialidade = listaEspecialidades;
 
                 m.TelefoneResidencial = mskTelefoneResidencial.Text;
                 m.TelefoneComercial = mskTelefoneComercial.Text;
@@ -103,7 +97,27 @@ namespace ClinicaMedica.View
 
                 if (resultado == null)
                 {
-                    MessageBox.Show("Médico cadastrado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MedicoEspecialidadeController meCont = new MedicoEspecialidadeController();
+                    int numeroErros = 0;
+
+                    foreach (var IdEsp in listaIdEspecialidade)
+                    {
+                        MedicoEspecialidade me = new MedicoEspecialidade();
+                        me.IdentificacaoMedico = m.Identificacao;
+                        me.IdEspecialidade = IdEsp;
+
+                        numeroErros += meCont.Insert(me);
+                    }
+
+                    if (numeroErros == 0)
+                    {
+                        MessageBox.Show("Médico cadastrado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Médico cadastrado, porém com erros.", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
                     Close();
                 }
                 else

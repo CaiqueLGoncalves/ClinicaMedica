@@ -55,7 +55,7 @@ namespace ClinicaMedica.Controller
             }
             catch (Exception ex)
             {
-                throw new Exception("Não foi possível cadastrar o funcionário.", ex);
+                throw new Exception("Não foi possível cadastrar o funcionário!\n" + ex.Message);
             }
         }
     }

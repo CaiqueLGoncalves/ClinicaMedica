@@ -69,6 +69,7 @@
     <Compile Include="Controller\FuncaoController.cs" />
     <Compile Include="Controller\FuncionarioController.cs" />
     <Compile Include="Controller\MedicoController.cs" />
+    <Compile Include="Controller\MedicoEspecialidadeController.cs" />
     <Compile Include="Controller\PacienteController.cs" />
     <Compile Include="Model\AgendaExame.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
