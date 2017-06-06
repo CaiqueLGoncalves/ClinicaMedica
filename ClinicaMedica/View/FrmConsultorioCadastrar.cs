@@ -44,8 +44,10 @@ namespace ClinicaMedica.View
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             ConsultorioController consultCont = new ConsultorioController();
+            ConsultorioExameController conexCont = new ConsultorioExameController();
             Consultorio c = new Consultorio();
             Localidade l = new Localidade();
+            ConsultorioExame ce = new ConsultorioExame();
             //Exame ex = new Model.Exame();
             c.NomeFantasia = txbNomeFantasia.Text;
             c.RazaoSocial = txbRazaoSocial.Text;
@@ -59,6 +61,15 @@ namespace ClinicaMedica.View
             l.Bairro = txbBairro.Text;
             l.Cidade = txbCidade.Text;
             l.Estado = txbEstado.Text;
+            ce.IdConsultorio = c.IdConsultorio;
+            var exames = lstExame.Items.Cast<Int32>().ToList();
+
+            foreach (int ex in exames)
+            {
+                ce.IdExame = ex;
+                conexCont.Insert(ce);
+            }
+            //ce.IdExame = 
             //var exames = lstExame.Items.Cast<Exame>().ToList();
            // c.Exame.Add(lstExame.Items.Cast<Exame>().ToList());
             //c.Exame = exames;
