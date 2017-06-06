@@ -24,12 +24,12 @@ namespace ClinicaMedica.Controller
                 {
                     db.TB_ConsultorioExame.Add(conex);
                     db.SaveChanges();
-                   // MessageBox.Show("Consultório cadastrado com sucesso!");
+                    MessageBox.Show("Especialidades adicionadas ao consultório!");
                 }
 
                 catch (Exception e)
                 {
-                //    MessageBox.Show("Não foi possível cadastrar o consultório!\n" + e.Message);
+                   MessageBox.Show("Não foi possível cadastrar as especialidades no consultório!\n" + e.Message);
                 }
                 //  CadastroCargo.ActiveForm.Close();
 
