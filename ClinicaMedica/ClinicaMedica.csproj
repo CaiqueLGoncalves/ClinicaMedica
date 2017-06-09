@@ -144,6 +144,12 @@
     <Compile Include="View\FrmEspecialidadeCadastrar.Designer.cs">
       <DependentUpon>FrmEspecialidadeCadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmEspecialidadeConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmEspecialidadeConsultar.Designer.cs">
+      <DependentUpon>FrmEspecialidadeConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmExameAgendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,12 @@
     <Compile Include="View\FrmFuncaoCadastrar.Designer.cs">
       <DependentUpon>FrmFuncaoCadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmFuncaoConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFuncaoConsultar.Designer.cs">
+      <DependentUpon>FrmFuncaoConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmFuncionarioCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     <Compile Include="View\FrmPacienteCadastrar.Designer.cs">
       <DependentUpon>FrmPacienteCadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmPacienteConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmPacienteConsultar.Designer.cs">
+      <DependentUpon>FrmPacienteConsultar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -222,6 +240,9 @@
     <EmbeddedResource Include="View\FrmEspecialidadeCadastrar.resx">
       <DependentUpon>FrmEspecialidadeCadastrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmEspecialidadeConsultar.resx">
+      <DependentUpon>FrmEspecialidadeConsultar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameAgendar.resx">
       <DependentUpon>FrmExameAgendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +255,9 @@
     <EmbeddedResource Include="View\FrmFuncaoCadastrar.resx">
       <DependentUpon>FrmFuncaoCadastrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFuncaoConsultar.resx">
+      <DependentUpon>FrmFuncaoConsultar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmFuncionarioCadastrar.resx">
       <DependentUpon>FrmFuncionarioCadastrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPacienteCadastrar.resx">
       <DependentUpon>FrmPacienteCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmPacienteConsultar.resx">
+      <DependentUpon>FrmPacienteConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
