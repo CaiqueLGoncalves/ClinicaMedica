@@ -78,7 +78,7 @@ namespace ClinicaMedica.Controller
                             CEP = paciente.Localidade.CEP,
                             Endereco = paciente.Localidade.Endereco,
                             Numero = paciente.Localidade.Numero,
-                            Complemeneto = paciente.Localidade.Complemento,
+                            Complemento = paciente.Localidade.Complemento,
                             Bairro = paciente.Localidade.Bairro,
                             Cidade = paciente.Localidade.Cidade,
                             Estado = paciente.Localidade.Estado

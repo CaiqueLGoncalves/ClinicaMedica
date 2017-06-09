@@ -2,15 +2,15 @@
 
 namespace ClinicaMedica.Model
 {
-    internal class ConsultaMedico
+    internal class ConsultaFuncionario
     {
         public int Codigo { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
-        public string CRM { get; set; }
         public DateTime DataNascimento { get; set; }
         public string Sexo { get; set; }
+        public string Funcao { get; set; }
         public string TelefoneResidencial { get; set; }
         public string TelefoneComercial { get; set; }
         public string TelefoneCelular { get; set; }
