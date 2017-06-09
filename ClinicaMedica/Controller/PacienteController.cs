@@ -61,29 +61,27 @@ namespace ClinicaMedica.Controller
 
         public List<ConsultaPaciente> Select()
         {
-            var query = from usuario in db.TB_Usuario
-                        join paciente in db.TB_Usuario_Paciente
-                        on usuario.Identificacao equals paciente.Identificacao
-                        orderby usuario.Identificacao ascending
+            var query = from paciente in db.TB_Usuario_Paciente
+                        orderby paciente.Identificacao ascending
                         select new ConsultaPaciente
                         {
-                            Codigo = usuario.Identificacao,
-                            Nome = usuario.Nome,
-                            CPF = usuario.CPF,
-                            RG = usuario.RG,
-                            DataNascimento = usuario.DataNascimento,
-                            Sexo = usuario.Sexo,
-                            TelefoneResidencial = usuario.TelefoneResidencial,
-                            TelefoneComercial = usuario.TelefoneComercial,
-                            TelefoneCelular = usuario.TelefoneCelular,
-                            Email = usuario.Email,
-                            CEP = usuario.Localidade.CEP,
-                            Endereco = usuario.Localidade.Endereco,
-                            Numero = usuario.Localidade.Numero,
-                            Complemeneto = usuario.Localidade.Complemento,
-                            Bairro = usuario.Localidade.Bairro,
-                            Cidade = usuario.Localidade.Cidade,
-                            Estado = usuario.Localidade.Estado
+                            Codigo = paciente.Identificacao,
+                            Nome = paciente.Nome,
+                            CPF = paciente.CPF,
+                            RG = paciente.RG,
+                            DataNascimento = paciente.DataNascimento,
+                            Sexo = paciente.Sexo,
+                            TelefoneResidencial = paciente.TelefoneResidencial,
+                            TelefoneComercial = paciente.TelefoneComercial,
+                            TelefoneCelular = paciente.TelefoneCelular,
+                            Email = paciente.Email,
+                            CEP = paciente.Localidade.CEP,
+                            Endereco = paciente.Localidade.Endereco,
+                            Numero = paciente.Localidade.Numero,
+                            Complemeneto = paciente.Localidade.Complemento,
+                            Bairro = paciente.Localidade.Bairro,
+                            Cidade = paciente.Localidade.Cidade,
+                            Estado = paciente.Localidade.Estado
                         };
 
             var resultado = query.ToList();

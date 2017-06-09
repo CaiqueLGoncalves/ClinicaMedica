@@ -58,5 +58,35 @@ namespace ClinicaMedica.Controller
                 throw new Exception("Não foi possível cadastrar o médico!\n" + ex.Message);
             }
         }
+
+        public List<ConsultaMedico> Select()
+        {
+            var query = from medico in db.TB_Usuario_Medico
+                        orderby medico.Identificacao ascending
+                        select new ConsultaMedico
+                        {
+                            Codigo = medico.Identificacao,
+                            Nome = medico.Nome,
+                            CPF = medico.CPF,
+                            RG = medico.RG,
+                            CRM = medico.CRM,
+                            DataNascimento = medico.DataNascimento,
+                            Sexo = medico.Sexo,
+                            TelefoneResidencial = medico.TelefoneResidencial,
+                            TelefoneComercial = medico.TelefoneComercial,
+                            TelefoneCelular = medico.TelefoneCelular,
+                            Email = medico.Email,
+                            CEP = medico.Localidade.CEP,
+                            Endereco = medico.Localidade.Endereco,
+                            Numero = medico.Localidade.Numero,
+                            Complemeneto = medico.Localidade.Complemento,
+                            Bairro = medico.Localidade.Bairro,
+                            Cidade = medico.Localidade.Cidade,
+                            Estado = medico.Localidade.Estado
+                        };
+
+            var resultado = query.ToList();
+            return resultado;
+        }
     }
 }

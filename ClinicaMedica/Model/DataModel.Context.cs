@@ -27,6 +27,8 @@ namespace ClinicaMedica.Model
     
         public virtual DbSet<Usuario> TB_Usuario { get; set; }
         public virtual DbSet<Paciente> TB_Usuario_Paciente { get; set; }
+        public virtual DbSet<Funcionario> TB_Usuario_Funcionario { get; set; }
+        public virtual DbSet<Medico> TB_Usuario_Medico { get; set; }
         public virtual DbSet<Localidade> TB_Localidade { get; set; }
         public virtual DbSet<Funcao> TB_Funcao { get; set; }
         public virtual DbSet<Consultorio> TB_Consultorio { get; set; }

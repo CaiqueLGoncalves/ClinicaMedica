@@ -1,4 +1,5 @@
 ﻿using ClinicaMedica.Controller;
+using System;
 using System.Windows.Forms;
 
 namespace ClinicaMedica.View
@@ -10,7 +11,7 @@ namespace ClinicaMedica.View
             InitializeComponent();
         }
 
-        private void FrmPacienteConsultar_Load(object sender, System.EventArgs e)
+        private void FrmPacienteConsultar_Load(object sender, EventArgs e)
         {
             dgvPacientes.DataSource = new PacienteController().Select();
         }

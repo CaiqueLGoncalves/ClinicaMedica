@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\ConsultaMedico.cs" />
     <Compile Include="Model\ConsultaPaciente.cs" />
     <Compile Include="Controller\ConsultorioController.cs" />
     <Compile Include="Controller\ConsultorioExameController.cs" />
@@ -211,6 +212,12 @@
     <Compile Include="View\FrmMedicoCadastrar.Designer.cs">
       <DependentUpon>FrmMedicoCadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmMedicoConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMedicoConsultar.Designer.cs">
+      <DependentUpon>FrmMedicoConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmPacienteCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMedicoCadastrar.resx">
       <DependentUpon>FrmMedicoCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMedicoConsultar.resx">
+      <DependentUpon>FrmMedicoConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPacienteCadastrar.resx">
       <DependentUpon>FrmPacienteCadastrar.cs</DependentUpon>
