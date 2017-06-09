@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\ConsultaPaciente.cs" />
     <Compile Include="Controller\ConsultorioController.cs" />
     <Compile Include="Controller\ConsultorioExameController.cs" />
     <Compile Include="Controller\EspecialidadeController.cs" />

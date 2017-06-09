@@ -33,10 +33,11 @@
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
+            this.lblFiltros = new System.Windows.Forms.Label();
+            this.rbtCPF = new System.Windows.Forms.RadioButton();
+            this.rbtNome = new System.Windows.Forms.RadioButton();
             this.rbtCodigo = new System.Windows.Forms.RadioButton();
             this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
-            this.rbtNome = new System.Windows.Forms.RadioButton();
-            this.rbtCPF = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.gpbFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             // 
             this.dgvPacientes.AllowUserToAddRows = false;
             this.dgvPacientes.AllowUserToDeleteRows = false;
-            this.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPacientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPacientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -70,7 +71,7 @@
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPacientes.Size = new System.Drawing.Size(510, 295);
+            this.dgvPacientes.Size = new System.Drawing.Size(660, 295);
             this.dgvPacientes.TabIndex = 5;
             // 
             // lblTitulo
@@ -78,26 +79,58 @@
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(12, 12);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(510, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(660, 25);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Consulta de Pacientes";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gpbFiltros
             // 
+            this.gpbFiltros.Controls.Add(this.lblFiltros);
             this.gpbFiltros.Controls.Add(this.rbtCPF);
             this.gpbFiltros.Controls.Add(this.rbtNome);
             this.gpbFiltros.Controls.Add(this.rbtCodigo);
             this.gpbFiltros.Location = new System.Drawing.Point(12, 87);
             this.gpbFiltros.Name = "gpbFiltros";
-            this.gpbFiltros.Size = new System.Drawing.Size(510, 50);
+            this.gpbFiltros.Size = new System.Drawing.Size(660, 50);
             this.gpbFiltros.TabIndex = 8;
             this.gpbFiltros.TabStop = false;
+            // 
+            // lblFiltros
+            // 
+            this.lblFiltros.AutoSize = true;
+            this.lblFiltros.Location = new System.Drawing.Point(6, 21);
+            this.lblFiltros.Name = "lblFiltros";
+            this.lblFiltros.Size = new System.Drawing.Size(37, 13);
+            this.lblFiltros.TabIndex = 3;
+            this.lblFiltros.Text = "Filtros:";
+            // 
+            // rbtCPF
+            // 
+            this.rbtCPF.AutoSize = true;
+            this.rbtCPF.Location = new System.Drawing.Point(193, 19);
+            this.rbtCPF.Name = "rbtCPF";
+            this.rbtCPF.Size = new System.Drawing.Size(45, 17);
+            this.rbtCPF.TabIndex = 2;
+            this.rbtCPF.TabStop = true;
+            this.rbtCPF.Text = "CPF";
+            this.rbtCPF.UseVisualStyleBackColor = true;
+            // 
+            // rbtNome
+            // 
+            this.rbtNome.AutoSize = true;
+            this.rbtNome.Location = new System.Drawing.Point(134, 19);
+            this.rbtNome.Name = "rbtNome";
+            this.rbtNome.Size = new System.Drawing.Size(53, 17);
+            this.rbtNome.TabIndex = 1;
+            this.rbtNome.TabStop = true;
+            this.rbtNome.Text = "Nome";
+            this.rbtNome.UseVisualStyleBackColor = true;
             // 
             // rbtCodigo
             // 
             this.rbtCodigo.AutoSize = true;
-            this.rbtCodigo.Location = new System.Drawing.Point(6, 19);
+            this.rbtCodigo.Location = new System.Drawing.Point(70, 19);
             this.rbtCodigo.Name = "rbtCodigo";
             this.rbtCodigo.Size = new System.Drawing.Size(58, 17);
             this.rbtCodigo.TabIndex = 0;
@@ -109,36 +142,14 @@
             // 
             this.mskPesquisa.Location = new System.Drawing.Point(82, 55);
             this.mskPesquisa.Name = "mskPesquisa";
-            this.mskPesquisa.Size = new System.Drawing.Size(440, 20);
+            this.mskPesquisa.Size = new System.Drawing.Size(590, 20);
             this.mskPesquisa.TabIndex = 9;
-            // 
-            // rbtNome
-            // 
-            this.rbtNome.AutoSize = true;
-            this.rbtNome.Location = new System.Drawing.Point(70, 19);
-            this.rbtNome.Name = "rbtNome";
-            this.rbtNome.Size = new System.Drawing.Size(53, 17);
-            this.rbtNome.TabIndex = 1;
-            this.rbtNome.TabStop = true;
-            this.rbtNome.Text = "Nome";
-            this.rbtNome.UseVisualStyleBackColor = true;
-            // 
-            // rbtCPF
-            // 
-            this.rbtCPF.AutoSize = true;
-            this.rbtCPF.Location = new System.Drawing.Point(129, 19);
-            this.rbtCPF.Name = "rbtCPF";
-            this.rbtCPF.Size = new System.Drawing.Size(45, 17);
-            this.rbtCPF.TabIndex = 2;
-            this.rbtCPF.TabStop = true;
-            this.rbtCPF.Text = "CPF";
-            this.rbtCPF.UseVisualStyleBackColor = true;
             // 
             // FrmPacienteConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 471);
+            this.ClientSize = new System.Drawing.Size(684, 471);
             this.Controls.Add(this.mskPesquisa);
             this.Controls.Add(this.gpbFiltros);
             this.Controls.Add(this.lblPesquisa);
@@ -168,5 +179,6 @@
         private System.Windows.Forms.MaskedTextBox mskPesquisa;
         private System.Windows.Forms.RadioButton rbtCPF;
         private System.Windows.Forms.RadioButton rbtNome;
+        private System.Windows.Forms.Label lblFiltros;
     }
 }

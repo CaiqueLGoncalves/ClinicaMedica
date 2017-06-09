@@ -75,5 +75,11 @@ namespace ClinicaMedica.View
             FrmFuncaoConsultar funcaoCons = new FrmFuncaoConsultar();
             funcaoCons.ShowDialog(this);
         }
+
+        private void pacienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmPacienteConsultar pacienteCons = new FrmPacienteConsultar();
+            pacienteCons.ShowDialog(this);
+        }
     }
 }
