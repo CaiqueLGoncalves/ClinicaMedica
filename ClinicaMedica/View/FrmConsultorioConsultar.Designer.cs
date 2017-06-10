@@ -29,88 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idConsultorioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeFantasiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razaoSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNPJDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horarioAberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horarioFechamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localidadeIdLocalidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicaMedicaBDDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.consultorioExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.consultorioExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.ConsultorioExameTableAdapter();
             this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBusca = new System.Windows.Forms.TextBox();
+            this.dgvConsultorio = new System.Windows.Forms.DataGridView();
+            this.gpbFiltro = new System.Windows.Forms.GroupBox();
+            this.rdbExame = new System.Windows.Forms.RadioButton();
+            this.rdbNome = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultorioExameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultorio)).BeginInit();
+            this.gpbFiltro.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idConsultorioDataGridViewTextBoxColumn,
-            this.nomeFantasiaDataGridViewTextBoxColumn,
-            this.razaoSocialDataGridViewTextBoxColumn,
-            this.cNPJDataGridViewTextBoxColumn,
-            this.horarioAberturaDataGridViewTextBoxColumn,
-            this.horarioFechamentoDataGridViewTextBoxColumn,
-            this.localidadeIdLocalidadeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.tBConsultorioBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 105);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(675, 150);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idConsultorioDataGridViewTextBoxColumn
-            // 
-            this.idConsultorioDataGridViewTextBoxColumn.DataPropertyName = "IdConsultorio";
-            this.idConsultorioDataGridViewTextBoxColumn.HeaderText = "IdConsultorio";
-            this.idConsultorioDataGridViewTextBoxColumn.Name = "idConsultorioDataGridViewTextBoxColumn";
-            this.idConsultorioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeFantasiaDataGridViewTextBoxColumn
-            // 
-            this.nomeFantasiaDataGridViewTextBoxColumn.DataPropertyName = "NomeFantasia";
-            this.nomeFantasiaDataGridViewTextBoxColumn.HeaderText = "NomeFantasia";
-            this.nomeFantasiaDataGridViewTextBoxColumn.Name = "nomeFantasiaDataGridViewTextBoxColumn";
-            // 
-            // razaoSocialDataGridViewTextBoxColumn
-            // 
-            this.razaoSocialDataGridViewTextBoxColumn.DataPropertyName = "RazaoSocial";
-            this.razaoSocialDataGridViewTextBoxColumn.HeaderText = "RazaoSocial";
-            this.razaoSocialDataGridViewTextBoxColumn.Name = "razaoSocialDataGridViewTextBoxColumn";
-            // 
-            // cNPJDataGridViewTextBoxColumn
-            // 
-            this.cNPJDataGridViewTextBoxColumn.DataPropertyName = "CNPJ";
-            this.cNPJDataGridViewTextBoxColumn.HeaderText = "CNPJ";
-            this.cNPJDataGridViewTextBoxColumn.Name = "cNPJDataGridViewTextBoxColumn";
-            // 
-            // horarioAberturaDataGridViewTextBoxColumn
-            // 
-            this.horarioAberturaDataGridViewTextBoxColumn.DataPropertyName = "HorarioAbertura";
-            this.horarioAberturaDataGridViewTextBoxColumn.HeaderText = "HorarioAbertura";
-            this.horarioAberturaDataGridViewTextBoxColumn.Name = "horarioAberturaDataGridViewTextBoxColumn";
-            // 
-            // horarioFechamentoDataGridViewTextBoxColumn
-            // 
-            this.horarioFechamentoDataGridViewTextBoxColumn.DataPropertyName = "HorarioFechamento";
-            this.horarioFechamentoDataGridViewTextBoxColumn.HeaderText = "HorarioFechamento";
-            this.horarioFechamentoDataGridViewTextBoxColumn.Name = "horarioFechamentoDataGridViewTextBoxColumn";
-            // 
-            // localidadeIdLocalidadeDataGridViewTextBoxColumn
-            // 
-            this.localidadeIdLocalidadeDataGridViewTextBoxColumn.DataPropertyName = "Localidade_IdLocalidade";
-            this.localidadeIdLocalidadeDataGridViewTextBoxColumn.HeaderText = "Localidade_IdLocalidade";
-            this.localidadeIdLocalidadeDataGridViewTextBoxColumn.Name = "localidadeIdLocalidadeDataGridViewTextBoxColumn";
             // 
             // tBConsultorioBindingSource
             // 
@@ -140,39 +78,113 @@
             // 
             this.tB_ConsultorioTableAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(257, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Consulta de Consultórios";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(132, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Pesquisa";
+            // 
+            // txtBusca
+            // 
+            this.txtBusca.Location = new System.Drawing.Point(211, 76);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(201, 20);
+            this.txtBusca.TabIndex = 2;
+            this.txtBusca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBusca_KeyUp);
+            // 
+            // dgvConsultorio
+            // 
+            this.dgvConsultorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultorio.Location = new System.Drawing.Point(81, 175);
+            this.dgvConsultorio.Name = "dgvConsultorio";
+            this.dgvConsultorio.Size = new System.Drawing.Size(544, 224);
+            this.dgvConsultorio.TabIndex = 3;
+            // 
+            // gpbFiltro
+            // 
+            this.gpbFiltro.Controls.Add(this.rdbExame);
+            this.gpbFiltro.Controls.Add(this.rdbNome);
+            this.gpbFiltro.Location = new System.Drawing.Point(81, 127);
+            this.gpbFiltro.Name = "gpbFiltro";
+            this.gpbFiltro.Size = new System.Drawing.Size(544, 42);
+            this.gpbFiltro.TabIndex = 4;
+            this.gpbFiltro.TabStop = false;
+            this.gpbFiltro.Text = "groupBox1";
+            // 
+            // rdbExame
+            // 
+            this.rdbExame.AutoSize = true;
+            this.rdbExame.Location = new System.Drawing.Point(179, 20);
+            this.rdbExame.Name = "rdbExame";
+            this.rdbExame.Size = new System.Drawing.Size(85, 17);
+            this.rdbExame.TabIndex = 1;
+            this.rdbExame.TabStop = true;
+            this.rdbExame.Text = "radioButton2";
+            this.rdbExame.UseVisualStyleBackColor = true;
+            // 
+            // rdbNome
+            // 
+            this.rdbNome.AutoSize = true;
+            this.rdbNome.Location = new System.Drawing.Point(54, 20);
+            this.rdbNome.Name = "rdbNome";
+            this.rdbNome.Size = new System.Drawing.Size(85, 17);
+            this.rdbNome.TabIndex = 0;
+            this.rdbNome.TabStop = true;
+            this.rdbNome.Text = "radioButton1";
+            this.rdbNome.UseVisualStyleBackColor = true;
+            this.rdbNome.CheckedChanged += new System.EventHandler(this.rdbNome_CheckedChanged);
+            // 
             // FrmConsultorioConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 445);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.gpbFiltro);
+            this.Controls.Add(this.dgvConsultorio);
+            this.Controls.Add(this.txtBusca);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Name = "FrmConsultorioConsultar";
             this.Text = "Consulta de Consultório";
+            this.Activated += new System.EventHandler(this.FrmConsultorioConsultar_Activated_1);
             this.Load += new System.EventHandler(this.FrmConsultorioConsultarcs_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultorioExameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultorio)).EndInit();
+            this.gpbFiltro.ResumeLayout(false);
+            this.gpbFiltro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource clinicaMedicaBDDataSetBindingSource;
         private ClinicaMedicaBDDataSet clinicaMedicaBDDataSet;
         private System.Windows.Forms.BindingSource consultorioExameBindingSource;
         private ClinicaMedicaBDDataSetTableAdapters.ConsultorioExameTableAdapter consultorioExameTableAdapter;
         private System.Windows.Forms.BindingSource tBConsultorioBindingSource;
         private ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter tB_ConsultorioTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idConsultorioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeFantasiaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razaoSocialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNPJDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horarioAberturaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horarioFechamentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn localidadeIdLocalidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtBusca;
+        private System.Windows.Forms.DataGridView dgvConsultorio;
+        private System.Windows.Forms.GroupBox gpbFiltro;
+        private System.Windows.Forms.RadioButton rdbExame;
+        private System.Windows.Forms.RadioButton rdbNome;
     }
 }
