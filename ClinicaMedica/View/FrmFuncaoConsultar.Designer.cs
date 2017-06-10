@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.txbPesquisa = new System.Windows.Forms.TextBox();
             this.dgvFuncoes = new System.Windows.Forms.DataGridView();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
-            this.TBFuncaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.TB_FuncaoTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_FuncaoTableAdapter();
             this.IdFuncao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TBFuncaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.TB_FuncaoTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_FuncaoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncoes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBFuncaoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPesquisa
@@ -60,6 +60,7 @@
             this.txbPesquisa.Name = "txbPesquisa";
             this.txbPesquisa.Size = new System.Drawing.Size(440, 20);
             this.txbPesquisa.TabIndex = 6;
+            this.txbPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbPesquisa_KeyUp);
             // 
             // dgvFuncoes
             // 
@@ -68,14 +69,14 @@
             this.dgvFuncoes.AutoGenerateColumns = false;
             this.dgvFuncoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFuncoes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFuncoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFuncoes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFuncoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdFuncao,
@@ -89,30 +90,6 @@
             this.dgvFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncoes.Size = new System.Drawing.Size(510, 250);
             this.dgvFuncoes.TabIndex = 5;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(12, 12);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(510, 25);
-            this.lblTitulo.TabIndex = 4;
-            this.lblTitulo.Text = "Consulta de Funções";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ClinicaMedicaBDDataSet
-            // 
-            this.ClinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
-            this.ClinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // TBFuncaoBindingSource
-            // 
-            this.TBFuncaoBindingSource.DataMember = "TB_Funcao";
-            this.TBFuncaoBindingSource.DataSource = this.ClinicaMedicaBDDataSet;
-            // 
-            // TB_FuncaoTableAdapter
-            // 
-            this.TB_FuncaoTableAdapter.ClearBeforeFill = true;
             // 
             // IdFuncao
             // 
@@ -140,6 +117,30 @@
             this.Descricao.Name = "Descricao";
             this.Descricao.ReadOnly = true;
             // 
+            // TBFuncaoBindingSource
+            // 
+            this.TBFuncaoBindingSource.DataMember = "TB_Funcao";
+            this.TBFuncaoBindingSource.DataSource = this.ClinicaMedicaBDDataSet;
+            // 
+            // ClinicaMedicaBDDataSet
+            // 
+            this.ClinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.ClinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(12, 12);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(510, 25);
+            this.lblTitulo.TabIndex = 4;
+            this.lblTitulo.Text = "Consulta de Funções";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TB_FuncaoTableAdapter
+            // 
+            this.TB_FuncaoTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmFuncaoConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,10 +155,11 @@
             this.Name = "FrmFuncaoConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Funções";
+            this.Activated += new System.EventHandler(this.FrmFuncaoConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmFuncaoConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncoes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBFuncaoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

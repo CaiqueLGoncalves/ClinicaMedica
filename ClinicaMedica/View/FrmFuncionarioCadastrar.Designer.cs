@@ -181,7 +181,7 @@
             this.mskTelefoneCelular.Name = "mskTelefoneCelular";
             this.mskTelefoneCelular.Size = new System.Drawing.Size(256, 20);
             this.mskTelefoneCelular.TabIndex = 5;
-            this.mskTelefoneCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.mskTelefoneCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblTelefoneCelular
             // 

@@ -89,5 +89,107 @@ namespace ClinicaMedica.Controller
             var resultado = query.ToList();
             return resultado;
         }
+
+        public List<ConsultaFuncionario> Select(string filtro, string pesquisa)
+        {
+            IQueryable<ConsultaFuncionario> query = null;
+
+            switch (filtro)
+            {
+                case "CODIGO":
+                    {
+                        query = from funcionario in db.TB_Usuario_Funcionario
+                                where funcionario.Funcao.Nome != "Médico"
+                                where funcionario.Identificacao.ToString().Contains(pesquisa)
+                                orderby funcionario.Identificacao ascending
+                                select new ConsultaFuncionario
+                                {
+                                    Codigo = funcionario.Identificacao,
+                                    Nome = funcionario.Nome,
+                                    CPF = funcionario.CPF,
+                                    RG = funcionario.RG,
+                                    DataNascimento = funcionario.DataNascimento,
+                                    Sexo = funcionario.Sexo,
+                                    Funcao = funcionario.Funcao.Nome,
+                                    TelefoneResidencial = funcionario.TelefoneResidencial,
+                                    TelefoneComercial = funcionario.TelefoneComercial,
+                                    TelefoneCelular = funcionario.TelefoneCelular,
+                                    Email = funcionario.Email,
+                                    CEP = funcionario.Localidade.CEP,
+                                    Endereco = funcionario.Localidade.Endereco,
+                                    Numero = funcionario.Localidade.Numero,
+                                    Complemento = funcionario.Localidade.Complemento,
+                                    Bairro = funcionario.Localidade.Bairro,
+                                    Cidade = funcionario.Localidade.Cidade,
+                                    Estado = funcionario.Localidade.Estado
+                                };
+
+                        break;
+                    }
+                case "NOME":
+                    {
+                        query = from funcionario in db.TB_Usuario_Funcionario
+                                where funcionario.Funcao.Nome != "Médico"
+                                where funcionario.Nome.Contains(pesquisa)
+                                orderby funcionario.Identificacao ascending
+                                select new ConsultaFuncionario
+                                {
+                                    Codigo = funcionario.Identificacao,
+                                    Nome = funcionario.Nome,
+                                    CPF = funcionario.CPF,
+                                    RG = funcionario.RG,
+                                    DataNascimento = funcionario.DataNascimento,
+                                    Sexo = funcionario.Sexo,
+                                    Funcao = funcionario.Funcao.Nome,
+                                    TelefoneResidencial = funcionario.TelefoneResidencial,
+                                    TelefoneComercial = funcionario.TelefoneComercial,
+                                    TelefoneCelular = funcionario.TelefoneCelular,
+                                    Email = funcionario.Email,
+                                    CEP = funcionario.Localidade.CEP,
+                                    Endereco = funcionario.Localidade.Endereco,
+                                    Numero = funcionario.Localidade.Numero,
+                                    Complemento = funcionario.Localidade.Complemento,
+                                    Bairro = funcionario.Localidade.Bairro,
+                                    Cidade = funcionario.Localidade.Cidade,
+                                    Estado = funcionario.Localidade.Estado
+                                };
+
+                        break;
+                    }
+                case "CPF":
+                    {
+                        query = from funcionario in db.TB_Usuario_Funcionario
+                                where funcionario.Funcao.Nome != "Médico"
+                                where funcionario.CPF.Contains(pesquisa)
+                                orderby funcionario.Identificacao ascending
+                                select new ConsultaFuncionario
+                                {
+                                    Codigo = funcionario.Identificacao,
+                                    Nome = funcionario.Nome,
+                                    CPF = funcionario.CPF,
+                                    RG = funcionario.RG,
+                                    DataNascimento = funcionario.DataNascimento,
+                                    Sexo = funcionario.Sexo,
+                                    Funcao = funcionario.Funcao.Nome,
+                                    TelefoneResidencial = funcionario.TelefoneResidencial,
+                                    TelefoneComercial = funcionario.TelefoneComercial,
+                                    TelefoneCelular = funcionario.TelefoneCelular,
+                                    Email = funcionario.Email,
+                                    CEP = funcionario.Localidade.CEP,
+                                    Endereco = funcionario.Localidade.Endereco,
+                                    Numero = funcionario.Localidade.Numero,
+                                    Complemento = funcionario.Localidade.Complemento,
+                                    Bairro = funcionario.Localidade.Bairro,
+                                    Cidade = funcionario.Localidade.Cidade,
+                                    Estado = funcionario.Localidade.Estado
+                                };
+
+                        break;
+                    }
+            }
+
+            var resultado = query.ToList();
+            return resultado;
+        }
     }
 }

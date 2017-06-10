@@ -85,7 +85,103 @@ namespace ClinicaMedica.Controller
                         };
 
             var resultado = query.ToList();
-            return resultado;           
+            return resultado;
+        }
+
+        public List<ConsultaPaciente> Select(string filtro, string pesquisa)
+        {
+            IQueryable<ConsultaPaciente> query = null;
+
+            switch (filtro)
+            {
+                case "CODIGO":
+                    {
+                        query = from paciente in db.TB_Usuario_Paciente
+                                where paciente.Identificacao.ToString().Contains(pesquisa)
+                                orderby paciente.Identificacao ascending
+                                select new ConsultaPaciente
+                                {
+                                    Codigo = paciente.Identificacao,
+                                    Nome = paciente.Nome,
+                                    CPF = paciente.CPF,
+                                    RG = paciente.RG,
+                                    DataNascimento = paciente.DataNascimento,
+                                    Sexo = paciente.Sexo,
+                                    TelefoneResidencial = paciente.TelefoneResidencial,
+                                    TelefoneComercial = paciente.TelefoneComercial,
+                                    TelefoneCelular = paciente.TelefoneCelular,
+                                    Email = paciente.Email,
+                                    CEP = paciente.Localidade.CEP,
+                                    Endereco = paciente.Localidade.Endereco,
+                                    Numero = paciente.Localidade.Numero,
+                                    Complemento = paciente.Localidade.Complemento,
+                                    Bairro = paciente.Localidade.Bairro,
+                                    Cidade = paciente.Localidade.Cidade,
+                                    Estado = paciente.Localidade.Estado
+                                };
+
+                        break;
+                    }
+                case "NOME":
+                    {
+                        query = from paciente in db.TB_Usuario_Paciente
+                                where paciente.Nome.Contains(pesquisa)
+                                orderby paciente.Identificacao ascending
+                                select new ConsultaPaciente
+                                {
+                                    Codigo = paciente.Identificacao,
+                                    Nome = paciente.Nome,
+                                    CPF = paciente.CPF,
+                                    RG = paciente.RG,
+                                    DataNascimento = paciente.DataNascimento,
+                                    Sexo = paciente.Sexo,
+                                    TelefoneResidencial = paciente.TelefoneResidencial,
+                                    TelefoneComercial = paciente.TelefoneComercial,
+                                    TelefoneCelular = paciente.TelefoneCelular,
+                                    Email = paciente.Email,
+                                    CEP = paciente.Localidade.CEP,
+                                    Endereco = paciente.Localidade.Endereco,
+                                    Numero = paciente.Localidade.Numero,
+                                    Complemento = paciente.Localidade.Complemento,
+                                    Bairro = paciente.Localidade.Bairro,
+                                    Cidade = paciente.Localidade.Cidade,
+                                    Estado = paciente.Localidade.Estado
+                                };
+
+                        break;
+                    }
+                case "CPF":
+                    {
+                        query = from paciente in db.TB_Usuario_Paciente
+                                where paciente.CPF.Contains(pesquisa)
+                                orderby paciente.Identificacao ascending
+                                select new ConsultaPaciente
+                                {
+                                    Codigo = paciente.Identificacao,
+                                    Nome = paciente.Nome,
+                                    CPF = paciente.CPF,
+                                    RG = paciente.RG,
+                                    DataNascimento = paciente.DataNascimento,
+                                    Sexo = paciente.Sexo,
+                                    TelefoneResidencial = paciente.TelefoneResidencial,
+                                    TelefoneComercial = paciente.TelefoneComercial,
+                                    TelefoneCelular = paciente.TelefoneCelular,
+                                    Email = paciente.Email,
+                                    CEP = paciente.Localidade.CEP,
+                                    Endereco = paciente.Localidade.Endereco,
+                                    Numero = paciente.Localidade.Numero,
+                                    Complemento = paciente.Localidade.Complemento,
+                                    Bairro = paciente.Localidade.Bairro,
+                                    Cidade = paciente.Localidade.Cidade,
+                                    Estado = paciente.Localidade.Estado
+                                };
+
+                        break;
+                    }
+            }
+
+            var resultado = query.ToList();
+            return resultado;
         }
     }
 }

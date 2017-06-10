@@ -45,9 +45,12 @@
             // mskPesquisa
             // 
             this.mskPesquisa.Location = new System.Drawing.Point(82, 55);
+            this.mskPesquisa.Mask = "999999999999";
             this.mskPesquisa.Name = "mskPesquisa";
-            this.mskPesquisa.Size = new System.Drawing.Size(590, 20);
+            this.mskPesquisa.Size = new System.Drawing.Size(690, 20);
             this.mskPesquisa.TabIndex = 19;
+            this.mskPesquisa.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskPesquisa_KeyUp);
             // 
             // gpbFiltros
             // 
@@ -57,7 +60,7 @@
             this.gpbFiltros.Controls.Add(this.rbtCodigo);
             this.gpbFiltros.Location = new System.Drawing.Point(12, 87);
             this.gpbFiltros.Name = "gpbFiltros";
-            this.gpbFiltros.Size = new System.Drawing.Size(660, 50);
+            this.gpbFiltros.Size = new System.Drawing.Size(760, 50);
             this.gpbFiltros.TabIndex = 18;
             this.gpbFiltros.TabStop = false;
             // 
@@ -77,9 +80,9 @@
             this.rbtCPF.Name = "rbtCPF";
             this.rbtCPF.Size = new System.Drawing.Size(45, 17);
             this.rbtCPF.TabIndex = 2;
-            this.rbtCPF.TabStop = true;
             this.rbtCPF.Text = "CPF";
             this.rbtCPF.UseVisualStyleBackColor = true;
+            this.rbtCPF.CheckedChanged += new System.EventHandler(this.rbtCPF_CheckedChanged);
             // 
             // rbtNome
             // 
@@ -88,13 +91,14 @@
             this.rbtNome.Name = "rbtNome";
             this.rbtNome.Size = new System.Drawing.Size(53, 17);
             this.rbtNome.TabIndex = 1;
-            this.rbtNome.TabStop = true;
             this.rbtNome.Text = "Nome";
             this.rbtNome.UseVisualStyleBackColor = true;
+            this.rbtNome.CheckedChanged += new System.EventHandler(this.rbtNome_CheckedChanged);
             // 
             // rbtCodigo
             // 
             this.rbtCodigo.AutoSize = true;
+            this.rbtCodigo.Checked = true;
             this.rbtCodigo.Location = new System.Drawing.Point(70, 19);
             this.rbtCodigo.Name = "rbtCodigo";
             this.rbtCodigo.Size = new System.Drawing.Size(58, 17);
@@ -102,6 +106,7 @@
             this.rbtCodigo.TabStop = true;
             this.rbtCodigo.Text = "Código";
             this.rbtCodigo.UseVisualStyleBackColor = true;
+            this.rbtCodigo.CheckedChanged += new System.EventHandler(this.rbtCodigo_CheckedChanged);
             // 
             // lblPesquisa
             // 
@@ -132,7 +137,7 @@
             this.dgvFuncionarios.Name = "dgvFuncionarios";
             this.dgvFuncionarios.ReadOnly = true;
             this.dgvFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFuncionarios.Size = new System.Drawing.Size(660, 295);
+            this.dgvFuncionarios.Size = new System.Drawing.Size(760, 385);
             this.dgvFuncionarios.TabIndex = 16;
             // 
             // lblTitulo
@@ -140,7 +145,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(12, 12);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(660, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(760, 25);
             this.lblTitulo.TabIndex = 15;
             this.lblTitulo.Text = "Consulta de Funcionários";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 471);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.mskPesquisa);
             this.Controls.Add(this.gpbFiltros);
             this.Controls.Add(this.lblPesquisa);
@@ -160,6 +165,7 @@
             this.Name = "FrmFuncionarioConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Funcionários";
+            this.Activated += new System.EventHandler(this.FrmFuncionarioConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmFuncionarioConsultar_Load);
             this.gpbFiltros.ResumeLayout(false);
             this.gpbFiltros.PerformLayout();

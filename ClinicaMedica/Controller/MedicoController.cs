@@ -88,5 +88,133 @@ namespace ClinicaMedica.Controller
             var resultado = query.ToList();
             return resultado;
         }
+
+        public List<ConsultaMedico> Select(string filtro, string pesquisa)
+        {
+            IQueryable<ConsultaMedico> query = null;
+
+            switch (filtro)
+            {
+                case "CODIGO":
+                    {
+                        query = from medico in db.TB_Usuario_Medico
+                                where medico.Identificacao.ToString().Contains(pesquisa)
+                                orderby medico.Identificacao ascending
+                                select new ConsultaMedico
+                                {
+                                    Codigo = medico.Identificacao,
+                                    Nome = medico.Nome,
+                                    CPF = medico.CPF,
+                                    RG = medico.RG,
+                                    CRM = medico.CRM,
+                                    DataNascimento = medico.DataNascimento,
+                                    Sexo = medico.Sexo,
+                                    TelefoneResidencial = medico.TelefoneResidencial,
+                                    TelefoneComercial = medico.TelefoneComercial,
+                                    TelefoneCelular = medico.TelefoneCelular,
+                                    Email = medico.Email,
+                                    CEP = medico.Localidade.CEP,
+                                    Endereco = medico.Localidade.Endereco,
+                                    Numero = medico.Localidade.Numero,
+                                    Complemento = medico.Localidade.Complemento,
+                                    Bairro = medico.Localidade.Bairro,
+                                    Cidade = medico.Localidade.Cidade,
+                                    Estado = medico.Localidade.Estado
+                                };
+
+                        break;
+                    }
+                case "NOME":
+                    {
+                        query = from medico in db.TB_Usuario_Medico
+                                where medico.Nome.Contains(pesquisa)
+                                orderby medico.Identificacao ascending
+                                select new ConsultaMedico
+                                {
+                                    Codigo = medico.Identificacao,
+                                    Nome = medico.Nome,
+                                    CPF = medico.CPF,
+                                    RG = medico.RG,
+                                    CRM = medico.CRM,
+                                    DataNascimento = medico.DataNascimento,
+                                    Sexo = medico.Sexo,
+                                    TelefoneResidencial = medico.TelefoneResidencial,
+                                    TelefoneComercial = medico.TelefoneComercial,
+                                    TelefoneCelular = medico.TelefoneCelular,
+                                    Email = medico.Email,
+                                    CEP = medico.Localidade.CEP,
+                                    Endereco = medico.Localidade.Endereco,
+                                    Numero = medico.Localidade.Numero,
+                                    Complemento = medico.Localidade.Complemento,
+                                    Bairro = medico.Localidade.Bairro,
+                                    Cidade = medico.Localidade.Cidade,
+                                    Estado = medico.Localidade.Estado
+                                };
+
+                        break;
+                    }
+                case "CPF":
+                    {
+                        query = from medico in db.TB_Usuario_Medico
+                                where medico.CPF.Contains(pesquisa)
+                                orderby medico.Identificacao ascending
+                                select new ConsultaMedico
+                                {
+                                    Codigo = medico.Identificacao,
+                                    Nome = medico.Nome,
+                                    CPF = medico.CPF,
+                                    RG = medico.RG,
+                                    CRM = medico.CRM,
+                                    DataNascimento = medico.DataNascimento,
+                                    Sexo = medico.Sexo,
+                                    TelefoneResidencial = medico.TelefoneResidencial,
+                                    TelefoneComercial = medico.TelefoneComercial,
+                                    TelefoneCelular = medico.TelefoneCelular,
+                                    Email = medico.Email,
+                                    CEP = medico.Localidade.CEP,
+                                    Endereco = medico.Localidade.Endereco,
+                                    Numero = medico.Localidade.Numero,
+                                    Complemento = medico.Localidade.Complemento,
+                                    Bairro = medico.Localidade.Bairro,
+                                    Cidade = medico.Localidade.Cidade,
+                                    Estado = medico.Localidade.Estado
+                                };
+
+                        break;
+                    }
+                case "CRM":
+                    {
+                        query = from medico in db.TB_Usuario_Medico
+                                where medico.CRM.Contains(pesquisa)
+                                orderby medico.Identificacao ascending
+                                select new ConsultaMedico
+                                {
+                                    Codigo = medico.Identificacao,
+                                    Nome = medico.Nome,
+                                    CPF = medico.CPF,
+                                    RG = medico.RG,
+                                    CRM = medico.CRM,
+                                    DataNascimento = medico.DataNascimento,
+                                    Sexo = medico.Sexo,
+                                    TelefoneResidencial = medico.TelefoneResidencial,
+                                    TelefoneComercial = medico.TelefoneComercial,
+                                    TelefoneCelular = medico.TelefoneCelular,
+                                    Email = medico.Email,
+                                    CEP = medico.Localidade.CEP,
+                                    Endereco = medico.Localidade.Endereco,
+                                    Numero = medico.Localidade.Numero,
+                                    Complemento = medico.Localidade.Complemento,
+                                    Bairro = medico.Localidade.Bairro,
+                                    Cidade = medico.Localidade.Cidade,
+                                    Estado = medico.Localidade.Estado
+                                };
+
+                        break;
+                    }
+            }
+
+            var resultado = query.ToList();
+            return resultado;
+        }
     }
 }

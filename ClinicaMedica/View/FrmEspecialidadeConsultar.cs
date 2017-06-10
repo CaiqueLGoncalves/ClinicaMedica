@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClinicaMedica.View
@@ -19,8 +12,24 @@ namespace ClinicaMedica.View
 
         private void FrmEspecialidadeConsultar_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'clinicaMedicaBDDataSet.TB_Especialidade'. Você pode movê-la ou removê-la conforme necessário.
             TB_EspecialidadeTableAdapter.Fill(ClinicaMedicaBDDataSet.TB_Especialidade);
+        }
+
+        private void FrmEspecialidadeConsultar_Activated(object sender, EventArgs e)
+        {
+            TB_EspecialidadeTableAdapter.Fill(ClinicaMedicaBDDataSet.TB_Especialidade);
+        }
+
+        private void txbPesquisa_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (txbPesquisa.Text.Equals(""))
+            {
+                TBEspecialidadeBindingSource.RemoveFilter();
+            }
+            else
+            {
+                TBEspecialidadeBindingSource.Filter = "Nome LIKE '%" + txbPesquisa.Text + "%'";
+            }
         }
     }
 }

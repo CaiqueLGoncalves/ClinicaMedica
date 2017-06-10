@@ -116,6 +116,7 @@
             // 
             this.TBEspecialidadeBindingSource.DataMember = "TB_Especialidade";
             this.TBEspecialidadeBindingSource.DataSource = this.ClinicaMedicaBDDataSet;
+            this.TBEspecialidadeBindingSource.Filter = "";
             // 
             // ClinicaMedicaBDDataSet
             // 
@@ -140,6 +141,7 @@
             this.txbPesquisa.Size = new System.Drawing.Size(440, 20);
             this.txbPesquisa.TabIndex = 2;
             this.ttpEspecialidade.SetToolTip(this.txbPesquisa, "Insira o nome da especialidade para pesquisar.");
+            this.txbPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbPesquisa_KeyUp);
             // 
             // lblPesquisa
             // 
@@ -164,6 +166,7 @@
             this.Name = "FrmEspecialidadeConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Especialidades";
+            this.Activated += new System.EventHandler(this.FrmEspecialidadeConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmEspecialidadeConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).EndInit();
