@@ -131,9 +131,9 @@
             // ttpEspecialidade
             // 
             this.ttpEspecialidade.AutoPopDelay = 5000;
-            this.ttpEspecialidade.InitialDelay = 500;
+            this.ttpEspecialidade.InitialDelay = 30;
             this.ttpEspecialidade.IsBalloon = true;
-            this.ttpEspecialidade.ReshowDelay = 100;
+            this.ttpEspecialidade.ReshowDelay = 30;
             // 
             // txbPesquisa
             // 

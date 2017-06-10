@@ -23,6 +23,37 @@ namespace ClinicaMedica.View
             txbDescricao.Text = descricao;
         }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EspecialidadeController espCont = new EspecialidadeController();
+                Especialidade esp = new Especialidade();
+                esp.IdEspecialidade = idEspecialidade;
+                esp.Nome = txbNome.Text;
+                esp.Descricao = txbDescricao.Text;
+
+                var resultado = espCont.Update(esp);
+
+                if (resultado == null)
+                {
+                    MessageBox.Show("Especialidade alterada com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    foreach (var erro in resultado)
+                    {
+                        MessageBox.Show("Não foi possível alterar a especialidade!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnExcluir_Click(object sender, System.EventArgs e)
         {
             try

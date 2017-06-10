@@ -40,6 +40,7 @@
             this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.TB_FuncaoTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_FuncaoTableAdapter();
+            this.ttpFuncao = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBFuncaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
@@ -60,6 +61,7 @@
             this.txbPesquisa.Name = "txbPesquisa";
             this.txbPesquisa.Size = new System.Drawing.Size(440, 20);
             this.txbPesquisa.TabIndex = 6;
+            this.ttpFuncao.SetToolTip(this.txbPesquisa, "Insira o nome da função para pesquisar.");
             this.txbPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbPesquisa_KeyUp);
             // 
             // dgvFuncoes
@@ -90,6 +92,7 @@
             this.dgvFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncoes.Size = new System.Drawing.Size(510, 250);
             this.dgvFuncoes.TabIndex = 5;
+            this.ttpFuncao.SetToolTip(this.dgvFuncoes, "Dê um duplo clique na função que deseja alterar ou excluir.");
             this.dgvFuncoes.DoubleClick += new System.EventHandler(this.dgvFuncoes_DoubleClick);
             // 
             // IdFuncao
@@ -142,6 +145,13 @@
             // 
             this.TB_FuncaoTableAdapter.ClearBeforeFill = true;
             // 
+            // ttpFuncao
+            // 
+            this.ttpFuncao.AutoPopDelay = 5000;
+            this.ttpFuncao.InitialDelay = 30;
+            this.ttpFuncao.IsBalloon = true;
+            this.ttpFuncao.ReshowDelay = 30;
+            // 
             // FrmFuncaoConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,5 +188,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdFuncao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.ToolTip ttpFuncao;
     }
 }

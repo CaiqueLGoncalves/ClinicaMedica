@@ -102,6 +102,61 @@ namespace ClinicaMedica.View
             }
         }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FuncionarioController funcCont = new FuncionarioController();
+                LocalidadeController localCont = new LocalidadeController();
+                Funcionario f = new Funcionario();
+                Localidade l = new Localidade();
+
+                l.IdLocalidade = funcCont.FindLocalidade(codigo).IdLocalidade;
+                l.CEP = mskCEP.Text;
+                l.Endereco = txbEndereco.Text;
+                l.Numero = txbNumero.Text;
+                l.Complemento = txbComplemento.Text;
+                l.Bairro = txbBairro.Text;
+                l.Cidade = txbCidade.Text;
+                l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
+
+                var resultadoLocalidade = localCont.Update(l);
+
+                f.Identificacao = codigo;
+                f.Nome = txbNome.Text;
+                f.CPF = mskCPF.Text;
+                f.RG = txbRG.Text;
+                f.DataNascimento = dtpDataNascimento.Value;
+                f.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
+                f.TelefoneResidencial = mskTelefoneResidencial.Text;
+                f.TelefoneComercial = mskTelefoneResidencial.Text;
+                f.TelefoneCelular = mskTelefoneCelular.Text;
+                f.IdFuncao = int.Parse(cmbFuncao.SelectedValue.ToString());
+                f.Email = txbEmail.Text;
+                f.IdLocalidade = l.IdLocalidade;
+                f.Localidade = l;
+
+                var resultado = funcCont.Update(f);
+
+                if (resultado == null)
+                {
+                    MessageBox.Show("Funcionário alterado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    foreach (var erro in resultado)
+                    {
+                        MessageBox.Show("Não foi possível alterar o funcionário!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             try
