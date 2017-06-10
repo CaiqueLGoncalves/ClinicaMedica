@@ -85,6 +85,7 @@
             this.dgvEspecialidades.Size = new System.Drawing.Size(510, 250);
             this.dgvEspecialidades.TabIndex = 1;
             this.ttpEspecialidade.SetToolTip(this.dgvEspecialidades, "Dê um duplo clique na especialidade que deseja alterar ou excluir.");
+            this.dgvEspecialidades.DoubleClick += new System.EventHandler(this.dgvEspecialidades_DoubleClick);
             // 
             // IdEspecialidade
             // 

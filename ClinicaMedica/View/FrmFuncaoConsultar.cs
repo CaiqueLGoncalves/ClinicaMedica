@@ -31,5 +31,15 @@ namespace ClinicaMedica.View
                 TBFuncaoBindingSource.Filter = "Nome LIKE '%" + txbPesquisa.Text + "%'";
             }
         }
+
+        private void dgvFuncoes_DoubleClick(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(dgvFuncoes.SelectedRows[0].Cells["IdFuncao"].Value.ToString());
+            string nome = dgvFuncoes.SelectedRows[0].Cells["Nome"].Value.ToString();
+            string descricao = dgvFuncoes.SelectedRows[0].Cells["Descricao"].Value.ToString();
+
+            FrmFuncaoManter frmFuncManter = new FrmFuncaoManter(codigo, nome, descricao);
+            frmFuncManter.ShowDialog(this);
+        }
     }
 }

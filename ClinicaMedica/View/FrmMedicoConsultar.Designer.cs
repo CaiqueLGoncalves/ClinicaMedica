@@ -152,6 +152,7 @@
             this.dgvMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicos.Size = new System.Drawing.Size(760, 385);
             this.dgvMedicos.TabIndex = 11;
+            this.dgvMedicos.DoubleClick += new System.EventHandler(this.dgvMedicos_DoubleClick);
             // 
             // lblTitulo
             // 

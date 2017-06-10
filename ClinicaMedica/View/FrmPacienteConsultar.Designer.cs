@@ -73,6 +73,7 @@
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacientes.Size = new System.Drawing.Size(760, 385);
             this.dgvPacientes.TabIndex = 5;
+            this.dgvPacientes.DoubleClick += new System.EventHandler(this.dgvPacientes_DoubleClick);
             // 
             // lblTitulo
             // 

@@ -153,6 +153,12 @@
     <Compile Include="View\FrmEspecialidadeConsultar.Designer.cs">
       <DependentUpon>FrmEspecialidadeConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmEspecialidadeManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmEspecialidadeManter.Designer.cs">
+      <DependentUpon>FrmEspecialidadeManter.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmExameAgendar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,12 @@
     </Compile>
     <Compile Include="View\FrmFuncaoConsultar.Designer.cs">
       <DependentUpon>FrmFuncaoConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmFuncaoManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFuncaoManter.Designer.cs">
+      <DependentUpon>FrmFuncaoManter.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmFuncionarioCadastrar.cs">
       <SubType>Form</SubType>
@@ -258,6 +270,9 @@
     <EmbeddedResource Include="View\FrmEspecialidadeConsultar.resx">
       <DependentUpon>FrmEspecialidadeConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmEspecialidadeManter.resx">
+      <DependentUpon>FrmEspecialidadeManter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameAgendar.resx">
       <DependentUpon>FrmExameAgendar.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmFuncaoConsultar.resx">
       <DependentUpon>FrmFuncaoConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFuncaoManter.resx">
+      <DependentUpon>FrmFuncaoManter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmFuncionarioCadastrar.resx">
       <DependentUpon>FrmFuncionarioCadastrar.cs</DependentUpon>

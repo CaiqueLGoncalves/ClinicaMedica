@@ -31,5 +31,15 @@ namespace ClinicaMedica.View
                 TBEspecialidadeBindingSource.Filter = "Nome LIKE '%" + txbPesquisa.Text + "%'";
             }
         }
+
+        private void dgvEspecialidades_DoubleClick(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(dgvEspecialidades.SelectedRows[0].Cells["IdEspecialidade"].Value.ToString());
+            string nome = dgvEspecialidades.SelectedRows[0].Cells["Nome"].Value.ToString();
+            string descricao = dgvEspecialidades.SelectedRows[0].Cells["Descricao"].Value.ToString();
+
+            FrmEspecialidadeManter frmEspManter = new FrmEspecialidadeManter(codigo, nome, descricao);
+            frmEspManter.ShowDialog(this);
+        }
     }
 }

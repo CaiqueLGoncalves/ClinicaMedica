@@ -139,6 +139,7 @@
             this.dgvFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncionarios.Size = new System.Drawing.Size(760, 385);
             this.dgvFuncionarios.TabIndex = 16;
+            this.dgvFuncionarios.DoubleClick += new System.EventHandler(this.dgvFuncionarios_DoubleClick);
             // 
             // lblTitulo
             // 

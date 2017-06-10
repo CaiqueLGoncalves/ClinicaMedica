@@ -94,6 +94,31 @@ namespace ClinicaMedica.View
             }
         }
 
+        private void dgvMedicos_DoubleClick(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(dgvMedicos.SelectedRows[0].Cells["Codigo"].Value.ToString());
+            string nome = dgvMedicos.SelectedRows[0].Cells["Nome"].Value.ToString();
+            string cpf = dgvMedicos.SelectedRows[0].Cells["CPF"].Value.ToString();
+            string rg = dgvMedicos.SelectedRows[0].Cells["RG"].Value.ToString();
+            string crm = dgvMedicos.SelectedRows[0].Cells["CRM"].Value.ToString();
+            DateTime dataNascimento = Convert.ToDateTime(dgvMedicos.SelectedRows[0].Cells["DataNascimento"].Value);
+            string sexo = dgvMedicos.SelectedRows[0].Cells["Sexo"].Value.ToString();
+            string telefoneResidencial = dgvMedicos.SelectedRows[0].Cells["TelefoneResidencial"].Value.ToString();
+            string telefoneComercial = dgvMedicos.SelectedRows[0].Cells["TelefoneComercial"].Value.ToString();
+            string telefoneCelular = dgvMedicos.SelectedRows[0].Cells["TelefoneCelular"].Value.ToString();
+            string email = dgvMedicos.SelectedRows[0].Cells["Email"].Value.ToString();
+            string cep = dgvMedicos.SelectedRows[0].Cells["CEP"].Value.ToString();
+            string endereco = dgvMedicos.SelectedRows[0].Cells["Endereco"].Value.ToString();
+            string numero = dgvMedicos.SelectedRows[0].Cells["Numero"].Value.ToString();
+            string complemento = dgvMedicos.SelectedRows[0].Cells["Complemento"].Value.ToString();
+            string bairro = dgvMedicos.SelectedRows[0].Cells["Bairro"].Value.ToString();
+            string cidade = dgvMedicos.SelectedRows[0].Cells["Cidade"].Value.ToString();
+            string estado = dgvMedicos.SelectedRows[0].Cells["Estado"].Value.ToString();
+
+            FrmMedicoManter frmMedicoManter = new FrmMedicoManter(codigo, nome, cpf, rg, crm, dataNascimento, sexo, telefoneResidencial, telefoneComercial, telefoneCelular, email, cep, endereco, numero, complemento, bairro, cidade, estado);
+            frmMedicoManter.ShowDialog(this);
+        }
+
         private void CarregarDataGridView()
         {
             dgvMedicos.DataSource = new MedicoController().Select();
