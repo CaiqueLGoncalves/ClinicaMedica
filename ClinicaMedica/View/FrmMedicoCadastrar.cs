@@ -2,7 +2,6 @@
 using ClinicaMedica.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ClinicaMedica.View
@@ -16,7 +15,14 @@ namespace ClinicaMedica.View
 
         private void FrmMedicoCadastrar_Load(object sender, EventArgs e)
         {
+            // Carregar o DataGridView
             TB_EspecialidadeTableAdapter.Fill(ClinicaMedicaBDDataSet.TB_Especialidade);
+
+            // Deseleciona todas as especialidades
+            for (int i = 0; i < dgvEspecialidades.Rows.Count; i++)
+            {
+                dgvEspecialidades.Rows[i].Selected = false;
+            }
         }
 
         private void btnBuscarCEP_Click(object sender, EventArgs e)

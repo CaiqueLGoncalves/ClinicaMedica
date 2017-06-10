@@ -1,7 +1,9 @@
 ﻿using ClinicaMedica.Model;
 using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Data.Entity.Validation;
+
 
 namespace ClinicaMedica.Controller
 {
@@ -49,6 +51,18 @@ namespace ClinicaMedica.Controller
             {
                 throw new Exception("Não foi possível adicionar esta especialidade ao médico!\n" + ex.Message);
             }
+        }
+
+        public List<int> Select(int identificacaoMedico)
+        {
+            var query = from me in db.TB_MedicoEspecialidade
+                        where me.IdentificacaoMedico == identificacaoMedico
+                        orderby me.IdEspecialidade ascending
+                        select me.IdEspecialidade;
+
+            var resultado = query.ToList();
+
+            return resultado;
         }
     }
 }
