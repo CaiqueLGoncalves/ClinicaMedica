@@ -219,6 +219,12 @@
     <Compile Include="View\FrmFuncionarioConsultar.Designer.cs">
       <DependentUpon>FrmFuncionarioConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmFuncionarioManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmFuncionarioManter.Designer.cs">
+      <DependentUpon>FrmFuncionarioManter.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmIndex.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,12 @@
     <Compile Include="View\FrmMedicoConsultar.Designer.cs">
       <DependentUpon>FrmMedicoConsultar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmMedicoManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmMedicoManter.Designer.cs">
+      <DependentUpon>FrmMedicoManter.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmPacienteCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +260,12 @@
     </Compile>
     <Compile Include="View\FrmPacienteConsultar.Designer.cs">
       <DependentUpon>FrmPacienteConsultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmPacienteManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmPacienteManter.Designer.cs">
+      <DependentUpon>FrmPacienteManter.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -297,6 +315,9 @@
     <EmbeddedResource Include="View\FrmFuncionarioConsultar.resx">
       <DependentUpon>FrmFuncionarioConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmFuncionarioManter.resx">
+      <DependentUpon>FrmFuncionarioManter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmIndex.resx">
       <DependentUpon>FrmIndex.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,11 +327,17 @@
     <EmbeddedResource Include="View\FrmMedicoConsultar.resx">
       <DependentUpon>FrmMedicoConsultar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmMedicoManter.resx">
+      <DependentUpon>FrmMedicoManter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPacienteCadastrar.resx">
       <DependentUpon>FrmPacienteCadastrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPacienteConsultar.resx">
       <DependentUpon>FrmPacienteConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmPacienteManter.resx">
+      <DependentUpon>FrmPacienteManter.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -100,8 +100,8 @@ namespace ClinicaMedica.View
             string cidade = dgvFuncionarios.SelectedRows[0].Cells["Cidade"].Value.ToString();
             string estado = dgvFuncionarios.SelectedRows[0].Cells["Estado"].Value.ToString();
 
-            // FrmFuncionarioManter frmFuncManter = new FrmFuncionarioManter(codigo, nome, cpf, rg, dataNascimento, sexo, funcao, telefoneResidencial, telefoneComercial, telefoneCelular, email, cep, endereco, numero, complemento, bairro, cidade, estado);
-            // frmFuncManter.ShowDialog(this);
+            FrmFuncionarioManter frmFuncManter = new FrmFuncionarioManter(codigo, nome, cpf, rg, dataNascimento, sexo, funcao, telefoneResidencial, telefoneComercial, telefoneCelular, email, cep, endereco, numero, complemento, bairro, cidade, estado);
+            frmFuncManter.ShowDialog(this);
         }
 
         private void CarregarDataGridView()

@@ -9,8 +9,14 @@ namespace ClinicaMedica.View
         public FrmFuncaoManter(int idFuncao, string nome, string descricao)
         {
             InitializeComponent();
+
+            // ID da Função
             this.idFuncao = idFuncao;
+
+            // Nome da Função
             txbNome.Text = nome;
+
+            // Descrição da Função
             txbDescricao.Text = descricao;
         }
     }
