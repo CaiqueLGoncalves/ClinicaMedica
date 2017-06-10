@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using ClinicaMedica.Controller;
+using ClinicaMedica.Model;
+using System;
+using System.Windows.Forms;
 
 namespace ClinicaMedica.View
 {
@@ -18,6 +21,26 @@ namespace ClinicaMedica.View
 
             // Descrição da Especialidade
             txbDescricao.Text = descricao;
+        }
+
+        private void btnExcluir_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                EspecialidadeController espCont = new EspecialidadeController();
+                Especialidade especialidade = new Especialidade();
+                especialidade.IdEspecialidade = idEspecialidade;
+
+                if (espCont.Delete(especialidade))
+                {
+                    MessageBox.Show("Especialidade excluída com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

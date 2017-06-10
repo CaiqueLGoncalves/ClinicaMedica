@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
+using System.Data.Entity.Infrastructure;
 
 namespace ClinicaMedica.Controller
 {
@@ -56,6 +57,44 @@ namespace ClinicaMedica.Controller
             catch (Exception ex)
             {
                 throw new Exception("Não foi possível cadastrar o paciente!\n" + ex.Message);
+            }
+        }
+
+        public bool Delete(Paciente paciente)
+        {
+            try
+            {
+                paciente = db.TB_Usuario_Paciente.Find(paciente.Identificacao);
+                db.TB_Usuario_Paciente.Remove(paciente);
+                db.SaveChanges();
+                return true;
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var evError in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entidade do tipo \"{0}\" no estado \"{1}\" possui os seguintes erros de validação: ",
+                                       evError.Entry.Entity.GetType().Name,
+                                       evError.Entry.State);
+
+                    foreach (var valError in evError.ValidationErrors)
+                    {
+                        Console.WriteLine("- Propriedade: \"{0}\", Valor: \"{1}\", Erro: \"{2}\"",
+                                          valError.PropertyName,
+                                          evError.Entry.CurrentValues.GetValue<object>(valError.PropertyName),
+                                          valError.ErrorMessage);
+                    }
+                }
+
+                throw new Exception("Erro Interno. Por favor, contate o(s) administrador(es) do sistema.", ex);
+            }
+            catch (DbUpdateException)
+            {
+                throw new Exception("Não foi possível excluir este paciente, pois alguma consulta está agendada para o mesmo.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível excluir este paciente!\n" + ex.Message);
             }
         }
 

@@ -122,5 +122,44 @@ namespace ClinicaMedica.View
                 MessageBox.Show("Não foi possível encontrar o CEP informado!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MedicoEspecialidadeController meCont = new MedicoEspecialidadeController();
+                var especialidades = meCont.Select(codigo);
+                int erros = 0;
+
+                foreach (var esp in especialidades)
+                {
+                    MedicoEspecialidade me = new MedicoEspecialidade();
+                    me.IdentificacaoMedico = codigo;
+                    me.IdEspecialidade = esp;
+
+                    if (!meCont.Delete(me))
+                    {
+                        erros++;
+                    }
+                }
+                 
+                if (erros == 0)
+                {
+                    MedicoController medicoCont = new MedicoController();
+                    Medico medico = new Medico();
+                    medico.Identificacao = codigo;
+
+                    if (medicoCont.Delete(medico))
+                    {
+                        MessageBox.Show("Médico excluído com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

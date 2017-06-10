@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
             this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
+            this.IdEspecialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TBEspecialidadeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.lblEspecialidades = new System.Windows.Forms.Label();
@@ -66,7 +69,6 @@
             this.txbComplemento = new System.Windows.Forms.TextBox();
             this.txbBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.lblDataNascimento = new System.Windows.Forms.Label();
             this.txbRG = new System.Windows.Forms.TextBox();
@@ -76,9 +78,8 @@
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.TB_EspecialidadeTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_EspecialidadeTableAdapter();
-            this.IdEspecialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.gpbDadosProfissionais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TBEspecialidadeBindingSource)).BeginInit();
@@ -108,14 +109,14 @@
             this.dgvEspecialidades.AutoGenerateColumns = false;
             this.dgvEspecialidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEspecialidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEspecialidade,
@@ -128,6 +129,30 @@
             this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEspecialidades.Size = new System.Drawing.Size(256, 95);
             this.dgvEspecialidades.TabIndex = 32;
+            // 
+            // IdEspecialidade
+            // 
+            this.IdEspecialidade.DataPropertyName = "IdEspecialidade";
+            this.IdEspecialidade.HeaderText = "IdEspecialidade";
+            this.IdEspecialidade.Name = "IdEspecialidade";
+            this.IdEspecialidade.ReadOnly = true;
+            this.IdEspecialidade.Visible = false;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Lista de Especialidades";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Visible = false;
             // 
             // TBEspecialidadeBindingSource
             // 
@@ -476,14 +501,6 @@
             this.lblBairro.TabIndex = 9;
             this.lblBairro.Text = "Bairro:";
             // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.Location = new System.Drawing.Point(173, 774);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(100, 23);
-            this.btnCadastrar.TabIndex = 47;
-            this.btnCadastrar.Text = "Cadastrar";
-            // 
             // dtpDataNascimento
             // 
             this.dtpDataNascimento.Cursor = System.Windows.Forms.Cursors.Default;
@@ -560,41 +577,36 @@
             // 
             this.TB_EspecialidadeTableAdapter.ClearBeforeFill = true;
             // 
-            // IdEspecialidade
+            // btnExcluir
             // 
-            this.IdEspecialidade.DataPropertyName = "IdEspecialidade";
-            this.IdEspecialidade.HeaderText = "IdEspecialidade";
-            this.IdEspecialidade.Name = "IdEspecialidade";
-            this.IdEspecialidade.ReadOnly = true;
-            this.IdEspecialidade.Visible = false;
+            this.btnExcluir.Location = new System.Drawing.Point(255, 774);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(100, 23);
+            this.btnExcluir.TabIndex = 34;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // Nome
+            // btnAlterar
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Lista de Especialidades";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descricao";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Visible = false;
+            this.btnAlterar.Location = new System.Drawing.Point(80, 774);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(100, 23);
+            this.btnAlterar.TabIndex = 33;
+            this.btnAlterar.Text = "Alterar";
             // 
             // FrmMedicoManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 811);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.gpbDadosProfissionais);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.gpbSexo);
             this.Controls.Add(this.gpbContato);
             this.Controls.Add(this.gpbLocalidade);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.dtpDataNascimento);
             this.Controls.Add(this.lblDataNascimento);
             this.Controls.Add(this.txbRG);
@@ -661,7 +673,6 @@
         private System.Windows.Forms.TextBox txbComplemento;
         private System.Windows.Forms.TextBox txbBairro;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
         private System.Windows.Forms.Label lblDataNascimento;
         private System.Windows.Forms.TextBox txbRG;
@@ -676,5 +687,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEspecialidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

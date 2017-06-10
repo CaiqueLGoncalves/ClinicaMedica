@@ -1,4 +1,5 @@
-﻿using ClinicaMedica.Model;
+﻿using ClinicaMedica.Controller;
+using ClinicaMedica.Model;
 using System;
 using System.Windows.Forms;
 
@@ -90,6 +91,26 @@ namespace ClinicaMedica.View
             catch (Exception)
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PacienteController pacienteCont = new PacienteController();
+                Paciente paciente = new Paciente();
+                paciente.Identificacao = codigo;
+
+                if (pacienteCont.Delete(paciente))
+                {
+                    MessageBox.Show("Paciente excluído com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
