@@ -115,8 +115,8 @@ namespace ClinicaMedica.View
             string cidade = dgvMedicos.SelectedRows[0].Cells["Cidade"].Value.ToString();
             string estado = dgvMedicos.SelectedRows[0].Cells["Estado"].Value.ToString();
 
-            FrmMedicoManter frmMedicoManter = new FrmMedicoManter(codigo, nome, cpf, rg, crm, dataNascimento, sexo, telefoneResidencial, telefoneComercial, telefoneCelular, email, cep, endereco, numero, complemento, bairro, cidade, estado);
-            frmMedicoManter.ShowDialog(this);
+            // FrmMedicoManter frmMedicoManter = new FrmMedicoManter(codigo, nome, cpf, rg, crm, dataNascimento, sexo, telefoneResidencial, telefoneComercial, telefoneCelular, email, cep, endereco, numero, complemento, bairro, cidade, estado);
+            // frmMedicoManter.ShowDialog(this);
         }
 
         private void CarregarDataGridView()
