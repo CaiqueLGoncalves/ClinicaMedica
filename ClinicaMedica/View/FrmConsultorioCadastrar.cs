@@ -54,6 +54,7 @@ namespace ClinicaMedica.View
             c.CNPJ = mskCnpj.Text;
             c.HorarioAbertura = dtpHorairoAbertura.Value.TimeOfDay;
             c.HorarioFechamento = dtpHorarioFechamento.Value.TimeOfDay;
+            c.Telefone = mskTelefone.Text;
             l.Endereco = txbEndereco.Text;
             l.Numero = txbNumero.Text;
             l.Complemento = txbComplemento.Text;
