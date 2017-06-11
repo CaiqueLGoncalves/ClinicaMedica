@@ -93,5 +93,11 @@ namespace ClinicaMedica.View
             FrmFuncionarioConsultar funcCons = new FrmFuncionarioConsultar();
             funcCons.ShowDialog(this);
         }
+
+        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaGerenciar consGerenciar = new FrmConsultaGerenciar();
+            consGerenciar.ShowDialog(this);
+        }
     }
 }

@@ -70,6 +70,12 @@ namespace ClinicaMedica.Controller
             return resultado;
         }
 
+        public Consultorio Select(int idConsultorio)
+        {
+            Consultorio consultorio = db.TB_Consultorio.Find(idConsultorio);
+            return consultorio;
+        }
+
         public List<ConsultaConsultorio> Select(string filtro, string pesquisa)
         {
             IQueryable<ConsultaConsultorio> query = null;
@@ -160,6 +166,19 @@ namespace ClinicaMedica.Controller
             }
 
             var resultado = query.ToList();
+            return resultado;
+        }       
+
+        public List<Funcionario> FindMedico(int idConsultorio)
+        {
+            var query = from qf in db.TB_QuadroFuncionarios
+                        where qf.IdConsultorio == idConsultorio
+                        where qf.Status == true
+                        where qf.Funcionario.Funcao.Nome.Equals("Médico")
+                        select qf.Funcionario;
+
+            var resultado = query.ToList();
+
             return resultado;
         }
     }

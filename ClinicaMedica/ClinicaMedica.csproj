@@ -63,6 +63,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaMedicaBDDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Controller\ConsultaController.cs" />
+    <Compile Include="Model\ConsultaConsulta.cs" />
     <Compile Include="Model\ConsultaConsultorio.cs" />
     <Compile Include="Model\ConsultaFuncionario.cs" />
     <Compile Include="Model\ConsultaMedico.cs" />
@@ -141,6 +143,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultaCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultaCadastrar.Designer.cs">
+      <DependentUpon>FrmConsultaCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultaGerenciar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultaGerenciar.Designer.cs">
+      <DependentUpon>FrmConsultaGerenciar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultaManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultaManter.Designer.cs">
+      <DependentUpon>FrmConsultaManter.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmEspecialidadeCadastrar.cs">
       <SubType>Form</SubType>
@@ -277,6 +297,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmConsultaCadastrar.resx">
+      <DependentUpon>FrmConsultaCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConsultaGerenciar.resx">
+      <DependentUpon>FrmConsultaGerenciar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConsultaManter.resx">
+      <DependentUpon>FrmConsultaManter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmConsultorioCadastrar.resx">
       <DependentUpon>FrmConsultorioCadastrar.cs</DependentUpon>
     </EmbeddedResource>

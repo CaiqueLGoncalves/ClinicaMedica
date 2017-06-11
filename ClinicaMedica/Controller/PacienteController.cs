@@ -117,7 +117,6 @@ namespace ClinicaMedica.Controller
             }
         }
 
-
         public bool Delete(Paciente paciente)
         {
             try
