@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 
 namespace ClinicaMedica.Controller
 {
@@ -59,6 +60,63 @@ namespace ClinicaMedica.Controller
                 throw new Exception("Não foi possível cadastrar o paciente!\n" + ex.Message);
             }
         }
+
+        public List<string> Update(Paciente paciente, Localidade localidade)
+        {
+            var errosPaciente = Validacao.Validar(paciente);
+            var errosLocalidade = Validacao.Validar(localidade);
+
+            try
+            {
+                if (errosPaciente.Count() == 0 && errosLocalidade.Count() == 0)
+                {
+                    db.Set<Paciente>().AddOrUpdate(paciente);
+                    db.Set<Localidade>().AddOrUpdate(localidade);
+                    db.SaveChanges();
+                    return null;
+                }
+                else
+                {
+                    List<string> listaErros = new List<string>();
+
+                    foreach (var erro in errosPaciente)
+                    {
+                        listaErros.Add(erro.ErrorMessage);
+                    }
+
+                    foreach (var erro in errosLocalidade)
+                    {
+                        listaErros.Add(erro.ErrorMessage);
+                    }
+
+                    return listaErros;
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var evError in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entidade do tipo \"{0}\" no estado \"{1}\" possui os seguintes erros de validação: ",
+                                       evError.Entry.Entity.GetType().Name,
+                                       evError.Entry.State);
+
+                    foreach (var valError in evError.ValidationErrors)
+                    {
+                        Console.WriteLine("- Propriedade: \"{0}\", Valor: \"{1}\", Erro: \"{2}\"",
+                                          valError.PropertyName,
+                                          evError.Entry.CurrentValues.GetValue<object>(valError.PropertyName),
+                                          valError.ErrorMessage);
+                    }
+                }
+
+                throw new Exception("Erro Interno. Por favor, contate o(s) administrador(es) do sistema.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível alterar o paciente!\n" + ex.ToString());
+            }
+        }
+
 
         public bool Delete(Paciente paciente)
         {
@@ -221,6 +279,12 @@ namespace ClinicaMedica.Controller
 
             var resultado = query.ToList();
             return resultado;
+        }
+
+        public Localidade FindLocalidade(int codigo)
+        {
+            Localidade l = db.TB_Usuario_Paciente.Find(codigo).Localidade;
+            return l;
         }
     }
 }

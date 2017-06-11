@@ -4,7 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Data.Entity.Infrastructure;
-using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace ClinicaMedica.Controller
 {
@@ -61,15 +61,17 @@ namespace ClinicaMedica.Controller
             }
         }
 
-        public List<string> Update(Funcionario funcionario)
+        public List<string> Update(Funcionario funcionario, Localidade localidade)
         {
-            var erros = Validacao.Validar(funcionario);
+            var errosFuncionario = Validacao.Validar(funcionario);
+            var errosLocalidade = Validacao.Validar(localidade);
 
             try
             {
-                if (erros.Count() == 0)
+                if (errosFuncionario.Count() == 0 && errosLocalidade.Count() == 0)
                 {
-                    db.Entry(funcionario).State = EntityState.Modified;
+                    db.Set<Funcionario>().AddOrUpdate(funcionario);
+                    db.Set<Localidade>().AddOrUpdate(localidade);
                     db.SaveChanges();
                     return null;
                 }
@@ -77,7 +79,12 @@ namespace ClinicaMedica.Controller
                 {
                     List<string> listaErros = new List<string>();
 
-                    foreach (var erro in erros)
+                    foreach (var erro in errosFuncionario)
+                    {
+                        listaErros.Add(erro.ErrorMessage);
+                    }
+
+                    foreach (var erro in errosLocalidade)
                     {
                         listaErros.Add(erro.ErrorMessage);
                     }

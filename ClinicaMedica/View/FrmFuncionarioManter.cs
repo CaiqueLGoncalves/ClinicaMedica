@@ -107,7 +107,6 @@ namespace ClinicaMedica.View
             try
             {
                 FuncionarioController funcCont = new FuncionarioController();
-                LocalidadeController localCont = new LocalidadeController();
                 Funcionario f = new Funcionario();
                 Localidade l = new Localidade();
 
@@ -119,8 +118,6 @@ namespace ClinicaMedica.View
                 l.Bairro = txbBairro.Text;
                 l.Cidade = txbCidade.Text;
                 l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
-
-                var resultadoLocalidade = localCont.Update(l);
 
                 f.Identificacao = codigo;
                 f.Nome = txbNome.Text;
@@ -136,7 +133,7 @@ namespace ClinicaMedica.View
                 f.IdLocalidade = l.IdLocalidade;
                 f.Localidade = l;
 
-                var resultado = funcCont.Update(f);
+                var resultado = funcCont.Update(f, l);
 
                 if (resultado == null)
                 {
