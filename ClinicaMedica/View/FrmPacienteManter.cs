@@ -94,6 +94,56 @@ namespace ClinicaMedica.View
             }
         }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PacienteController pacienteCont = new PacienteController();
+                Paciente p = new Paciente();
+                Localidade l = new Localidade();
+
+                l.IdLocalidade = pacienteCont.FindLocalidade(codigo).IdLocalidade;
+                l.CEP = mskCEP.Text;
+                l.Endereco = txbEndereco.Text;
+                l.Numero = txbNumero.Text;
+                l.Complemento = txbComplemento.Text;
+                l.Bairro = txbBairro.Text;
+                l.Cidade = txbCidade.Text;
+                l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
+
+                p.Identificacao = codigo;
+                p.Nome = txbNome.Text;
+                p.CPF = mskCPF.Text;
+                p.RG = txbRG.Text;
+                p.DataNascimento = dtpDataNascimento.Value;
+                p.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
+                p.TelefoneResidencial = mskTelefoneResidencial.Text;
+                p.TelefoneComercial = mskTelefoneResidencial.Text;
+                p.TelefoneCelular = mskTelefoneCelular.Text;
+                p.Email = txbEmail.Text;
+                p.Localidade = l;
+
+                var resultado = pacienteCont.Update(p, l);
+
+                if (resultado == null)
+                {
+                    MessageBox.Show("Paciente alterado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+                else
+                {
+                    foreach (var erro in resultado)
+                    {
+                        MessageBox.Show("Não foi possível alterar o paciente!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             try
