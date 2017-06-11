@@ -67,11 +67,14 @@
             this.IdExame = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recomendacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gpbEndereço = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).BeginInit();
+            this.gpbEndereço.SuspendLayout();
             this.SuspendLayout();
             // 
             // txbNomeFantasia
@@ -157,7 +160,7 @@
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(105, 281);
+            this.lblCep.Location = new System.Drawing.Point(33, 34);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 10;
@@ -166,7 +169,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(105, 312);
+            this.lblEndereco.Location = new System.Drawing.Point(33, 65);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(53, 13);
             this.lblEndereco.TabIndex = 11;
@@ -175,7 +178,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(105, 339);
+            this.lblNumero.Location = new System.Drawing.Point(33, 92);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 12;
@@ -184,7 +187,7 @@
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(105, 365);
+            this.lblComplemento.Location = new System.Drawing.Point(33, 118);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(71, 13);
             this.lblComplemento.TabIndex = 13;
@@ -193,7 +196,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(105, 394);
+            this.lblBairro.Location = new System.Drawing.Point(33, 147);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(34, 13);
             this.lblBairro.TabIndex = 14;
@@ -202,7 +205,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(105, 422);
+            this.lblCidade.Location = new System.Drawing.Point(33, 175);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(40, 13);
             this.lblCidade.TabIndex = 15;
@@ -211,7 +214,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(105, 457);
+            this.lblEstado.Location = new System.Drawing.Point(33, 210);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 16;
@@ -220,21 +223,21 @@
             // txbEndereco
             // 
             this.txbEndereco.Enabled = false;
-            this.txbEndereco.Location = new System.Drawing.Point(214, 305);
+            this.txbEndereco.Location = new System.Drawing.Point(142, 58);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(192, 20);
             this.txbEndereco.TabIndex = 8;
             // 
             // txbNumero
             // 
-            this.txbNumero.Location = new System.Drawing.Point(214, 332);
+            this.txbNumero.Location = new System.Drawing.Point(142, 85);
             this.txbNumero.Name = "txbNumero";
             this.txbNumero.Size = new System.Drawing.Size(100, 20);
             this.txbNumero.TabIndex = 9;
             // 
             // txbComplemento
             // 
-            this.txbComplemento.Location = new System.Drawing.Point(214, 362);
+            this.txbComplemento.Location = new System.Drawing.Point(142, 115);
             this.txbComplemento.Name = "txbComplemento";
             this.txbComplemento.Size = new System.Drawing.Size(192, 20);
             this.txbComplemento.TabIndex = 10;
@@ -242,7 +245,7 @@
             // txbBairro
             // 
             this.txbBairro.Enabled = false;
-            this.txbBairro.Location = new System.Drawing.Point(214, 394);
+            this.txbBairro.Location = new System.Drawing.Point(142, 147);
             this.txbBairro.Name = "txbBairro";
             this.txbBairro.Size = new System.Drawing.Size(100, 20);
             this.txbBairro.TabIndex = 11;
@@ -250,7 +253,7 @@
             // txbCidade
             // 
             this.txbCidade.Enabled = false;
-            this.txbCidade.Location = new System.Drawing.Point(214, 422);
+            this.txbCidade.Location = new System.Drawing.Point(142, 175);
             this.txbCidade.Name = "txbCidade";
             this.txbCidade.Size = new System.Drawing.Size(100, 20);
             this.txbCidade.TabIndex = 12;
@@ -258,7 +261,7 @@
             // txbEstado
             // 
             this.txbEstado.Enabled = false;
-            this.txbEstado.Location = new System.Drawing.Point(214, 457);
+            this.txbEstado.Location = new System.Drawing.Point(142, 210);
             this.txbEstado.Name = "txbEstado";
             this.txbEstado.Size = new System.Drawing.Size(42, 20);
             this.txbEstado.TabIndex = 13;
@@ -275,7 +278,7 @@
             // 
             // btnBuscarCep
             // 
-            this.btnBuscarCep.Location = new System.Drawing.Point(331, 272);
+            this.btnBuscarCep.Location = new System.Drawing.Point(259, 25);
             this.btnBuscarCep.Name = "btnBuscarCep";
             this.btnBuscarCep.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarCep.TabIndex = 7;
@@ -294,7 +297,7 @@
             // 
             // mskCep
             // 
-            this.mskCep.Location = new System.Drawing.Point(214, 272);
+            this.mskCep.Location = new System.Drawing.Point(142, 25);
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(100, 20);
@@ -304,7 +307,7 @@
             // lblExames
             // 
             this.lblExames.AutoSize = true;
-            this.lblExames.Location = new System.Drawing.Point(108, 509);
+            this.lblExames.Location = new System.Drawing.Point(134, 540);
             this.lblExames.Name = "lblExames";
             this.lblExames.Size = new System.Drawing.Size(44, 13);
             this.lblExames.TabIndex = 25;
@@ -363,7 +366,7 @@
             this.nomeDataGridViewTextBoxColumn,
             this.recomendacoesDataGridViewTextBoxColumn});
             this.dtgExame.DataSource = this.tBExameBindingSource2;
-            this.dtgExame.Location = new System.Drawing.Point(200, 509);
+            this.dtgExame.Location = new System.Drawing.Point(214, 540);
             this.dtgExame.Name = "dtgExame";
             this.dtgExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgExame.Size = new System.Drawing.Size(232, 150);
@@ -375,6 +378,7 @@
             this.IdExame.HeaderText = "IdExame";
             this.IdExame.Name = "IdExame";
             this.IdExame.ReadOnly = true;
+            this.IdExame.Visible = false;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -387,34 +391,52 @@
             this.recomendacoesDataGridViewTextBoxColumn.DataPropertyName = "Recomendacoes";
             this.recomendacoesDataGridViewTextBoxColumn.HeaderText = "Recomendacoes";
             this.recomendacoesDataGridViewTextBoxColumn.Name = "recomendacoesDataGridViewTextBoxColumn";
+            this.recomendacoesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // gpbEndereço
+            // 
+            this.gpbEndereço.Controls.Add(this.txbCidade);
+            this.gpbEndereço.Controls.Add(this.lblCep);
+            this.gpbEndereço.Controls.Add(this.txbBairro);
+            this.gpbEndereço.Controls.Add(this.lblEndereco);
+            this.gpbEndereço.Controls.Add(this.txbComplemento);
+            this.gpbEndereço.Controls.Add(this.txbNumero);
+            this.gpbEndereço.Controls.Add(this.lblNumero);
+            this.gpbEndereço.Controls.Add(this.txbEstado);
+            this.gpbEndereço.Controls.Add(this.txbEndereco);
+            this.gpbEndereço.Controls.Add(this.lblComplemento);
+            this.gpbEndereço.Controls.Add(this.lblEstado);
+            this.gpbEndereço.Controls.Add(this.btnBuscarCep);
+            this.gpbEndereço.Controls.Add(this.mskCep);
+            this.gpbEndereço.Controls.Add(this.lblCidade);
+            this.gpbEndereço.Controls.Add(this.lblBairro);
+            this.gpbEndereço.Location = new System.Drawing.Point(75, 254);
+            this.gpbEndereço.Name = "gpbEndereço";
+            this.gpbEndereço.Size = new System.Drawing.Size(377, 252);
+            this.gpbEndereço.TabIndex = 29;
+            this.gpbEndereço.TabStop = false;
+            this.gpbEndereço.Text = "Localidade";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(75, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(334, 236);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Dados Gerais";
             // 
             // FrmConsultorioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 661);
-            this.Controls.Add(this.dtgExame);
             this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.lblTelefone);
-            this.Controls.Add(this.lblExames);
-            this.Controls.Add(this.mskCep);
             this.Controls.Add(this.mskCnpj);
-            this.Controls.Add(this.btnBuscarCep);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.txbEstado);
-            this.Controls.Add(this.txbCidade);
-            this.Controls.Add(this.txbBairro);
-            this.Controls.Add(this.txbComplemento);
-            this.Controls.Add(this.txbNumero);
-            this.Controls.Add(this.txbEndereco);
-            this.Controls.Add(this.lblEstado);
-            this.Controls.Add(this.lblCidade);
-            this.Controls.Add(this.lblBairro);
-            this.Controls.Add(this.lblComplemento);
-            this.Controls.Add(this.lblNumero);
-            this.Controls.Add(this.lblEndereco);
-            this.Controls.Add(this.lblCep);
             this.Controls.Add(this.lblHorarioFechamento);
+            this.Controls.Add(this.dtgExame);
             this.Controls.Add(this.lblHorarioAbertura);
             this.Controls.Add(this.lblCnpj);
             this.Controls.Add(this.lblRazaoSocial);
@@ -423,6 +445,9 @@
             this.Controls.Add(this.dtpHorairoAbertura);
             this.Controls.Add(this.txbRazaoSocial);
             this.Controls.Add(this.txbNomeFantasia);
+            this.Controls.Add(this.lblExames);
+            this.Controls.Add(this.gpbEndereço);
+            this.Controls.Add(this.groupBox1);
             this.Name = "FrmConsultorioCadastrar";
             this.Text = "Cadastro de Consultório";
             this.Load += new System.EventHandler(this.FrmConsultorioCadastrar_Load);
@@ -431,6 +456,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).EndInit();
+            this.gpbEndereço.ResumeLayout(false);
+            this.gpbEndereço.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,5 +503,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdExame;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn recomendacoesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox gpbEndereço;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
