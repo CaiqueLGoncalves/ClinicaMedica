@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
@@ -38,6 +39,7 @@
             this.rbtNome = new System.Windows.Forms.RadioButton();
             this.rbtCodigo = new System.Windows.Forms.RadioButton();
             this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
+            this.ttpPaciente = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.gpbFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +75,7 @@
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacientes.Size = new System.Drawing.Size(760, 385);
             this.dgvPacientes.TabIndex = 5;
+            this.ttpPaciente.SetToolTip(this.dgvPacientes, "Dê um duplo clique no paciente que deseja alterar ou excluir.");
             this.dgvPacientes.DoubleClick += new System.EventHandler(this.dgvPacientes_DoubleClick);
             // 
             // lblTitulo
@@ -189,5 +192,6 @@
         private System.Windows.Forms.RadioButton rbtCPF;
         private System.Windows.Forms.RadioButton rbtNome;
         private System.Windows.Forms.Label lblFiltros;
+        private System.Windows.Forms.ToolTip ttpPaciente;
     }
 }

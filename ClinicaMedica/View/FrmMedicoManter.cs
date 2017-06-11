@@ -1,6 +1,7 @@
 ﻿using ClinicaMedica.Controller;
 using ClinicaMedica.Model;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace ClinicaMedica.View
@@ -120,6 +121,112 @@ namespace ClinicaMedica.View
             catch (Exception)
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MedicoController medicoCont = new MedicoController();
+                MedicoEspecialidadeController meCont = new MedicoEspecialidadeController();
+
+                /* Excluir Todas as Especialidades do Médico */
+
+                List<int> especialidadesCadastradas = meCont.Select(codigo);
+
+                foreach (var esp in especialidadesCadastradas)
+                {
+                    MedicoEspecialidade me = new MedicoEspecialidade();
+                    me.IdentificacaoMedico = codigo;
+                    me.IdEspecialidade = esp;
+                
+                    meCont.Delete(me);
+                }
+
+                /* Lista de Especialidades do Médico para Cadastrar */
+
+                List<int> listaIdEspecialidade = new List<int>();
+
+                for (int i = 0; i < dgvEspecialidades.SelectedRows.Count; i++)
+                {
+                    listaIdEspecialidade.Add(int.Parse(dgvEspecialidades.SelectedRows[i].Cells["IdEspecialidade"].Value.ToString()));
+                }
+
+                listaIdEspecialidade.Sort();
+
+                /* Localidade do Médico */
+
+                Localidade l = new Localidade();
+
+                l.IdLocalidade = medicoCont.FindLocalidade(codigo).IdLocalidade;
+                l.CEP = mskCEP.Text;
+                l.Endereco = txbEndereco.Text;
+                l.Numero = txbNumero.Text;
+                l.Complemento = txbComplemento.Text;
+                l.Bairro = txbBairro.Text;
+                l.Cidade = txbCidade.Text;
+                l.Estado = Utilitario.RetornarSiglaEstado(cmbEstado.SelectedIndex);
+
+                /* Cadastro do Médico */
+
+                Medico m = new Medico();
+
+                m.Identificacao = codigo;
+                m.Nome = txbNome.Text;
+                m.CPF = mskCPF.Text;
+                m.RG = txbRG.Text;
+                m.DataNascimento = dtpDataNascimento.Value;
+                m.Sexo = (rbtMasculino.Checked) ? rbtMasculino.Text : rbtFeminino.Text;
+
+                m.IdFuncao = 1;
+                m.CRM = txbCRM.Text;
+
+                m.TelefoneResidencial = mskTelefoneResidencial.Text;
+                m.TelefoneComercial = mskTelefoneComercial.Text;
+                m.TelefoneCelular = mskTelefoneCelular.Text;
+                m.Email = txbEmail.Text;
+
+                m.IdLocalidade = l.IdLocalidade;
+                m.Localidade = l;
+
+                var resultado = medicoCont.Update(m, l);
+
+                if (resultado == null)
+                {
+                    int numeroErros = 0;
+
+                    foreach (var IdEsp in listaIdEspecialidade)
+                    {
+                        MedicoEspecialidade me = new MedicoEspecialidade();
+                        me.IdentificacaoMedico = m.Identificacao;
+                        me.IdEspecialidade = IdEsp;
+
+                        numeroErros += meCont.Insert(me);
+                    }
+
+                    if (numeroErros == 0)
+                    {
+                        MessageBox.Show("Médico alterado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Médico alterado, porém com erros.", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                    Close();
+                }
+                else
+                {
+                    foreach (var erro in resultado)
+                    {
+                        MessageBox.Show("Não foi possível alterar o médico!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
