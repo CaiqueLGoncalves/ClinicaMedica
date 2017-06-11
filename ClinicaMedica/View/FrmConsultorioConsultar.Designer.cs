@@ -36,22 +36,23 @@
             this.rdbCidade = new System.Windows.Forms.RadioButton();
             this.rdbNome = new System.Windows.Forms.RadioButton();
             this.cmbExame = new System.Windows.Forms.ComboBox();
-            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.tBExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.tB_ExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter();
             this.lblExame = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultorio)).BeginInit();
             this.gpbFiltro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(257, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.Size = new System.Drawing.Size(243, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta de Consultórios";
             // 
@@ -70,10 +71,12 @@
             this.dgvConsultorio.AllowUserToResizeColumns = false;
             this.dgvConsultorio.AllowUserToResizeRows = false;
             this.dgvConsultorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultorio.Location = new System.Drawing.Point(23, 175);
+            this.dgvConsultorio.Location = new System.Drawing.Point(23, 161);
             this.dgvConsultorio.Name = "dgvConsultorio";
+            this.dgvConsultorio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultorio.Size = new System.Drawing.Size(731, 224);
             this.dgvConsultorio.TabIndex = 3;
+            this.dgvConsultorio.DoubleClick += new System.EventHandler(this.dgvConsultorio_DoubleClick);
             // 
             // gpbFiltro
             // 
@@ -82,7 +85,7 @@
             this.gpbFiltro.Controls.Add(this.txtBusca);
             this.gpbFiltro.Location = new System.Drawing.Point(81, 52);
             this.gpbFiltro.Name = "gpbFiltro";
-            this.gpbFiltro.Size = new System.Drawing.Size(544, 42);
+            this.gpbFiltro.Size = new System.Drawing.Size(544, 50);
             this.gpbFiltro.TabIndex = 4;
             this.gpbFiltro.TabStop = false;
             this.gpbFiltro.Text = "Busca Aberta";
@@ -123,15 +126,15 @@
             this.cmbExame.ValueMember = "IdExame";
             this.cmbExame.SelectedIndexChanged += new System.EventHandler(this.cmbExame_SelectedIndexChanged);
             // 
-            // clinicaMedicaBDDataSet
-            // 
-            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
-            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tBExameBindingSource
             // 
             this.tBExameBindingSource.DataMember = "TB_Exame";
             this.tBExameBindingSource.DataSource = this.clinicaMedicaBDDataSet;
+            // 
+            // clinicaMedicaBDDataSet
+            // 
+            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tB_ExameTableAdapter
             // 
@@ -163,8 +166,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultorio)).EndInit();
             this.gpbFiltro.ResumeLayout(false);
             this.gpbFiltro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

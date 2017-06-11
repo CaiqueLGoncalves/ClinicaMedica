@@ -94,10 +94,10 @@ namespace ClinicaMedica.View
             funcCons.ShowDialog(this);
         }
 
-        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exameToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FrmConsultaGerenciar consGerenciar = new FrmConsultaGerenciar();
-            consGerenciar.ShowDialog(this);
+            FrmExameConsultar exaCons = new FrmExameConsultar();
+            exaCons.Show();
         }
     }
 }

@@ -81,7 +81,7 @@ namespace ClinicaMedica.View
             dgvConsultorio.Columns["Bairro"].HeaderText = "Bairro";
             dgvConsultorio.Columns["Cidade"].HeaderText = "Cidade";
             dgvConsultorio.Columns["Estado"].HeaderText = "Estado";
-                    }
+         }
 
         private void FrmConsultorioConsultar_Activated_1(object sender, EventArgs e)
         {
@@ -132,6 +132,32 @@ namespace ClinicaMedica.View
                 txtBusca.Focus();
                 CarregarDataGridView();
             }
+        }
+
+        private void dgvConsultorio_DoubleClick(object sender, EventArgs e)
+        {
+
+            int idconsultorio = Convert.ToInt32(dgvConsultorio.SelectedRows[0].Cells["IdConsultorio"].Value.ToString());
+            string nomefantasia = dgvConsultorio.SelectedRows[0].Cells["NomeFantasia"].Value.ToString();
+            string razaosocial = dgvConsultorio.SelectedRows[0].Cells["RazaoSocial"].Value.ToString();
+            string cnpj = dgvConsultorio.SelectedRows[0].Cells["CNPJ"].Value.ToString();
+            TimeSpan horarioabertura = TimeSpan.Parse(dgvConsultorio.SelectedRows[0].Cells["HorarioAbertura"].Value.ToString());
+            TimeSpan horariofechamento = TimeSpan.Parse(dgvConsultorio.SelectedRows[0].Cells["HorarioFechamento"].Value.ToString());
+            //DateTime horarioabertura = Convert.ToDateTime(dgvConsultorio.SelectedRows[0].Cells["HorarioAbertura"].Value);
+            //DateTime horariofechamento = Convert.ToDateTime(dgvConsultorio.SelectedRows[0].Cells["HorarioFechamento"].Value);
+            string telefone = dgvConsultorio.SelectedRows[0].Cells["Telefone"].Value.ToString();
+            string cep = dgvConsultorio.SelectedRows[0].Cells["CEP"].Value.ToString();
+            string endereco = dgvConsultorio.SelectedRows[0].Cells["Endereco"].Value.ToString();
+            string numero = dgvConsultorio.SelectedRows[0].Cells["Numero"].Value.ToString();
+            string complemento = dgvConsultorio.SelectedRows[0].Cells["Complemento"].Value.ToString();
+            string bairro = dgvConsultorio.SelectedRows[0].Cells["Bairro"].Value.ToString();
+            string cidade = dgvConsultorio.SelectedRows[0].Cells["Cidade"].Value.ToString();
+            string estado = dgvConsultorio.SelectedRows[0].Cells["Estado"].Value.ToString();
+
+
+            FrmConsultorioManter consMant = new FrmConsultorioManter(idconsultorio, nomefantasia, razaosocial, cnpj, horarioabertura, horariofechamento, telefone, cep, endereco, numero, complemento, bairro, cidade, estado);
+            consMant.ShowDialog(this);
+
         }
     }
 
