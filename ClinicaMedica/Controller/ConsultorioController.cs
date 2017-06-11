@@ -2,6 +2,8 @@
 using ClinicaMedica.View;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -162,6 +164,94 @@ namespace ClinicaMedica.Controller
             var resultado = query.ToList();
             return resultado;
         }
+
+        public List<string> Update(Consultorio consultorio)
+        {
+            var erros = Validacao.Validar(consultorio);
+
+            try
+            {
+                if (erros.Count() == 0)
+                {
+                    db.Entry(consultorio).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return null;
+                }
+                else
+                {
+                    List<string> listaErros = new List<string>();
+
+                    foreach (var erro in erros)
+                    {
+                        listaErros.Add(erro.ErrorMessage);
+                    }
+
+                    return listaErros;
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var evError in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entidade do tipo \"{0}\" no estado \"{1}\" possui os seguintes erros de validação: ",
+                                       evError.Entry.Entity.GetType().Name,
+                                       evError.Entry.State);
+
+                    foreach (var valError in evError.ValidationErrors)
+                    {
+                        Console.WriteLine("- Propriedade: \"{0}\", Valor: \"{1}\", Erro: \"{2}\"",
+                                          valError.PropertyName,
+                                          evError.Entry.CurrentValues.GetValue<object>(valError.PropertyName),
+                                          valError.ErrorMessage);
+                    }
+                }
+
+                throw new Exception("Erro Interno. Por favor, contate o(s) administrador(es) do sistema.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível alterar o consultorio!\n" + ex.Message);
+            }
+        }
+
+        public bool Delete(Consultorio consultorio)
+        {
+            try
+            {
+                consultorio = db.TB_Consultorio.Find(consultorio.IdConsultorio);
+                db.TB_Consultorio.Remove(consultorio);
+                db.SaveChanges();
+                return true;
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var evError in ex.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entidade do tipo \"{0}\" no estado \"{1}\" possui os seguintes erros de validação: ",
+                                       evError.Entry.Entity.GetType().Name,
+                                       evError.Entry.State);
+
+                    foreach (var valError in evError.ValidationErrors)
+                    {
+                        Console.WriteLine("- Propriedade: \"{0}\", Valor: \"{1}\", Erro: \"{2}\"",
+                                          valError.PropertyName,
+                                          evError.Entry.CurrentValues.GetValue<object>(valError.PropertyName),
+                                          valError.ErrorMessage);
+                    }
+                }
+
+                throw new Exception("Erro Interno. Por favor, contate o(s) administrador(es) do sistema.", ex);
+            }
+            catch (DbUpdateException)
+            {
+                throw new Exception("Não foi possível excluir este consultório pois ele está vinculado a um exame.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Não foi possível excluir este consultório!\n" + ex.Message);
+            }
+        }
+
     }
 
 

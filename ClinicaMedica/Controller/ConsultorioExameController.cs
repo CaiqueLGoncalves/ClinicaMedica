@@ -41,5 +41,21 @@ namespace ClinicaMedica.Controller
             }
 
         }
+
+        public List<int> Select(int idconsultorio)
+        {
+            var query = from consultorio in db.TB_ConsultorioExame
+                        where consultorio.IdConsultorio == idconsultorio
+                        orderby consultorio.IdExame ascending
+                        select consultorio.IdExame;
+
+            var resultado = query.ToList();
+
+            return resultado;
+        }
+
+
+
+
     }
 }

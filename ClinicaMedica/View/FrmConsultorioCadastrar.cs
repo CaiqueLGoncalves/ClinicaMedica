@@ -34,10 +34,19 @@ namespace ClinicaMedica.View
                 txbBairro.Text = resposta.bairro;
                 txbCidade.Text = resposta.cidade;
                 txbEstado.Text = resposta.uf;
+                txbEndereco.Enabled = false;
+                txbBairro.Enabled = false;
+                txbCidade.Enabled = false;
+                txbEstado.Enabled = false;
+
             }
             catch (Exception)
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado");
+                txbEndereco.Enabled = true;
+                txbBairro.Enabled = true;
+                txbCidade.Enabled = true;
+                txbEstado.Enabled = true;
             }
         }
 
@@ -92,7 +101,10 @@ namespace ClinicaMedica.View
                 MessageBox.Show(erro.ToString());
             }
 
-
+            txbEndereco.Enabled = true;
+            txbBairro.Enabled = true;
+            txbCidade.Enabled = true;
+            txbEstado.Enabled = true;
 
             //consultCont.Insert(c);
         }
