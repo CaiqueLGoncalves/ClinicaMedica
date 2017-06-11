@@ -92,9 +92,23 @@ namespace ClinicaMedica.View
         {
             try
             {
-                ConsultorioController concon = new ConsultorioController();
-                Consultorio c = new Consultorio();
-                Localidade l = new Localidade();
+                ConsultorioController conCont = new ConsultorioController();
+                ConsultorioExameController conexCont = new ConsultorioExameController();
+
+                /* Excluir Todos Exames do Consultorio */
+
+                List<int> exCadastrados = conexCont.Select(codigo);
+
+                foreach (var ex in exCadastrados)
+                {
+                    ConsultorioExame ce = new ConsultorioExame();
+                    ce.IdConsultorio = codigo;
+                    ce.IdExame = ex;
+
+                    conexCont.Delete(ce);
+                }
+
+                /* Lista de Exames no Consultoroi para Cadastrar */
 
                 List<int> listaIdExame = new List<int>();
 
@@ -102,7 +116,25 @@ namespace ClinicaMedica.View
                 {
                     listaIdExame.Add(int.Parse(dtgExame.SelectedRows[i].Cells["IdExame"].Value.ToString()));
                 }
+
                 listaIdExame.Sort();
+
+                /* Localidade do Consultorio */
+
+                Localidade l = new Localidade();
+
+                l.IdLocalidade = conCont.FindLocalidade(codigo).IdLocalidade;
+                l.CEP = mskCep.Text;
+                l.Endereco = txbEndereco.Text;
+                l.Numero = txbNumero.Text;
+                l.Complemento = txbComplemento.Text;
+                l.Bairro = txbBairro.Text;
+                l.Cidade = txbCidade.Text;
+                l.Estado = txbEstado.Text;
+
+                /* Cadastro do Médico */
+
+                Consultorio c = new Consultorio();
 
                 c.NomeFantasia = txbNomeFantasia.Text;
                 c.RazaoSocial = txbRazaoSocial.Text;
@@ -110,48 +142,41 @@ namespace ClinicaMedica.View
                 c.HorarioAbertura = dtpHorairoAbertura.Value.TimeOfDay;
                 c.HorarioFechamento = dtpHorarioFechamento.Value.TimeOfDay;
                 c.Telefone = mskTelefone.Text;
-                l.Endereco = txbEndereco.Text;
-                l.Numero = txbNumero.Text;
-                l.Complemento = txbComplemento.Text;
-                l.CEP = mskCep.Text;
-                l.Bairro = txbBairro.Text;
-                l.Cidade = txbCidade.Text;
-                l.Estado = txbEstado.Text;
+
+                //m.IdLocalidade = l.IdLocalidade;
                 c.Localidade = l;
 
-                try
+                var resultado = conCont.Update(c, l);
+
+                if (resultado == null)
                 {
-                    ConsultorioExameController conexCont = new ConsultorioExameController();
+//                    int numeroErros = 0;
 
                     foreach (var IdEx in listaIdExame)
                     {
                         ConsultorioExame ce = new ConsultorioExame();
                         ce.IdConsultorio = c.IdConsultorio;
                         ce.IdExame = IdEx;
-                        conexCont.Insert(ce);
-                        //numeroErros += meCont.Insert(me);
+                        try
+                        {
+                            conexCont.Insert(ce);
+                        }
+                        catch (Exception er)
+                        {
+                            MessageBox.Show(er.ToString());
+
+                        }
+
+                       // numeroErros += conexCont.Insert(ce);
                     }
+                    MessageBox.Show("Clínica Alterada com Sucesso!!");
 
-
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show(erro.ToString());
-                }
-
-
-                var resultado = concon.Update(c);
-
-                if (resultado == null)
-                {
-                    MessageBox.Show("Consultório alterado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
                 }
                 else
                 {
                     foreach (var erro in resultado)
                     {
-                        MessageBox.Show("Não foi possível alterar o consultório!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Não foi possível alterar o médico!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -160,10 +185,46 @@ namespace ClinicaMedica.View
                 MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            txbEndereco.Enabled = true;
-            txbBairro.Enabled = true;
-            txbCidade.Enabled = true;
-            txbEstado.Enabled = true;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               ConsultorioExameController ceCont = new ConsultorioExameController();
+                var exames = ceCont.Select(codigo);
+                int erros = 0;
+
+                foreach (var exa in exames)
+                {
+                    ConsultorioExame ce = new ConsultorioExame();
+                    ce.IdConsultorio = codigo;
+                    ce.IdExame = exa;
+
+                    if (!ceCont.Delete(ce))
+                    {
+                        erros++;
+                    }
+                }
+
+                if (erros == 0)
+                {
+                    ConsultorioController consultorioCont = new ConsultorioController();
+                    Consultorio consultorio = new Consultorio();
+                    consultorio.IdConsultorio = codigo;
+
+                    if (consultorioCont.Delete(consultorio))
+                    {
+                        MessageBox.Show("Consultorio excluído com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
-}
+    }

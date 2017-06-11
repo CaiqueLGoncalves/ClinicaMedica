@@ -69,7 +69,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tBExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tBExameBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource2)).BeginInit();
@@ -437,21 +437,22 @@
             // 
             this.tBExameBindingSource1.DataMember = "TB_Exame";
             // 
-            // button1
+            // btnExcluir
             // 
-            this.button1.Location = new System.Drawing.Point(203, 538);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Excluir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExcluir.Location = new System.Drawing.Point(203, 538);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.TabIndex = 36;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmConsultorioManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 570);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gpbEndereço);
@@ -515,6 +516,6 @@
         private System.Windows.Forms.Label lblCidade;
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -165,15 +166,17 @@ namespace ClinicaMedica.Controller
             return resultado;
         }
 
-        public List<string> Update(Consultorio consultorio)
+        public List<string> Update(Consultorio consultorio, Localidade localidade)
         {
-            var erros = Validacao.Validar(consultorio);
+            var errosConsultorio = Validacao.Validar(consultorio);
+            var errosLocalidade = Validacao.Validar(localidade);
 
             try
             {
-                if (erros.Count() == 0)
+                if (errosConsultorio.Count() == 0 && errosLocalidade.Count() == 0)
                 {
-                    db.Entry(consultorio).State = EntityState.Modified;
+                    db.Set<Consultorio>().AddOrUpdate(consultorio);
+                    db.Set<Localidade>().AddOrUpdate(localidade);
                     db.SaveChanges();
                     return null;
                 }
@@ -181,7 +184,12 @@ namespace ClinicaMedica.Controller
                 {
                     List<string> listaErros = new List<string>();
 
-                    foreach (var erro in erros)
+                    foreach (var erro in errosConsultorio)
+                    {
+                        listaErros.Add(erro.ErrorMessage);
+                    }
+
+                    foreach (var erro in errosLocalidade)
                     {
                         listaErros.Add(erro.ErrorMessage);
                     }
@@ -210,10 +218,9 @@ namespace ClinicaMedica.Controller
             }
             catch (Exception ex)
             {
-                throw new Exception("Não foi possível alterar o consultorio!\n" + ex.Message);
+                throw new Exception("Não foi possível alterar o consultório!\n" + ex.ToString());
             }
         }
-
         public bool Delete(Consultorio consultorio)
         {
             try
@@ -251,7 +258,11 @@ namespace ClinicaMedica.Controller
                 throw new Exception("Não foi possível excluir este consultório!\n" + ex.Message);
             }
         }
-
+        public Localidade FindLocalidade(int codigo)
+        {
+            Localidade l = db.TB_Consultorio.Find(codigo).Localidade;
+            return l;
+        }
     }
 
 
