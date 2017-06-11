@@ -33,6 +33,7 @@
             this.txbNome = new System.Windows.Forms.TextBox();
             this.txbRecomendacoes = new System.Windows.Forms.TextBox();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNome
@@ -57,19 +58,20 @@
             // 
             this.txbNome.Location = new System.Drawing.Point(129, 109);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(153, 20);
+            this.txbNome.Size = new System.Drawing.Size(212, 20);
             this.txbNome.TabIndex = 2;
             // 
             // txbRecomendacoes
             // 
             this.txbRecomendacoes.Location = new System.Drawing.Point(129, 142);
+            this.txbRecomendacoes.Multiline = true;
             this.txbRecomendacoes.Name = "txbRecomendacoes";
-            this.txbRecomendacoes.Size = new System.Drawing.Size(153, 20);
+            this.txbRecomendacoes.Size = new System.Drawing.Size(212, 67);
             this.txbRecomendacoes.TabIndex = 3;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(129, 192);
+            this.btnCadastrar.Location = new System.Drawing.Point(129, 233);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 4;
@@ -77,11 +79,21 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(129, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Cadastro de Exames";
+            // 
             // FrmExameCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 322);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txbRecomendacoes);
             this.Controls.Add(this.txbNome);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.TextBox txbNome;
         private System.Windows.Forms.TextBox txbRecomendacoes;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Label label1;
     }
 }

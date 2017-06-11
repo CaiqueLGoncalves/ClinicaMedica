@@ -24,7 +24,7 @@ namespace ClinicaMedica.Controller
                 {
                     db.TB_ConsultorioExame.Add(conex);
                     db.SaveChanges();
-                    MessageBox.Show("Especialidades adicionadas ao consultório!");
+                  //  MessageBox.Show("Especialidades adicionadas ao consultório!");
                 }
 
                 catch (Exception e)

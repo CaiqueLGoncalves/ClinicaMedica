@@ -56,8 +56,14 @@ namespace ClinicaMedica.Controller
                             CNPJ = consultorio.CNPJ,
                             HorarioAbertura = consultorio.HorarioAbertura,
                             HorarioFechamento = consultorio.HorarioFechamento,
-                            //Telefone = consultorio.Telefone,
-
+                            Telefone = consultorio.Telefone,
+                            CEP = consultorio.Localidade.CEP,
+                            Endereco = consultorio.Localidade.Endereco,
+                            Numero = consultorio.Localidade.Numero,
+                            Complemento = consultorio.Localidade.Complemento,
+                            Bairro = consultorio.Localidade.Bairro,
+                            Cidade = consultorio.Localidade.Cidade,
+                            Estado = consultorio.Localidade.Estado
                         };
 
             var resultado = query.ToList();
@@ -81,16 +87,24 @@ namespace ClinicaMedica.Controller
                                     NomeFantasia = consultorio.NomeFantasia,
                                     RazaoSocial = consultorio.RazaoSocial,
                                     CNPJ = consultorio.CNPJ,
+                                    Telefone = consultorio.Telefone,
                                     HorarioAbertura = consultorio.HorarioAbertura,
                                     HorarioFechamento = consultorio.HorarioFechamento,
+                                    CEP = consultorio.Localidade.CEP,
+                                    Endereco = consultorio.Localidade.Endereco,
+                                    Numero = consultorio.Localidade.Numero,
+                                    Complemento = consultorio.Localidade.Complemento,
+                                    Bairro = consultorio.Localidade.Bairro,
+                                    Cidade = consultorio.Localidade.Cidade,
+                                    Estado = consultorio.Localidade.Estado
                                 };
 
                         break;
                     }
-                case "exame":
+                case "CIDADE":
                     {
                         query = from consultorio in db.TB_Consultorio
-                                where consultorio.NomeFantasia.ToString().Contains(pesquisa)
+                                where consultorio.Localidade.Cidade.ToString().Contains(pesquisa)
                                 orderby consultorio.NomeFantasia ascending
                                 select new ConsultaConsultorio
                                 {
@@ -98,8 +112,45 @@ namespace ClinicaMedica.Controller
                                     NomeFantasia = consultorio.NomeFantasia,
                                     RazaoSocial = consultorio.RazaoSocial,
                                     CNPJ = consultorio.CNPJ,
+                                    Telefone = consultorio.Telefone,
                                     HorarioAbertura = consultorio.HorarioAbertura,
                                     HorarioFechamento = consultorio.HorarioFechamento,
+                                    CEP = consultorio.Localidade.CEP,
+                                    Endereco = consultorio.Localidade.Endereco,
+                                    Numero = consultorio.Localidade.Numero,
+                                    Complemento = consultorio.Localidade.Complemento,
+                                    Bairro = consultorio.Localidade.Bairro,
+                                    Cidade = consultorio.Localidade.Cidade,
+                                    Estado = consultorio.Localidade.Estado
+                                };
+
+                        break;
+                    }
+
+                case "EXAME":
+                    {
+                        query = from consultorio in db.TB_Consultorio
+                                join consex in db.TB_ConsultorioExame on consultorio.IdConsultorio equals consex.IdConsultorio
+                                join exame in db.TB_Exame on consex.IdExame equals exame.IdExame
+
+                                where exame.Nome.ToString().Contains(pesquisa) //consultorio.Localidade.Cidade.ToString().Contains(pesquisa)
+                                orderby consultorio.NomeFantasia ascending
+                                select new ConsultaConsultorio
+                                {
+                                    IdConsultorio = consultorio.IdConsultorio,
+                                    NomeFantasia = consultorio.NomeFantasia,
+                                    RazaoSocial = consultorio.RazaoSocial,
+                                    CNPJ = consultorio.CNPJ,
+                                    Telefone = consultorio.Telefone,
+                                    HorarioAbertura = consultorio.HorarioAbertura,
+                                    HorarioFechamento = consultorio.HorarioFechamento,
+                                    CEP = consultorio.Localidade.CEP,
+                                    Endereco = consultorio.Localidade.Endereco,
+                                    Numero = consultorio.Localidade.Numero,
+                                    Complemento = consultorio.Localidade.Complemento,
+                                    Bairro = consultorio.Localidade.Bairro,
+                                    Cidade = consultorio.Localidade.Cidade,
+                                    Estado = consultorio.Localidade.Estado
                                 };
 
                         break;

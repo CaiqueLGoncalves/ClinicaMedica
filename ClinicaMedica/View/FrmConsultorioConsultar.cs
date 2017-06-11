@@ -22,6 +22,8 @@ namespace ClinicaMedica.View
 
         private void FrmConsultorioConsultarcs_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'clinicaMedicaBDDataSet.TB_Exame' table. You can move, or remove it, as needed.
+            this.tB_ExameTableAdapter.Fill(this.clinicaMedicaBDDataSet.TB_Exame);
             CarregarDataGridView();
             txtBusca.Focus();
             // TODO: This line of code loads data into the 'clinicaMedicaBDDataSet.TB_Consultorio' table. You can move, or remove it, as needed.
@@ -52,20 +54,34 @@ namespace ClinicaMedica.View
             dgvConsultorio.Columns["CNPJ"].HeaderText = "CNPJ";
             dgvConsultorio.Columns["HorarioAbertura"].HeaderText = "HorarioAbertura";
             dgvConsultorio.Columns["HorarioFechamento"].HeaderText = "HorarioFechamento";
-          //  dgvConsultorio.Columns["Telefone"].HeaderText = "Telefone";
+            dgvConsultorio.Columns["Telefone"].HeaderText = "Telefone";
+            dgvConsultorio.Columns["CEP"].HeaderText = "CEP";
+            dgvConsultorio.Columns["Endereco"].HeaderText = "Endereço";
+            dgvConsultorio.Columns["Numero"].HeaderText = "Numero";
+            dgvConsultorio.Columns["Complemento"].HeaderText = "Complemento";
+            dgvConsultorio.Columns["Bairro"].HeaderText = "Bairro";
+            dgvConsultorio.Columns["Cidade"].HeaderText = "Cidade";
+            dgvConsultorio.Columns["Estado"].HeaderText = "Estado";
         }
 
         private void CarregarDataGridView(string filtro, string pesquisa)
         {
             dgvConsultorio.DataSource = new ConsultorioController().Select(filtro, pesquisa);
             dgvConsultorio.Columns["IdConsultorio"].HeaderText = "Código";
-            dgvConsultorio.Columns["NomeFantasia"].HeaderText = "Nome Fatnasia";
+            dgvConsultorio.Columns["NomeFantasia"].HeaderText = "Nome Fantasia";
             dgvConsultorio.Columns["RazaoSocial"].HeaderText = "Razao Social";
             dgvConsultorio.Columns["CNPJ"].HeaderText = "CNPJ";
             dgvConsultorio.Columns["HorarioAbertura"].HeaderText = "HorarioAbertura";
             dgvConsultorio.Columns["HorarioFechamento"].HeaderText = "HorarioFechamento";
-          //  dgvConsultorio.Columns["Telefone"].HeaderText = "Telefone";
-        }
+            dgvConsultorio.Columns["Telefone"].HeaderText = "Telefone";
+            dgvConsultorio.Columns["CEP"].HeaderText = "CEP";
+            dgvConsultorio.Columns["Endereco"].HeaderText = "Endereço";
+            dgvConsultorio.Columns["Numero"].HeaderText = "Numero";
+            dgvConsultorio.Columns["Complemento"].HeaderText = "Complemento";
+            dgvConsultorio.Columns["Bairro"].HeaderText = "Bairro";
+            dgvConsultorio.Columns["Cidade"].HeaderText = "Cidade";
+            dgvConsultorio.Columns["Estado"].HeaderText = "Estado";
+                    }
 
         private void FrmConsultorioConsultar_Activated_1(object sender, EventArgs e)
         {
@@ -84,9 +100,9 @@ namespace ClinicaMedica.View
                 {
                     CarregarDataGridView("NOME", txtBusca.Text);
                 }
-                else if (rdbExame.Checked)
+                else if (rdbCidade.Checked)
                 {
-                    CarregarDataGridView("EXAME", txtBusca.Text);
+                    CarregarDataGridView("CIDADE", txtBusca.Text);
                 }
 
             }
@@ -95,6 +111,22 @@ namespace ClinicaMedica.View
         private void rdbNome_CheckedChanged(object sender, EventArgs e)
         {
             if (rdbNome.Checked)
+            {
+                txtBusca.ResetText();
+                txtBusca.Focus();
+                CarregarDataGridView();
+            }
+        }
+
+        private void cmbExame_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CarregarDataGridView("EXAME", cmbExame.Text);
+
+        }
+
+        private void rdbCidade_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbCidade.Checked)
             {
                 txtBusca.ResetText();
                 txtBusca.Focus();

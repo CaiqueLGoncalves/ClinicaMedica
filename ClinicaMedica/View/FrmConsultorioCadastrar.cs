@@ -44,11 +44,18 @@ namespace ClinicaMedica.View
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             ConsultorioController consultCont = new ConsultorioController();
-            ConsultorioExameController conexCont = new ConsultorioExameController();
             Consultorio c = new Consultorio();
             Localidade l = new Localidade();
-            ConsultorioExame ce = new ConsultorioExame();
+            // ConsultorioExame ce = new ConsultorioExame();
             //Exame ex = new Model.Exame();
+            List<int> listaIdExame = new List<int>();
+
+            for (int i=0; i<dtgExame.SelectedRows.Count; i++)
+            {
+                listaIdExame.Add(int.Parse(dtgExame.SelectedRows[i].Cells["IdExame"].Value.ToString()));
+            }
+            listaIdExame.Sort();
+
             c.NomeFantasia = txbNomeFantasia.Text;
             c.RazaoSocial = txbRazaoSocial.Text;
             c.CNPJ = mskCnpj.Text;
@@ -63,17 +70,28 @@ namespace ClinicaMedica.View
             l.Cidade = txbCidade.Text;
             l.Estado = txbEstado.Text;
             c.Localidade = l;
-            consultCont.Insert(c);
-            //ce.IdConsultorio = c.IdConsultorio;
 
-            for (int i = 0; i < dtgExame.SelectedRows.Count; i++)
+            try
             {
-                ce = new ConsultorioExame();
-                ce.IdConsultorio = c.IdConsultorio;
-                ce.IdExame = int.Parse(dtgExame.SelectedRows[i].Cells["IdExame"].Value.ToString());
-                MessageBox.Show(c.IdConsultorio.ToString() + " " + ce.IdExame.ToString());
-                  conexCont.Insert(ce);
+                consultCont.Insert(c);
+                ConsultorioExameController conexCont = new ConsultorioExameController();
+
+                foreach (var IdEx in listaIdExame)
+                {
+                    ConsultorioExame ce = new ConsultorioExame();
+                    ce.IdConsultorio = c.IdConsultorio;
+                    ce.IdExame = IdEx;
+                    conexCont.Insert(ce);
+                    //numeroErros += meCont.Insert(me);
+                }
+
+
             }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.ToString());
+            }
+
 
 
             //consultCont.Insert(c);

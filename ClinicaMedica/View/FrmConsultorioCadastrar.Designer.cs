@@ -58,15 +58,20 @@
             this.lblExames = new System.Windows.Forms.Label();
             this.tBExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tB_ExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter();
-            this.dtgExame = new System.Windows.Forms.DataGridView();
             this.tBExameBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.tBExameBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dtgExame = new System.Windows.Forms.DataGridView();
+            this.IdExame = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recomendacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).BeginInit();
             this.SuspendLayout();
             // 
             // txbNomeFantasia
@@ -218,21 +223,21 @@
             this.txbEndereco.Location = new System.Drawing.Point(214, 305);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(192, 20);
-            this.txbEndereco.TabIndex = 7;
+            this.txbEndereco.TabIndex = 8;
             // 
             // txbNumero
             // 
             this.txbNumero.Location = new System.Drawing.Point(214, 332);
             this.txbNumero.Name = "txbNumero";
             this.txbNumero.Size = new System.Drawing.Size(100, 20);
-            this.txbNumero.TabIndex = 8;
+            this.txbNumero.TabIndex = 9;
             // 
             // txbComplemento
             // 
             this.txbComplemento.Location = new System.Drawing.Point(214, 362);
             this.txbComplemento.Name = "txbComplemento";
             this.txbComplemento.Size = new System.Drawing.Size(192, 20);
-            this.txbComplemento.TabIndex = 9;
+            this.txbComplemento.TabIndex = 10;
             // 
             // txbBairro
             // 
@@ -240,7 +245,7 @@
             this.txbBairro.Location = new System.Drawing.Point(214, 394);
             this.txbBairro.Name = "txbBairro";
             this.txbBairro.Size = new System.Drawing.Size(100, 20);
-            this.txbBairro.TabIndex = 10;
+            this.txbBairro.TabIndex = 11;
             // 
             // txbCidade
             // 
@@ -248,7 +253,7 @@
             this.txbCidade.Location = new System.Drawing.Point(214, 422);
             this.txbCidade.Name = "txbCidade";
             this.txbCidade.Size = new System.Drawing.Size(100, 20);
-            this.txbCidade.TabIndex = 11;
+            this.txbCidade.TabIndex = 12;
             // 
             // txbEstado
             // 
@@ -256,14 +261,14 @@
             this.txbEstado.Location = new System.Drawing.Point(214, 457);
             this.txbEstado.Name = "txbEstado";
             this.txbEstado.Size = new System.Drawing.Size(42, 20);
-            this.txbEstado.TabIndex = 12;
+            this.txbEstado.TabIndex = 13;
             // 
             // btnCadastrar
             // 
             this.btnCadastrar.Location = new System.Drawing.Point(108, 589);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCadastrar.TabIndex = 24;
+            this.btnCadastrar.TabIndex = 15;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
@@ -273,7 +278,7 @@
             this.btnBuscarCep.Location = new System.Drawing.Point(331, 272);
             this.btnBuscarCep.Name = "btnBuscarCep";
             this.btnBuscarCep.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarCep.TabIndex = 6;
+            this.btnBuscarCep.TabIndex = 7;
             this.btnBuscarCep.Text = "Buscar";
             this.btnBuscarCep.UseVisualStyleBackColor = true;
             this.btnBuscarCep.Click += new System.EventHandler(this.btnBuscarCep_Click);
@@ -293,7 +298,7 @@
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(100, 20);
-            this.mskCep.TabIndex = 5;
+            this.mskCep.TabIndex = 6;
             this.mskCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblExames
@@ -312,20 +317,6 @@
             // tB_ExameTableAdapter
             // 
             this.tB_ExameTableAdapter.ClearBeforeFill = true;
-            // 
-            // dtgExame
-            // 
-            this.dtgExame.AllowUserToAddRows = false;
-            this.dtgExame.AllowUserToDeleteRows = false;
-            this.dtgExame.AutoGenerateColumns = false;
-            this.dtgExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgExame.DataSource = this.tBExameBindingSource1;
-            this.dtgExame.Location = new System.Drawing.Point(214, 498);
-            this.dtgExame.Name = "dtgExame";
-            this.dtgExame.ReadOnly = true;
-            this.dtgExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgExame.Size = new System.Drawing.Size(240, 151);
-            this.dtgExame.TabIndex = 26;
             // 
             // tBExameBindingSource1
             // 
@@ -351,17 +342,60 @@
             this.mskTelefone.Mask = "(99) 0000-0000";
             this.mskTelefone.Name = "mskTelefone";
             this.mskTelefone.Size = new System.Drawing.Size(100, 20);
-            this.mskTelefone.TabIndex = 28;
+            this.mskTelefone.TabIndex = 5;
             this.mskTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // tBExameBindingSource2
+            // 
+            this.tBExameBindingSource2.DataMember = "TB_Exame";
+            this.tBExameBindingSource2.DataSource = this.clinicaMedicaBDDataSet;
+            // 
+            // dtgExame
+            // 
+            this.dtgExame.AllowUserToAddRows = false;
+            this.dtgExame.AllowUserToDeleteRows = false;
+            this.dtgExame.AutoGenerateColumns = false;
+            this.dtgExame.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgExame.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgExame.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdExame,
+            this.nomeDataGridViewTextBoxColumn,
+            this.recomendacoesDataGridViewTextBoxColumn});
+            this.dtgExame.DataSource = this.tBExameBindingSource2;
+            this.dtgExame.Location = new System.Drawing.Point(200, 509);
+            this.dtgExame.Name = "dtgExame";
+            this.dtgExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgExame.Size = new System.Drawing.Size(232, 150);
+            this.dtgExame.TabIndex = 28;
+            // 
+            // IdExame
+            // 
+            this.IdExame.DataPropertyName = "IdExame";
+            this.IdExame.HeaderText = "IdExame";
+            this.IdExame.Name = "IdExame";
+            this.IdExame.ReadOnly = true;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // recomendacoesDataGridViewTextBoxColumn
+            // 
+            this.recomendacoesDataGridViewTextBoxColumn.DataPropertyName = "Recomendacoes";
+            this.recomendacoesDataGridViewTextBoxColumn.HeaderText = "Recomendacoes";
+            this.recomendacoesDataGridViewTextBoxColumn.Name = "recomendacoesDataGridViewTextBoxColumn";
             // 
             // FrmConsultorioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 661);
+            this.Controls.Add(this.dtgExame);
             this.Controls.Add(this.mskTelefone);
             this.Controls.Add(this.lblTelefone);
-            this.Controls.Add(this.dtgExame);
             this.Controls.Add(this.lblExames);
             this.Controls.Add(this.mskCep);
             this.Controls.Add(this.mskCnpj);
@@ -393,9 +427,10 @@
             this.Text = "Cadastro de Consultório";
             this.Load += new System.EventHandler(this.FrmConsultorioCadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,10 +467,14 @@
         private System.Windows.Forms.Label lblExames;
         private System.Windows.Forms.BindingSource tBExameBindingSource;
         private ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter tB_ExameTableAdapter;
-        private System.Windows.Forms.DataGridView dtgExame;
         private System.Windows.Forms.BindingSource tBExameBindingSource1;
         private ClinicaMedicaBDDataSet clinicaMedicaBDDataSet;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.MaskedTextBox mskTelefone;
+        private System.Windows.Forms.BindingSource tBExameBindingSource2;
+        private System.Windows.Forms.DataGridView dtgExame;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdExame;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn recomendacoesDataGridViewTextBoxColumn;
     }
 }
