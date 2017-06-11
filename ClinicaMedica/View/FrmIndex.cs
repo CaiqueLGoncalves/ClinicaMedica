@@ -105,5 +105,11 @@ namespace ClinicaMedica.View
             FrmConsultaGerenciar consGerenciar = new FrmConsultaGerenciar();
             consGerenciar.ShowDialog(this);
         }
+
+        private void examesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmExameGerencia exgere = new FrmExameGerencia();
+            exgere.ShowDialog(this);
+        }
     }
 }

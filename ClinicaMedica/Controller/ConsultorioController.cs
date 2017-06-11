@@ -79,6 +79,8 @@ namespace ClinicaMedica.Controller
             return consultorio;
         }
 
+
+
         public List<ConsultaConsultorio> Select(string filtro, string pesquisa)
         {
             IQueryable<ConsultaConsultorio> query = null;

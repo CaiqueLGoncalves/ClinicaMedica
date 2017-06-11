@@ -73,6 +73,13 @@ namespace ClinicaMedica.Controller
             return resultado;
         }
 
+        public Exame Select(int idExame)
+        {
+            Exame exame = db.TB_Exame.Find(idExame);
+            return exame;
+        }
+
+
         public List<string> Update(Exame exame)
         {
             var erros = Validacao.Validar(exame);
