@@ -121,6 +121,7 @@ namespace ClinicaMedica.View
                 p.TelefoneComercial = mskTelefoneResidencial.Text;
                 p.TelefoneCelular = mskTelefoneCelular.Text;
                 p.Email = txbEmail.Text;
+                p.IdLocalidade = l.IdLocalidade;
                 p.Localidade = l;
 
                 var resultado = pacienteCont.Update(p, l);

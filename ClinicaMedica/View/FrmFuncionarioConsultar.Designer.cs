@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
@@ -38,6 +39,7 @@
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.ttpFuncionario = new System.Windows.Forms.ToolTip(this.components);
             this.gpbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +141,7 @@
             this.dgvFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncionarios.Size = new System.Drawing.Size(760, 385);
             this.dgvFuncionarios.TabIndex = 16;
+            this.ttpFuncionario.SetToolTip(this.dgvFuncionarios, "Dê um duplo clique no funcionário que deseja alterar ou excluir.");
             this.dgvFuncionarios.DoubleClick += new System.EventHandler(this.dgvFuncionarios_DoubleClick);
             // 
             // lblTitulo
@@ -187,5 +190,6 @@
         private System.Windows.Forms.Label lblPesquisa;
         private System.Windows.Forms.DataGridView dgvFuncionarios;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.ToolTip ttpFuncionario;
     }
 }

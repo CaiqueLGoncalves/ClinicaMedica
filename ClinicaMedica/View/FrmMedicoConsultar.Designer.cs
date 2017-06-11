@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
@@ -39,6 +40,7 @@
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvMedicos = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.ttpMedico = new System.Windows.Forms.ToolTip(this.components);
             this.gpbFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
             this.SuspendLayout();
@@ -179,6 +181,7 @@
             this.Name = "FrmMedicoConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Médicos";
+            this.ttpMedico.SetToolTip(this, "Dê um duplo clique no médico que deseja alterar ou excluir.");
             this.Activated += new System.EventHandler(this.FrmMedicoConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmMedicoConsultar_Load);
             this.gpbFiltros.ResumeLayout(false);
@@ -201,5 +204,6 @@
         private System.Windows.Forms.DataGridView dgvMedicos;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.RadioButton rbtCRM;
+        private System.Windows.Forms.ToolTip ttpMedico;
     }
 }

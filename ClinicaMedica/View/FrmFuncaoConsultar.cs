@@ -13,11 +13,13 @@ namespace ClinicaMedica.View
         private void FrmFuncaoConsultar_Load(object sender, EventArgs e)
         {
             TB_FuncaoTableAdapter.Fill(ClinicaMedicaBDDataSet.TB_Funcao);
+            txbPesquisa.Focus();
         }
 
         private void FrmFuncaoConsultar_Activated(object sender, EventArgs e)
         {
             TB_FuncaoTableAdapter.Fill(ClinicaMedicaBDDataSet.TB_Funcao);
+            txbPesquisa.Focus();
         }
 
         private void txbPesquisa_KeyUp(object sender, KeyEventArgs e)
