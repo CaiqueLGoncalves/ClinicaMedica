@@ -195,6 +195,18 @@
     <Compile Include="View\FrmExameAgendar.Designer.cs">
       <DependentUpon>FrmExameAgendar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmExameAgendarManter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmExameAgendarManter.Designer.cs">
+      <DependentUpon>FrmExameAgendarManter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmExameAgendarConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmExameAgendarConsultar.Designer.cs">
+      <DependentUpon>FrmExameAgendarConsultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmExameCadastrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameAgendar.resx">
       <DependentUpon>FrmExameAgendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmExameAgendarConsultar.resx">
+      <DependentUpon>FrmExameAgendarConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmExameAgendarManter.resx">
+      <DependentUpon>FrmExameAgendarManter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameCadastrar.resx">
       <DependentUpon>FrmExameCadastrar.cs</DependentUpon>

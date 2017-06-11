@@ -159,6 +159,11 @@ namespace ClinicaMedica.View
             consMant.ShowDialog(this);
 
         }
+
+        private void dgvConsultorio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }

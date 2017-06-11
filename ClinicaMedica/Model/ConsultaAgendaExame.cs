@@ -14,6 +14,7 @@ namespace ClinicaMedica.Model
         public int IdConsultorio { get; set; }
         public System.DateTime DataHoraInicio { get; set; }
         public System.DateTime DataHoraFim { get; set; }
+        public string Consultorio { get; set; }
         public string Paciente { get; set; }
         public string Exame { get; set; }
         public bool Comparecimento { get; set; }

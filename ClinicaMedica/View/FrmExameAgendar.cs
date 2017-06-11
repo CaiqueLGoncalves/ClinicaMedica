@@ -78,7 +78,7 @@ namespace ClinicaMedica.View
             try
             {
                 ExameAgendarController exameAgendar = new ExameAgendarController();
-                 AgendaExame agendaexame = new AgendaExame();
+                AgendaExame agendaexame = new AgendaExame();
 
                 agendaexame.IdConsultorio = consultorio.IdConsultorio;
                 agendaexame.IdExame = exame.IdExame;

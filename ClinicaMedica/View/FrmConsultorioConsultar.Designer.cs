@@ -76,6 +76,7 @@
             this.dgvConsultorio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultorio.Size = new System.Drawing.Size(731, 224);
             this.dgvConsultorio.TabIndex = 3;
+            this.dgvConsultorio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultorio_CellContentClick);
             this.dgvConsultorio.DoubleClick += new System.EventHandler(this.dgvConsultorio_DoubleClick);
             // 
             // gpbFiltro

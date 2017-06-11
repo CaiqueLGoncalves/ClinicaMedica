@@ -108,8 +108,24 @@ namespace ClinicaMedica.View
 
         private void examesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void agendarExameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             FrmExameGerencia exgere = new FrmExameGerencia();
             exgere.ShowDialog(this);
+        }
+
+        private void consultarExamesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmExameAgendarConsultar exagecon = new FrmExameAgendarConsultar();
+            exagecon.ShowDialog(this);
+        }
+
+        private void inserirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

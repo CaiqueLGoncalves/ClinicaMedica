@@ -40,14 +40,14 @@ namespace ClinicaMedica.View
 
                 if (resultado == null)
                 {
-                    MessageBox.Show("Função alterada com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Exame alterado com sucesso!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
                 else
                 {
                     foreach (var erro in resultado)
                     {
-                        MessageBox.Show("Não foi possível alterar a função!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Não foi possível alterar o exame!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

@@ -41,13 +41,13 @@ namespace ClinicaMedica.View
             this.tB_ExameTableAdapter.Fill(this.clinicaMedicaBDDataSet.TB_Exame);
 
             //tB_ExameTableAdapter.Fill(ClinicaMedicaBDDataSet.TB_Consultorio);
-            // Deseleciona todas as especialidades
+            // Deseleciona todos os exames
             for (int i = 0; i < dtgExame.Rows.Count; i++)
             {
                 dtgExame.Rows[i].Selected = false;
             }
 
-            // Seleciona apenas as especialidades atribuídas ao médico
+            // Seleciona apenas os exames do consultorio
             var exames = new ConsultorioExameController().Select(codigo);
 
             foreach (int ex in exames)
@@ -80,7 +80,7 @@ namespace ClinicaMedica.View
             }
             catch (Exception)
             {
-                MessageBox.Show("Não foi possível encontrar o CEP informado");
+                MessageBox.Show("Não foi possível encontrar o CEP informado!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txbEndereco.Enabled = true;
                 txbBairro.Enabled = true;
                 txbCidade.Enabled = true;
@@ -108,13 +108,13 @@ namespace ClinicaMedica.View
                     conexCont.Delete(ce);
                 }
 
-                /* Lista de Exames no Consultoroi para Cadastrar */
+                /* Lista de Exames no Consultorio para Cadastrar */
 
                 List<int> listaIdExame = new List<int>();
 
                 for (int i = 0; i < dtgExame.SelectedRows.Count; i++)
                 {
-                    listaIdExame.Add(int.Parse(dtgExame.SelectedRows[i].Cells["IdExame"].Value.ToString()));
+                    listaIdExame.Add(Convert.ToInt32(dtgExame.SelectedRows[i].Cells["IdExame"].Value.ToString()));
                 }
 
                 listaIdExame.Sort();
@@ -132,17 +132,17 @@ namespace ClinicaMedica.View
                 l.Cidade = txbCidade.Text;
                 l.Estado = txbEstado.Text;
 
-                /* Cadastro do Médico */
+                /* Cadastro do Consultorio */
 
                 Consultorio c = new Consultorio();
-
+                c.IdConsultorio = codigo;
                 c.NomeFantasia = txbNomeFantasia.Text;
                 c.RazaoSocial = txbRazaoSocial.Text;
                 c.CNPJ = mskCnpj.Text;
                 c.HorarioAbertura = dtpHorairoAbertura.Value.TimeOfDay;
                 c.HorarioFechamento = dtpHorarioFechamento.Value.TimeOfDay;
                 c.Telefone = mskTelefone.Text;
-
+                
                 //m.IdLocalidade = l.IdLocalidade;
                 c.Localidade = l;
 
