@@ -59,7 +59,7 @@ namespace ClinicaMedica.Controller
         {
             try
             {
-                consultorioExame = db.TB_ConsultorioExame.Find(consultorioExame.IdExame, consultorioExame.IdConsultorio);
+                consultorioExame = db.TB_ConsultorioExame.Find(consultorioExame.IdConsultorio, consultorioExame.IdExame);
                 db.TB_ConsultorioExame.Remove(consultorioExame);
                 db.SaveChanges();
                 return true;
