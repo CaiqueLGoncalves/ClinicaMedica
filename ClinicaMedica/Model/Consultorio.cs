@@ -11,7 +11,8 @@ namespace ClinicaMedica.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Consultorio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,8 +25,14 @@ namespace ClinicaMedica.Model
         }
     
         public int IdConsultorio { get; set; }
+
+        [Required(ErrorMessage = "Nome Fantasia é obrigatório!", AllowEmptyStrings = false)]
         public string NomeFantasia { get; set; }
+
+        [Required(ErrorMessage = "Razão Social é obrigatória!", AllowEmptyStrings = false)]
         public string RazaoSocial { get; set; }
+
+        [Required(ErrorMessage = "CNPJ é obrigatório!!!", AllowEmptyStrings = false)]
         public string CNPJ { get; set; }
         public System.TimeSpan HorarioAbertura { get; set; }
         public System.TimeSpan HorarioFechamento { get; set; }

@@ -11,7 +11,8 @@ namespace ClinicaMedica.Model
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Exame
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +23,7 @@ namespace ClinicaMedica.Model
         }
     
         public int IdExame { get; set; }
+        [Required(ErrorMessage = "Nome do Exame é obrigatório!", AllowEmptyStrings = false)]
         public string Nome { get; set; }
         public string Recomendacoes { get; set; }
     

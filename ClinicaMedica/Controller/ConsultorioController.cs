@@ -17,10 +17,10 @@ namespace ClinicaMedica.Controller
     {
         private DataModelContainer db = new DataModelContainer();
 
-        public void Insert(Consultorio consultorio)
+        public int Insert(Consultorio consultorio)
         {
 
-                var erros = Validacao.Validar(consultorio);
+                var erros = Validacao.ValidarConsultorio(consultorio);
 
 
                 if (erros.Count() == 0)
@@ -44,7 +44,7 @@ namespace ClinicaMedica.Controller
                     foreach (var e in erros)
                         MessageBox.Show(e.ToString());
                 }
-            
+            return erros.Count();
         }
 
         public List<ConsultaConsultorio> Select()

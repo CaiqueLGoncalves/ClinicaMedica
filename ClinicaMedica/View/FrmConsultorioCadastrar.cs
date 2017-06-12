@@ -78,16 +78,19 @@ namespace ClinicaMedica.View
 
             try
             {
-                consultCont.Insert(c);
+                //consultCont.Insert(c);
                 ConsultorioExameController conexCont = new ConsultorioExameController();
-
-                foreach (var IdEx in listaIdExame)
+                if (consultCont.Insert(c) == 0)
                 {
-                    ConsultorioExame ce = new ConsultorioExame();
-                    ce.IdConsultorio = c.IdConsultorio;
-                    ce.IdExame = IdEx;
-                    conexCont.Insert(ce);
-                    //numeroErros += meCont.Insert(me);
+                    foreach (var IdEx in listaIdExame)
+                    {
+                        ConsultorioExame ce = new ConsultorioExame();
+                        ce.IdConsultorio = c.IdConsultorio;
+                        ce.IdExame = IdEx;
+                        conexCont.Insert(ce);
+                        //numeroErros += meCont.Insert(me);
+
+                    }
                     Close();
                 }
 
