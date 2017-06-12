@@ -600,7 +600,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 741);
+            this.ClientSize = new System.Drawing.Size(429, 811);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.gpbDadosProfissionais);
             this.Controls.Add(this.btnAlterar);

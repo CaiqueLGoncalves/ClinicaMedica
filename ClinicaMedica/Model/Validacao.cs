@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ClinicaMedica.Model
@@ -14,9 +13,5 @@ namespace ClinicaMedica.Model
             Validator.TryValidateObject(objeto, contexto, erros, true);
             return erros;
         }
-
-
-
-
     }
 }

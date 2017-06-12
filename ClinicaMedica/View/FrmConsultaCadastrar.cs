@@ -46,6 +46,11 @@ namespace ClinicaMedica.View
         {
             try
             {
+                if (dtpHorarioInicio.Value.TimeOfDay.CompareTo(dtpHorarioFinal.Value.TimeOfDay) >= 0)
+                {
+                    throw new Exception("Horário Inválido! O horário final deve ser maior do que o horário inicial.");
+                }
+
                 ConsultaController consultaCont = new ConsultaController();
                 Consulta consulta = new Consulta();
 
@@ -68,7 +73,7 @@ namespace ClinicaMedica.View
                 {
                     foreach (var erro in resultado)
                     {
-                        MessageBox.Show("Não foi possível agendar a paciente!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Não foi possível agendar a consulta!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

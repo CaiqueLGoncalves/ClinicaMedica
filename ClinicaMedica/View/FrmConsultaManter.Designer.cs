@@ -45,7 +45,7 @@
             this.lblAnotacoes = new System.Windows.Forms.Label();
             this.txbConsultorio = new System.Windows.Forms.TextBox();
             this.lblConsultorio = new System.Windows.Forms.Label();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnDesmarcar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.gpbData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPacientes)).BeginInit();
@@ -212,14 +212,15 @@
             this.lblConsultorio.TabIndex = 17;
             this.lblConsultorio.Text = "Consultório:";
             // 
-            // btnExcluir
+            // btnDesmarcar
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(253, 460);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(100, 23);
-            this.btnExcluir.TabIndex = 30;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnDesmarcar.Location = new System.Drawing.Point(253, 460);
+            this.btnDesmarcar.Name = "btnDesmarcar";
+            this.btnDesmarcar.Size = new System.Drawing.Size(100, 23);
+            this.btnDesmarcar.TabIndex = 30;
+            this.btnDesmarcar.Text = "Desmarcar";
+            this.btnDesmarcar.UseVisualStyleBackColor = true;
+            this.btnDesmarcar.Click += new System.EventHandler(this.btnDesmarcar_Click);
             // 
             // btnAlterar
             // 
@@ -228,13 +229,14 @@
             this.btnAlterar.Size = new System.Drawing.Size(100, 23);
             this.btnAlterar.TabIndex = 29;
             this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // FrmConsultaManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 496);
-            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnDesmarcar);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.chkComparecimento);
             this.Controls.Add(this.lblComparecimento);
@@ -252,6 +254,7 @@
             this.Name = "FrmConsultaManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendamento de Consultas: Manutenção";
+            this.Load += new System.EventHandler(this.FrmConsultaManter_Load);
             this.gpbData.ResumeLayout(false);
             this.gpbData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPacientes)).EndInit();
@@ -279,7 +282,7 @@
         private System.Windows.Forms.Label lblAnotacoes;
         private System.Windows.Forms.TextBox txbConsultorio;
         private System.Windows.Forms.Label lblConsultorio;
-        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnDesmarcar;
         private System.Windows.Forms.Button btnAlterar;
     }
 }

@@ -38,6 +38,14 @@ namespace ClinicaMedica.View
             consCadastrar.ShowDialog(this);
         }
 
+        private void dgvConsultas_DoubleClick(object sender, EventArgs e)
+        {
+            int codigo = Convert.ToInt32(dgvConsultas.SelectedRows[0].Cells["Codigo"].Value.ToString());
+
+            FrmConsultaManter frmConsultaManter = new FrmConsultaManter(codigo);
+            frmConsultaManter.ShowDialog();
+        }
+
         private void CarregarDataGridView()
         {
             DateTime dataSelecionada = mclCalendario.SelectionStart;

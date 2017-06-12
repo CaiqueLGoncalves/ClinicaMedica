@@ -110,6 +110,7 @@
             this.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvConsultas.Size = new System.Drawing.Size(390, 292);
             this.dgvConsultas.TabIndex = 4;
+            this.dgvConsultas.DoubleClick += new System.EventHandler(this.dgvConsultas_DoubleClick);
             // 
             // TB_ConsultorioTableAdapter
             // 
