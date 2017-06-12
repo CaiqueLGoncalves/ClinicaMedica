@@ -54,7 +54,7 @@
             this.gpbFiltros.Location = new System.Drawing.Point(12, 87);
             this.gpbFiltros.Name = "gpbFiltros";
             this.gpbFiltros.Size = new System.Drawing.Size(760, 50);
-            this.gpbFiltros.TabIndex = 23;
+            this.gpbFiltros.TabIndex = 3;
             this.gpbFiltros.TabStop = false;
             // 
             // chkFuncionariosInativos
@@ -63,7 +63,7 @@
             this.chkFuncionariosInativos.Location = new System.Drawing.Point(600, 20);
             this.chkFuncionariosInativos.Name = "chkFuncionariosInativos";
             this.chkFuncionariosInativos.Size = new System.Drawing.Size(154, 17);
-            this.chkFuncionariosInativos.TabIndex = 4;
+            this.chkFuncionariosInativos.TabIndex = 3;
             this.chkFuncionariosInativos.Text = "Exibir Funcionários Inativos";
             this.chkFuncionariosInativos.UseVisualStyleBackColor = true;
             this.chkFuncionariosInativos.CheckedChanged += new System.EventHandler(this.chkFuncionariosInativos_CheckedChanged);
@@ -74,7 +74,7 @@
             this.lblFiltros.Location = new System.Drawing.Point(6, 21);
             this.lblFiltros.Name = "lblFiltros";
             this.lblFiltros.Size = new System.Drawing.Size(37, 13);
-            this.lblFiltros.TabIndex = 3;
+            this.lblFiltros.TabIndex = 0;
             this.lblFiltros.Text = "Filtros:";
             // 
             // rbtFuncionario
@@ -83,7 +83,7 @@
             this.rbtFuncionario.Location = new System.Drawing.Point(153, 19);
             this.rbtFuncionario.Name = "rbtFuncionario";
             this.rbtFuncionario.Size = new System.Drawing.Size(80, 17);
-            this.rbtFuncionario.TabIndex = 1;
+            this.rbtFuncionario.TabIndex = 2;
             this.rbtFuncionario.Text = "Funcionário";
             this.rbtFuncionario.UseVisualStyleBackColor = true;
             this.rbtFuncionario.CheckedChanged += new System.EventHandler(this.rbtFuncionario_CheckedChanged);
@@ -95,7 +95,7 @@
             this.rbtConsultorio.Location = new System.Drawing.Point(70, 19);
             this.rbtConsultorio.Name = "rbtConsultorio";
             this.rbtConsultorio.Size = new System.Drawing.Size(77, 17);
-            this.rbtConsultorio.TabIndex = 0;
+            this.rbtConsultorio.TabIndex = 1;
             this.rbtConsultorio.TabStop = true;
             this.rbtConsultorio.Text = "Consultório";
             this.rbtConsultorio.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             this.lblPesquisa.Location = new System.Drawing.Point(13, 58);
             this.lblPesquisa.Name = "lblPesquisa";
             this.lblPesquisa.Size = new System.Drawing.Size(53, 13);
-            this.lblPesquisa.TabIndex = 22;
+            this.lblPesquisa.TabIndex = 1;
             this.lblPesquisa.Text = "Pesquisa:";
             // 
             // dgvQuadroFuncionarios
@@ -131,7 +131,7 @@
             this.dgvQuadroFuncionarios.ReadOnly = true;
             this.dgvQuadroFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvQuadroFuncionarios.Size = new System.Drawing.Size(630, 385);
-            this.dgvQuadroFuncionarios.TabIndex = 21;
+            this.dgvQuadroFuncionarios.TabIndex = 4;
             this.dgvQuadroFuncionarios.Click += new System.EventHandler(this.dgvQuadroFuncionarios_Click);
             // 
             // lblTitulo
@@ -140,7 +140,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(12, 12);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(760, 25);
-            this.lblTitulo.TabIndex = 20;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Quadro de Funcionários";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -149,7 +149,7 @@
             this.txbPesquisa.Location = new System.Drawing.Point(82, 55);
             this.txbPesquisa.Name = "txbPesquisa";
             this.txbPesquisa.Size = new System.Drawing.Size(690, 20);
-            this.txbPesquisa.TabIndex = 25;
+            this.txbPesquisa.TabIndex = 2;
             this.txbPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbPesquisa_KeyUp);
             // 
             // btnAtivar
@@ -158,7 +158,7 @@
             this.btnAtivar.Location = new System.Drawing.Point(672, 154);
             this.btnAtivar.Name = "btnAtivar";
             this.btnAtivar.Size = new System.Drawing.Size(100, 30);
-            this.btnAtivar.TabIndex = 26;
+            this.btnAtivar.TabIndex = 5;
             this.btnAtivar.Text = "Ativar";
             this.btnAtivar.UseVisualStyleBackColor = true;
             this.btnAtivar.Click += new System.EventHandler(this.btnAtivar_Click);
@@ -168,7 +168,7 @@
             this.btnInativar.Location = new System.Drawing.Point(672, 200);
             this.btnInativar.Name = "btnInativar";
             this.btnInativar.Size = new System.Drawing.Size(100, 30);
-            this.btnInativar.TabIndex = 27;
+            this.btnInativar.TabIndex = 6;
             this.btnInativar.Text = "Inativar";
             this.btnInativar.UseVisualStyleBackColor = true;
             this.btnInativar.Click += new System.EventHandler(this.btnInativar_Click);

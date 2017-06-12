@@ -53,7 +53,7 @@
             this.lblPesquisa.Location = new System.Drawing.Point(13, 58);
             this.lblPesquisa.Name = "lblPesquisa";
             this.lblPesquisa.Size = new System.Drawing.Size(53, 13);
-            this.lblPesquisa.TabIndex = 7;
+            this.lblPesquisa.TabIndex = 1;
             this.lblPesquisa.Text = "Pesquisa:";
             // 
             // txbPesquisa
@@ -61,7 +61,7 @@
             this.txbPesquisa.Location = new System.Drawing.Point(82, 55);
             this.txbPesquisa.Name = "txbPesquisa";
             this.txbPesquisa.Size = new System.Drawing.Size(440, 20);
-            this.txbPesquisa.TabIndex = 6;
+            this.txbPesquisa.TabIndex = 2;
             this.ttpFuncao.SetToolTip(this.txbPesquisa, "Insira o nome da função para pesquisar.");
             this.txbPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbPesquisa_KeyUp);
             // 
@@ -92,7 +92,7 @@
             this.dgvFuncoes.ReadOnly = true;
             this.dgvFuncoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncoes.Size = new System.Drawing.Size(510, 250);
-            this.dgvFuncoes.TabIndex = 5;
+            this.dgvFuncoes.TabIndex = 3;
             this.ttpFuncao.SetToolTip(this.dgvFuncoes, "Dê um duplo clique na função que deseja alterar ou excluir.");
             this.dgvFuncoes.DoubleClick += new System.EventHandler(this.dgvFuncoes_DoubleClick);
             // 
@@ -138,7 +138,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(12, 12);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(510, 25);
-            this.lblTitulo.TabIndex = 4;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Consulta de Funções";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

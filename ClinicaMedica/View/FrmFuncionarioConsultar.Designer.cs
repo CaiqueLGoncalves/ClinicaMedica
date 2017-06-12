@@ -51,7 +51,7 @@
             this.mskPesquisa.Mask = "999999999999";
             this.mskPesquisa.Name = "mskPesquisa";
             this.mskPesquisa.Size = new System.Drawing.Size(690, 20);
-            this.mskPesquisa.TabIndex = 19;
+            this.mskPesquisa.TabIndex = 2;
             this.mskPesquisa.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskPesquisa_KeyUp);
             // 
@@ -64,7 +64,7 @@
             this.gpbFiltros.Location = new System.Drawing.Point(12, 87);
             this.gpbFiltros.Name = "gpbFiltros";
             this.gpbFiltros.Size = new System.Drawing.Size(760, 50);
-            this.gpbFiltros.TabIndex = 18;
+            this.gpbFiltros.TabIndex = 3;
             this.gpbFiltros.TabStop = false;
             // 
             // lblFiltros
@@ -73,7 +73,7 @@
             this.lblFiltros.Location = new System.Drawing.Point(6, 21);
             this.lblFiltros.Name = "lblFiltros";
             this.lblFiltros.Size = new System.Drawing.Size(37, 13);
-            this.lblFiltros.TabIndex = 3;
+            this.lblFiltros.TabIndex = 0;
             this.lblFiltros.Text = "Filtros:";
             // 
             // rbtCPF
@@ -82,7 +82,7 @@
             this.rbtCPF.Location = new System.Drawing.Point(193, 19);
             this.rbtCPF.Name = "rbtCPF";
             this.rbtCPF.Size = new System.Drawing.Size(45, 17);
-            this.rbtCPF.TabIndex = 2;
+            this.rbtCPF.TabIndex = 3;
             this.rbtCPF.Text = "CPF";
             this.rbtCPF.UseVisualStyleBackColor = true;
             this.rbtCPF.CheckedChanged += new System.EventHandler(this.rbtCPF_CheckedChanged);
@@ -93,7 +93,7 @@
             this.rbtNome.Location = new System.Drawing.Point(134, 19);
             this.rbtNome.Name = "rbtNome";
             this.rbtNome.Size = new System.Drawing.Size(53, 17);
-            this.rbtNome.TabIndex = 1;
+            this.rbtNome.TabIndex = 2;
             this.rbtNome.Text = "Nome";
             this.rbtNome.UseVisualStyleBackColor = true;
             this.rbtNome.CheckedChanged += new System.EventHandler(this.rbtNome_CheckedChanged);
@@ -105,7 +105,7 @@
             this.rbtCodigo.Location = new System.Drawing.Point(70, 19);
             this.rbtCodigo.Name = "rbtCodigo";
             this.rbtCodigo.Size = new System.Drawing.Size(58, 17);
-            this.rbtCodigo.TabIndex = 0;
+            this.rbtCodigo.TabIndex = 1;
             this.rbtCodigo.TabStop = true;
             this.rbtCodigo.Text = "Código";
             this.rbtCodigo.UseVisualStyleBackColor = true;
@@ -117,7 +117,7 @@
             this.lblPesquisa.Location = new System.Drawing.Point(13, 58);
             this.lblPesquisa.Name = "lblPesquisa";
             this.lblPesquisa.Size = new System.Drawing.Size(53, 13);
-            this.lblPesquisa.TabIndex = 17;
+            this.lblPesquisa.TabIndex = 1;
             this.lblPesquisa.Text = "Pesquisa:";
             // 
             // dgvFuncionarios
@@ -141,7 +141,7 @@
             this.dgvFuncionarios.ReadOnly = true;
             this.dgvFuncionarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncionarios.Size = new System.Drawing.Size(760, 385);
-            this.dgvFuncionarios.TabIndex = 16;
+            this.dgvFuncionarios.TabIndex = 4;
             this.ttpFuncionario.SetToolTip(this.dgvFuncionarios, "Dê um duplo clique no funcionário que deseja alterar ou excluir.");
             this.dgvFuncionarios.DoubleClick += new System.EventHandler(this.dgvFuncionarios_DoubleClick);
             // 
@@ -151,7 +151,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(12, 12);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(760, 25);
-            this.lblTitulo.TabIndex = 15;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Consulta de Funcionários";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

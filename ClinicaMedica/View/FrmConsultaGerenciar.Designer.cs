@@ -63,7 +63,7 @@
             this.cmbConsultorio.Location = new System.Drawing.Point(18, 230);
             this.cmbConsultorio.Name = "cmbConsultorio";
             this.cmbConsultorio.Size = new System.Drawing.Size(227, 21);
-            this.cmbConsultorio.TabIndex = 1;
+            this.cmbConsultorio.TabIndex = 2;
             this.cmbConsultorio.ValueMember = "IdConsultorio";
             this.cmbConsultorio.SelectedIndexChanged += new System.EventHandler(this.cmbConsultorio_SelectedIndexChanged);
             // 
@@ -83,7 +83,7 @@
             this.lblConsultorio.Location = new System.Drawing.Point(18, 210);
             this.lblConsultorio.Name = "lblConsultorio";
             this.lblConsultorio.Size = new System.Drawing.Size(62, 13);
-            this.lblConsultorio.TabIndex = 2;
+            this.lblConsultorio.TabIndex = 1;
             this.lblConsultorio.Text = "Consultório:";
             // 
             // btnNovaConsulta

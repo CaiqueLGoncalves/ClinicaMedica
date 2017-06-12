@@ -42,7 +42,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(80, 119);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 23);
-            this.btnAlterar.TabIndex = 10;
+            this.btnAlterar.TabIndex = 4;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -52,7 +52,7 @@
             this.txbDescricao.Multiline = true;
             this.txbDescricao.Name = "txbDescricao";
             this.txbDescricao.Size = new System.Drawing.Size(270, 60);
-            this.txbDescricao.TabIndex = 9;
+            this.txbDescricao.TabIndex = 3;
             // 
             // lblDescricao
             // 
@@ -60,7 +60,7 @@
             this.lblDescricao.Location = new System.Drawing.Point(12, 42);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(58, 13);
-            this.lblDescricao.TabIndex = 8;
+            this.lblDescricao.TabIndex = 2;
             this.lblDescricao.Text = "Descrição:";
             // 
             // txbNome
@@ -69,7 +69,7 @@
             this.txbNome.MaxLength = 30;
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(270, 20);
-            this.txbNome.TabIndex = 7;
+            this.txbNome.TabIndex = 1;
             // 
             // lblNome
             // 
@@ -77,7 +77,7 @@
             this.lblNome.Location = new System.Drawing.Point(12, 12);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 6;
+            this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
             // btnExcluir
@@ -85,7 +85,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(255, 119);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 23);
-            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.TabIndex = 5;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);

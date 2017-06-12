@@ -58,7 +58,7 @@
             this.chkComparecimento.Location = new System.Drawing.Point(146, 356);
             this.chkComparecimento.Name = "chkComparecimento";
             this.chkComparecimento.Size = new System.Drawing.Size(15, 14);
-            this.chkComparecimento.TabIndex = 28;
+            this.chkComparecimento.TabIndex = 7;
             this.chkComparecimento.UseVisualStyleBackColor = true;
             // 
             // lblComparecimento
@@ -67,7 +67,7 @@
             this.lblComparecimento.Location = new System.Drawing.Point(12, 357);
             this.lblComparecimento.Name = "lblComparecimento";
             this.lblComparecimento.Size = new System.Drawing.Size(89, 13);
-            this.lblComparecimento.TabIndex = 27;
+            this.lblComparecimento.TabIndex = 6;
             this.lblComparecimento.Text = "Comparecimento:";
             // 
             // gpbData
@@ -81,7 +81,7 @@
             this.gpbData.Location = new System.Drawing.Point(12, 230);
             this.gpbData.Name = "gpbData";
             this.gpbData.Size = new System.Drawing.Size(407, 107);
-            this.gpbData.TabIndex = 26;
+            this.gpbData.TabIndex = 6;
             this.gpbData.TabStop = false;
             // 
             // dtpHorarioFinal
@@ -149,7 +149,7 @@
             this.dgvListaPacientes.Name = "dgvListaPacientes";
             this.dgvListaPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaPacientes.Size = new System.Drawing.Size(270, 150);
-            this.dgvListaPacientes.TabIndex = 25;
+            this.dgvListaPacientes.TabIndex = 5;
             // 
             // lblPaciente
             // 
@@ -157,7 +157,7 @@
             this.lblPaciente.Location = new System.Drawing.Point(12, 72);
             this.lblPaciente.Name = "lblPaciente";
             this.lblPaciente.Size = new System.Drawing.Size(52, 13);
-            this.lblPaciente.TabIndex = 24;
+            this.lblPaciente.TabIndex = 4;
             this.lblPaciente.Text = "Paciente:";
             // 
             // cmbMedico
@@ -167,7 +167,7 @@
             this.cmbMedico.Location = new System.Drawing.Point(149, 39);
             this.cmbMedico.Name = "cmbMedico";
             this.cmbMedico.Size = new System.Drawing.Size(270, 21);
-            this.cmbMedico.TabIndex = 23;
+            this.cmbMedico.TabIndex = 3;
             // 
             // lblMedico
             // 
@@ -175,7 +175,7 @@
             this.lblMedico.Location = new System.Drawing.Point(12, 42);
             this.lblMedico.Name = "lblMedico";
             this.lblMedico.Size = new System.Drawing.Size(45, 13);
-            this.lblMedico.TabIndex = 22;
+            this.lblMedico.TabIndex = 2;
             this.lblMedico.Text = "Médico:";
             // 
             // txbAnotacoes
@@ -184,7 +184,7 @@
             this.txbAnotacoes.Multiline = true;
             this.txbAnotacoes.Name = "txbAnotacoes";
             this.txbAnotacoes.Size = new System.Drawing.Size(270, 60);
-            this.txbAnotacoes.TabIndex = 20;
+            this.txbAnotacoes.TabIndex = 9;
             // 
             // lblAnotacoes
             // 
@@ -192,7 +192,7 @@
             this.lblAnotacoes.Location = new System.Drawing.Point(12, 387);
             this.lblAnotacoes.Name = "lblAnotacoes";
             this.lblAnotacoes.Size = new System.Drawing.Size(61, 13);
-            this.lblAnotacoes.TabIndex = 19;
+            this.lblAnotacoes.TabIndex = 8;
             this.lblAnotacoes.Text = "Anotações:";
             // 
             // txbConsultorio
@@ -202,7 +202,7 @@
             this.txbConsultorio.Name = "txbConsultorio";
             this.txbConsultorio.ReadOnly = true;
             this.txbConsultorio.Size = new System.Drawing.Size(270, 20);
-            this.txbConsultorio.TabIndex = 18;
+            this.txbConsultorio.TabIndex = 1;
             // 
             // lblConsultorio
             // 
@@ -210,7 +210,7 @@
             this.lblConsultorio.Location = new System.Drawing.Point(12, 12);
             this.lblConsultorio.Name = "lblConsultorio";
             this.lblConsultorio.Size = new System.Drawing.Size(62, 13);
-            this.lblConsultorio.TabIndex = 17;
+            this.lblConsultorio.TabIndex = 0;
             this.lblConsultorio.Text = "Consultório:";
             // 
             // btnDesmarcar
@@ -218,7 +218,7 @@
             this.btnDesmarcar.Location = new System.Drawing.Point(253, 460);
             this.btnDesmarcar.Name = "btnDesmarcar";
             this.btnDesmarcar.Size = new System.Drawing.Size(100, 23);
-            this.btnDesmarcar.TabIndex = 30;
+            this.btnDesmarcar.TabIndex = 11;
             this.btnDesmarcar.Text = "Desmarcar";
             this.btnDesmarcar.UseVisualStyleBackColor = true;
             this.btnDesmarcar.Click += new System.EventHandler(this.btnDesmarcar_Click);
@@ -228,7 +228,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(78, 460);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 23);
-            this.btnAlterar.TabIndex = 29;
+            this.btnAlterar.TabIndex = 10;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 

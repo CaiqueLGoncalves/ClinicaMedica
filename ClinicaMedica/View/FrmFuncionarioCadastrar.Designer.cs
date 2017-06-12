@@ -89,7 +89,7 @@
             this.lblFuncao.Location = new System.Drawing.Point(12, 240);
             this.lblFuncao.Name = "lblFuncao";
             this.lblFuncao.Size = new System.Drawing.Size(46, 13);
-            this.lblFuncao.TabIndex = 10;
+            this.lblFuncao.TabIndex = 1;
             this.lblFuncao.Text = "Função:";
             // 
             // cmbFuncao
@@ -101,7 +101,7 @@
             this.cmbFuncao.Location = new System.Drawing.Point(149, 237);
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(269, 21);
-            this.cmbFuncao.TabIndex = 11;
+            this.cmbFuncao.TabIndex = 2;
             this.cmbFuncao.ValueMember = "IdFuncao";
             // 
             // TBFuncaoBindingSource
@@ -133,7 +133,7 @@
             this.gpbContato.Location = new System.Drawing.Point(12, 264);
             this.gpbContato.Name = "gpbContato";
             this.gpbContato.Size = new System.Drawing.Size(406, 150);
-            this.gpbContato.TabIndex = 14;
+            this.gpbContato.TabIndex = 3;
             this.gpbContato.TabStop = false;
             this.gpbContato.Text = "Contato";
             // 
@@ -229,7 +229,7 @@
             this.gpbLocalidade.Location = new System.Drawing.Point(12, 425);
             this.gpbLocalidade.Name = "gpbLocalidade";
             this.gpbLocalidade.Size = new System.Drawing.Size(406, 240);
-            this.gpbLocalidade.TabIndex = 15;
+            this.gpbLocalidade.TabIndex = 4;
             this.gpbLocalidade.TabStop = false;
             this.gpbLocalidade.Text = "Endereço";
             // 
@@ -411,7 +411,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(173, 678);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 23);
-            this.btnCadastrar.TabIndex = 16;
+            this.btnCadastrar.TabIndex = 5;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
@@ -430,7 +430,7 @@
             this.gpbDadosPessoais.Location = new System.Drawing.Point(12, 12);
             this.gpbDadosPessoais.Name = "gpbDadosPessoais";
             this.gpbDadosPessoais.Size = new System.Drawing.Size(406, 215);
-            this.gpbDadosPessoais.TabIndex = 29;
+            this.gpbDadosPessoais.TabIndex = 0;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "Dados Pessoais";
             // 
@@ -440,7 +440,7 @@
             this.lblNome.Location = new System.Drawing.Point(10, 25);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 13;
+            this.lblNome.TabIndex = 0;
             this.lblNome.Text = "Nome:";
             // 
             // txbNome
@@ -449,7 +449,7 @@
             this.txbNome.MaxLength = 100;
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(247, 20);
-            this.txbNome.TabIndex = 14;
+            this.txbNome.TabIndex = 1;
             // 
             // lblSexo
             // 
@@ -457,7 +457,7 @@
             this.lblSexo.Location = new System.Drawing.Point(10, 145);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(34, 13);
-            this.lblSexo.TabIndex = 21;
+            this.lblSexo.TabIndex = 8;
             this.lblSexo.Text = "Sexo:";
             // 
             // lblCPF
@@ -466,7 +466,7 @@
             this.lblCPF.Location = new System.Drawing.Point(10, 55);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(30, 13);
-            this.lblCPF.TabIndex = 15;
+            this.lblCPF.TabIndex = 2;
             this.lblCPF.Text = "CPF:";
             // 
             // gpbSexo
@@ -476,7 +476,7 @@
             this.gpbSexo.Location = new System.Drawing.Point(143, 145);
             this.gpbSexo.Name = "gpbSexo";
             this.gpbSexo.Size = new System.Drawing.Size(247, 55);
-            this.gpbSexo.TabIndex = 22;
+            this.gpbSexo.TabIndex = 9;
             this.gpbSexo.TabStop = false;
             // 
             // rbtFeminino
@@ -507,7 +507,7 @@
             this.mskCPF.Mask = "999,999,999-99";
             this.mskCPF.Name = "mskCPF";
             this.mskCPF.Size = new System.Drawing.Size(247, 20);
-            this.mskCPF.TabIndex = 16;
+            this.mskCPF.TabIndex = 3;
             this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblRG
@@ -516,7 +516,7 @@
             this.lblRG.Location = new System.Drawing.Point(10, 85);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(26, 13);
-            this.lblRG.TabIndex = 17;
+            this.lblRG.TabIndex = 4;
             this.lblRG.Text = "RG:";
             // 
             // txbRG
@@ -525,7 +525,7 @@
             this.txbRG.MaxLength = 12;
             this.txbRG.Name = "txbRG";
             this.txbRG.Size = new System.Drawing.Size(247, 20);
-            this.txbRG.TabIndex = 18;
+            this.txbRG.TabIndex = 5;
             // 
             // lblDataNascimento
             // 
@@ -533,19 +533,19 @@
             this.lblDataNascimento.Location = new System.Drawing.Point(10, 115);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(107, 13);
-            this.lblDataNascimento.TabIndex = 19;
+            this.lblDataNascimento.TabIndex = 6;
             this.lblDataNascimento.Text = "Data de Nascimento:";
             // 
             // dtpDataNascimento
             // 
             this.dtpDataNascimento.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(143, 109);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(143, 115);
             this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 6, 30, 0, 0, 0, 0);
             this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(247, 20);
-            this.dtpDataNascimento.TabIndex = 20;
+            this.dtpDataNascimento.TabIndex = 7;
             // 
             // FrmFuncionarioCadastrar
             // 

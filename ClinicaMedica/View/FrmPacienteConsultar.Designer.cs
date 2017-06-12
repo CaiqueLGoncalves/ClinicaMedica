@@ -51,7 +51,7 @@
             this.lblPesquisa.Location = new System.Drawing.Point(13, 58);
             this.lblPesquisa.Name = "lblPesquisa";
             this.lblPesquisa.Size = new System.Drawing.Size(53, 13);
-            this.lblPesquisa.TabIndex = 7;
+            this.lblPesquisa.TabIndex = 1;
             this.lblPesquisa.Text = "Pesquisa:";
             // 
             // dgvPacientes
@@ -75,7 +75,7 @@
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacientes.Size = new System.Drawing.Size(760, 385);
-            this.dgvPacientes.TabIndex = 5;
+            this.dgvPacientes.TabIndex = 4;
             this.ttpPaciente.SetToolTip(this.dgvPacientes, "Dê um duplo clique no paciente que deseja alterar ou excluir.");
             this.dgvPacientes.DoubleClick += new System.EventHandler(this.dgvPacientes_DoubleClick);
             // 
@@ -85,7 +85,7 @@
             this.lblTitulo.Location = new System.Drawing.Point(12, 12);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(760, 25);
-            this.lblTitulo.TabIndex = 4;
+            this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Consulta de Pacientes";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -98,7 +98,7 @@
             this.gpbFiltros.Location = new System.Drawing.Point(12, 87);
             this.gpbFiltros.Name = "gpbFiltros";
             this.gpbFiltros.Size = new System.Drawing.Size(760, 50);
-            this.gpbFiltros.TabIndex = 8;
+            this.gpbFiltros.TabIndex = 3;
             this.gpbFiltros.TabStop = false;
             // 
             // lblFiltros
@@ -107,7 +107,7 @@
             this.lblFiltros.Location = new System.Drawing.Point(6, 21);
             this.lblFiltros.Name = "lblFiltros";
             this.lblFiltros.Size = new System.Drawing.Size(37, 13);
-            this.lblFiltros.TabIndex = 3;
+            this.lblFiltros.TabIndex = 0;
             this.lblFiltros.Text = "Filtros:";
             // 
             // rbtCPF
@@ -116,7 +116,7 @@
             this.rbtCPF.Location = new System.Drawing.Point(193, 19);
             this.rbtCPF.Name = "rbtCPF";
             this.rbtCPF.Size = new System.Drawing.Size(45, 17);
-            this.rbtCPF.TabIndex = 2;
+            this.rbtCPF.TabIndex = 3;
             this.rbtCPF.TabStop = true;
             this.rbtCPF.Text = "CPF";
             this.rbtCPF.UseVisualStyleBackColor = true;
@@ -128,7 +128,7 @@
             this.rbtNome.Location = new System.Drawing.Point(134, 19);
             this.rbtNome.Name = "rbtNome";
             this.rbtNome.Size = new System.Drawing.Size(53, 17);
-            this.rbtNome.TabIndex = 1;
+            this.rbtNome.TabIndex = 2;
             this.rbtNome.TabStop = true;
             this.rbtNome.Text = "Nome";
             this.rbtNome.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             this.rbtCodigo.Location = new System.Drawing.Point(70, 19);
             this.rbtCodigo.Name = "rbtCodigo";
             this.rbtCodigo.Size = new System.Drawing.Size(58, 17);
-            this.rbtCodigo.TabIndex = 0;
+            this.rbtCodigo.TabIndex = 1;
             this.rbtCodigo.TabStop = true;
             this.rbtCodigo.Text = "Código";
             this.rbtCodigo.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.mskPesquisa.Mask = "999999999999";
             this.mskPesquisa.Name = "mskPesquisa";
             this.mskPesquisa.Size = new System.Drawing.Size(690, 20);
-            this.mskPesquisa.TabIndex = 9;
+            this.mskPesquisa.TabIndex = 2;
             this.mskPesquisa.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mskPesquisa.KeyUp += new System.Windows.Forms.KeyEventHandler(this.mskPesquisa_KeyUp);
             // 

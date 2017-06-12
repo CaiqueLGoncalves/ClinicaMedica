@@ -84,7 +84,7 @@
             this.dgvEspecialidades.ReadOnly = true;
             this.dgvEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEspecialidades.Size = new System.Drawing.Size(510, 250);
-            this.dgvEspecialidades.TabIndex = 1;
+            this.dgvEspecialidades.TabIndex = 3;
             this.ttpEspecialidade.SetToolTip(this.dgvEspecialidades, "Dê um duplo clique na especialidade que deseja alterar ou excluir.");
             this.dgvEspecialidades.DoubleClick += new System.EventHandler(this.dgvEspecialidades_DoubleClick);
             // 
@@ -151,7 +151,7 @@
             this.lblPesquisa.Location = new System.Drawing.Point(13, 58);
             this.lblPesquisa.Name = "lblPesquisa";
             this.lblPesquisa.Size = new System.Drawing.Size(53, 13);
-            this.lblPesquisa.TabIndex = 3;
+            this.lblPesquisa.TabIndex = 1;
             this.lblPesquisa.Text = "Pesquisa:";
             // 
             // FrmEspecialidadeConsultar

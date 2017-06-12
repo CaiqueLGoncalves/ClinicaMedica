@@ -51,7 +51,7 @@
             this.lblFuncionario.Location = new System.Drawing.Point(12, 42);
             this.lblFuncionario.Name = "lblFuncionario";
             this.lblFuncionario.Size = new System.Drawing.Size(65, 13);
-            this.lblFuncionario.TabIndex = 8;
+            this.lblFuncionario.TabIndex = 2;
             this.lblFuncionario.Text = "Funcionário:";
             // 
             // lblConsultorio
@@ -60,7 +60,7 @@
             this.lblConsultorio.Location = new System.Drawing.Point(12, 12);
             this.lblConsultorio.Name = "lblConsultorio";
             this.lblConsultorio.Size = new System.Drawing.Size(62, 13);
-            this.lblConsultorio.TabIndex = 6;
+            this.lblConsultorio.TabIndex = 0;
             this.lblConsultorio.Text = "Consultório:";
             // 
             // cmbConsultorio
@@ -72,7 +72,7 @@
             this.cmbConsultorio.Location = new System.Drawing.Point(149, 9);
             this.cmbConsultorio.Name = "cmbConsultorio";
             this.cmbConsultorio.Size = new System.Drawing.Size(270, 21);
-            this.cmbConsultorio.TabIndex = 11;
+            this.cmbConsultorio.TabIndex = 1;
             this.cmbConsultorio.ValueMember = "IdConsultorio";
             // 
             // TBConsultorioBindingSource
@@ -97,7 +97,7 @@
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFuncionario.Size = new System.Drawing.Size(270, 150);
-            this.dgvFuncionario.TabIndex = 12;
+            this.dgvFuncionario.TabIndex = 3;
             // 
             // dtpDataAdmissao
             // 
@@ -106,7 +106,7 @@
             this.dtpDataAdmissao.MaxDate = new System.DateTime(2017, 6, 12, 0, 0, 0, 0);
             this.dtpDataAdmissao.Name = "dtpDataAdmissao";
             this.dtpDataAdmissao.Size = new System.Drawing.Size(270, 20);
-            this.dtpDataAdmissao.TabIndex = 13;
+            this.dtpDataAdmissao.TabIndex = 5;
             this.dtpDataAdmissao.Value = new System.DateTime(2017, 6, 11, 0, 0, 0, 0);
             // 
             // lblDataAdmissao
@@ -115,7 +115,7 @@
             this.lblDataAdmissao.Location = new System.Drawing.Point(12, 211);
             this.lblDataAdmissao.Name = "lblDataAdmissao";
             this.lblDataAdmissao.Size = new System.Drawing.Size(96, 13);
-            this.lblDataAdmissao.TabIndex = 14;
+            this.lblDataAdmissao.TabIndex = 4;
             this.lblDataAdmissao.Text = "Data de Admissão:";
             // 
             // btnContratar
@@ -123,7 +123,7 @@
             this.btnContratar.Location = new System.Drawing.Point(166, 255);
             this.btnContratar.Name = "btnContratar";
             this.btnContratar.Size = new System.Drawing.Size(100, 23);
-            this.btnContratar.TabIndex = 10;
+            this.btnContratar.TabIndex = 6;
             this.btnContratar.Text = "Contratar";
             this.btnContratar.Click += new System.EventHandler(this.btnContratar_Click);
             // 
