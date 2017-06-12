@@ -22,7 +22,7 @@ namespace ClinicaMedica.Controller
             {
                 if (erros.Count() == 0)
                 {
-                    if (IsAvailable(agendaexame.DataHoraInicio, agendaexame.DataHoraFim))
+                    if (IsAvailable(agendaexame.IdConsultorio,agendaexame.IdExame, agendaexame.DataHoraInicio, agendaexame.DataHoraFim))
                     {
                         db.TB_AgendaExame.Add(agendaexame);
                         db.SaveChanges();
@@ -216,7 +216,7 @@ namespace ClinicaMedica.Controller
             {
                 if (erros.Count() == 0)
                 {
-                    if (IsAvailable(agendaexame.DataHoraInicio, agendaexame.DataHoraFim))
+                    if (IsAvailable(agendaexame.IdConsultorio, agendaexame.IdExame, agendaexame.DataHoraInicio, agendaexame.DataHoraFim))
                     {
                         db.Entry(agendaexame).State = EntityState.Modified;
                         db.SaveChanges();
@@ -306,11 +306,13 @@ namespace ClinicaMedica.Controller
 
 
 
-        private bool IsAvailable(DateTime inicio, DateTime final)
+        private bool IsAvailable(int idconsultorio, int idexame, DateTime inicio, DateTime final)
         {
             var query = from c in db.TB_AgendaExame
-                        where c.DataHoraInicio <= final
-                        where c.DataHoraFim >= inicio
+                        where c.IdConsultorio == idconsultorio
+                        where c.IdExame == idexame
+                        where c.DataHoraInicio < final
+                        where c.DataHoraFim > inicio
                         select c;
 
             if (query.Count() == 0)
