@@ -1,5 +1,6 @@
 ﻿using ClinicaMedica.View;
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace ClinicaMedica
@@ -12,9 +13,20 @@ namespace ClinicaMedica
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmIndex());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new FrmIndex());
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Erro de Rede. Por favor, tente novamente.\nMensagem de Erro: " + ex.Message, "Clínica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Mensagem de Erro: " + ex.Message, "Clínica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
