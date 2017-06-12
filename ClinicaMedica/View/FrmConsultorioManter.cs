@@ -166,19 +166,19 @@ namespace ClinicaMedica.View
                        // numeroErros += conexCont.Insert(ce);
                     }
                     MessageBox.Show("Clínica Alterada com Sucesso!!");
+                    Close();
 
                 }
                 else
                 {
                     foreach (var erro in resultado)
                     {
-                        MessageBox.Show("Não foi possível alterar o médico!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Não foi possível alterar a clínica!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
                 //FrmConsultorioConsultar.
                 
-                Close();
             }
             catch (Exception ex)
             {

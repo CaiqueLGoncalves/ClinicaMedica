@@ -189,7 +189,7 @@ namespace ClinicaMedica.Controller
 
         public List<string> Update(Consultorio consultorio, Localidade localidade)
         {
-            var errosConsultorio = Validacao.Validar(consultorio);
+            var errosConsultorio = Validacao.ValidarConsultorio(consultorio);
             var errosLocalidade = Validacao.Validar(localidade);
 
             try
