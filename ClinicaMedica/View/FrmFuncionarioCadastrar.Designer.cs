@@ -35,10 +35,6 @@
             this.TBFuncaoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.TB_FuncaoTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_FuncaoTableAdapter();
-            this.lblSexo = new System.Windows.Forms.Label();
-            this.gpbSexo = new System.Windows.Forms.GroupBox();
-            this.rbtFeminino = new System.Windows.Forms.RadioButton();
-            this.rbtMasculino = new System.Windows.Forms.RadioButton();
             this.gpbContato = new System.Windows.Forms.GroupBox();
             this.mskTelefoneCelular = new System.Windows.Forms.MaskedTextBox();
             this.lblTelefoneCelular = new System.Windows.Forms.Label();
@@ -66,25 +62,31 @@
             this.txbBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.lblDataNascimento = new System.Windows.Forms.Label();
-            this.txbRG = new System.Windows.Forms.TextBox();
-            this.lblRG = new System.Windows.Forms.Label();
-            this.mskCPF = new System.Windows.Forms.MaskedTextBox();
-            this.lblCPF = new System.Windows.Forms.Label();
-            this.txbNome = new System.Windows.Forms.TextBox();
+            this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.lblNome = new System.Windows.Forms.Label();
+            this.txbNome = new System.Windows.Forms.TextBox();
+            this.lblSexo = new System.Windows.Forms.Label();
+            this.lblCPF = new System.Windows.Forms.Label();
+            this.gpbSexo = new System.Windows.Forms.GroupBox();
+            this.rbtFeminino = new System.Windows.Forms.RadioButton();
+            this.rbtMasculino = new System.Windows.Forms.RadioButton();
+            this.mskCPF = new System.Windows.Forms.MaskedTextBox();
+            this.lblRG = new System.Windows.Forms.Label();
+            this.txbRG = new System.Windows.Forms.TextBox();
+            this.lblDataNascimento = new System.Windows.Forms.Label();
+            this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.TBFuncaoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).BeginInit();
-            this.gpbSexo.SuspendLayout();
             this.gpbContato.SuspendLayout();
             this.gpbLocalidade.SuspendLayout();
+            this.gpbDadosPessoais.SuspendLayout();
+            this.gpbSexo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblFuncao
             // 
             this.lblFuncao.AutoSize = true;
-            this.lblFuncao.Location = new System.Drawing.Point(12, 195);
+            this.lblFuncao.Location = new System.Drawing.Point(12, 240);
             this.lblFuncao.Name = "lblFuncao";
             this.lblFuncao.Size = new System.Drawing.Size(46, 13);
             this.lblFuncao.TabIndex = 10;
@@ -96,7 +98,7 @@
             this.cmbFuncao.DisplayMember = "Nome";
             this.cmbFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFuncao.FormattingEnabled = true;
-            this.cmbFuncao.Location = new System.Drawing.Point(149, 192);
+            this.cmbFuncao.Location = new System.Drawing.Point(149, 237);
             this.cmbFuncao.Name = "cmbFuncao";
             this.cmbFuncao.Size = new System.Drawing.Size(269, 21);
             this.cmbFuncao.TabIndex = 11;
@@ -118,47 +120,6 @@
             // 
             this.TB_FuncaoTableAdapter.ClearBeforeFill = true;
             // 
-            // lblSexo
-            // 
-            this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(12, 129);
-            this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(34, 13);
-            this.lblSexo.TabIndex = 8;
-            this.lblSexo.Text = "Sexo:";
-            // 
-            // gpbSexo
-            // 
-            this.gpbSexo.Controls.Add(this.rbtFeminino);
-            this.gpbSexo.Controls.Add(this.rbtMasculino);
-            this.gpbSexo.Location = new System.Drawing.Point(149, 124);
-            this.gpbSexo.Name = "gpbSexo";
-            this.gpbSexo.Size = new System.Drawing.Size(269, 55);
-            this.gpbSexo.TabIndex = 9;
-            this.gpbSexo.TabStop = false;
-            // 
-            // rbtFeminino
-            // 
-            this.rbtFeminino.AutoSize = true;
-            this.rbtFeminino.Location = new System.Drawing.Point(6, 33);
-            this.rbtFeminino.Name = "rbtFeminino";
-            this.rbtFeminino.Size = new System.Drawing.Size(67, 17);
-            this.rbtFeminino.TabIndex = 1;
-            this.rbtFeminino.Text = "Feminino";
-            this.rbtFeminino.UseVisualStyleBackColor = true;
-            // 
-            // rbtMasculino
-            // 
-            this.rbtMasculino.AutoSize = true;
-            this.rbtMasculino.Checked = true;
-            this.rbtMasculino.Location = new System.Drawing.Point(6, 10);
-            this.rbtMasculino.Name = "rbtMasculino";
-            this.rbtMasculino.Size = new System.Drawing.Size(73, 17);
-            this.rbtMasculino.TabIndex = 0;
-            this.rbtMasculino.TabStop = true;
-            this.rbtMasculino.Text = "Masculino";
-            this.rbtMasculino.UseVisualStyleBackColor = true;
-            // 
             // gpbContato
             // 
             this.gpbContato.Controls.Add(this.mskTelefoneCelular);
@@ -169,7 +130,7 @@
             this.gpbContato.Controls.Add(this.lblTelefoneResidencial);
             this.gpbContato.Controls.Add(this.lblEmail);
             this.gpbContato.Controls.Add(this.txbEmail);
-            this.gpbContato.Location = new System.Drawing.Point(12, 223);
+            this.gpbContato.Location = new System.Drawing.Point(12, 264);
             this.gpbContato.Name = "gpbContato";
             this.gpbContato.Size = new System.Drawing.Size(406, 150);
             this.gpbContato.TabIndex = 14;
@@ -265,7 +226,7 @@
             this.gpbLocalidade.Controls.Add(this.txbComplemento);
             this.gpbLocalidade.Controls.Add(this.txbBairro);
             this.gpbLocalidade.Controls.Add(this.lblBairro);
-            this.gpbLocalidade.Location = new System.Drawing.Point(12, 383);
+            this.gpbLocalidade.Location = new System.Drawing.Point(12, 425);
             this.gpbLocalidade.Name = "gpbLocalidade";
             this.gpbLocalidade.Size = new System.Drawing.Size(406, 240);
             this.gpbLocalidade.TabIndex = 15;
@@ -447,103 +408,154 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(173, 633);
+            this.btnCadastrar.Location = new System.Drawing.Point(173, 678);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(100, 23);
             this.btnCadastrar.TabIndex = 16;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // dtpDataNascimento
+            // gpbDadosPessoais
             // 
-            this.dtpDataNascimento.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(149, 97);
-            this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 6, 30, 0, 0, 0, 0);
-            this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(269, 20);
-            this.dtpDataNascimento.TabIndex = 7;
-            // 
-            // lblDataNascimento
-            // 
-            this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Location = new System.Drawing.Point(12, 99);
-            this.lblDataNascimento.Name = "lblDataNascimento";
-            this.lblDataNascimento.Size = new System.Drawing.Size(107, 13);
-            this.lblDataNascimento.TabIndex = 6;
-            this.lblDataNascimento.Text = "Data de Nascimento:";
-            // 
-            // txbRG
-            // 
-            this.txbRG.Location = new System.Drawing.Point(149, 66);
-            this.txbRG.MaxLength = 12;
-            this.txbRG.Name = "txbRG";
-            this.txbRG.Size = new System.Drawing.Size(269, 20);
-            this.txbRG.TabIndex = 5;
-            // 
-            // lblRG
-            // 
-            this.lblRG.AutoSize = true;
-            this.lblRG.Location = new System.Drawing.Point(12, 69);
-            this.lblRG.Name = "lblRG";
-            this.lblRG.Size = new System.Drawing.Size(26, 13);
-            this.lblRG.TabIndex = 4;
-            this.lblRG.Text = "RG:";
-            // 
-            // mskCPF
-            // 
-            this.mskCPF.Location = new System.Drawing.Point(149, 36);
-            this.mskCPF.Mask = "999,999,999-99";
-            this.mskCPF.Name = "mskCPF";
-            this.mskCPF.Size = new System.Drawing.Size(269, 20);
-            this.mskCPF.TabIndex = 3;
-            this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // lblCPF
-            // 
-            this.lblCPF.AutoSize = true;
-            this.lblCPF.Location = new System.Drawing.Point(12, 39);
-            this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(30, 13);
-            this.lblCPF.TabIndex = 2;
-            this.lblCPF.Text = "CPF:";
-            // 
-            // txbNome
-            // 
-            this.txbNome.Location = new System.Drawing.Point(149, 6);
-            this.txbNome.MaxLength = 100;
-            this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(269, 20);
-            this.txbNome.TabIndex = 1;
+            this.gpbDadosPessoais.Controls.Add(this.lblNome);
+            this.gpbDadosPessoais.Controls.Add(this.txbNome);
+            this.gpbDadosPessoais.Controls.Add(this.lblSexo);
+            this.gpbDadosPessoais.Controls.Add(this.lblCPF);
+            this.gpbDadosPessoais.Controls.Add(this.gpbSexo);
+            this.gpbDadosPessoais.Controls.Add(this.mskCPF);
+            this.gpbDadosPessoais.Controls.Add(this.lblRG);
+            this.gpbDadosPessoais.Controls.Add(this.txbRG);
+            this.gpbDadosPessoais.Controls.Add(this.lblDataNascimento);
+            this.gpbDadosPessoais.Controls.Add(this.dtpDataNascimento);
+            this.gpbDadosPessoais.Location = new System.Drawing.Point(12, 12);
+            this.gpbDadosPessoais.Name = "gpbDadosPessoais";
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(406, 215);
+            this.gpbDadosPessoais.TabIndex = 29;
+            this.gpbDadosPessoais.TabStop = false;
+            this.gpbDadosPessoais.Text = "Dados Pessoais";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(12, 9);
+            this.lblNome.Location = new System.Drawing.Point(10, 25);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 0;
+            this.lblNome.TabIndex = 13;
             this.lblNome.Text = "Nome:";
+            // 
+            // txbNome
+            // 
+            this.txbNome.Location = new System.Drawing.Point(143, 22);
+            this.txbNome.MaxLength = 100;
+            this.txbNome.Name = "txbNome";
+            this.txbNome.Size = new System.Drawing.Size(247, 20);
+            this.txbNome.TabIndex = 14;
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.AutoSize = true;
+            this.lblSexo.Location = new System.Drawing.Point(10, 145);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(34, 13);
+            this.lblSexo.TabIndex = 21;
+            this.lblSexo.Text = "Sexo:";
+            // 
+            // lblCPF
+            // 
+            this.lblCPF.AutoSize = true;
+            this.lblCPF.Location = new System.Drawing.Point(10, 55);
+            this.lblCPF.Name = "lblCPF";
+            this.lblCPF.Size = new System.Drawing.Size(30, 13);
+            this.lblCPF.TabIndex = 15;
+            this.lblCPF.Text = "CPF:";
+            // 
+            // gpbSexo
+            // 
+            this.gpbSexo.Controls.Add(this.rbtFeminino);
+            this.gpbSexo.Controls.Add(this.rbtMasculino);
+            this.gpbSexo.Location = new System.Drawing.Point(143, 145);
+            this.gpbSexo.Name = "gpbSexo";
+            this.gpbSexo.Size = new System.Drawing.Size(247, 55);
+            this.gpbSexo.TabIndex = 22;
+            this.gpbSexo.TabStop = false;
+            // 
+            // rbtFeminino
+            // 
+            this.rbtFeminino.AutoSize = true;
+            this.rbtFeminino.Location = new System.Drawing.Point(6, 33);
+            this.rbtFeminino.Name = "rbtFeminino";
+            this.rbtFeminino.Size = new System.Drawing.Size(67, 17);
+            this.rbtFeminino.TabIndex = 1;
+            this.rbtFeminino.Text = "Feminino";
+            this.rbtFeminino.UseVisualStyleBackColor = true;
+            // 
+            // rbtMasculino
+            // 
+            this.rbtMasculino.AutoSize = true;
+            this.rbtMasculino.Checked = true;
+            this.rbtMasculino.Location = new System.Drawing.Point(6, 10);
+            this.rbtMasculino.Name = "rbtMasculino";
+            this.rbtMasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbtMasculino.TabIndex = 0;
+            this.rbtMasculino.TabStop = true;
+            this.rbtMasculino.Text = "Masculino";
+            this.rbtMasculino.UseVisualStyleBackColor = true;
+            // 
+            // mskCPF
+            // 
+            this.mskCPF.Location = new System.Drawing.Point(143, 52);
+            this.mskCPF.Mask = "999,999,999-99";
+            this.mskCPF.Name = "mskCPF";
+            this.mskCPF.Size = new System.Drawing.Size(247, 20);
+            this.mskCPF.TabIndex = 16;
+            this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            // 
+            // lblRG
+            // 
+            this.lblRG.AutoSize = true;
+            this.lblRG.Location = new System.Drawing.Point(10, 85);
+            this.lblRG.Name = "lblRG";
+            this.lblRG.Size = new System.Drawing.Size(26, 13);
+            this.lblRG.TabIndex = 17;
+            this.lblRG.Text = "RG:";
+            // 
+            // txbRG
+            // 
+            this.txbRG.Location = new System.Drawing.Point(143, 82);
+            this.txbRG.MaxLength = 12;
+            this.txbRG.Name = "txbRG";
+            this.txbRG.Size = new System.Drawing.Size(247, 20);
+            this.txbRG.TabIndex = 18;
+            // 
+            // lblDataNascimento
+            // 
+            this.lblDataNascimento.AutoSize = true;
+            this.lblDataNascimento.Location = new System.Drawing.Point(10, 115);
+            this.lblDataNascimento.Name = "lblDataNascimento";
+            this.lblDataNascimento.Size = new System.Drawing.Size(107, 13);
+            this.lblDataNascimento.TabIndex = 19;
+            this.lblDataNascimento.Text = "Data de Nascimento:";
+            // 
+            // dtpDataNascimento
+            // 
+            this.dtpDataNascimento.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNascimento.Location = new System.Drawing.Point(143, 109);
+            this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 6, 30, 0, 0, 0, 0);
+            this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpDataNascimento.Name = "dtpDataNascimento";
+            this.dtpDataNascimento.Size = new System.Drawing.Size(247, 20);
+            this.dtpDataNascimento.TabIndex = 20;
             // 
             // FrmFuncionarioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 671);
-            this.Controls.Add(this.lblSexo);
-            this.Controls.Add(this.gpbSexo);
+            this.ClientSize = new System.Drawing.Size(434, 711);
+            this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.gpbContato);
             this.Controls.Add(this.gpbLocalidade);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.dtpDataNascimento);
-            this.Controls.Add(this.lblDataNascimento);
-            this.Controls.Add(this.txbRG);
-            this.Controls.Add(this.lblRG);
-            this.Controls.Add(this.mskCPF);
-            this.Controls.Add(this.lblCPF);
-            this.Controls.Add(this.txbNome);
-            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.cmbFuncao);
             this.Controls.Add(this.lblFuncao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -555,12 +567,14 @@
             this.Activated += new System.EventHandler(this.FrmFuncionarioCadastrar_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.TBFuncaoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClinicaMedicaBDDataSet)).EndInit();
-            this.gpbSexo.ResumeLayout(false);
-            this.gpbSexo.PerformLayout();
             this.gpbContato.ResumeLayout(false);
             this.gpbContato.PerformLayout();
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();
+            this.gpbDadosPessoais.ResumeLayout(false);
+            this.gpbDadosPessoais.PerformLayout();
+            this.gpbSexo.ResumeLayout(false);
+            this.gpbSexo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -572,10 +586,6 @@
         private ClinicaMedicaBDDataSet ClinicaMedicaBDDataSet;
         private System.Windows.Forms.BindingSource TBFuncaoBindingSource;
         private ClinicaMedicaBDDataSetTableAdapters.TB_FuncaoTableAdapter TB_FuncaoTableAdapter;
-        private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.GroupBox gpbSexo;
-        private System.Windows.Forms.RadioButton rbtFeminino;
-        private System.Windows.Forms.RadioButton rbtMasculino;
         private System.Windows.Forms.GroupBox gpbContato;
         private System.Windows.Forms.MaskedTextBox mskTelefoneCelular;
         private System.Windows.Forms.Label lblTelefoneCelular;
@@ -602,14 +612,19 @@
         private System.Windows.Forms.TextBox txbBairro;
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.DateTimePicker dtpDataNascimento;
-        private System.Windows.Forms.Label lblDataNascimento;
-        private System.Windows.Forms.TextBox txbRG;
-        private System.Windows.Forms.Label lblRG;
-        private System.Windows.Forms.MaskedTextBox mskCPF;
-        private System.Windows.Forms.Label lblCPF;
-        private System.Windows.Forms.TextBox txbNome;
-        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.CheckBox chkCEP;
+        private System.Windows.Forms.GroupBox gpbDadosPessoais;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txbNome;
+        private System.Windows.Forms.Label lblSexo;
+        private System.Windows.Forms.Label lblCPF;
+        private System.Windows.Forms.GroupBox gpbSexo;
+        private System.Windows.Forms.RadioButton rbtFeminino;
+        private System.Windows.Forms.RadioButton rbtMasculino;
+        private System.Windows.Forms.MaskedTextBox mskCPF;
+        private System.Windows.Forms.Label lblRG;
+        private System.Windows.Forms.TextBox txbRG;
+        private System.Windows.Forms.Label lblDataNascimento;
+        private System.Windows.Forms.DateTimePicker dtpDataNascimento;
     }
 }

@@ -107,7 +107,7 @@
             this.gpbSexo.Controls.Add(this.rbtMasculino);
             this.gpbSexo.Location = new System.Drawing.Point(131, 138);
             this.gpbSexo.Name = "gpbSexo";
-            this.gpbSexo.Size = new System.Drawing.Size(269, 55);
+            this.gpbSexo.Size = new System.Drawing.Size(259, 55);
             this.gpbSexo.TabIndex = 26;
             this.gpbSexo.TabStop = false;
             // 
@@ -436,7 +436,7 @@
             this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(269, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(259, 20);
             this.dtpDataNascimento.TabIndex = 24;
             // 
             // lblDataNascimento
@@ -453,7 +453,7 @@
             this.txbRG.Location = new System.Drawing.Point(131, 82);
             this.txbRG.MaxLength = 12;
             this.txbRG.Name = "txbRG";
-            this.txbRG.Size = new System.Drawing.Size(269, 20);
+            this.txbRG.Size = new System.Drawing.Size(259, 20);
             this.txbRG.TabIndex = 22;
             // 
             // lblRG
@@ -470,7 +470,7 @@
             this.mskCPF.Location = new System.Drawing.Point(131, 52);
             this.mskCPF.Mask = "999,999,999-99";
             this.mskCPF.Name = "mskCPF";
-            this.mskCPF.Size = new System.Drawing.Size(269, 20);
+            this.mskCPF.Size = new System.Drawing.Size(259, 20);
             this.mskCPF.TabIndex = 20;
             this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -488,7 +488,7 @@
             this.txbNome.Location = new System.Drawing.Point(131, 22);
             this.txbNome.MaxLength = 100;
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(269, 20);
+            this.txbNome.Size = new System.Drawing.Size(259, 20);
             this.txbNome.TabIndex = 18;
             // 
             // lblNome

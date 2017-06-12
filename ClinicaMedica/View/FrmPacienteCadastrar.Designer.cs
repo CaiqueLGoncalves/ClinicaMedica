@@ -404,7 +404,7 @@
             this.txbNome.Location = new System.Drawing.Point(143, 22);
             this.txbNome.MaxLength = 100;
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(254, 20);
+            this.txbNome.Size = new System.Drawing.Size(247, 20);
             this.txbNome.TabIndex = 14;
             // 
             // lblSexo
@@ -431,7 +431,7 @@
             this.gpbSexo.Controls.Add(this.rbtMasculino);
             this.gpbSexo.Location = new System.Drawing.Point(143, 145);
             this.gpbSexo.Name = "gpbSexo";
-            this.gpbSexo.Size = new System.Drawing.Size(254, 55);
+            this.gpbSexo.Size = new System.Drawing.Size(247, 55);
             this.gpbSexo.TabIndex = 22;
             this.gpbSexo.TabStop = false;
             // 
@@ -462,7 +462,7 @@
             this.mskCPF.Location = new System.Drawing.Point(143, 52);
             this.mskCPF.Mask = "999,999,999-99";
             this.mskCPF.Name = "mskCPF";
-            this.mskCPF.Size = new System.Drawing.Size(254, 20);
+            this.mskCPF.Size = new System.Drawing.Size(247, 20);
             this.mskCPF.TabIndex = 16;
             this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -480,7 +480,7 @@
             this.txbRG.Location = new System.Drawing.Point(143, 82);
             this.txbRG.MaxLength = 12;
             this.txbRG.Name = "txbRG";
-            this.txbRG.Size = new System.Drawing.Size(254, 20);
+            this.txbRG.Size = new System.Drawing.Size(247, 20);
             this.txbRG.TabIndex = 18;
             // 
             // lblDataNascimento
@@ -500,7 +500,7 @@
             this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 6, 30, 0, 0, 0, 0);
             this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(254, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(247, 20);
             this.dtpDataNascimento.TabIndex = 20;
             // 
             // FrmPacienteCadastrar

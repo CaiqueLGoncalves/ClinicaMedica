@@ -90,6 +90,7 @@
             this.gpbSexo.SuspendLayout();
             this.gpbContato.SuspendLayout();
             this.gpbLocalidade.SuspendLayout();
+            this.gpbPessoal.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbDadosProfissionais
@@ -196,7 +197,7 @@
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(22, 154);
+            this.lblSexo.Location = new System.Drawing.Point(22, 150);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(34, 13);
             this.lblSexo.TabIndex = 43;
@@ -206,9 +207,9 @@
             // 
             this.gpbSexo.Controls.Add(this.rbtFeminino);
             this.gpbSexo.Controls.Add(this.rbtMasculino);
-            this.gpbSexo.Location = new System.Drawing.Point(149, 149);
+            this.gpbSexo.Location = new System.Drawing.Point(128, 135);
             this.gpbSexo.Name = "gpbSexo";
-            this.gpbSexo.Size = new System.Drawing.Size(269, 55);
+            this.gpbSexo.Size = new System.Drawing.Size(262, 55);
             this.gpbSexo.TabIndex = 44;
             this.gpbSexo.TabStop = false;
             // 
@@ -528,7 +529,7 @@
             this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
             this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(269, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(262, 20);
             this.dtpDataNascimento.TabIndex = 42;
             // 
             // lblDataNascimento
@@ -545,7 +546,7 @@
             this.txbRG.Location = new System.Drawing.Point(149, 91);
             this.txbRG.MaxLength = 12;
             this.txbRG.Name = "txbRG";
-            this.txbRG.Size = new System.Drawing.Size(269, 20);
+            this.txbRG.Size = new System.Drawing.Size(262, 20);
             this.txbRG.TabIndex = 40;
             // 
             // lblRG
@@ -562,7 +563,7 @@
             this.mskCPF.Location = new System.Drawing.Point(149, 61);
             this.mskCPF.Mask = "999,999,999-99";
             this.mskCPF.Name = "mskCPF";
-            this.mskCPF.Size = new System.Drawing.Size(269, 20);
+            this.mskCPF.Size = new System.Drawing.Size(262, 20);
             this.mskCPF.TabIndex = 38;
             this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -580,7 +581,7 @@
             this.txbNome.Location = new System.Drawing.Point(149, 31);
             this.txbNome.MaxLength = 100;
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(269, 20);
+            this.txbNome.Size = new System.Drawing.Size(262, 20);
             this.txbNome.TabIndex = 36;
             // 
             // lblNome
@@ -617,9 +618,10 @@
             // 
             // gpbPessoal
             // 
+            this.gpbPessoal.Controls.Add(this.gpbSexo);
             this.gpbPessoal.Location = new System.Drawing.Point(21, 9);
             this.gpbPessoal.Name = "gpbPessoal";
-            this.gpbPessoal.Size = new System.Drawing.Size(406, 198);
+            this.gpbPessoal.Size = new System.Drawing.Size(406, 200);
             this.gpbPessoal.TabIndex = 49;
             this.gpbPessoal.TabStop = false;
             this.gpbPessoal.Text = "Dados Pessoais";
@@ -633,7 +635,6 @@
             this.Controls.Add(this.gpbDadosProfissionais);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.lblSexo);
-            this.Controls.Add(this.gpbSexo);
             this.Controls.Add(this.gpbContato);
             this.Controls.Add(this.gpbLocalidade);
             this.Controls.Add(this.dtpDataNascimento);
@@ -663,6 +664,7 @@
             this.gpbContato.PerformLayout();
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();
+            this.gpbPessoal.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
