@@ -69,15 +69,17 @@
             this.txbNome = new System.Windows.Forms.TextBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
             this.gpbSexo.SuspendLayout();
             this.gpbContato.SuspendLayout();
             this.gpbLocalidade.SuspendLayout();
+            this.gpbDadosPessoais.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(12, 130);
+            this.lblSexo.Location = new System.Drawing.Point(10, 145);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(34, 13);
             this.lblSexo.TabIndex = 21;
@@ -87,9 +89,9 @@
             // 
             this.gpbSexo.Controls.Add(this.rbtFeminino);
             this.gpbSexo.Controls.Add(this.rbtMasculino);
-            this.gpbSexo.Location = new System.Drawing.Point(149, 125);
+            this.gpbSexo.Location = new System.Drawing.Point(143, 145);
             this.gpbSexo.Name = "gpbSexo";
-            this.gpbSexo.Size = new System.Drawing.Size(269, 55);
+            this.gpbSexo.Size = new System.Drawing.Size(254, 55);
             this.gpbSexo.TabIndex = 22;
             this.gpbSexo.TabStop = false;
             // 
@@ -125,7 +127,7 @@
             this.gpbContato.Controls.Add(this.lblTelefoneResidencial);
             this.gpbContato.Controls.Add(this.lblEmail);
             this.gpbContato.Controls.Add(this.txbEmail);
-            this.gpbContato.Location = new System.Drawing.Point(15, 190);
+            this.gpbContato.Location = new System.Drawing.Point(15, 238);
             this.gpbContato.Name = "gpbContato";
             this.gpbContato.Size = new System.Drawing.Size(403, 150);
             this.gpbContato.TabIndex = 23;
@@ -221,7 +223,7 @@
             this.gpbLocalidade.Controls.Add(this.txbComplemento);
             this.gpbLocalidade.Controls.Add(this.txbBairro);
             this.gpbLocalidade.Controls.Add(this.lblBairro);
-            this.gpbLocalidade.Location = new System.Drawing.Point(15, 350);
+            this.gpbLocalidade.Location = new System.Drawing.Point(15, 398);
             this.gpbLocalidade.Name = "gpbLocalidade";
             this.gpbLocalidade.Size = new System.Drawing.Size(403, 240);
             this.gpbLocalidade.TabIndex = 24;
@@ -403,7 +405,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(80, 600);
+            this.btnAlterar.Location = new System.Drawing.Point(80, 648);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(100, 23);
             this.btnAlterar.TabIndex = 25;
@@ -415,17 +417,17 @@
             // 
             this.dtpDataNascimento.Cursor = System.Windows.Forms.Cursors.Default;
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(149, 98);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(143, 109);
             this.dtpDataNascimento.MaxDate = new System.DateTime(2017, 6, 30, 0, 0, 0, 0);
             this.dtpDataNascimento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(269, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(254, 20);
             this.dtpDataNascimento.TabIndex = 20;
             // 
             // lblDataNascimento
             // 
             this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Location = new System.Drawing.Point(12, 100);
+            this.lblDataNascimento.Location = new System.Drawing.Point(10, 115);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(107, 13);
             this.lblDataNascimento.TabIndex = 19;
@@ -433,16 +435,16 @@
             // 
             // txbRG
             // 
-            this.txbRG.Location = new System.Drawing.Point(149, 67);
+            this.txbRG.Location = new System.Drawing.Point(143, 82);
             this.txbRG.MaxLength = 12;
             this.txbRG.Name = "txbRG";
-            this.txbRG.Size = new System.Drawing.Size(269, 20);
+            this.txbRG.Size = new System.Drawing.Size(254, 20);
             this.txbRG.TabIndex = 18;
             // 
             // lblRG
             // 
             this.lblRG.AutoSize = true;
-            this.lblRG.Location = new System.Drawing.Point(12, 70);
+            this.lblRG.Location = new System.Drawing.Point(10, 85);
             this.lblRG.Name = "lblRG";
             this.lblRG.Size = new System.Drawing.Size(26, 13);
             this.lblRG.TabIndex = 17;
@@ -450,17 +452,17 @@
             // 
             // mskCPF
             // 
-            this.mskCPF.Location = new System.Drawing.Point(149, 37);
+            this.mskCPF.Location = new System.Drawing.Point(143, 52);
             this.mskCPF.Mask = "999,999,999-99";
             this.mskCPF.Name = "mskCPF";
-            this.mskCPF.Size = new System.Drawing.Size(269, 20);
+            this.mskCPF.Size = new System.Drawing.Size(254, 20);
             this.mskCPF.TabIndex = 16;
             this.mskCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // lblCPF
             // 
             this.lblCPF.AutoSize = true;
-            this.lblCPF.Location = new System.Drawing.Point(12, 40);
+            this.lblCPF.Location = new System.Drawing.Point(10, 55);
             this.lblCPF.Name = "lblCPF";
             this.lblCPF.Size = new System.Drawing.Size(30, 13);
             this.lblCPF.TabIndex = 15;
@@ -468,16 +470,16 @@
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(149, 7);
+            this.txbNome.Location = new System.Drawing.Point(143, 22);
             this.txbNome.MaxLength = 100;
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(269, 20);
+            this.txbNome.Size = new System.Drawing.Size(254, 20);
             this.txbNome.TabIndex = 14;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(12, 10);
+            this.lblNome.Location = new System.Drawing.Point(10, 25);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 13;
@@ -485,7 +487,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(255, 600);
+            this.btnExcluir.Location = new System.Drawing.Point(255, 648);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(100, 24);
             this.btnExcluir.TabIndex = 26;
@@ -493,25 +495,35 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // gpbDadosPessoais
+            // 
+            this.gpbDadosPessoais.Controls.Add(this.lblNome);
+            this.gpbDadosPessoais.Controls.Add(this.txbNome);
+            this.gpbDadosPessoais.Controls.Add(this.lblSexo);
+            this.gpbDadosPessoais.Controls.Add(this.lblCPF);
+            this.gpbDadosPessoais.Controls.Add(this.gpbSexo);
+            this.gpbDadosPessoais.Controls.Add(this.mskCPF);
+            this.gpbDadosPessoais.Controls.Add(this.lblRG);
+            this.gpbDadosPessoais.Controls.Add(this.txbRG);
+            this.gpbDadosPessoais.Controls.Add(this.lblDataNascimento);
+            this.gpbDadosPessoais.Controls.Add(this.dtpDataNascimento);
+            this.gpbDadosPessoais.Location = new System.Drawing.Point(15, 12);
+            this.gpbDadosPessoais.Name = "gpbDadosPessoais";
+            this.gpbDadosPessoais.Size = new System.Drawing.Size(403, 215);
+            this.gpbDadosPessoais.TabIndex = 27;
+            this.gpbDadosPessoais.TabStop = false;
+            this.gpbDadosPessoais.Text = "Dados Pessoais";
+            // 
             // FrmPacienteManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 636);
+            this.ClientSize = new System.Drawing.Size(434, 691);
+            this.Controls.Add(this.gpbDadosPessoais);
             this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.lblSexo);
-            this.Controls.Add(this.gpbSexo);
             this.Controls.Add(this.gpbContato);
             this.Controls.Add(this.gpbLocalidade);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.dtpDataNascimento);
-            this.Controls.Add(this.lblDataNascimento);
-            this.Controls.Add(this.txbRG);
-            this.Controls.Add(this.lblRG);
-            this.Controls.Add(this.mskCPF);
-            this.Controls.Add(this.lblCPF);
-            this.Controls.Add(this.txbNome);
-            this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -524,8 +536,9 @@
             this.gpbContato.PerformLayout();
             this.gpbLocalidade.ResumeLayout(false);
             this.gpbLocalidade.PerformLayout();
+            this.gpbDadosPessoais.ResumeLayout(false);
+            this.gpbDadosPessoais.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -571,5 +584,6 @@
         private System.Windows.Forms.CheckBox chkCEP;
         private System.Windows.Forms.Button btnBuscarCEP;
         private System.Windows.Forms.MaskedTextBox mskCEP;
+        private System.Windows.Forms.GroupBox gpbDadosPessoais;
     }
 }

@@ -284,7 +284,9 @@
             this.ClientSize = new System.Drawing.Size(684, 261);
             this.Controls.Add(this.lblCreditos);
             this.Controls.Add(this.mstMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmIndex";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Consultórios";
