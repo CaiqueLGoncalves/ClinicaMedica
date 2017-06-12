@@ -38,7 +38,7 @@
             // lblExame
             // 
             this.lblExame.AutoSize = true;
-            this.lblExame.Location = new System.Drawing.Point(21, 46);
+            this.lblExame.Location = new System.Drawing.Point(12, 53);
             this.lblExame.Name = "lblExame";
             this.lblExame.Size = new System.Drawing.Size(125, 13);
             this.lblExame.TabIndex = 0;
@@ -46,9 +46,9 @@
             // 
             // txtExame
             // 
-            this.txtExame.Location = new System.Drawing.Point(206, 46);
+            this.txtExame.Location = new System.Drawing.Point(143, 50);
             this.txtExame.Name = "txtExame";
-            this.txtExame.Size = new System.Drawing.Size(180, 20);
+            this.txtExame.Size = new System.Drawing.Size(523, 20);
             this.txtExame.TabIndex = 1;
             this.txtExame.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtExame_KeyUp);
             // 
@@ -56,12 +56,13 @@
             // 
             this.dtgExame.AllowUserToAddRows = false;
             this.dtgExame.AllowUserToDeleteRows = false;
+            this.dtgExame.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgExame.Location = new System.Drawing.Point(12, 86);
             this.dtgExame.Name = "dtgExame";
             this.dtgExame.ReadOnly = true;
             this.dtgExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgExame.Size = new System.Drawing.Size(470, 150);
+            this.dtgExame.Size = new System.Drawing.Size(654, 199);
             this.dtgExame.TabIndex = 2;
             this.dtgExame.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgExame_CellContentClick);
             this.dtgExame.DoubleClick += new System.EventHandler(this.dtgExame_DoubleClick);
@@ -70,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(118, 13);
+            this.label1.Location = new System.Drawing.Point(233, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 24);
             this.label1.TabIndex = 3;
@@ -80,13 +81,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 461);
+            this.ClientSize = new System.Drawing.Size(681, 314);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtgExame);
             this.Controls.Add(this.txtExame);
             this.Controls.Add(this.lblExame);
             this.Name = "FrmExameConsultar";
             this.Text = "FrmExameConsultar";
+            this.Activated += new System.EventHandler(this.FrmExameConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmExameConsultar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgExame)).EndInit();
             this.ResumeLayout(false);

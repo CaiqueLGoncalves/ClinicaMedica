@@ -48,8 +48,9 @@ namespace ClinicaMedica.View
         private void CarregarDataGridView()
         {
             dgvConsultorio.DataSource = new ConsultorioController().Select();
-            dgvConsultorio.Columns["IdConsultorio"].HeaderText = "Código";
-            dgvConsultorio.Columns["NomeFantasia"].HeaderText = "Nome Fatnasia";
+            //dgvConsultorio.Columns["IdConsultorio"].HeaderText = "Código";
+            dgvConsultorio.Columns["IdConsultorio"].Visible = false;
+            dgvConsultorio.Columns["NomeFantasia"].HeaderText = "Nome Fantasia";
             dgvConsultorio.Columns["RazaoSocial"].HeaderText = "Razao Social";
             dgvConsultorio.Columns["CNPJ"].HeaderText = "CNPJ";
             dgvConsultorio.Columns["HorarioAbertura"].HeaderText = "HorarioAbertura";
@@ -67,7 +68,8 @@ namespace ClinicaMedica.View
         private void CarregarDataGridView(string filtro, string pesquisa)
         {
             dgvConsultorio.DataSource = new ConsultorioController().Select(filtro, pesquisa);
-            dgvConsultorio.Columns["IdConsultorio"].HeaderText = "Código";
+            //dgvConsultorio.Columns["IdConsultorio"].HeaderText = "Código";
+            dgvConsultorio.Columns["IdConsultorio"].Visible = false;
             dgvConsultorio.Columns["NomeFantasia"].HeaderText = "Nome Fantasia";
             dgvConsultorio.Columns["RazaoSocial"].HeaderText = "Razao Social";
             dgvConsultorio.Columns["CNPJ"].HeaderText = "CNPJ";
@@ -85,7 +87,7 @@ namespace ClinicaMedica.View
 
         private void FrmConsultorioConsultar_Activated_1(object sender, EventArgs e)
         {
-
+            CarregarDataGridView();
         }
 
         private void txtBusca_KeyUp(object sender, KeyEventArgs e)
@@ -112,6 +114,8 @@ namespace ClinicaMedica.View
         {
             if (rdbNome.Checked)
             {
+                txtBusca.Visible = true;
+                cmbExame.Visible = false;
                 txtBusca.ResetText();
                 txtBusca.Focus();
                 CarregarDataGridView();
@@ -128,6 +132,8 @@ namespace ClinicaMedica.View
         {
             if (rdbCidade.Checked)
             {
+                txtBusca.Visible = true;
+                cmbExame.Visible = false;
                 txtBusca.ResetText();
                 txtBusca.Focus();
                 CarregarDataGridView();
@@ -163,6 +169,20 @@ namespace ClinicaMedica.View
         private void dgvConsultorio_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void rdbExame_CheckedChanged(object sender, EventArgs e)
+        {
+            cmbExame.SelectedIndex = -1;
+            txtBusca.Visible = false;
+            cmbExame.Visible = true;
+        }
+
+        private void rdbTudo_CheckedChanged(object sender, EventArgs e)
+        {
+            CarregarDataGridView();
+            txtBusca.Visible = false;
+            cmbExame.Visible = false;
         }
     }
 

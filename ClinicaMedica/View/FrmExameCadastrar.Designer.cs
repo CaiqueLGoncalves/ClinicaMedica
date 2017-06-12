@@ -70,7 +70,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(160, 126);
+            this.btnCadastrar.Location = new System.Drawing.Point(134, 125);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 4;
@@ -82,7 +82,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 160);
+            this.ClientSize = new System.Drawing.Size(333, 160);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txbRecomendacoes);
             this.Controls.Add(this.txbNome);

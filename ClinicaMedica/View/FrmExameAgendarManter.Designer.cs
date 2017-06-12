@@ -50,7 +50,7 @@
             // 
             // txtAnotacoes
             // 
-            this.txtAnotacoes.Location = new System.Drawing.Point(143, 372);
+            this.txtAnotacoes.Location = new System.Drawing.Point(101, 336);
             this.txtAnotacoes.Multiline = true;
             this.txtAnotacoes.Name = "txtAnotacoes";
             this.txtAnotacoes.Size = new System.Drawing.Size(227, 76);
@@ -59,7 +59,7 @@
             // chkComparecimento
             // 
             this.chkComparecimento.AutoSize = true;
-            this.chkComparecimento.Location = new System.Drawing.Point(143, 342);
+            this.chkComparecimento.Location = new System.Drawing.Point(101, 316);
             this.chkComparecimento.Name = "chkComparecimento";
             this.chkComparecimento.Size = new System.Drawing.Size(15, 14);
             this.chkComparecimento.TabIndex = 33;
@@ -68,7 +68,7 @@
             // dtpHorarioFinal
             // 
             this.dtpHorarioFinal.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHorarioFinal.Location = new System.Drawing.Point(143, 313);
+            this.dtpHorarioFinal.Location = new System.Drawing.Point(101, 290);
             this.dtpHorarioFinal.Name = "dtpHorarioFinal";
             this.dtpHorarioFinal.Size = new System.Drawing.Size(227, 20);
             this.dtpHorarioFinal.TabIndex = 32;
@@ -76,14 +76,14 @@
             // dtpHorarioInicio
             // 
             this.dtpHorarioInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpHorarioInicio.Location = new System.Drawing.Point(143, 289);
+            this.dtpHorarioInicio.Location = new System.Drawing.Point(101, 264);
             this.dtpHorarioInicio.Name = "dtpHorarioInicio";
             this.dtpHorarioInicio.Size = new System.Drawing.Size(227, 20);
             this.dtpHorarioInicio.TabIndex = 31;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(143, 463);
+            this.btnAlterar.Location = new System.Drawing.Point(15, 418);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 29;
@@ -93,7 +93,7 @@
             // 
             // txtExame
             // 
-            this.txtExame.Location = new System.Drawing.Point(143, 40);
+            this.txtExame.Location = new System.Drawing.Point(101, 32);
             this.txtExame.Name = "txtExame";
             this.txtExame.ReadOnly = true;
             this.txtExame.Size = new System.Drawing.Size(227, 20);
@@ -101,7 +101,7 @@
             // 
             // txtConsultorio
             // 
-            this.txtConsultorio.Location = new System.Drawing.Point(143, 13);
+            this.txtConsultorio.Location = new System.Drawing.Point(101, 6);
             this.txtConsultorio.Name = "txtConsultorio";
             this.txtConsultorio.ReadOnly = true;
             this.txtConsultorio.Size = new System.Drawing.Size(227, 20);
@@ -110,7 +110,7 @@
             // lblAnotacoes
             // 
             this.lblAnotacoes.AutoSize = true;
-            this.lblAnotacoes.Location = new System.Drawing.Point(52, 372);
+            this.lblAnotacoes.Location = new System.Drawing.Point(12, 339);
             this.lblAnotacoes.Name = "lblAnotacoes";
             this.lblAnotacoes.Size = new System.Drawing.Size(58, 13);
             this.lblAnotacoes.TabIndex = 25;
@@ -119,7 +119,7 @@
             // lblComparecimento
             // 
             this.lblComparecimento.AutoSize = true;
-            this.lblComparecimento.Location = new System.Drawing.Point(52, 342);
+            this.lblComparecimento.Location = new System.Drawing.Point(10, 316);
             this.lblComparecimento.Name = "lblComparecimento";
             this.lblComparecimento.Size = new System.Drawing.Size(86, 13);
             this.lblComparecimento.TabIndex = 24;
@@ -128,7 +128,7 @@
             // lblFim
             // 
             this.lblFim.AutoSize = true;
-            this.lblFim.Location = new System.Drawing.Point(52, 321);
+            this.lblFim.Location = new System.Drawing.Point(10, 290);
             this.lblFim.Name = "lblFim";
             this.lblFim.Size = new System.Drawing.Size(75, 13);
             this.lblFim.TabIndex = 23;
@@ -137,7 +137,7 @@
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(52, 297);
+            this.lblInicio.Location = new System.Drawing.Point(10, 264);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(80, 13);
             this.lblInicio.TabIndex = 22;
@@ -146,7 +146,7 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(52, 116);
+            this.lblData.Location = new System.Drawing.Point(12, 90);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(33, 13);
             this.lblData.TabIndex = 21;
@@ -155,7 +155,7 @@
             // lblPaciente
             // 
             this.lblPaciente.AutoSize = true;
-            this.lblPaciente.Location = new System.Drawing.Point(52, 72);
+            this.lblPaciente.Location = new System.Drawing.Point(12, 61);
             this.lblPaciente.Name = "lblPaciente";
             this.lblPaciente.Size = new System.Drawing.Size(52, 13);
             this.lblPaciente.TabIndex = 20;
@@ -164,7 +164,7 @@
             // lblExame
             // 
             this.lblExame.AutoSize = true;
-            this.lblExame.Location = new System.Drawing.Point(52, 47);
+            this.lblExame.Location = new System.Drawing.Point(12, 35);
             this.lblExame.Name = "lblExame";
             this.lblExame.Size = new System.Drawing.Size(42, 13);
             this.lblExame.TabIndex = 19;
@@ -173,7 +173,7 @@
             // lblConsultorio
             // 
             this.lblConsultorio.AutoSize = true;
-            this.lblConsultorio.Location = new System.Drawing.Point(52, 20);
+            this.lblConsultorio.Location = new System.Drawing.Point(10, 9);
             this.lblConsultorio.Name = "lblConsultorio";
             this.lblConsultorio.Size = new System.Drawing.Size(62, 13);
             this.lblConsultorio.TabIndex = 18;
@@ -181,7 +181,7 @@
             // 
             // txtPaciente
             // 
-            this.txtPaciente.Location = new System.Drawing.Point(143, 72);
+            this.txtPaciente.Location = new System.Drawing.Point(101, 58);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.ReadOnly = true;
             this.txtPaciente.Size = new System.Drawing.Size(227, 20);
@@ -189,13 +189,13 @@
             // 
             // mntData
             // 
-            this.mntData.Location = new System.Drawing.Point(143, 115);
+            this.mntData.Location = new System.Drawing.Point(101, 90);
             this.mntData.Name = "mntData";
             this.mntData.TabIndex = 36;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(295, 463);
+            this.btnExcluir.Location = new System.Drawing.Point(253, 418);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 37;
@@ -207,7 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 531);
+            this.ClientSize = new System.Drawing.Size(349, 452);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.mntData);
             this.Controls.Add(this.txtPaciente);

@@ -69,6 +69,7 @@
             this.gpbEndereço = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkCEP = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
@@ -162,7 +163,7 @@
             // lblCep
             // 
             this.lblCep.AutoSize = true;
-            this.lblCep.Location = new System.Drawing.Point(26, 20);
+            this.lblCep.Location = new System.Drawing.Point(13, 20);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(28, 13);
             this.lblCep.TabIndex = 10;
@@ -171,7 +172,7 @@
             // lblEndereco
             // 
             this.lblEndereco.AutoSize = true;
-            this.lblEndereco.Location = new System.Drawing.Point(26, 46);
+            this.lblEndereco.Location = new System.Drawing.Point(13, 46);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(53, 13);
             this.lblEndereco.TabIndex = 11;
@@ -180,7 +181,7 @@
             // lblNumero
             // 
             this.lblNumero.AutoSize = true;
-            this.lblNumero.Location = new System.Drawing.Point(26, 72);
+            this.lblNumero.Location = new System.Drawing.Point(13, 72);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(44, 13);
             this.lblNumero.TabIndex = 12;
@@ -189,7 +190,7 @@
             // lblComplemento
             // 
             this.lblComplemento.AutoSize = true;
-            this.lblComplemento.Location = new System.Drawing.Point(26, 98);
+            this.lblComplemento.Location = new System.Drawing.Point(13, 98);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(71, 13);
             this.lblComplemento.TabIndex = 13;
@@ -198,7 +199,7 @@
             // lblBairro
             // 
             this.lblBairro.AutoSize = true;
-            this.lblBairro.Location = new System.Drawing.Point(26, 124);
+            this.lblBairro.Location = new System.Drawing.Point(13, 124);
             this.lblBairro.Name = "lblBairro";
             this.lblBairro.Size = new System.Drawing.Size(34, 13);
             this.lblBairro.TabIndex = 14;
@@ -207,7 +208,7 @@
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(26, 150);
+            this.lblCidade.Location = new System.Drawing.Point(13, 150);
             this.lblCidade.Name = "lblCidade";
             this.lblCidade.Size = new System.Drawing.Size(40, 13);
             this.lblCidade.TabIndex = 15;
@@ -216,7 +217,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(26, 176);
+            this.lblEstado.Location = new System.Drawing.Point(13, 176);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(40, 13);
             this.lblEstado.TabIndex = 16;
@@ -224,49 +225,55 @@
             // 
             // txbEndereco
             // 
-            this.txbEndereco.Location = new System.Drawing.Point(98, 46);
+            this.txbEndereco.Enabled = false;
+            this.txbEndereco.Location = new System.Drawing.Point(98, 45);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(248, 20);
             this.txbEndereco.TabIndex = 8;
             // 
             // txbNumero
             // 
-            this.txbNumero.Location = new System.Drawing.Point(98, 72);
+            this.txbNumero.Enabled = false;
+            this.txbNumero.Location = new System.Drawing.Point(98, 71);
             this.txbNumero.Name = "txbNumero";
             this.txbNumero.Size = new System.Drawing.Size(100, 20);
             this.txbNumero.TabIndex = 9;
             // 
             // txbComplemento
             // 
-            this.txbComplemento.Location = new System.Drawing.Point(98, 98);
+            this.txbComplemento.Enabled = false;
+            this.txbComplemento.Location = new System.Drawing.Point(98, 97);
             this.txbComplemento.Name = "txbComplemento";
             this.txbComplemento.Size = new System.Drawing.Size(248, 20);
             this.txbComplemento.TabIndex = 10;
             // 
             // txbBairro
             // 
-            this.txbBairro.Location = new System.Drawing.Point(98, 124);
+            this.txbBairro.Enabled = false;
+            this.txbBairro.Location = new System.Drawing.Point(98, 123);
             this.txbBairro.Name = "txbBairro";
             this.txbBairro.Size = new System.Drawing.Size(248, 20);
             this.txbBairro.TabIndex = 11;
             // 
             // txbCidade
             // 
-            this.txbCidade.Location = new System.Drawing.Point(98, 150);
+            this.txbCidade.Enabled = false;
+            this.txbCidade.Location = new System.Drawing.Point(98, 149);
             this.txbCidade.Name = "txbCidade";
             this.txbCidade.Size = new System.Drawing.Size(248, 20);
             this.txbCidade.TabIndex = 12;
             // 
             // txbEstado
             // 
-            this.txbEstado.Location = new System.Drawing.Point(98, 176);
+            this.txbEstado.Enabled = false;
+            this.txbEstado.Location = new System.Drawing.Point(98, 175);
             this.txbEstado.Name = "txbEstado";
             this.txbEstado.Size = new System.Drawing.Size(42, 20);
             this.txbEstado.TabIndex = 13;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(147, 533);
+            this.btnCadastrar.Location = new System.Drawing.Point(160, 585);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 15;
@@ -276,7 +283,7 @@
             // 
             // btnBuscarCep
             // 
-            this.btnBuscarCep.Location = new System.Drawing.Point(204, 17);
+            this.btnBuscarCep.Location = new System.Drawing.Point(186, 17);
             this.btnBuscarCep.Name = "btnBuscarCep";
             this.btnBuscarCep.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarCep.TabIndex = 7;
@@ -295,10 +302,10 @@
             // 
             // mskCep
             // 
-            this.mskCep.Location = new System.Drawing.Point(98, 20);
+            this.mskCep.Location = new System.Drawing.Point(98, 19);
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
-            this.mskCep.Size = new System.Drawing.Size(100, 20);
+            this.mskCep.Size = new System.Drawing.Size(82, 20);
             this.mskCep.TabIndex = 6;
             this.mskCep.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -358,7 +365,7 @@
             this.dtgExame.Location = new System.Drawing.Point(6, 19);
             this.dtgExame.Name = "dtgExame";
             this.dtgExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgExame.Size = new System.Drawing.Size(340, 82);
+            this.dtgExame.Size = new System.Drawing.Size(340, 146);
             this.dtgExame.TabIndex = 28;
             // 
             // IdExame
@@ -384,6 +391,7 @@
             // 
             // gpbEndereço
             // 
+            this.gpbEndereço.Controls.Add(this.chkCEP);
             this.gpbEndereço.Controls.Add(this.txbCidade);
             this.gpbEndereço.Controls.Add(this.lblCep);
             this.gpbEndereço.Controls.Add(this.txbBairro);
@@ -401,7 +409,7 @@
             this.gpbEndereço.Controls.Add(this.lblBairro);
             this.gpbEndereço.Location = new System.Drawing.Point(15, 195);
             this.gpbEndereço.Name = "gpbEndereço";
-            this.gpbEndereço.Size = new System.Drawing.Size(369, 219);
+            this.gpbEndereço.Size = new System.Drawing.Size(369, 207);
             this.gpbEndereço.TabIndex = 29;
             this.gpbEndereço.TabStop = false;
             this.gpbEndereço.Text = "Localidade";
@@ -430,18 +438,29 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtgExame);
-            this.groupBox2.Location = new System.Drawing.Point(15, 420);
+            this.groupBox2.Location = new System.Drawing.Point(15, 408);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(369, 107);
+            this.groupBox2.Size = new System.Drawing.Size(369, 171);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Selecione um ou mais exames";
+            // 
+            // chkCEP
+            // 
+            this.chkCEP.AutoSize = true;
+            this.chkCEP.Location = new System.Drawing.Point(267, 22);
+            this.chkCEP.Name = "chkCEP";
+            this.chkCEP.Size = new System.Drawing.Size(95, 17);
+            this.chkCEP.TabIndex = 17;
+            this.chkCEP.Text = "Não sei o CEP";
+            this.chkCEP.UseVisualStyleBackColor = true;
+            this.chkCEP.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // FrmConsultorioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 572);
+            this.ClientSize = new System.Drawing.Size(396, 618);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.gpbEndereço);
             this.Controls.Add(this.groupBox2);
@@ -505,5 +524,6 @@
         private System.Windows.Forms.GroupBox gpbEndereço;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox chkCEP;
     }
 }

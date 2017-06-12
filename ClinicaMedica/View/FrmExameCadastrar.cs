@@ -26,11 +26,16 @@ namespace ClinicaMedica.View
 
             ex.Nome = txbNome.Text;
             ex.Recomendacoes = txbRecomendacoes.Text;
+            try
+            {
+                exc.Insert(ex);
+                Close();
+            }
+            catch(Exception er)
+            {
+                MessageBox.Show("Erro ao inserir.", "Clínica Médica");
+            }
 
-            exc.Insert(ex);
-
-            txbNome.Clear();
-            txbRecomendacoes.Clear();
             
         }
     }

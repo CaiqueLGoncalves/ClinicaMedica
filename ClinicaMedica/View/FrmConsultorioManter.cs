@@ -72,19 +72,15 @@ namespace ClinicaMedica.View
                 txbBairro.Text = resposta.bairro;
                 txbCidade.Text = resposta.cidade;
                 txbEstado.Text = resposta.uf;
-                txbEndereco.Enabled = false;
-                txbBairro.Enabled = false;
-                txbCidade.Enabled = false;
-                txbEstado.Enabled = false;
+                txbNumero.Enabled = true;
+                txbComplemento.Enabled = true;
+                txbNumero.Focus();
 
             }
             catch (Exception)
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado!", "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txbEndereco.Enabled = true;
-                txbBairro.Enabled = true;
-                txbCidade.Enabled = true;
-                txbEstado.Enabled = true;
+
             }
         }
 
@@ -179,6 +175,10 @@ namespace ClinicaMedica.View
                         MessageBox.Show("Não foi possível alterar o médico!\n" + erro, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+
+                //FrmConsultorioConsultar.
+                
+                Close();
             }
             catch (Exception ex)
             {
@@ -220,10 +220,63 @@ namespace ClinicaMedica.View
                         Close();
                     }
                 }
+                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void lblNomeFantasia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRazaoSocial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCnpj_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHorarioAbertura_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblHorarioFechamento_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTelefone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkCEP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCEP.Checked)
+            {
+                txbEndereco.Enabled = true;
+                txbNumero.Enabled = true;
+                txbComplemento.Enabled = true;
+                txbBairro.Enabled = true;
+                txbCidade.Enabled = true;
+                txbEstado.Enabled = true;
+            }
+            else
+            {
+                txbEndereco.Enabled = false;
+                txbNumero.Enabled = false;
+                txbComplemento.Enabled = false;
+                txbBairro.Enabled = false;
+                txbCidade.Enabled = false;
+                txbEstado.Enabled = false;
             }
         }
     }

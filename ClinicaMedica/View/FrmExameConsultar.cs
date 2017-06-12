@@ -21,7 +21,7 @@ namespace ClinicaMedica.View
         private void CarregarDataGridView()
         {
             dtgExame.DataSource = new ExameController().Select();
-            dtgExame.Columns["IdExame"].HeaderText = "Código";
+            dtgExame.Columns["IdExame"].Visible = false;
             dtgExame.Columns["Nome"].HeaderText = "Nome do Exame";
             dtgExame.Columns["Recomendacoes"].HeaderText = "Recomendações";
         }
@@ -29,7 +29,7 @@ namespace ClinicaMedica.View
         private void CarregarDataGridView(string pesquisa)
         {
             dtgExame.DataSource = new ExameController().Select(pesquisa);
-            dtgExame.Columns["IdExame"].HeaderText = "Código";
+            dtgExame.Columns["IdExame"].Visible = false;
             dtgExame.Columns["Nome"].HeaderText = "Nome do Exame";
             dtgExame.Columns["Recomendacoes"].HeaderText = "Recomendações";
         }
@@ -63,6 +63,12 @@ namespace ClinicaMedica.View
 
             FrmExameManter frmFuncManter = new FrmExameManter(idexame,nome,recomendacoes);
             frmFuncManter.ShowDialog(this);
+        }
+
+        private void FrmExameConsultar_Activated(object sender, EventArgs e)
+        {
+            CarregarDataGridView();
+            txtExame.Focus();
         }
     }
 }

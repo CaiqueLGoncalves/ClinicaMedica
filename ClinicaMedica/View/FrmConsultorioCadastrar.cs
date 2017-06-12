@@ -34,19 +34,15 @@ namespace ClinicaMedica.View
                 txbBairro.Text = resposta.bairro;
                 txbCidade.Text = resposta.cidade;
                 txbEstado.Text = resposta.uf;
-                txbEndereco.Enabled = false;
-                txbBairro.Enabled = false;
-                txbCidade.Enabled = false;
-                txbEstado.Enabled = false;
+                txbNumero.Enabled = true;
+                txbComplemento.Enabled = true;
+                txbNumero.Focus();
 
             }
             catch (Exception)
             {
                 MessageBox.Show("Não foi possível encontrar o CEP informado");
-                txbEndereco.Enabled = true;
-                txbBairro.Enabled = true;
-                txbCidade.Enabled = true;
-                txbEstado.Enabled = true;
+
             }
         }
 
@@ -92,8 +88,8 @@ namespace ClinicaMedica.View
                     ce.IdExame = IdEx;
                     conexCont.Insert(ce);
                     //numeroErros += meCont.Insert(me);
+                    Close();
                 }
-
 
             }
             catch (Exception erro)
@@ -101,10 +97,6 @@ namespace ClinicaMedica.View
                 MessageBox.Show(erro.ToString());
             }
 
-            txbEndereco.Enabled = true;
-            txbBairro.Enabled = true;
-            txbCidade.Enabled = true;
-            txbEstado.Enabled = true;
 
             //consultCont.Insert(c);
         }
@@ -113,6 +105,29 @@ namespace ClinicaMedica.View
         {
             // TODO: This line of code loads data into the 'clinicaMedicaBDDataSet.TB_Exame' table. You can move, or remove it, as needed.
             this.tB_ExameTableAdapter.Fill(this.clinicaMedicaBDDataSet.TB_Exame);
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCEP.Checked)
+            {
+                txbEndereco.Enabled = true;
+                txbNumero.Enabled = true;
+                txbComplemento.Enabled = true;
+                txbBairro.Enabled = true;
+                txbCidade.Enabled = true;
+                txbEstado.Enabled = true;
+            }
+            else
+            {
+                txbEndereco.Enabled = false;
+                txbNumero.Enabled = false;
+                txbComplemento.Enabled = false;
+                txbBairro.Enabled = false;
+                txbCidade.Enabled = false;
+                txbEstado.Enabled = false;
+            }
 
         }
     }

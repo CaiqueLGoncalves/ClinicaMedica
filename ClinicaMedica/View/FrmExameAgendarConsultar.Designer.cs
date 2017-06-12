@@ -31,31 +31,32 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbConsultorio = new System.Windows.Forms.ComboBox();
-            this.cmbExame = new System.Windows.Forms.ComboBox();
-            this.dgvExame = new System.Windows.Forms.DataGridView();
-            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
             this.tBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
+            this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
+            this.cmbExame = new System.Windows.Forms.ComboBox();
             this.tBExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvExame = new System.Windows.Forms.DataGridView();
+            this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
             this.tB_ExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter();
             this.gpbOpcoes = new System.Windows.Forms.GroupBox();
-            this.rdbConsultorio = new System.Windows.Forms.RadioButton();
-            this.rdbExame = new System.Windows.Forms.RadioButton();
             this.rdbPessoa = new System.Windows.Forms.RadioButton();
+            this.rdbExame = new System.Windows.Forms.RadioButton();
+            this.rdbConsultorio = new System.Windows.Forms.RadioButton();
             this.txtBusca = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExame)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExame)).BeginInit();
             this.gpbOpcoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(280, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(228, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Consulta de Exames";
             // 
@@ -64,55 +65,56 @@
             this.cmbConsultorio.DataSource = this.tBConsultorioBindingSource;
             this.cmbConsultorio.DisplayMember = "NomeFantasia";
             this.cmbConsultorio.FormattingEnabled = true;
-            this.cmbConsultorio.Location = new System.Drawing.Point(123, 132);
+            this.cmbConsultorio.Location = new System.Drawing.Point(168, 41);
             this.cmbConsultorio.Name = "cmbConsultorio";
-            this.cmbConsultorio.Size = new System.Drawing.Size(345, 21);
+            this.cmbConsultorio.Size = new System.Drawing.Size(524, 21);
             this.cmbConsultorio.TabIndex = 2;
             this.cmbConsultorio.ValueMember = "IdConsultorio";
             this.cmbConsultorio.Visible = false;
             this.cmbConsultorio.SelectedIndexChanged += new System.EventHandler(this.cmbConsultorio_SelectedIndexChanged);
-            // 
-            // cmbExame
-            // 
-            this.cmbExame.DataSource = this.tBExameBindingSource;
-            this.cmbExame.DisplayMember = "Nome";
-            this.cmbExame.FormattingEnabled = true;
-            this.cmbExame.Location = new System.Drawing.Point(123, 132);
-            this.cmbExame.Name = "cmbExame";
-            this.cmbExame.Size = new System.Drawing.Size(344, 21);
-            this.cmbExame.TabIndex = 4;
-            this.cmbExame.ValueMember = "IdExame";
-            this.cmbExame.Visible = false;
-            this.cmbExame.SelectedIndexChanged += new System.EventHandler(this.cmbExame_SelectedIndexChanged);
-            // 
-            // dgvExame
-            // 
-            this.dgvExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExame.Location = new System.Drawing.Point(58, 168);
-            this.dgvExame.Name = "dgvExame";
-            this.dgvExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExame.Size = new System.Drawing.Size(571, 279);
-            this.dgvExame.TabIndex = 5;
-            this.dgvExame.DoubleClick += new System.EventHandler(this.dgvExame_DoubleClick);
-            // 
-            // clinicaMedicaBDDataSet
-            // 
-            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
-            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tBConsultorioBindingSource
             // 
             this.tBConsultorioBindingSource.DataMember = "TB_Consultorio";
             this.tBConsultorioBindingSource.DataSource = this.clinicaMedicaBDDataSet;
             // 
-            // tB_ConsultorioTableAdapter
+            // clinicaMedicaBDDataSet
             // 
-            this.tB_ConsultorioTableAdapter.ClearBeforeFill = true;
+            this.clinicaMedicaBDDataSet.DataSetName = "ClinicaMedicaBDDataSet";
+            this.clinicaMedicaBDDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmbExame
+            // 
+            this.cmbExame.DataSource = this.tBExameBindingSource;
+            this.cmbExame.DisplayMember = "Nome";
+            this.cmbExame.FormattingEnabled = true;
+            this.cmbExame.Location = new System.Drawing.Point(168, 41);
+            this.cmbExame.Name = "cmbExame";
+            this.cmbExame.Size = new System.Drawing.Size(523, 21);
+            this.cmbExame.TabIndex = 4;
+            this.cmbExame.ValueMember = "IdExame";
+            this.cmbExame.Visible = false;
+            this.cmbExame.SelectedIndexChanged += new System.EventHandler(this.cmbExame_SelectedIndexChanged);
             // 
             // tBExameBindingSource
             // 
             this.tBExameBindingSource.DataMember = "TB_Exame";
             this.tBExameBindingSource.DataSource = this.clinicaMedicaBDDataSet;
+            // 
+            // dgvExame
+            // 
+            this.dgvExame.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExame.Location = new System.Drawing.Point(12, 142);
+            this.dgvExame.Name = "dgvExame";
+            this.dgvExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvExame.Size = new System.Drawing.Size(776, 279);
+            this.dgvExame.TabIndex = 5;
+            this.dgvExame.DoubleClick += new System.EventHandler(this.dgvExame_DoubleClick);
+            // 
+            // tB_ConsultorioTableAdapter
+            // 
+            this.tB_ConsultorioTableAdapter.ClearBeforeFill = true;
             // 
             // tB_ExameTableAdapter
             // 
@@ -120,39 +122,18 @@
             // 
             // gpbOpcoes
             // 
+            this.gpbOpcoes.Controls.Add(this.txtBusca);
             this.gpbOpcoes.Controls.Add(this.rdbPessoa);
             this.gpbOpcoes.Controls.Add(this.rdbExame);
+            this.gpbOpcoes.Controls.Add(this.cmbExame);
             this.gpbOpcoes.Controls.Add(this.rdbConsultorio);
-            this.gpbOpcoes.Location = new System.Drawing.Point(123, 28);
+            this.gpbOpcoes.Controls.Add(this.cmbConsultorio);
+            this.gpbOpcoes.Location = new System.Drawing.Point(12, 38);
             this.gpbOpcoes.Name = "gpbOpcoes";
-            this.gpbOpcoes.Size = new System.Drawing.Size(345, 98);
+            this.gpbOpcoes.Size = new System.Drawing.Size(776, 98);
             this.gpbOpcoes.TabIndex = 6;
             this.gpbOpcoes.TabStop = false;
             this.gpbOpcoes.Text = "Selecione o Tipo de Consulta:";
-            // 
-            // rdbConsultorio
-            // 
-            this.rdbConsultorio.AutoSize = true;
-            this.rdbConsultorio.Location = new System.Drawing.Point(7, 20);
-            this.rdbConsultorio.Name = "rdbConsultorio";
-            this.rdbConsultorio.Size = new System.Drawing.Size(77, 17);
-            this.rdbConsultorio.TabIndex = 0;
-            this.rdbConsultorio.TabStop = true;
-            this.rdbConsultorio.Text = "Consultorio";
-            this.rdbConsultorio.UseVisualStyleBackColor = true;
-            this.rdbConsultorio.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // rdbExame
-            // 
-            this.rdbExame.AutoSize = true;
-            this.rdbExame.Location = new System.Drawing.Point(7, 44);
-            this.rdbExame.Name = "rdbExame";
-            this.rdbExame.Size = new System.Drawing.Size(57, 17);
-            this.rdbExame.TabIndex = 1;
-            this.rdbExame.TabStop = true;
-            this.rdbExame.Text = "Exame";
-            this.rdbExame.UseVisualStyleBackColor = true;
-            this.rdbExame.CheckedChanged += new System.EventHandler(this.rdbExame_CheckedChanged);
             // 
             // rdbPessoa
             // 
@@ -166,11 +147,35 @@
             this.rdbPessoa.UseVisualStyleBackColor = true;
             this.rdbPessoa.CheckedChanged += new System.EventHandler(this.rdbPessoa_CheckedChanged);
             // 
+            // rdbExame
+            // 
+            this.rdbExame.AutoSize = true;
+            this.rdbExame.Location = new System.Drawing.Point(7, 44);
+            this.rdbExame.Name = "rdbExame";
+            this.rdbExame.Size = new System.Drawing.Size(57, 17);
+            this.rdbExame.TabIndex = 1;
+            this.rdbExame.TabStop = true;
+            this.rdbExame.Text = "Exame";
+            this.rdbExame.UseVisualStyleBackColor = true;
+            this.rdbExame.CheckedChanged += new System.EventHandler(this.rdbExame_CheckedChanged);
+            // 
+            // rdbConsultorio
+            // 
+            this.rdbConsultorio.AutoSize = true;
+            this.rdbConsultorio.Location = new System.Drawing.Point(7, 20);
+            this.rdbConsultorio.Name = "rdbConsultorio";
+            this.rdbConsultorio.Size = new System.Drawing.Size(77, 17);
+            this.rdbConsultorio.TabIndex = 0;
+            this.rdbConsultorio.TabStop = true;
+            this.rdbConsultorio.Text = "Consultorio";
+            this.rdbConsultorio.UseVisualStyleBackColor = true;
+            this.rdbConsultorio.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // txtBusca
             // 
-            this.txtBusca.Location = new System.Drawing.Point(123, 132);
+            this.txtBusca.Location = new System.Drawing.Point(168, 41);
             this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(345, 20);
+            this.txtBusca.Size = new System.Drawing.Size(524, 20);
             this.txtBusca.TabIndex = 7;
             this.txtBusca.Visible = false;
             this.txtBusca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPessoa_KeyUp);
@@ -179,20 +184,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 483);
-            this.Controls.Add(this.txtBusca);
+            this.ClientSize = new System.Drawing.Size(800, 427);
             this.Controls.Add(this.gpbOpcoes);
             this.Controls.Add(this.dgvExame);
-            this.Controls.Add(this.cmbExame);
-            this.Controls.Add(this.cmbConsultorio);
             this.Controls.Add(this.label1);
             this.Name = "FrmExameAgendarConsultar";
             this.Text = "Consultar Exames Agendados";
+            this.Activated += new System.EventHandler(this.FrmExameAgendarConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmExameAgendarConsultar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExame)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExame)).EndInit();
             this.gpbOpcoes.ResumeLayout(false);
             this.gpbOpcoes.PerformLayout();
             this.ResumeLayout(false);

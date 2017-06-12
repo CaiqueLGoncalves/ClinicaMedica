@@ -22,12 +22,14 @@ namespace ClinicaMedica.View
         {
             // TODO: This line of code loads data into the 'clinicaMedicaBDDataSet.TB_Exame' table. You can move, or remove it, as needed.
             this.tB_ExameTableAdapter.Fill(this.clinicaMedicaBDDataSet.TB_Exame);
+            //CarregarDataGridViewZero();
+            cmbExame.SelectedIndex = -1;
 
         }
 
         private void cmbExame_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbConsultorio.Enabled = true;
+            //cmbConsultorio.Enabled = true;
 
             var consultorios = new ConsultorioController().Select("EXAME", cmbExame.Text);
             bool isEmpty = !consultorios.Any();
@@ -45,7 +47,8 @@ namespace ClinicaMedica.View
                 cmbConsultorio.DisplayMember = "NomeFantasia";
                 cmbConsultorio.ValueMember = "IdConsultorio";
                 btnNovo.Enabled = true;
-
+                cmbConsultorio.SelectedIndex = -1;
+                cmbConsultorio.Enabled = true;
                 CarregarDataGridView();
             }
 
@@ -59,8 +62,28 @@ namespace ClinicaMedica.View
             int exameSelecionado = Convert.ToInt32(cmbExame.SelectedValue);
             dtgHorarios.DataSource = new ExameAgendarController().Select(dataSelecionada, consultorioSelecionado, exameSelecionado);
             dtgHorarios.Columns["IdAgendaExame"].Visible = false;
-            dtgHorarios.Columns["IdExame"].HeaderText = "ID Exame";
-            dtgHorarios.Columns["IdConsultorio"].HeaderText = "Id Consultorio";
+            dtgHorarios.Columns["IdExame"].Visible = false;
+            dtgHorarios.Columns["IdConsultorio"].Visible = false;
+            dtgHorarios.Columns["IdentificacaoPaciente"].Visible = false;
+            dtgHorarios.Columns["Consultorio"].HeaderText = "Consultorio";
+            dtgHorarios.Columns["Paciente"].HeaderText = "Paciente";
+            dtgHorarios.Columns["Exame"].HeaderText = "Exame";
+            dtgHorarios.Columns["DataHoraInicio"].HeaderText = "Data Inicio";
+            dtgHorarios.Columns["DataHoraFim"].HeaderText = "Data Fim";
+            dtgHorarios.Columns["Comparecimento"].HeaderText = "Comparecimento";
+            dtgHorarios.Columns["Anotacoes"].HeaderText = "Anotacoes";
+        }
+
+        private void CarregarDataGridViewZero()
+        {
+            dtgHorarios.DataSource = new ExameAgendarController().Select();
+            dtgHorarios.Columns["IdAgendaExame"].Visible = false;
+            dtgHorarios.Columns["IdExame"].Visible = false;
+            dtgHorarios.Columns["IdConsultorio"].Visible = false;
+            dtgHorarios.Columns["IdentificacaoPaciente"].Visible = false;
+            dtgHorarios.Columns["Consultorio"].HeaderText = "Consultorio";
+            dtgHorarios.Columns["Paciente"].HeaderText = "Paciente";
+            dtgHorarios.Columns["Exame"].HeaderText = "Exame";
             dtgHorarios.Columns["DataHoraInicio"].HeaderText = "Data Inicio";
             dtgHorarios.Columns["DataHoraFim"].HeaderText = "Data Fim";
             dtgHorarios.Columns["Comparecimento"].HeaderText = "Comparecimento";
@@ -71,6 +94,31 @@ namespace ClinicaMedica.View
         {
             FrmExameAgendar exameAgendar = new FrmExameAgendar(mntCalendario.SelectionStart, Convert.ToInt32(cmbConsultorio.SelectedValue), Convert.ToInt32(cmbExame.SelectedValue));
             exameAgendar.ShowDialog(this);
+        }
+
+        private void FrmExameGerencia_Activated(object sender, EventArgs e)
+        {
+            CarregarDataGridViewZero();
+        }
+
+        private void chkExame_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkExame.Checked) CarregarDataGridViewZero();
+            else dtgHorarios.DataSource = null; 
+        }
+
+        private void cmbConsultorio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbConsultorio.SelectedIndex != -1)
+            {
+              //  CarregarDataGridView();
+            }
+
+        }
+
+        private void mntCalendario_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            CarregarDataGridView();
         }
     }
 }

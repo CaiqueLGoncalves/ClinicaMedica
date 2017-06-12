@@ -60,7 +60,7 @@ namespace ClinicaMedica.View
             this.tB_ExameTableAdapter.Fill(this.clinicaMedicaBDDataSet.TB_Exame);
             // TODO: This line of code loads data into the 'clinicaMedicaBDDataSet.TB_Consultorio' table. You can move, or remove it, as needed.
             this.tB_ConsultorioTableAdapter.Fill(this.clinicaMedicaBDDataSet.TB_Consultorio);
-
+            CarregarDataGridView();
         }
 
         private void cmbConsultorio_SelectedIndexChanged(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace ClinicaMedica.View
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            
+            cmbConsultorio.SelectedIndex = -1;
             cmbConsultorio.Visible = true;
             cmbExame.Visible = false;
             txtBusca.Visible = false;
@@ -85,6 +85,8 @@ namespace ClinicaMedica.View
 
         private void rdbExame_CheckedChanged(object sender, EventArgs e)
         {
+            cmbExame.SelectedIndex = -1;
+
             cmbExame.Visible = true;
             cmbConsultorio.Visible = false;
             txtBusca.Visible = false;
@@ -131,6 +133,11 @@ namespace ClinicaMedica.View
             exagendar.ShowDialog(this);
 
 
+        }
+
+        private void FrmExameAgendarConsultar_Activated(object sender, EventArgs e)
+        {
+            CarregarDataGridView();
         }
     }
 }
