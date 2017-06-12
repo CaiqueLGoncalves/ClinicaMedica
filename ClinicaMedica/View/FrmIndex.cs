@@ -10,10 +10,22 @@ namespace ClinicaMedica.View
             InitializeComponent();
         }
 
-        private void consultórioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarConsultorioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmConsultorioCadastrar consultorio = new FrmConsultorioCadastrar();
             consultorio.Show();
+        }
+
+        private void atribuirFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultorioFuncionarioCadastrar cfCadastrar = new FrmConsultorioFuncionarioCadastrar();
+            cfCadastrar.ShowDialog(this);
+        }
+
+        private void consultarFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultorioFuncionarioConsultar cfConsultar = new FrmConsultorioFuncionarioConsultar();
+            cfConsultar.ShowDialog(this);
         }
 
         private void consultórioToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -121,11 +133,6 @@ namespace ClinicaMedica.View
         {
             FrmExameAgendarConsultar exagecon = new FrmExameAgendarConsultar();
             exagecon.ShowDialog(this);
-        }
-
-        private void inserirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

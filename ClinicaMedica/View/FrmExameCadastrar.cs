@@ -31,12 +31,10 @@ namespace ClinicaMedica.View
                 exc.Insert(ex);
                 Close();
             }
-            catch(Exception er)
+            catch(Exception)
             {
                 MessageBox.Show("Erro ao inserir.", "Clínica Médica");
             }
-
-            
         }
     }
 }

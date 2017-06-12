@@ -65,6 +65,7 @@
     </Compile>
     <Compile Include="Controller\ConsultaController.cs" />
     <Compile Include="Controller\ExameAgendarController.cs" />
+    <Compile Include="Controller\QuadroFuncionariosController.cs" />
     <Compile Include="Model\ConsultaAgendaExame.cs" />
     <Compile Include="Model\ConsultaConsulta.cs" />
     <Compile Include="Model\ConsultaConsultorio.cs" />
@@ -87,6 +88,7 @@
     <Compile Include="Model\Consulta.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ConsultaQuadroFuncionarios.cs" />
     <Compile Include="Model\Consultorio.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
@@ -164,6 +166,18 @@
     </Compile>
     <Compile Include="View\FrmConsultaManter.Designer.cs">
       <DependentUpon>FrmConsultaManter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultorioFuncionarioCadastrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultorioFuncionarioCadastrar.Designer.cs">
+      <DependentUpon>FrmConsultorioFuncionarioCadastrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmConsultorioFuncionarioConsultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmConsultorioFuncionarioConsultar.Designer.cs">
+      <DependentUpon>FrmConsultorioFuncionarioConsultar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmConsultorioManter.cs">
       <SubType>Form</SubType>
@@ -350,6 +364,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmConsultorioConsultar.resx">
       <DependentUpon>FrmConsultorioConsultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConsultorioFuncionarioCadastrar.resx">
+      <DependentUpon>FrmConsultorioFuncionarioCadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmConsultorioFuncionarioConsultar.resx">
+      <DependentUpon>FrmConsultorioFuncionarioConsultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmConsultorioManter.resx">
       <DependentUpon>FrmConsultorioManter.cs</DependentUpon>

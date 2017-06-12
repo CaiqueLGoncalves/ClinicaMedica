@@ -186,6 +186,36 @@ namespace ClinicaMedica.Controller
             return resultado;
         }
 
+        public List<ConsultaFuncionario> SelectWithMedico()
+        {
+            var query = from funcionario in db.TB_Usuario_Funcionario
+                        orderby funcionario.Identificacao ascending
+                        select new ConsultaFuncionario
+                        {
+                            Codigo = funcionario.Identificacao,
+                            Nome = funcionario.Nome,
+                            CPF = funcionario.CPF,
+                            RG = funcionario.RG,
+                            DataNascimento = funcionario.DataNascimento,
+                            Sexo = funcionario.Sexo,
+                            Funcao = funcionario.Funcao.Nome,
+                            TelefoneResidencial = funcionario.TelefoneResidencial,
+                            TelefoneComercial = funcionario.TelefoneComercial,
+                            TelefoneCelular = funcionario.TelefoneCelular,
+                            Email = funcionario.Email,
+                            CEP = funcionario.Localidade.CEP,
+                            Endereco = funcionario.Localidade.Endereco,
+                            Numero = funcionario.Localidade.Numero,
+                            Complemento = funcionario.Localidade.Complemento,
+                            Bairro = funcionario.Localidade.Bairro,
+                            Cidade = funcionario.Localidade.Cidade,
+                            Estado = funcionario.Localidade.Estado
+                        };
+
+            var resultado = query.ToList();
+            return resultado;
+        }
+
         public List<ConsultaFuncionario> Select(string filtro, string pesquisa)
         {
             IQueryable<ConsultaFuncionario> query = null;
