@@ -9,18 +9,19 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Medico : Funcionario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Medico()
         {
-            this.Consulta = new HashSet<Consulta>();
-            this.MedicoEspecialidade = new HashSet<MedicoEspecialidade>();
+            Consulta = new HashSet<Consulta>();
+            MedicoEspecialidade = new HashSet<MedicoEspecialidade>();
         }
-    
+
+        [Required(ErrorMessage = "O campo 'CRM' é obrigatório!", AllowEmptyStrings = false)]
         public string CRM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

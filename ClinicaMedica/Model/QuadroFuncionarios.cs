@@ -10,14 +10,15 @@
 namespace ClinicaMedica.Model
 {
     using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class QuadroFuncionarios
     {
         public int IdConsultorio { get; set; }
         public int IdFuncionario { get; set; }
-        public System.DateTime DataAdmissao { get; set; }
-        public Nullable<System.DateTime> DataDemissao { get; set; }
+        [Required(ErrorMessage = "O campo 'Data de Admissão' é obrigatório!")]
+        public DateTime DataAdmissao { get; set; }
+        public DateTime? DataDemissao { get; set; }
         public bool Status { get; set; }
     
         public virtual Funcionario Funcionario { get; set; }

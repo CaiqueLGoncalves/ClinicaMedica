@@ -9,9 +9,7 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class MedicoEspecialidade
     {
         public int IdentificacaoMedico { get; set; }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMedicoManter));
             this.gpbDadosProfissionais = new System.Windows.Forms.GroupBox();
             this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
             this.IdEspecialidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +55,11 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.gpbLocalidade = new System.Windows.Forms.GroupBox();
+            this.chkCEP = new System.Windows.Forms.CheckBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.lblCEP = new System.Windows.Forms.Label();
-            this.mskCEP = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscarCEP = new System.Windows.Forms.Button();
+            this.mskCEP = new System.Windows.Forms.MaskedTextBox();
             this.lblEndereco = new System.Windows.Forms.Label();
             this.txbCidade = new System.Windows.Forms.TextBox();
             this.txbEndereco = new System.Windows.Forms.TextBox();
@@ -321,10 +323,11 @@
             // 
             // gpbLocalidade
             // 
+            this.gpbLocalidade.Controls.Add(this.chkCEP);
             this.gpbLocalidade.Controls.Add(this.cmbEstado);
             this.gpbLocalidade.Controls.Add(this.lblCEP);
-            this.gpbLocalidade.Controls.Add(this.mskCEP);
             this.gpbLocalidade.Controls.Add(this.btnBuscarCEP);
+            this.gpbLocalidade.Controls.Add(this.mskCEP);
             this.gpbLocalidade.Controls.Add(this.lblEndereco);
             this.gpbLocalidade.Controls.Add(this.txbCidade);
             this.gpbLocalidade.Controls.Add(this.txbEndereco);
@@ -343,9 +346,21 @@
             this.gpbLocalidade.TabStop = false;
             this.gpbLocalidade.Text = "Endereço";
             // 
+            // chkCEP
+            // 
+            this.chkCEP.AutoSize = true;
+            this.chkCEP.Location = new System.Drawing.Point(300, 24);
+            this.chkCEP.Name = "chkCEP";
+            this.chkCEP.Size = new System.Drawing.Size(95, 17);
+            this.chkCEP.TabIndex = 17;
+            this.chkCEP.Text = "Não sei o CEP";
+            this.chkCEP.UseVisualStyleBackColor = true;
+            this.chkCEP.CheckedChanged += new System.EventHandler(this.chkCEP_CheckedChanged);
+            // 
             // cmbEstado
             // 
             this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstado.Enabled = false;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "Acre (AC)",
@@ -389,24 +404,24 @@
             this.lblCEP.TabIndex = 0;
             this.lblCEP.Text = "CEP:";
             // 
+            // btnBuscarCEP
+            // 
+            this.btnBuscarCEP.Location = new System.Drawing.Point(215, 20);
+            this.btnBuscarCEP.Name = "btnBuscarCEP";
+            this.btnBuscarCEP.Size = new System.Drawing.Size(65, 23);
+            this.btnBuscarCEP.TabIndex = 16;
+            this.btnBuscarCEP.Text = "Buscar";
+            this.btnBuscarCEP.UseVisualStyleBackColor = true;
+            this.btnBuscarCEP.Click += new System.EventHandler(this.btnBuscarCEP_Click);
+            // 
             // mskCEP
             // 
             this.mskCEP.Location = new System.Drawing.Point(134, 22);
             this.mskCEP.Mask = "00000-999";
             this.mskCEP.Name = "mskCEP";
-            this.mskCEP.Size = new System.Drawing.Size(150, 20);
-            this.mskCEP.TabIndex = 1;
+            this.mskCEP.Size = new System.Drawing.Size(75, 20);
+            this.mskCEP.TabIndex = 15;
             this.mskCEP.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
-            // 
-            // btnBuscarCEP
-            // 
-            this.btnBuscarCEP.Location = new System.Drawing.Point(305, 20);
-            this.btnBuscarCEP.Name = "btnBuscarCEP";
-            this.btnBuscarCEP.Size = new System.Drawing.Size(85, 23);
-            this.btnBuscarCEP.TabIndex = 2;
-            this.btnBuscarCEP.Text = "Buscar";
-            this.btnBuscarCEP.UseVisualStyleBackColor = true;
-            this.btnBuscarCEP.Click += new System.EventHandler(this.btnBuscarCEP_Click);
             // 
             // lblEndereco
             // 
@@ -421,6 +436,7 @@
             // 
             this.txbCidade.Location = new System.Drawing.Point(134, 172);
             this.txbCidade.Name = "txbCidade";
+            this.txbCidade.ReadOnly = true;
             this.txbCidade.Size = new System.Drawing.Size(256, 20);
             this.txbCidade.TabIndex = 12;
             // 
@@ -429,6 +445,7 @@
             this.txbEndereco.Location = new System.Drawing.Point(134, 52);
             this.txbEndereco.MaxLength = 100;
             this.txbEndereco.Name = "txbEndereco";
+            this.txbEndereco.ReadOnly = true;
             this.txbEndereco.Size = new System.Drawing.Size(256, 20);
             this.txbEndereco.TabIndex = 4;
             // 
@@ -489,6 +506,7 @@
             this.txbBairro.Location = new System.Drawing.Point(134, 142);
             this.txbBairro.MaxLength = 100;
             this.txbBairro.Name = "txbBairro";
+            this.txbBairro.ReadOnly = true;
             this.txbBairro.Size = new System.Drawing.Size(256, 20);
             this.txbBairro.TabIndex = 10;
             // 
@@ -617,6 +635,7 @@
             this.Controls.Add(this.txbNome);
             this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMedicoManter";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -661,8 +680,6 @@
         private System.Windows.Forms.GroupBox gpbLocalidade;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label lblCEP;
-        private System.Windows.Forms.MaskedTextBox mskCEP;
-        private System.Windows.Forms.Button btnBuscarCEP;
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.TextBox txbCidade;
         private System.Windows.Forms.TextBox txbEndereco;
@@ -690,5 +707,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.CheckBox chkCEP;
+        private System.Windows.Forms.Button btnBuscarCEP;
+        private System.Windows.Forms.MaskedTextBox mskCEP;
     }
 }

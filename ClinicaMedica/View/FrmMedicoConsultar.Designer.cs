@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMedicoConsultar));
             this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
             this.rbtCRM = new System.Windows.Forms.RadioButton();
@@ -177,6 +178,7 @@
             this.Controls.Add(this.dgvMedicos);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMedicoConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -9,7 +9,6 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -18,8 +17,8 @@ namespace ClinicaMedica.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Exame()
         {
-            this.AgendaExame = new HashSet<AgendaExame>();
-            this.ConsultorioExame = new HashSet<ConsultorioExame>();
+            AgendaExame = new HashSet<AgendaExame>();
+            ConsultorioExame = new HashSet<ConsultorioExame>();
         }
     
         public int IdExame { get; set; }

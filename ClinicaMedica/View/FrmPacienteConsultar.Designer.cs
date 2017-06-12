@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPacienteConsultar));
             this.lblPesquisa = new System.Windows.Forms.Label();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -167,6 +168,7 @@
             this.Controls.Add(this.dgvPacientes);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmPacienteConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -10,16 +10,19 @@
 namespace ClinicaMedica.Model
 {
     using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Consulta
     {
         public int IdConsulta { get; set; }
         public int IdentificacaoPaciente { get; set; }
         public int IdentificacaoMedico { get; set; }
         public int IdConsultorio { get; set; }
-        public System.DateTime DataHoraInicio { get; set; }
-        public System.DateTime DataHoraFim { get; set; }
+        [Required(ErrorMessage = "O campo 'Horário (Inicial)' é obrigatório!", AllowEmptyStrings = false)]
+        public DateTime DataHoraInicio { get; set; }
+        [Required(ErrorMessage = "O campo 'Horário (Final)' é obrigatório!", AllowEmptyStrings = false)]
+        public DateTime DataHoraFim { get; set; }
+        [Required(ErrorMessage = "O campo 'Comparecimento' é obrigatório!")]
         public bool Comparecimento { get; set; }
         public string Anotacoes { get; set; }
     

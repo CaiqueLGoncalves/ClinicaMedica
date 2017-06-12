@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExameGerencia));
             this.mntCalendario = new System.Windows.Forms.MonthCalendar();
             this.cmbExame = new System.Windows.Forms.ComboBox();
             this.tBExameBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -88,10 +89,15 @@
             // 
             // dtgHorarios
             // 
+            this.dtgHorarios.AllowUserToAddRows = false;
+            this.dtgHorarios.AllowUserToDeleteRows = false;
             this.dtgHorarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgHorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgHorarios.Location = new System.Drawing.Point(257, 30);
+            this.dtgHorarios.MultiSelect = false;
             this.dtgHorarios.Name = "dtgHorarios";
+            this.dtgHorarios.ReadOnly = true;
+            this.dtgHorarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgHorarios.Size = new System.Drawing.Size(672, 280);
             this.dtgHorarios.TabIndex = 3;
             // 
@@ -154,7 +160,11 @@
             this.Controls.Add(this.cmbConsultorio);
             this.Controls.Add(this.cmbExame);
             this.Controls.Add(this.mntCalendario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmExameGerencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciamento de Exames";
             this.Activated += new System.EventHandler(this.FrmExameGerencia_Activated);
             this.Load += new System.EventHandler(this.FrmExameGerencia_Load);

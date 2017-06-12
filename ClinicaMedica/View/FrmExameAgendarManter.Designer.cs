@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExameAgendarManter));
             this.txtAnotacoes = new System.Windows.Forms.TextBox();
             this.chkComparecimento = new System.Windows.Forms.CheckBox();
             this.dtpHorarioFinal = new System.Windows.Forms.DateTimePicker();
@@ -226,7 +227,11 @@
             this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.lblExame);
             this.Controls.Add(this.lblConsultorio);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmExameAgendarManter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alterar/Excluir Exames Agendados";
             this.Load += new System.EventHandler(this.FrmExameAgendarManter_Load);
             this.ResumeLayout(false);

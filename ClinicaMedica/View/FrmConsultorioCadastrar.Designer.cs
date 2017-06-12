@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultorioCadastrar));
             this.txbNomeFantasia = new System.Windows.Forms.TextBox();
             this.txbRazaoSocial = new System.Windows.Forms.TextBox();
             this.dtpHorairoAbertura = new System.Windows.Forms.DateTimePicker();
@@ -67,9 +68,9 @@
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recomendacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gpbEndereço = new System.Windows.Forms.GroupBox();
+            this.chkCEP = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.chkCEP = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
@@ -414,6 +415,17 @@
             this.gpbEndereço.TabStop = false;
             this.gpbEndereço.Text = "Localidade";
             // 
+            // chkCEP
+            // 
+            this.chkCEP.AutoSize = true;
+            this.chkCEP.Location = new System.Drawing.Point(267, 22);
+            this.chkCEP.Name = "chkCEP";
+            this.chkCEP.Size = new System.Drawing.Size(95, 17);
+            this.chkCEP.TabIndex = 17;
+            this.chkCEP.Text = "Não sei o CEP";
+            this.chkCEP.UseVisualStyleBackColor = true;
+            this.chkCEP.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblTelefone);
@@ -445,17 +457,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Selecione um ou mais exames";
             // 
-            // chkCEP
-            // 
-            this.chkCEP.AutoSize = true;
-            this.chkCEP.Location = new System.Drawing.Point(267, 22);
-            this.chkCEP.Name = "chkCEP";
-            this.chkCEP.Size = new System.Drawing.Size(95, 17);
-            this.chkCEP.TabIndex = 17;
-            this.chkCEP.Text = "Não sei o CEP";
-            this.chkCEP.UseVisualStyleBackColor = true;
-            this.chkCEP.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // FrmConsultorioCadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +466,11 @@
             this.Controls.Add(this.gpbEndereço);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmConsultorioCadastrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Consultório";
             this.Load += new System.EventHandler(this.FrmConsultorioCadastrar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).EndInit();

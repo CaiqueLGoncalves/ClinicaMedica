@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExameConsultar));
             this.lblExame = new System.Windows.Forms.Label();
             this.txtExame = new System.Windows.Forms.TextBox();
             this.dtgExame = new System.Windows.Forms.DataGridView();
@@ -59,6 +60,7 @@
             this.dtgExame.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgExame.Location = new System.Drawing.Point(12, 86);
+            this.dtgExame.MultiSelect = false;
             this.dtgExame.Name = "dtgExame";
             this.dtgExame.ReadOnly = true;
             this.dtgExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -86,7 +88,10 @@
             this.Controls.Add(this.dtgExame);
             this.Controls.Add(this.txtExame);
             this.Controls.Add(this.lblExame);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmExameConsultar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmExameConsultar";
             this.Activated += new System.EventHandler(this.FrmExameConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmExameConsultar_Load);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaGerenciar));
             this.mclCalendario = new System.Windows.Forms.MonthCalendar();
             this.cmbConsultorio = new System.Windows.Forms.ComboBox();
             this.TBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -127,6 +128,7 @@
             this.Controls.Add(this.cmbConsultorio);
             this.Controls.Add(this.mclCalendario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmConsultaGerenciar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -10,16 +10,15 @@
 namespace ClinicaMedica.Model
 {
     using System;
-    using System.Collections.Generic;
-    
+
     public partial class AgendaExame
     {
         public int IdAgendaExame { get; set; }
         public int IdentificacaoPaciente { get; set; }
         public int IdExame { get; set; }
         public int IdConsultorio { get; set; }
-        public System.DateTime DataHoraInicio { get; set; }
-        public System.DateTime DataHoraFim { get; set; }
+        public DateTime DataHoraInicio { get; set; }
+        public DateTime DataHoraFim { get; set; }
         public bool Comparecimento { get; set; }
         public string Anotacoes { get; set; }
     

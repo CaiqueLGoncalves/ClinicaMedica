@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExameAgendarConsultar));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbConsultorio = new System.Windows.Forms.ComboBox();
             this.tBConsultorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -39,10 +40,10 @@
             this.tB_ConsultorioTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ConsultorioTableAdapter();
             this.tB_ExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter();
             this.gpbOpcoes = new System.Windows.Forms.GroupBox();
+            this.txtBusca = new System.Windows.Forms.TextBox();
             this.rdbPessoa = new System.Windows.Forms.RadioButton();
             this.rdbExame = new System.Windows.Forms.RadioButton();
             this.rdbConsultorio = new System.Windows.Forms.RadioButton();
-            this.txtBusca = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tBConsultorioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
@@ -106,6 +107,7 @@
             this.dgvExame.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExame.Location = new System.Drawing.Point(12, 142);
+            this.dgvExame.MultiSelect = false;
             this.dgvExame.Name = "dgvExame";
             this.dgvExame.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExame.Size = new System.Drawing.Size(776, 279);
@@ -134,6 +136,15 @@
             this.gpbOpcoes.TabIndex = 6;
             this.gpbOpcoes.TabStop = false;
             this.gpbOpcoes.Text = "Selecione o Tipo de Consulta:";
+            // 
+            // txtBusca
+            // 
+            this.txtBusca.Location = new System.Drawing.Point(168, 41);
+            this.txtBusca.Name = "txtBusca";
+            this.txtBusca.Size = new System.Drawing.Size(524, 20);
+            this.txtBusca.TabIndex = 7;
+            this.txtBusca.Visible = false;
+            this.txtBusca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPessoa_KeyUp);
             // 
             // rdbPessoa
             // 
@@ -171,15 +182,6 @@
             this.rdbConsultorio.UseVisualStyleBackColor = true;
             this.rdbConsultorio.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // txtBusca
-            // 
-            this.txtBusca.Location = new System.Drawing.Point(168, 41);
-            this.txtBusca.Name = "txtBusca";
-            this.txtBusca.Size = new System.Drawing.Size(524, 20);
-            this.txtBusca.TabIndex = 7;
-            this.txtBusca.Visible = false;
-            this.txtBusca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPessoa_KeyUp);
-            // 
             // FrmExameAgendarConsultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +190,11 @@
             this.Controls.Add(this.gpbOpcoes);
             this.Controls.Add(this.dgvExame);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmExameAgendarConsultar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Exames Agendados";
             this.Activated += new System.EventHandler(this.FrmExameAgendarConsultar_Activated);
             this.Load += new System.EventHandler(this.FrmExameAgendarConsultar_Load);

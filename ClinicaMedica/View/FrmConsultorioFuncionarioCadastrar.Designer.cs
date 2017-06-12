@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultorioFuncionarioCadastrar));
             this.lblFuncionario = new System.Windows.Forms.Label();
             this.lblConsultorio = new System.Windows.Forms.Label();
             this.cmbConsultorio = new System.Windows.Forms.ComboBox();
@@ -143,6 +144,7 @@
             this.Controls.Add(this.lblFuncionario);
             this.Controls.Add(this.lblConsultorio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmConsultorioFuncionarioCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

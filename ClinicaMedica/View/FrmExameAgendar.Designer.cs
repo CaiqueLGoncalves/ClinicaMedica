@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmExameAgendar));
             this.lblConsultorio = new System.Windows.Forms.Label();
             this.lblExame = new System.Windows.Forms.Label();
             this.lblPaciente = new System.Windows.Forms.Label();
@@ -219,7 +220,11 @@
             this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.lblExame);
             this.Controls.Add(this.lblConsultorio);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmExameAgendar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agendamento de Exame";
             this.Load += new System.EventHandler(this.FrmExameAgendar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaPacientes)).EndInit();

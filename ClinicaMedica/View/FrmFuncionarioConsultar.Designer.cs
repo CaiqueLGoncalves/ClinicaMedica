@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFuncionarioConsultar));
             this.mskPesquisa = new System.Windows.Forms.MaskedTextBox();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
             this.lblFiltros = new System.Windows.Forms.Label();
@@ -165,6 +166,7 @@
             this.Controls.Add(this.dgvFuncionarios);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmFuncionarioConsultar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

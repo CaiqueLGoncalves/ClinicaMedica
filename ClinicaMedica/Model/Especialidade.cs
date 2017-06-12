@@ -9,18 +9,19 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Especialidade
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Especialidade()
         {
-            this.MedicoEspecialidade = new HashSet<MedicoEspecialidade>();
+            MedicoEspecialidade = new HashSet<MedicoEspecialidade>();
         }
     
         public int IdEspecialidade { get; set; }
+        [Required(ErrorMessage = "O campo 'Nome da Especialidade' é obrigatório!", AllowEmptyStrings = false)]
         public string Nome { get; set; }
         public string Descricao { get; set; }
     

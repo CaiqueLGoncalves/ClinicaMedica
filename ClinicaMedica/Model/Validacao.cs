@@ -23,6 +23,21 @@ namespace ClinicaMedica.Model
             Validator.TryValidateObject(consultorio, contexto, erros, true);
             return erros;
         }
+
+        public static IEnumerable<ValidationResult> ValidarUsuario(Usuario usuario)
+        {
+            var erros = new List<ValidationResult>();
+            var contexto = new ValidationContext(usuario, null, null);
+
+            if (!IsCpf(usuario.CPF.ToString()))
+            {
+                erros.Add(new ValidationResult("CPF Inválido!"));
+            }
+
+            Validator.TryValidateObject(usuario, contexto, erros, true);
+            return erros;
+        }
+
         //true valido false invalido
         public static bool IsCnpj(string cnpj)
         {

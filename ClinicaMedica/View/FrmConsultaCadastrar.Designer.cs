@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultaCadastrar));
             this.btnAgendar = new System.Windows.Forms.Button();
             this.txbAnotacoes = new System.Windows.Forms.TextBox();
             this.lblAnotacoes = new System.Windows.Forms.Label();
@@ -238,6 +239,7 @@
             this.Controls.Add(this.txbConsultorio);
             this.Controls.Add(this.lblConsultorio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmConsultaCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

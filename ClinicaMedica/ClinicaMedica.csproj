@@ -245,12 +245,6 @@
     <Compile Include="View\FrmExameConsultar.Designer.cs">
       <DependentUpon>FrmExameConsultar.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmExameConsultorio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FrmExameConsultorio.Designer.cs">
-      <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FrmExameGerencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,9 +391,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameConsultar.resx">
       <DependentUpon>FrmExameConsultar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmExameConsultorio.resx">
-      <DependentUpon>FrmExameConsultorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmExameGerencia.resx">
       <DependentUpon>FrmExameGerencia.cs</DependentUpon>

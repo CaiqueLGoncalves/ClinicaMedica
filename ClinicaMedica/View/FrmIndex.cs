@@ -10,129 +10,123 @@ namespace ClinicaMedica.View
             InitializeComponent();
         }
 
-        private void cadastrarConsultorioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmConsultorioCadastrar consultorio = new FrmConsultorioCadastrar();
-            consultorio.Show();
-        }
-
-        private void atribuirFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmConsultorioFuncionarioCadastrar cfCadastrar = new FrmConsultorioFuncionarioCadastrar();
-            cfCadastrar.ShowDialog(this);
-        }
-
-        private void consultarFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmConsultorioFuncionarioConsultar cfConsultar = new FrmConsultorioFuncionarioConsultar();
-            cfConsultar.ShowDialog(this);
-        }
-
-        private void consultórioToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            FrmConsultorioConsultar consultorioConsulta = new FrmConsultorioConsultar();
-            consultorioConsulta.Show();
-        }
-
-        private void exameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmExameCadastrar exameCadastra = new FrmExameCadastrar();
-            exameCadastra.Show();
-        }
-
-        private void exameEmConsultóriroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmExameConsultorio exameConsultorio = new FrmExameConsultorio();
-            exameConsultorio.Show();
-        }
-
         private void cadastrarPacienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPacienteCadastrar paciente = new FrmPacienteCadastrar();
-            paciente.ShowDialog(this);
+            FrmPacienteCadastrar frmPacienteCadastrar = new FrmPacienteCadastrar();
+            frmPacienteCadastrar.ShowDialog(this);
+        }
+
+        private void consultarPacienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPacienteConsultar frmPacienteConsultar = new FrmPacienteConsultar();
+            frmPacienteConsultar.ShowDialog(this);
         }
 
         private void cadastrarFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFuncionarioCadastrar funcionario = new FrmFuncionarioCadastrar();
-            funcionario.ShowDialog(this);
+            FrmFuncionarioCadastrar frmFuncionarioCadastrar = new FrmFuncionarioCadastrar();
+            frmFuncionarioCadastrar.ShowDialog(this);
         }
 
-        private void cadastrarMedicoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultarFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmMedicoCadastrar medico = new FrmMedicoCadastrar();
-            medico.ShowDialog(this);
-        }
-
-        private void cadastrarEspecialidadeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmEspecialidadeCadastrar especialidade = new FrmEspecialidadeCadastrar();
-            especialidade.ShowDialog(this);
+            FrmFuncionarioConsultar frmFuncionarioConsultar = new FrmFuncionarioConsultar();
+            frmFuncionarioConsultar.ShowDialog(this);
         }
 
         private void cadastrarFuncaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFuncaoCadastrar funcao = new FrmFuncaoCadastrar();
-            funcao.ShowDialog(this);
+            FrmFuncaoCadastrar frmFuncaoCadastrar = new FrmFuncaoCadastrar();
+            frmFuncaoCadastrar.ShowDialog(this);
         }
 
-        private void especialidadeToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void consultarFuncaoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmEspecialidadeConsultar espCons = new FrmEspecialidadeConsultar();
-            espCons.ShowDialog(this);
+            FrmFuncaoConsultar frmFuncaoConsultar = new FrmFuncaoConsultar();
+            frmFuncaoConsultar.ShowDialog(this);
         }
 
-        private void funcaoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarMedicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFuncaoConsultar funcaoCons = new FrmFuncaoConsultar();
-            funcaoCons.ShowDialog(this);
+            FrmMedicoCadastrar frmMedicoCadastrar = new FrmMedicoCadastrar();
+            frmMedicoCadastrar.ShowDialog(this);
         }
 
-        private void pacienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void consultarMedicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmPacienteConsultar pacienteCons = new FrmPacienteConsultar();
-            pacienteCons.ShowDialog(this);
+            FrmMedicoConsultar frmMedicoConsultar = new FrmMedicoConsultar();
+            frmMedicoConsultar.ShowDialog(this);
         }
 
-        private void medicoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarEspecialidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmMedicoConsultar medicoCons = new FrmMedicoConsultar();
-            medicoCons.ShowDialog(this);
+            FrmEspecialidadeCadastrar frmEspecialidadeCadastrar = new FrmEspecialidadeCadastrar();
+            frmEspecialidadeCadastrar.ShowDialog(this);
         }
 
-        private void funcionarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void consultarEspecialidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmFuncionarioConsultar funcCons = new FrmFuncionarioConsultar();
-            funcCons.ShowDialog(this);
+            FrmEspecialidadeConsultar frmEspecialidadeConsultar = new FrmEspecialidadeConsultar();
+            frmEspecialidadeConsultar.ShowDialog(this);
         }
 
-        private void exameToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void cadastrarConsultorioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmExameConsultar exaCons = new FrmExameConsultar();
-            exaCons.Show();
+            FrmConsultorioCadastrar frmConsultorioCadastrar = new FrmConsultorioCadastrar();
+            frmConsultorioCadastrar.ShowDialog(this);
+        }
+
+        private void consultarConsultorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultorioConsultar frmConsultorioConsultar = new FrmConsultorioConsultar();
+            frmConsultorioConsultar.ShowDialog(this);
+        }
+
+        private void contratarFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultorioFuncionarioCadastrar frmConsultorioFuncionarioCadastrar = new FrmConsultorioFuncionarioCadastrar();
+            frmConsultorioFuncionarioCadastrar.ShowDialog(this);
+        }
+
+        private void consultarQuadroFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultorioFuncionarioConsultar frmConsultorioFuncionarioConsultar = new FrmConsultorioFuncionarioConsultar();
+            frmConsultorioFuncionarioConsultar.ShowDialog(this);
         }
 
         private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultaGerenciar consGerenciar = new FrmConsultaGerenciar();
-            consGerenciar.ShowDialog(this);
+            FrmConsultaGerenciar frmConsultaGerenciar = new FrmConsultaGerenciar();
+            frmConsultaGerenciar.ShowDialog(this);
         }
 
-        private void examesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastrarExameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmExameCadastrar frmExameCadastrar = new FrmExameCadastrar();
+            frmExameCadastrar.ShowDialog(this);
         }
 
-        private void agendarExameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultarExameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmExameGerencia exgere = new FrmExameGerencia();
-            exgere.ShowDialog(this);
+            FrmExameConsultar frmExameConsultar = new FrmExameConsultar();
+            frmExameConsultar.ShowDialog(this);
         }
 
-        private void consultarExamesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void gerenciarAgendamentoExamesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmExameAgendarConsultar exagecon = new FrmExameAgendarConsultar();
-            exagecon.ShowDialog(this);
+            FrmExameGerencia frmExameGerencia = new FrmExameGerencia();
+            frmExameGerencia.ShowDialog(this);
+        }
+
+        private void consultarAgendamentoExamesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmExameAgendarConsultar frmExameAgendarConsultar = new FrmExameAgendarConsultar();
+            frmExameAgendarConsultar.ShowDialog(this);
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

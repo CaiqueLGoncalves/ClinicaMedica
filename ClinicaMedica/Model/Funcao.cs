@@ -9,18 +9,19 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Funcao
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Funcao()
         {
-            this.Funcionario = new HashSet<Funcionario>();
+            Funcionario = new HashSet<Funcionario>();
         }
     
         public int IdFuncao { get; set; }
+        [Required(ErrorMessage = "O campo 'Nome da Função' é obrigatório!", AllowEmptyStrings = false)]
         public string Nome { get; set; }
         public string Descricao { get; set; }
     

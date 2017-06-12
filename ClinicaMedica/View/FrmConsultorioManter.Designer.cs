@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultorioManter));
             this.btnAlterar = new System.Windows.Forms.Button();
             this.tB_ExameTableAdapter = new ClinicaMedica.ClinicaMedicaBDDataSetTableAdapters.TB_ExameTableAdapter();
             this.clinicaMedicaBDDataSet = new ClinicaMedica.ClinicaMedicaBDDataSet();
@@ -37,9 +38,9 @@
             this.tBExameBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnExcluir = new System.Windows.Forms.Button();
             this.dtgExame = new System.Windows.Forms.DataGridView();
-            this.recomendacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdExame = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.recomendacoesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.lblCep = new System.Windows.Forms.Label();
             this.txbCidade = new System.Windows.Forms.TextBox();
             this.gpbEndereço = new System.Windows.Forms.GroupBox();
+            this.chkCEP = new System.Windows.Forms.CheckBox();
             this.dtpHorairoAbertura = new System.Windows.Forms.DateTimePicker();
             this.txbNomeFantasia = new System.Windows.Forms.TextBox();
             this.lblHorarioAbertura = new System.Windows.Forms.Label();
@@ -70,7 +72,6 @@
             this.mskTelefone = new System.Windows.Forms.MaskedTextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chkCEP = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBExameBindingSource)).BeginInit();
@@ -142,19 +143,6 @@
             this.dtgExame.Size = new System.Drawing.Size(340, 132);
             this.dtgExame.TabIndex = 28;
             // 
-            // recomendacoesDataGridViewTextBoxColumn
-            // 
-            this.recomendacoesDataGridViewTextBoxColumn.DataPropertyName = "Recomendacoes";
-            this.recomendacoesDataGridViewTextBoxColumn.HeaderText = "Recomendacoes";
-            this.recomendacoesDataGridViewTextBoxColumn.Name = "recomendacoesDataGridViewTextBoxColumn";
-            this.recomendacoesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
             // IdExame
             // 
             this.IdExame.DataPropertyName = "IdExame";
@@ -162,6 +150,19 @@
             this.IdExame.Name = "IdExame";
             this.IdExame.ReadOnly = true;
             this.IdExame.Visible = false;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // recomendacoesDataGridViewTextBoxColumn
+            // 
+            this.recomendacoesDataGridViewTextBoxColumn.DataPropertyName = "Recomendacoes";
+            this.recomendacoesDataGridViewTextBoxColumn.HeaderText = "Recomendacoes";
+            this.recomendacoesDataGridViewTextBoxColumn.Name = "recomendacoesDataGridViewTextBoxColumn";
+            this.recomendacoesDataGridViewTextBoxColumn.Visible = false;
             // 
             // groupBox2
             // 
@@ -253,6 +254,7 @@
             // 
             // txbNumero
             // 
+            this.txbNumero.Enabled = false;
             this.txbNumero.Location = new System.Drawing.Point(87, 72);
             this.txbNumero.Name = "txbNumero";
             this.txbNumero.Size = new System.Drawing.Size(100, 20);
@@ -260,6 +262,7 @@
             // 
             // txbComplemento
             // 
+            this.txbComplemento.Enabled = false;
             this.txbComplemento.Location = new System.Drawing.Point(87, 98);
             this.txbComplemento.Name = "txbComplemento";
             this.txbComplemento.Size = new System.Drawing.Size(248, 20);
@@ -321,6 +324,17 @@
             this.gpbEndereço.TabIndex = 33;
             this.gpbEndereço.TabStop = false;
             this.gpbEndereço.Text = "Localidade";
+            // 
+            // chkCEP
+            // 
+            this.chkCEP.AutoSize = true;
+            this.chkCEP.Location = new System.Drawing.Point(274, 22);
+            this.chkCEP.Name = "chkCEP";
+            this.chkCEP.Size = new System.Drawing.Size(95, 17);
+            this.chkCEP.TabIndex = 37;
+            this.chkCEP.Text = "Não sei o CEP";
+            this.chkCEP.UseVisualStyleBackColor = true;
+            this.chkCEP.CheckedChanged += new System.EventHandler(this.chkCEP_CheckedChanged);
             // 
             // dtpHorairoAbertura
             // 
@@ -455,17 +469,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados Gerais";
             // 
-            // chkCEP
-            // 
-            this.chkCEP.AutoSize = true;
-            this.chkCEP.Location = new System.Drawing.Point(274, 22);
-            this.chkCEP.Name = "chkCEP";
-            this.chkCEP.Size = new System.Drawing.Size(95, 17);
-            this.chkCEP.TabIndex = 37;
-            this.chkCEP.Text = "Não sei o CEP";
-            this.chkCEP.UseVisualStyleBackColor = true;
-            this.chkCEP.CheckedChanged += new System.EventHandler(this.chkCEP_CheckedChanged);
-            // 
             // FrmConsultorioManter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -476,7 +479,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gpbEndereço);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmConsultorioManter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsultorioManter";
             this.Load += new System.EventHandler(this.FrmConsultorioManter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.clinicaMedicaBDDataSet)).EndInit();

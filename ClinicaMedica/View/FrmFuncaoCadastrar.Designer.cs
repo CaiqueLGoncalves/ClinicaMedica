@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmFuncaoCadastrar));
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.txbDescricao = new System.Windows.Forms.TextBox();
             this.lblDescricao = new System.Windows.Forms.Label();
@@ -89,6 +90,7 @@
             this.Controls.Add(this.txbNome);
             this.Controls.Add(this.lblNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmFuncaoCadastrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

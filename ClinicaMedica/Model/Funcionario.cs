@@ -9,15 +9,14 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
     using System.Collections.Generic;
-    
+
     public partial class Funcionario : Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Funcionario()
         {
-            this.QuadroFuncionarios = new HashSet<QuadroFuncionarios>();
+            QuadroFuncionarios = new HashSet<QuadroFuncionarios>();
         }
     
         public int IdFuncao { get; set; }

@@ -14,7 +14,7 @@ namespace ClinicaMedica.Controller
 
         public List<string> Insert(Funcionario funcionario)
         {
-            var erros = Validacao.Validar(funcionario);
+            var erros = Validacao.ValidarUsuario(funcionario);
 
             try
             {
@@ -63,7 +63,7 @@ namespace ClinicaMedica.Controller
 
         public List<string> Update(Funcionario funcionario, Localidade localidade)
         {
-            var errosFuncionario = Validacao.Validar(funcionario);
+            var errosFuncionario = Validacao.ValidarUsuario(funcionario);
             var errosLocalidade = Validacao.Validar(localidade);
 
             try

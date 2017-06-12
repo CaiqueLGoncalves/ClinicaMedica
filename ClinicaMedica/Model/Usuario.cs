@@ -9,16 +9,19 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Usuario
     {
         public int Identificacao { get; set; }
+
+        [Required(ErrorMessage = "O campo 'Nome' é obrigatório!", AllowEmptyStrings = false)]
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
+        [Required(ErrorMessage = "O campo 'Data de Nascimento' é obrigatório!")]
         public System.DateTime DataNascimento { get; set; }
+        [Required(ErrorMessage = "O campo 'Sexo' é obrigatório!", AllowEmptyStrings = false)]
         public string Sexo { get; set; }
         public string TelefoneResidencial { get; set; }
         public string TelefoneComercial { get; set; }

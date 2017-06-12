@@ -9,24 +9,27 @@
 
 namespace ClinicaMedica.Model
 {
-    using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Localidade
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Localidade()
         {
-            this.Pessoa = new HashSet<Usuario>();
+            Pessoa = new HashSet<Usuario>();
         }
     
         public int IdLocalidade { get; set; }
+        [Required(ErrorMessage = "O campo 'Endereço' é obrigatório!", AllowEmptyStrings = false)]
         public string Endereco { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
         public string CEP { get; set; }
         public string Bairro { get; set; }
+        [Required(ErrorMessage = "O campo 'Cidade' é obrigatório!", AllowEmptyStrings = false)]
         public string Cidade { get; set; }
+        [Required(ErrorMessage = "O campo 'Estado' é obrigatório!", AllowEmptyStrings = false)]
         public string Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -173,5 +173,25 @@ namespace ClinicaMedica.View
                 MessageBox.Show(ex.Message, "Clinica Médica", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void chkCEP_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCEP.Checked)
+            {
+                txbEndereco.ReadOnly = false;
+                txbNumero.ReadOnly = false;
+                txbComplemento.ReadOnly = false;
+                txbBairro.ReadOnly = false;
+                txbCidade.ReadOnly = false;
+                cmbEstado.Enabled = true;
+            }
+            else
+            {
+                txbEndereco.ReadOnly = true;
+                txbBairro.ReadOnly = true;
+                txbCidade.ReadOnly = true;
+                cmbEstado.Enabled = false;
+            }
+        }
     }
 }
